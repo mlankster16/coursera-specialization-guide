@@ -103,16 +103,17 @@ function homeHtml() {
   const h = C.home;
   return `
     ${heroHtml(h.hero)}
+    ${orientationHtml(h.orientation)}
     ${legendHtml(h.legend)}
     <div class="infographic">
       ${homeSpecHtml(h.specialization)}
-      ${fanHtml(3, '', '16px')}
+      ${fanHtml(3, '', '42px')}
       ${homeCoursesHtml(h.courses)}
-      ${fanHtml(3, 'dashed', '16px')}
+      ${dropHtml(1, 3, 'dashed')}
       ${homeModulesHtml(h.modules)}
-      ${stemHtml('dashed')}
+      ${dropHtml(1, 3, 'dashed')}
       ${homeLessonsHtml(h.lessons)}
-      ${stemHtml('dashed')}
+      ${dropHtml(1, 3, 'dashed')}
       ${homeAssetsHtml(h.assets)}
     </div>
     ${comparisonHtml(h.comparison)}
@@ -126,6 +127,15 @@ function heroHtml(hero) {
       <h1 class="hero-title">${esc(hero.title)}</h1>
       <p class="hero-sub">${esc(hero.subtitle)}</p>
       <p class="hero-hint">${icon('star')}${esc(hero.hint)}</p>
+    </section>`;
+}
+
+/* Page-level orientation: bridges from a Duke semester course to this format */
+function orientationHtml(o) {
+  return `
+    <section class="orientation">
+      <span class="orientation-icon">${icon('scale')}</span>
+      <p class="orientation-body">${esc(o.body)}</p>
     </section>`;
 }
 
@@ -151,6 +161,12 @@ function fanHtml(cols, mod = '', gap = '16px') {
     </div>`;
 }
 
+/* Vertical connector under a single column — used to enter the first module */
+function dropHtml(col, cols, mod = '', gap = '42px') {
+  const cells = Array.from({ length: cols }, (_, i) => `<span${i === col - 1 ? ' class="has-line"' : ''}></span>`).join('');
+  return `<div class="drop-row ${mod}" style="--cols:${cols};--gap:${gap}">${cells}</div>`;
+}
+
 function openCue(label) {
   return `<span class="more-cue">${esc(label)} &rarr;</span>`;
 }
@@ -164,13 +180,6 @@ function homeSpecHtml(s) {
           <span class="big-card-main">
             <span class="big-card-title">Specialization</span>
             <span class="big-card-def">${esc(s.definition)}</span>
-            <span class="outcome-box">
-              ${icon('star')}
-              <span>
-                <span class="outcome-label">${esc(s.highlight.label)}</span>
-                <span class="outcome-body">${esc(s.highlight.body)}</span>
-              </span>
-            </span>
           </span>
           <span class="big-card-includes">
             <span class="includes-label">Includes</span>
@@ -231,6 +240,10 @@ function homeModulesHtml(m) {
               ${openCue('Plan a module')}
             </button>`
             )
+            .join('')}
+          ${m.cards
+            .slice(1)
+            .map((_, i) => `<span class="row-arrow" data-gap="${i + 1}" aria-hidden="true">${icon('arrow')}</span>`)
             .join('')}
         </div>
       </div>

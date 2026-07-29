@@ -255,13 +255,13 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 
 .big-card-main { display: flex; flex-direction: column; gap: 10px; flex: 1; min-width: 0; }
 
+/* Title case, matching Course and Module — the Specialization is a larger unit,
+   not a more important one */
 .big-card-title {
   font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 800;
   font-size: 1.18rem;
   color: var(--spec);
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
 }
 
 .big-card-def { font-size: 0.92rem; color: var(--cast-iron); line-height: 1.6; }
@@ -312,9 +312,10 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 
 /* ---------- Course row ---------- */
 .course-row {
+  --rowgap: 42px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: var(--rowgap);
   align-items: stretch;
 }
 
@@ -530,7 +531,26 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .lesson-count .ico { width: 17px; height: 17px; }
 
 /* ---------- Module row ---------- */
-.module-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.module-row {
+  --rowgap: 42px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--rowgap);
+  align-items: stretch;
+}
+
+/* Sequential arrows between modules — modules within a course do run in order */
+.module-row .row-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  color: var(--module);
+}
+.module-row .row-arrow .ico { width: 22px; height: 22px; }
+.module-row .row-arrow[data-gap="1"] { left: calc((100% - 2 * var(--rowgap)) / 3 + var(--rowgap) / 2); }
+.module-row .row-arrow[data-gap="2"] { left: calc(2 * (100% - 2 * var(--rowgap)) / 3 + var(--rowgap) * 1.5); }
 
 .module-card {
   background: var(--module-bg);
@@ -1400,3 +1420,41 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   margin-bottom: 4px;
 }
 .outcome-body { display: block; }
+
+/* ---------- Orientation strip ---------- */
+.orientation {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  background: var(--white);
+  border: 1px solid var(--spec-line);
+  border-left: 3px solid var(--spec);
+  border-radius: 11px;
+  padding: 18px 22px;
+  margin-bottom: 22px;
+}
+
+.orientation-icon { display: flex; flex-shrink: 0; }
+.orientation-icon .ico { width: 22px; height: 22px; color: var(--spec); margin-top: 1px; }
+.orientation-body { font-size: 0.9rem; color: var(--cast-iron); line-height: 1.7; }
+
+/* ---------- Single-column drop connector ---------- */
+.drop-row {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  gap: var(--gap);
+}
+.drop-row > span { display: flex; justify-content: center; }
+.drop-row > span.has-line::before {
+  content: '';
+  width: 0;
+  height: 26px;
+  border-left: 1.5px solid var(--line);
+}
+.drop-row.dashed > span.has-line::before { border-left-style: dashed; }
+
+@media (max-width: 720px) {
+  .module-row { --rowgap: 14px; grid-template-columns: 1fr; }
+  .module-row .row-arrow { display: none; }
+  .drop-row { display: none; }
+}

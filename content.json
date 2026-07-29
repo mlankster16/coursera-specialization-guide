@@ -28,6 +28,9 @@
       "subtitle": "A Specialization is a set of related courses, each built to stand on its own.",
       "hint": "Click any level below to open its planning guide."
     },
+    "orientation": {
+      "body": "A full Specialization runs 12–48 hours of learner time, in range of a 15-week course, but your learners are working adults worldwide moving at their own pace with no cohort, no schedule, and no physical classroom. Much of the design work is translating class time into asynchronous learning time: what you'd explain live becomes short video, what you'd work through together becomes self-guided practice, etc. Your Learning Experience Designer will help you think through how to best adapt your existing or new materials for the Coursera learner."
+    },
     "legend": [
       {
         "tier": "spec",
@@ -59,7 +62,7 @@
         },
         {
           "icon": "clock",
-          "label": "12–32 hours of learner time"
+          "label": "12–48 hours of learner time"
         },
         {
           "icon": "flask",
@@ -69,11 +72,7 @@
           "icon": "certificate",
           "label": "Specialization Certificate"
         }
-      ],
-      "highlight": {
-        "label": "The headline outcome",
-        "body": "By the end, learners can [observable action] [product or task] [to a standard]. Define this first — every course below exists to deliver it."
-      }
+      ]
     },
     "courses": {
       "cards": [
@@ -221,7 +220,7 @@
         {
           "aspect": "Length",
           "credit": "~40+ contact hours per course",
-          "coursera": "2–8 hours of learning per course; 12–32 hours across the whole Specialization."
+          "coursera": "2–8 hours of learning per course; 12–48 hours across the whole Specialization."
         },
         {
           "aspect": "Your audience",
@@ -264,7 +263,7 @@
         },
         {
           "icon": "clock",
-          "label": "12–32 hours",
+          "label": "12–48 hours",
           "sub": "total learner time"
         },
         {
@@ -293,7 +292,7 @@
           "title": "Who you're designing for",
           "body": [
             "Coursera learners are mostly working adults choosing on career grounds. They arrive scanning for a skill they can use at work and show to someone else, and nothing obliges them to stay — every module has to earn the next click.",
-            "Coursera organises its whole catalogue around skills: the specific, in-demand competencies learners need for their careers. A Specialization that names a high-demand skill plainly is easier for the right learner to find, and easier for them to justify spending 12–32 hours on."
+            "Coursera organises its whole catalogue around skills: the specific, in-demand competencies learners need for their careers. A Specialization that names a high-demand skill plainly is easier for the right learner to find, and easier for them to justify spending 12–48 hours on."
           ],
           "tips": [
             "Name the skill the way a learner would search for it, not the way a syllabus would title it.",
