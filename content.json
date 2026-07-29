@@ -29,7 +29,7 @@
       "body": [
         "A Specialization is a series of related, in-depth courses that help learners master a competency. Specializations include projects — authentic, hands-on assessments with real-world applications that let learners demonstrate the skill.",
         "Learners who complete every course earn a Specialization Certificate. Learners who complete a single course earn a course certificate for that course alone.",
-        "Design it as a coherent set rather than a fixed path. Learners can enroll in any course in any order, and a well-built course may later be reused in a different Specialization."
+        "Design it as a coherent set rather than a fixed path. Learners can enroll in any course in any order, so each course needs to hold up on its own."
       ],
       "tips": [
         "Name the competency the whole set adds up to before planning individual courses.",
@@ -43,7 +43,7 @@
   "courses": {
     "label": "COURSES",
     "sublabel": "Anchored to Skills",
-    "rail": "Each course is anchored to specific, demonstrable skills. Courses are not chapters — any one of them may be reused in another Specialization later.",
+    "rail": "Each course is anchored to specific, demonstrable skills. Courses are not chapters — learners can enroll in any course in any order, so each one needs to make sense on its own.",
     "callout": {
       "title": "Standalone does not mean unsequenced",
       "body": "You can absolutely design courses and modules that increase in complexity — that's good pedagogy! What breaks reuse is cross-referencing. Try not to reference other courses, modules, or the Specialization by name or number. Establish the context fresh inside each piece instead, and it works whether a learner arrives first or last. If you're unsure how to best approach this, chat with a Learning Experience Designer!"
@@ -56,15 +56,17 @@
     "cardSpecs": [
       { "icon": "star", "label": "2–4 learning objectives" },
       { "icon": "list", "label": "3–4 modules" },
-      { "icon": "clock", "label": "2–8 hours" }
+      { "icon": "clock", "label": "2–8 hours" },
+      { "icon": "certificate", "label": "Course Certificate" }
     ],
-    "reuseBadge": "Reusable in another Specialization",
+    "reuseBadge": "Stands on its own",
     "detail": {
       "title": "Course",
       "body": [
         "Courses give learners access to instructional videos, assessments, and other learning content. Learners who pay for and complete a course earn a shareable course certificate.",
         "Anchor each course to clearly defined skills — concrete, demonstrable abilities tied to real work, like \"clean and validate a dataset\" or \"build a responsive web page layout.\" Content that is clearly skill-aligned is easier for learners to find and easier for your team to reuse.",
-        "Build every course as a self-contained unit. Anyone can enroll in any course at any time, and your team may want to place this course in a different Specialization later."
+        "Build every course as a self-contained unit. The immediate reason is the learner: anyone can enroll in any course at any time, so plenty of people will meet this course on its own, with no exposure to the rest of the Specialization.",
+        "Designing this way also keeps options open — a self-contained course can more easily be refreshed, or support a new offering down the road, without being rebuilt. Any decision like that would be a conversation with you. Your Specialization stays yours."
       ],
       "tips": [
         "Anchor to skills, not topics — name the ability a learner walks away with.",
@@ -410,7 +412,7 @@
       { "aspect": "Schedule", "credit": "Fixed semester, weekly meetings", "coursera": "No schedule. Learners start any day and work at their own pace on personalized deadlines." },
       { "aspect": "Your presence", "credit": "You're in the room; you can adjust live", "coursera": "Fully asynchronous. Everything a learner needs has to already be in the course." },
       { "aspect": "Enrollment", "credit": "Registrar enforces prerequisites and sequence", "coursera": "Anyone can enroll in any course, in any order. Prerequisites are stated, not enforced." },
-      { "aspect": "Structure", "credit": "Courses build on each other within a program", "coursera": "Courses are modular. A course may be reused in a different Specialization." },
+      { "aspect": "Structure", "credit": "Courses build on each other within a program", "coursera": "Courses are modular and self-contained. Many learners take one course without the others." },
       { "aspect": "Length", "credit": "~40+ contact hours per course", "coursera": "2–8 hours of learning per course; 12–32 hours across the whole Specialization." },
       { "aspect": "Your audience", "credit": "Admitted students with shared background", "coursera": "Working adults worldwide, widely varied backgrounds, mostly self-motivated." },
       { "aspect": "Assessment", "credit": "Essays, exams, participation, your judgment", "coursera": "Mostly auto-graded. At least one graded assessment per module." },

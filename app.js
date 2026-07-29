@@ -293,7 +293,7 @@ function coursesHtml() {
                 </span>
               </span>
               <span class="spec-list">${specRowsHtml(c.cardSpecs)}</span>
-              <span class="reuse-badge">${icon('layers')}${esc(c.reuseBadge)}</span>
+              <span class="reuse-badge">${icon('check')}${esc(c.reuseBadge)}</span>
               <span class="more-cue">Learn more</span>
             </button>`
             )

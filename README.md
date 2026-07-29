@@ -18,11 +18,17 @@ splits them:
 ## Design notes
 
 - Modularity over sequence, which is Coursera's own stated first principle
-  ("Design modular, standalone content"). Courses are framed as self-contained and
-  reusable in another Specialization, not as chapters in a fixed path — but note the
-  nuance Coursera is explicit about: standalone does *not* mean unsequenced. Content
-  may increase in complexity; what breaks reuse is cross-referencing other courses,
-  modules, or the Specialization by name.
+  ("Design modular, standalone content"). Courses are framed as self-contained rather
+  than as chapters in a fixed path — but note the nuance Coursera is explicit about:
+  standalone does *not* mean unsequenced. Content may increase in complexity; what
+  breaks reuse is cross-referencing other courses, modules, or the Specialization by
+  name.
+- **The case for standalone design is made from the learner's side, not from reuse.**
+  Faculty read this page, so it deliberately avoids implying that CTL might repurpose
+  their courses into other Specializations without them. The reason each course must
+  work alone is that learners genuinely enroll in one course without the others.
+  Reuse is described only as an option that stays open, and the course drawer states
+  plainly that any such decision would be a conversation with the faculty lead.
 - Definitions come from Coursera's "Getting Started: Coursera Terminology," "Course
   Content Specifications," and "Specialization Content Specifications."
 - Deliberately omitted at Duke's direction: discussion prompts (being sunset in
