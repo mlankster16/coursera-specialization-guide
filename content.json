@@ -24,12 +24,7 @@
   ],
   "home": {
     "hero": {
-      "title": "Coursera Specialization Structure",
-      "subtitle": "A Specialization is a set of related courses, each built to stand on its own.",
-      "hint": "Click any level below to open its planning guide."
-    },
-    "orientation": {
-      "body": "A full Specialization runs 12–48 hours of learner time, in range of a 15-week course, but your learners are working adults worldwide moving at their own pace with no cohort, no schedule, and no physical classroom. Much of the design work is translating class time into asynchronous learning time: what you'd explain live becomes short video, what you'd work through together becomes self-guided practice, etc. Your Learning Experience Designer will help you think through how to best adapt your existing or new materials for the Coursera learner."
+      "title": "Coursera Specialization Structure"
     },
     "legend": [
       {
@@ -43,10 +38,6 @@
       {
         "tier": "module",
         "label": "Module"
-      },
-      {
-        "tier": "lesson",
-        "label": "Lesson (optional)"
       },
       {
         "tier": "asset",
@@ -72,7 +63,10 @@
           "icon": "certificate",
           "label": "Specialization Certificate"
         }
-      ]
+      ],
+      "highlight": {
+        "body": "In most cases, the anticipated learning time for a Coursera Specialization parallels a 15-week semester course at Duke. The difference? How self-paced learners use those hours. Your Learning Experience Designer will help you think through how to best adapt your existing or new materials for the Coursera learner."
+      }
     },
     "courses": {
       "cards": [
@@ -144,10 +138,6 @@
           "label": "1 graded assessment"
         }
       ]
-    },
-    "lessons": {
-      "definition": "Lessons group related items within a module. They're optional — use them when a module has enough content that grouping helps learners find their way.",
-      "count": "2–3 lessons per module, when used"
     },
     "assets": {
       "cards": [

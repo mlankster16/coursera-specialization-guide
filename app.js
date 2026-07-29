@@ -103,7 +103,6 @@ function homeHtml() {
   const h = C.home;
   return `
     ${heroHtml(h.hero)}
-    ${orientationHtml(h.orientation)}
     ${legendHtml(h.legend)}
     <div class="infographic">
       ${homeSpecHtml(h.specialization)}
@@ -111,8 +110,6 @@ function homeHtml() {
       ${homeCoursesHtml(h.courses)}
       ${dropHtml(1, 3, 'dashed')}
       ${homeModulesHtml(h.modules)}
-      ${dropHtml(1, 3, 'dashed')}
-      ${homeLessonsHtml(h.lessons)}
       ${dropHtml(1, 3, 'dashed')}
       ${homeAssetsHtml(h.assets)}
     </div>
@@ -125,17 +122,6 @@ function heroHtml(hero) {
   return `
     <section class="hero">
       <h1 class="hero-title">${esc(hero.title)}</h1>
-      <p class="hero-sub">${esc(hero.subtitle)}</p>
-      <p class="hero-hint">${icon('star')}${esc(hero.hint)}</p>
-    </section>`;
-}
-
-/* Page-level orientation: bridges from a Duke semester course to this format */
-function orientationHtml(o) {
-  return `
-    <section class="orientation">
-      <span class="orientation-icon">${icon('scale')}</span>
-      <p class="orientation-body">${esc(o.body)}</p>
     </section>`;
 }
 
@@ -180,12 +166,13 @@ function homeSpecHtml(s) {
           <span class="big-card-main">
             <span class="big-card-title">Specialization</span>
             <span class="big-card-def">${esc(s.definition)}</span>
+            <span class="outcome-box">${icon('star')}<span>${esc(s.highlight.body)}</span></span>
+            ${openCue('Plan your Specialization')}
           </span>
           <span class="big-card-includes">
             <span class="includes-label">Includes</span>
             ${s.includes.map((i) => `<span class="include-row">${icon(i.icon)}<span>${esc(i.label)}</span></span>`).join('')}
           </span>
-          ${openCue('Plan your Specialization')}
         </button>
       </div>
     </section>`;
@@ -246,24 +233,6 @@ function homeModulesHtml(m) {
             .map((_, i) => `<span class="row-arrow" data-gap="${i + 1}" aria-hidden="true">${icon('arrow')}</span>`)
             .join('')}
         </div>
-      </div>
-    </section>`;
-}
-
-function homeLessonsHtml(l) {
-  return `
-    <section class="tier tier-lesson">
-      <div class="tier-body">
-        <button type="button" class="lesson-card" data-goto="module">
-          <span class="lesson-card-top">
-            <span class="icon-badge">${icon('book')}</span>
-            <span class="card-title">Lessons</span>
-            <span class="optional-tag">Optional</span>
-          </span>
-          <span class="card-role">${esc(l.definition)}</span>
-          <span class="lesson-count">${icon('list')}${esc(l.count)}</span>
-          ${openCue('See lessons on the Module page')}
-        </button>
       </div>
     </section>`;
 }
