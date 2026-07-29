@@ -46,9 +46,8 @@
     "rail": "Each course is anchored to specific, demonstrable skills. Courses are not chapters — any one of them may be reused in another Specialization later.",
     "callout": {
       "title": "Standalone does not mean unsequenced",
-      "body": "You can absolutely design courses and modules that increase in complexity — that's good pedagogy. What breaks reuse is cross-referencing. Try not to reference other courses, modules, or the Specialization by name or number. Establish the context fresh inside each piece instead, and it works whether a learner arrives first or last."
+      "body": "You can absolutely design courses and modules that increase in complexity — that's good pedagogy! What breaks reuse is cross-referencing. Try not to reference other courses, modules, or the Specialization by name or number. Establish the context fresh inside each piece instead, and it works whether a learner arrives first or last. If you're unsure how to best approach this, chat with a Learning Experience Designer!"
     },
-    "pill": { "icon": "clock", "label": "2–8 hours of learning per course" },
     "cards": [
       { "n": 1, "title": "Course", "focus": "Anchored to its own skills" },
       { "n": 2, "title": "Course", "focus": "Anchored to its own skills" },
@@ -81,7 +80,6 @@
     "sublabel": "One Skill at a Time",
     "rail": "A module is a self-contained section of a course, built around a single skill or topic.",
     "note": "Title each module for the skill it teaches — \"Identifying and Handling Missing Data,\" not \"Module 1: Introduction.\" Coursera adds the numbering, and your own numbers break when a module moves.",
-    "pill": { "icon": "check", "label": "1 graded assessment per module" },
     "cards": [
       { "n": 1, "title": "Module", "role": "One skill or topic, taught end to end." },
       { "n": 2, "title": "Module", "role": "One skill or topic, taught end to end." },

@@ -262,6 +262,12 @@ function specHtml() {
     </section>`;
 }
 
+/* Optional pill under a tier — renders nothing if `pill` is absent from content.json */
+function pillHtml(pill, tier) {
+  if (!pill) return '';
+  return `<span class="pill tier-${tier}">${icon(pill.icon)}${esc(pill.label)}</span>`;
+}
+
 function specRowsHtml(specs) {
   return specs
     .map((s) => `<span class="spec-row">${icon(s.icon)}<span>${esc(s.label)}</span></span>`)
@@ -293,7 +299,7 @@ function coursesHtml() {
             )
             .join('')}
         </div>
-        <span class="pill tier-course">${icon(c.pill.icon)}${esc(c.pill.label)}</span>
+        ${pillHtml(c.pill, 'course')}
         <div class="callout callout-course">
           <span class="callout-icon">${icon('layers')}</span>
           <div>
@@ -327,7 +333,7 @@ function modulesHtml() {
             )
             .join('')}
         </div>
-        <span class="pill tier-module">${icon(m.pill.icon)}${esc(m.pill.label)}</span>
+        ${pillHtml(m.pill, 'module')}
         <p class="tier-note">${icon('star')}<span>${esc(m.note)}</span></p>
       </div>
     </section>`;
