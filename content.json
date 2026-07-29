@@ -2,12 +2,12 @@
   "templateUrl": "",
   "hero": {
     "title": "Coursera Specialization Structure",
-    "subtitle": "A Specialization is a set of related courses, each built to stand on its own and be reused.",
+    "subtitle": "A Specialization is a set of related courses, each built to stand on its own.",
     "hint": "Click any element below to learn more about it."
   },
   "legend": [
     { "tier": "spec", "label": "Specialization (the whole program)" },
-    { "tier": "course", "label": "Course (self-contained, reusable)" },
+    { "tier": "course", "label": "Course (self-contained)" },
     { "tier": "module", "label": "Module (one skill)" },
     { "tier": "lesson", "label": "Lesson (optional grouping)" },
     { "tier": "asset", "label": "Learning assets (what learners do)" }
@@ -64,7 +64,7 @@
       "title": "Course",
       "body": [
         "Courses give learners access to instructional videos, assessments, and other learning content. Learners who pay for and complete a course earn a shareable course certificate.",
-        "Anchor each course to clearly defined skills — concrete, demonstrable abilities tied to real work, like \"clean and validate a dataset\" or \"build a responsive web page layout.\" Content that is clearly skill-aligned is easier for learners to find and easier for your team to reuse.",
+        "Anchor each course to clearly defined skills — concrete, demonstrable abilities tied to real work, like \"clean and validate a dataset\" or \"build a responsive web page layout.\" Content that is clearly skill-aligned is more discoverable on the platform and more valuable to learners.",
         "Build every course as a self-contained unit. The immediate reason is the learner: anyone can enroll in any course at any time, so plenty of people will meet this course on its own, with no exposure to the rest of the Specialization.",
         "Designing this way also keeps options open — a self-contained course can more easily be refreshed, or support a new offering down the road, without being rebuilt. Any decision like that would be a conversation with you. Your Specialization stays yours."
       ],
@@ -72,7 +72,7 @@
         "Anchor to skills, not topics — name the ability a learner walks away with.",
         "Target 2–4 learning objectives, 3–4 modules, and 2–8 hours of learning.",
         "State needed background as a skill, not as another course a learner should have taken.",
-        "Keep supporting files (glossaries, templates, setup guides) inside readings and activities in the learning path — not in the course Resources section, which doesn't travel with content when it's reused.",
+        "Keep supporting files (glossaries, templates, setup guides) inside readings and activities in the learning path — not in the course Resources section, which doesn't travel with content if it's ever moved.",
         "Put the syllabus and orienting context on the course landing page so modules can focus purely on teaching."
       ]
     }
@@ -162,7 +162,7 @@
           "title": "Reading",
           "body": [
             "Learner-facing text used to explain, extend, or provide reference material. Best for anything learners will want to scan, search, or return to later.",
-            "Readings are also the right home for supporting files — glossaries, templates, setup guides — because items in the learning path travel with your content when it's reused."
+            "Readings are also the right home for supporting files — glossaries, templates, setup guides — because items in the learning path travel with your content if it's ever moved."
           ],
           "tips": [
             "Provide the complete text, not an outline.",
@@ -288,7 +288,7 @@
   },
   "wwhaa": {
     "title": "Structure every module with WWHAA",
-    "intro": "Coursera recommends the Why → What → How → Apply → Assess pattern for each module. It creates a complete, self-contained learning cycle — which is exactly what makes a module reusable somewhere else.",
+    "intro": "Coursera recommends the Why → What → How → Apply → Assess pattern for each module. It creates a complete, self-contained learning cycle — which is exactly what lets a module hold up on its own.",
     "phases": [
       {
         "key": "Why",
@@ -340,8 +340,8 @@
     ]
   },
   "phrasing": {
-    "title": "Write it so it can be reused",
-    "intro": "Reuse breaks on phrasing more often than on structure. Aim to have every item open by establishing its own context, so a learner doesn't need to have seen anything else first.",
+    "title": "Write it so it stands on its own",
+    "intro": "This breaks on phrasing more often than on structure. Aim to have every item open by establishing its own context, so a learner doesn't need to have seen anything else first.",
     "dontLabel": "Instead of this",
     "doLabel": "Write this",
     "rows": [
@@ -388,7 +388,7 @@
           "Confirm you have permission for every image, figure, video clip, dataset, and excerpt that isn't yours.",
           "Attribute sources, and keep a record of what you cleared and where it came from.",
           "Course content reaches a global public audience — classroom fair-use reasoning generally doesn't carry over.",
-          "Content may be reused in another Specialization later, so permissions need to cover more than one course."
+          "Clear permissions broadly rather than for one narrow use, so rights don't have to be chased again if content is refreshed later."
         ]
       },
       {
