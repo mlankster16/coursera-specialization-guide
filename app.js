@@ -44,19 +44,24 @@ async function init() {
   render();
 }
 
-/* Route is the bare hash: "" / "specialization" / "course" / "module" / "assets" */
-function route() {
-  const h = location.hash.replace(/^#\/?/, '').split('?')[0];
-  return C.pages[h] ? h : '';
+/* Hash is "page" or "page/section" — e.g. "assets" or "assets/reading" */
+function parseHash() {
+  const raw = location.hash.replace(/^#\/?/, '').split('?')[0];
+  const [page, section] = raw.split('/');
+  return { page: C.pages[page] ? page : '', section: section || '' };
 }
 
 function render() {
-  const r = route();
-  renderFlowNav(r);
-  document.getElementById('page').innerHTML = r ? pageHtml(r) : homeHtml();
+  const { page, section } = parseHash();
+  renderFlowNav(page);
+  document.getElementById('page').innerHTML = page ? pageHtml(page) : homeHtml();
   wireHomeNavigation();
   wireAssetJump();
-  window.scrollTo(0, 0);
+
+  // Arriving from a link, jump straight there — the smooth easing is for in-page use
+  const target = section && document.getElementById(`asset-${section}`);
+  if (target) target.scrollIntoView({ behavior: 'instant', block: 'start' });
+  else window.scrollTo(0, 0);
 }
 
 function wireTemplateLink() {
@@ -111,7 +116,7 @@ function homeHtml() {
       ${dropHtml(1, 3, 'dashed')}
       ${homeModulesHtml(h.modules)}
       ${dropHtml(1, 3, 'dashed')}
-      ${homeAssetsHtml(h.assets)}
+      ${homeAssetsHtml()}
     </div>
     ${comparisonHtml(h.comparison)}
     ${completionHtml(h.completion)}
@@ -237,25 +242,22 @@ function homeModulesHtml(m) {
     </section>`;
 }
 
-function homeAssetsHtml(a) {
+function homeAssetsHtml() {
   return `
     <section class="tier tier-asset">
       <div class="tier-body">
         <div class="asset-band">
-          ${a.cards
+          ${C.pages.assets.items
             .map(
-              (card) => `
-            <button type="button" class="asset-tile" data-goto="assets">
-              <span class="asset-tile-icon">${icon(card.icon)}</span>
-              <span class="asset-tile-title">${esc(card.title)}</span>
-              <span class="asset-tile-short">${esc(card.short)}</span>
+              (a) => `
+            <button type="button" class="asset-tile" data-goto="assets/${a.id}">
+              <span class="asset-tile-icon">${icon(a.icon)}</span>
+              <span class="asset-tile-title">${esc(a.title)}</span>
+              <span class="asset-tile-short">${esc(a.short)}</span>
             </button>`
             )
             .join('')}
         </div>
-        <button type="button" class="reference-link" data-goto="assets">
-          Pedagogy, accessibility, and copyright for each type &rarr;
-        </button>
       </div>
     </section>`;
 }
@@ -579,8 +581,12 @@ function wireAssetJump() {
   document.querySelectorAll('[data-jump]').forEach((el) => {
     el.addEventListener('click', (e) => {
       e.preventDefault();
-      const target = document.getElementById(`asset-${el.dataset.jump}`);
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const id = el.dataset.jump;
+      const target = document.getElementById(`asset-${id}`);
+      if (!target) return;
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Update the URL without re-rendering, so the link stays shareable
+      history.replaceState(null, '', `#assets/${id}`);
     });
   });
 }

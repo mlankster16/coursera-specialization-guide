@@ -139,50 +139,7 @@
         }
       ]
     },
-    "assets": {
-      "cards": [
-        {
-          "icon": "play",
-          "title": "Video",
-          "short": "Introduces and teaches a topic."
-        },
-        {
-          "icon": "book",
-          "title": "Reading",
-          "short": "Articles or guides that deepen understanding."
-        },
-        {
-          "icon": "mic",
-          "title": "Audio Podcast",
-          "short": "Audio-only instruction learners take anywhere."
-        },
-        {
-          "icon": "plugin",
-          "title": "Interactive Plugin",
-          "short": "Embedded web apps for interactive practice."
-        },
-        {
-          "icon": "chat",
-          "title": "Coach Dialogue",
-          "short": "AI-driven conversation that applies and reflects."
-        },
-        {
-          "icon": "flask",
-          "title": "Hands-on Practice",
-          "short": "Ungraded labs, activities, and exercises."
-        },
-        {
-          "icon": "question",
-          "title": "Practice Quiz",
-          "short": "Assessment for learning — ungraded self-check."
-        },
-        {
-          "icon": "rosette",
-          "title": "Graded Assessment",
-          "short": "Assessment of learning — checks mastery."
-        }
-      ]
-    },
+    "assets": {},
     "comparison": {
       "title": "How this differs from a for-credit course",
       "intro": "Most of the surprises in a first Coursera build come from assumptions carried over from semester teaching.",
@@ -699,6 +656,7 @@
           "id": "video",
           "icon": "play",
           "title": "Video",
+          "short": "Introduces and teaches a topic.",
           "what": "Videos introduce and teach a course topic. Video is powerful for human connection, storytelling, and demonstration — the moments where learners benefit from seeing a real person.",
           "pedagogy": [
             "Aim for 5–10 minutes, one idea per video.",
@@ -725,6 +683,7 @@
           "id": "reading",
           "icon": "book",
           "title": "Reading",
+          "short": "Articles or guides that deepen understanding.",
           "what": "Learner-facing text used to explain, extend, or provide reference material. Best for anything learners will want to scan, search, or return to later.",
           "pedagogy": [
             "Provide the complete text, not an outline.",
@@ -748,6 +707,7 @@
           "id": "audio-podcast",
           "icon": "mic",
           "title": "Audio Podcast",
+          "short": "Audio-only instruction learners take anywhere.",
           "what": "A recognised instructional format alongside video and readings. Audio suits interviews, expert conversations, and narrative explanation — anything a learner might absorb while commuting or walking.",
           "pedagogy": [
             "Best for conversation, storytelling, and expert perspective — not for anything visual.",
@@ -770,6 +730,7 @@
           "id": "interactive-plugin",
           "icon": "plugin",
           "title": "Interactive Plugin",
+          "short": "Embedded web apps for interactive practice.",
           "what": "Plugins embed single-page web applications directly inside a Coursera course item, so they support nearly any experience the web can deliver — simulations, visualisers, calculators, explorable diagrams.",
           "pedagogy": [
             "Strong choice for concepts that are easier to manipulate than to describe.",
@@ -794,6 +755,7 @@
           "id": "coach-dialogue",
           "icon": "chat",
           "title": "Coach Dialogue",
+          "short": "AI-driven conversation that applies and reflects.",
           "what": "Dialogue items let you create AI-driven discussions that simulate interaction with a live instructor, leading learners through structured, text-based conversations designed to hit specific learning objectives. The AI guide (Coursera Coach) asks adaptive, open-ended questions and gives personalised feedback.",
           "pedagogy": [
             "Coursera recommends at least one Dialogue item per course, and notes that including one improves learner engagement.",
@@ -819,6 +781,7 @@
           "id": "hands-on",
           "icon": "flask",
           "title": "Hands-on Practice",
+          "short": "Ungraded labs, activities, and exercises.",
           "what": "Where learners try the skill directly with no stakes. This can be an off-platform activity with step-by-step instructions, an ungraded Coursera Lab, or in-browser coding. Labs allow trial-and-error learning with immediate feedback and no formal assessment.",
           "pedagogy": [
             "Provide the activity plus step-by-step learner instructions and any setup details.",
@@ -842,6 +805,7 @@
           "id": "practice-quiz",
           "icon": "question",
           "title": "Practice Quiz",
+          "short": "Assessment for learning — ungraded self-check.",
           "what": "Assessment for learning: optional, ungraded, and not counted toward a learner's final grade. Practice quizzes help learners self-assess, catch misconceptions early, and build the confidence to apply a skill for real.",
           "pedagogy": [
             "Coursera recommends at least one practice quiz and one practice activity per module.",
@@ -865,6 +829,7 @@
           "id": "graded-assessment",
           "icon": "rosette",
           "title": "Graded Assessment",
+          "short": "Assessment of learning — checks mastery.",
           "what": "Assessment of learning: required, counted toward the final grade, and used to evaluate whether learners achieved the stated objectives. Every module needs at least one, and every course-level objective should be validated somewhere in the graded assessments.",
           "pedagogy": [
             "A 10-question auto-graded quiz with answer-specific feedback is the common default.",
