@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "coursera-specialization-guide",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-I", "-c", "import functools, http.server as h; H = functools.partial(h.SimpleHTTPRequestHandler, directory='/Users/meganlancaster/Desktop/Claude Code/coursera-specialization-guide'); h.test(HandlerClass=H, port=8746, bind='127.0.0.1')"],
+      "port": 8746
+    }
+  ]
+}
