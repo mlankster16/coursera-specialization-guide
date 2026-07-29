@@ -34,7 +34,7 @@
       "tips": [
         "Name the competency the whole set adds up to before planning individual courses.",
         "Plan for 3–4 courses and 12–32 hours of total learner time.",
-        "Every course must work for someone who takes only that one course.",
+        "Each course should work for someone who takes only that one course.",
         "Each course should include at least one hands-on project. Plan where those live early — they're expected, not optional.",
         "Put high-level learning objectives on the Specialization landing page, then chunk them into course- and module-level objectives."
       ]
@@ -46,7 +46,7 @@
     "rail": "Each course is anchored to specific, demonstrable skills. Courses are not chapters — any one of them may be reused in another Specialization later.",
     "callout": {
       "title": "Standalone does not mean unsequenced",
-      "body": "You can absolutely design courses and modules that increase in complexity — that's good pedagogy. What breaks reuse is cross-referencing. Don't reference other courses, modules, or the Specialization by name or number. Establish the context fresh inside each piece instead, and it works whether a learner arrives first or last."
+      "body": "You can absolutely design courses and modules that increase in complexity — that's good pedagogy. What breaks reuse is cross-referencing. Try not to reference other courses, modules, or the Specialization by name or number. Establish the context fresh inside each piece instead, and it works whether a learner arrives first or last."
     },
     "pill": { "icon": "clock", "label": "2–8 hours of learning per course" },
     "cards": [
@@ -101,7 +101,7 @@
       ],
       "tips": [
         "Title the module for its skill. The platform supplies the number.",
-        "Open each module by establishing its own context — a learner should never need to have seen anything else first.",
+        "Open each module by establishing its own context, so a learner doesn't need to have seen anything else first.",
         "Structure the module with the WWHAA pattern below.",
         "If a learner needs background, say what they should already know, not where they should have learned it.",
         "Your first module is the strongest chance to hook learners. Make it a full teaching module rather than a syllabus walkthrough."
@@ -121,7 +121,7 @@
         "You don't have to use them. A module with only a handful of items usually reads better without them."
       ],
       "tips": [
-        "Group by idea, not by format — don't build a \"videos\" lesson and a \"readings\" lesson.",
+        "Group by idea rather than by format — aim for topic-based lessons instead of a \"videos\" lesson and a \"readings\" lesson.",
         "Start a new lesson when the sub-topic changes or a learner would naturally pause.",
         "If a module only has a few items, skip lessons entirely."
       ]
@@ -147,8 +147,8 @@
           "tips": [
             "Aim under 7 minutes; 6 or less is ideal. One idea per video.",
             "What raises engagement: open with a hook or story, keep the tone conversational, use appropriate humour, add visuals or animation, and keep a relatively brisk speaking pace.",
-            "Don't default to video. Readings, interactives, and labs are often better for reference material and anything that needs frequent updating.",
-            "Use AI tools to speed up production, but don't make AI the on-screen presenter — learners benefit from seeing real people.",
+            "Try not to default to video. Readings, interactives, and labs are often better for reference material and anything that needs frequent updating.",
+            "Use AI tools to speed up production, but aim to keep a real person as the on-screen presenter — learners benefit from seeing real people.",
             "Accessibility: every video needs accurate captions and a transcript.",
             "In-video questions can pause a video to prompt a quick check."
           ]
@@ -186,7 +186,7 @@
             "Best for conversation, storytelling, and expert perspective — not for anything visual.",
             "Accessibility: a full transcript is required, since there's no visual channel at all.",
             "Keep episodes focused on one idea, same as video.",
-            "Don't use audio for content learners will need to reference later — use a reading."
+            "Audio is a poor fit for content learners will need to reference later — reach for a reading instead."
           ]
         }
       },
@@ -330,18 +330,18 @@
       {
         "icon": "star",
         "title": "Choose the format that fits the phase",
-        "body": "WWHAA guides format decisions too. Don't default to video for everything — pick what serves the goal of that phase."
+        "body": "WWHAA guides format decisions too. Try not to default to video for everything — pick what serves the goal of that phase."
       },
       {
         "icon": "layers",
-        "title": "Never more than two of the same type in a row",
+        "title": "Aim for no more than two of the same type in a row",
         "body": "Varied sequences — video, then reading, then practice activity — sustain engagement. Coursera's internal research shows learners drop off at significantly higher rates in repetitive sequences."
       }
     ]
   },
   "phrasing": {
     "title": "Write it so it can be reused",
-    "intro": "Reuse breaks on phrasing more often than on structure. Every item should open by establishing its own context — a learner should never need to have seen anything else first.",
+    "intro": "Reuse breaks on phrasing more often than on structure. Aim to have every item open by establishing its own context, so a learner doesn't need to have seen anything else first.",
     "dontLabel": "Instead of this",
     "doLabel": "Write this",
     "rows": [
