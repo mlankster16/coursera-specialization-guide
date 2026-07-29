@@ -24,6 +24,7 @@ const ICONS = {
   gear: '<circle cx="12" cy="12" r="3"/><path d="M12 3.6v2.3M12 18.1v2.3M5.1 7.7l2 1.2M16.9 15.1l2 1.2M5.1 16.3l2-1.2M16.9 8.9l2-1.2"/>',
   copyright: '<circle cx="12" cy="12" r="8.5"/><path d="M14.9 9.5a3.7 3.7 0 1 0 0 5"/>',
   access: '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="7.7" r="1.2"/><path d="M7.6 10.3h8.8"/><path d="M12 10.7v4.4"/><path d="m9.3 19 1.5-3.9h2.4l1.5 3.9"/>',
+  home: '<path d="M4 10.5 12 4l8 6.5"/><path d="M6 9.4V20h12V9.4"/><path d="M10 20v-5.5h4V20"/>',
 };
 
 function icon(name) {
@@ -31,19 +32,31 @@ function icon(name) {
     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name] || ''}</svg>`;
 }
 
-/* ---------- State ---------- */
+/* ---------- State + routing ---------- */
 
 let C = null;
-const DETAILS = {};
-let lastFocused = null;
 
 async function init() {
   const res = await fetch('content.json');
   C = await res.json();
   wireTemplateLink();
-  document.getElementById('page').innerHTML = pageHtml();
-  wireDetailTriggers();
-  wireDrawer();
+  window.addEventListener('hashchange', render);
+  render();
+}
+
+/* Route is the bare hash: "" / "specialization" / "course" / "module" / "assets" */
+function route() {
+  const h = location.hash.replace(/^#\/?/, '').split('?')[0];
+  return C.pages[h] ? h : '';
+}
+
+function render() {
+  const r = route();
+  renderFlowNav(r);
+  document.getElementById('page').innerHTML = r ? pageHtml(r) : homeHtml();
+  wireHomeNavigation();
+  wireAssetJump();
+  window.scrollTo(0, 0);
 }
 
 function wireTemplateLink() {
@@ -64,161 +77,71 @@ function esc(str) {
   return d.innerHTML;
 }
 
-/* Register a detail payload and return the attributes that open it */
-let detailSeq = 0;
-function trigger(detail) {
-  if (!detail) return '';
-  const id = `d${++detailSeq}`;
-  DETAILS[id] = detail;
-  return `data-detail="${id}"`;
+/* ---------- Flow navigation (shows scale and where you are) ---------- */
+
+function renderFlowNav(current) {
+  const nav = document.getElementById('flow-nav');
+  const steps = C.nav
+    .map(
+      (n, i) => `
+      ${i > 0 ? '<span class="flow-arrow" aria-hidden="true">&rsaquo;</span>' : ''}
+      <a class="flow-step tier-${n.tier}${current === n.id ? ' current' : ''}"
+         href="#${n.id}"${current === n.id ? ' aria-current="page"' : ''}>
+        <span class="flow-dot"></span>${esc(n.label)}
+      </a>`
+    )
+    .join('');
+  nav.innerHTML = `
+    <a class="flow-home${current === '' ? ' current' : ''}" href="#/">${icon('home')}<span>Overview</span></a>
+    <span class="flow-divider" aria-hidden="true"></span>
+    ${steps}`;
 }
 
-/* ---------- Page ---------- */
+/* ---------- Home ---------- */
 
-function pageHtml() {
+function homeHtml() {
+  const h = C.home;
   return `
-    ${heroHtml()}
-    ${legendHtml()}
+    ${heroHtml(h.hero)}
+    ${legendHtml(h.legend)}
     <div class="infographic">
-      ${specHtml()}
+      ${homeSpecHtml(h.specialization)}
       ${fanHtml(3, '', '16px')}
-      ${coursesHtml()}
+      ${homeCoursesHtml(h.courses)}
       ${fanHtml(3, 'dashed', '16px')}
-      ${modulesHtml()}
+      ${homeModulesHtml(h.modules)}
       ${stemHtml('dashed')}
-      ${lessonsHtml()}
+      ${homeLessonsHtml(h.lessons)}
       ${stemHtml('dashed')}
-      ${assetsHtml()}
+      ${homeAssetsHtml(h.assets)}
     </div>
-    ${wwhaaHtml()}
-    ${phrasingHtml()}
-    ${responsibilitiesHtml()}
-    ${comparisonHtml()}
-    ${completionHtml()}
-    ${handoffHtml()}
-  `;
+    ${comparisonHtml(h.comparison)}
+    ${completionHtml(h.completion)}
+    ${handoffHtml(h.handoff)}`;
 }
 
-/* WWHAA: five clickable phases in a horizontal band */
-function wwhaaHtml() {
-  const w = C.wwhaa;
-  return `
-    <section class="block">
-      <h2 class="section-title">${esc(w.title)}</h2>
-      <p class="section-intro">${esc(w.intro)}</p>
-      <div class="wwhaa-band">
-        ${w.phases
-          .map(
-            (p, i) => `
-          ${i > 0 ? '<span class="wwhaa-sep" aria-hidden="true">&rarr;</span>' : ''}
-          <button type="button" class="wwhaa-phase" ${trigger({
-            title: `${p.key} — ${p.headline}`,
-            body: [p.body],
-            tips: [`Formats that fit this phase: ${p.formats}`],
-          })}>
-            <span class="wwhaa-icon">${icon(p.icon)}</span>
-            <span class="wwhaa-key">${esc(p.key)}</span>
-            <span class="wwhaa-headline">${esc(p.headline)}</span>
-          </button>`
-          )
-          .join('')}
-      </div>
-      <div class="note-grid">
-        ${w.notes
-          .map(
-            (n) => `
-          <div class="mini-note">
-            <span class="mini-note-icon">${icon(n.icon)}</span>
-            <div>
-              <p class="mini-note-title">${esc(n.title)}</p>
-              <p class="mini-note-body">${esc(n.body)}</p>
-            </div>
-          </div>`
-          )
-          .join('')}
-      </div>
-    </section>`;
-}
-
-/* Don't say / Do say */
-function phrasingHtml() {
-  const p = C.phrasing;
-  return `
-    <section class="block">
-      <h2 class="section-title">${esc(p.title)}</h2>
-      <p class="section-intro">${esc(p.intro)}</p>
-      <div class="phrasing-table">
-        <div class="phrasing-row phrasing-header">
-          <span></span>
-          <span class="col-dont">${esc(p.dontLabel)}</span>
-          <span class="col-do">${esc(p.doLabel)}</span>
-        </div>
-        ${p.rows
-          .map(
-            (r) => `
-          <div class="phrasing-row">
-            <span class="phrasing-aspect">${esc(r.aspect)}</span>
-            <span class="phrasing-dont">${esc(r.dont)}</span>
-            <span class="phrasing-do">${esc(r.do)}</span>
-          </div>`
-          )
-          .join('')}
-      </div>
-    </section>`;
-}
-
-/* Copyright + accessibility */
-function responsibilitiesHtml() {
-  const r = C.responsibilities;
-  return `
-    <section class="block">
-      <h2 class="section-title">${esc(r.title)}</h2>
-      <p class="section-intro">${esc(r.intro)}</p>
-      <div class="resp-grid">
-        ${r.groups
-          .map(
-            (g) => `
-          <div class="resp-card">
-            <div class="resp-card-top">
-              <span class="resp-icon">${icon(g.icon)}</span>
-              <span class="resp-label">${esc(g.label)}</span>
-            </div>
-            <ul class="resp-list">
-              ${g.items.map((i) => `<li>${esc(i)}</li>`).join('')}
-            </ul>
-          </div>`
-          )
-          .join('')}
-      </div>
-    </section>`;
-}
-
-function heroHtml() {
-  const h = C.hero;
+function heroHtml(hero) {
   return `
     <section class="hero">
-      <h1 class="hero-title">${esc(h.title)}</h1>
-      <p class="hero-sub">${esc(h.subtitle)}</p>
-      <p class="hero-hint">${icon('star')}${esc(h.hint)}</p>
+      <h1 class="hero-title">${esc(hero.title)}</h1>
+      <p class="hero-sub">${esc(hero.subtitle)}</p>
+      <p class="hero-hint">${icon('star')}${esc(hero.hint)}</p>
     </section>`;
 }
 
-function legendHtml() {
+function legendHtml(legend) {
   return `
     <div class="legend">
-      ${C.legend
+      ${legend
         .map((l) => `<span class="legend-item tier-${l.tier}"><span class="legend-dot"></span>${esc(l.label)}</span>`)
         .join('')}
     </div>`;
 }
 
-/* Connector: single vertical stem */
 function stemHtml(mod = '') {
   return `<div class="stem ${mod}"></div>`;
 }
 
-/* Connector: stem, horizontal bar, and one drop per column.
-   `gap` must match the gap of the card row below it so the drops land on card centres. */
 function fanHtml(cols, mod = '', gap = '16px') {
   return `
     <div class="fan ${mod}" style="--cols:${cols};--gap:${gap}">
@@ -228,22 +151,15 @@ function fanHtml(cols, mod = '', gap = '16px') {
     </div>`;
 }
 
-function railHtml(tier, data) {
-  return `
-    <div class="rail">
-      <p class="rail-label tier-${tier}">${esc(data.label)}</p>
-      <p class="rail-sublabel">${esc(data.sublabel)}</p>
-      <p class="rail-text">${esc(data.rail)}</p>
-    </div>`;
+function openCue(label) {
+  return `<span class="more-cue">${esc(label)} &rarr;</span>`;
 }
 
-function specHtml() {
-  const s = C.specialization;
+function homeSpecHtml(s) {
   return `
     <section class="tier tier-spec">
-      ${railHtml('spec', s)}
       <div class="tier-body">
-        <button type="button" class="big-card" ${trigger(s.detail)}>
+        <button type="button" class="big-card" data-goto="specialization">
           <span class="big-card-icon">${icon('certificate')}</span>
           <span class="big-card-main">
             <span class="big-card-title">Specialization</span>
@@ -252,39 +168,27 @@ function specHtml() {
           </span>
           <span class="big-card-includes">
             <span class="includes-label">Includes</span>
-            ${s.includes
-              .map((i) => `<span class="include-row">${icon(i.icon)}<span>${esc(i.label)}</span></span>`)
-              .join('')}
+            ${s.includes.map((i) => `<span class="include-row">${icon(i.icon)}<span>${esc(i.label)}</span></span>`).join('')}
           </span>
-          <span class="more-cue">Learn more</span>
+          ${openCue('Plan your Specialization')}
         </button>
       </div>
     </section>`;
 }
 
-/* Optional pill under a tier — renders nothing if `pill` is absent from content.json */
-function pillHtml(pill, tier) {
-  if (!pill) return '';
-  return `<span class="pill tier-${tier}">${icon(pill.icon)}${esc(pill.label)}</span>`;
-}
-
 function specRowsHtml(specs) {
-  return specs
-    .map((s) => `<span class="spec-row">${icon(s.icon)}<span>${esc(s.label)}</span></span>`)
-    .join('');
+  return specs.map((s) => `<span class="spec-row">${icon(s.icon)}<span>${esc(s.label)}</span></span>`).join('');
 }
 
-function coursesHtml() {
-  const c = C.courses;
+function homeCoursesHtml(c) {
   return `
     <section class="tier tier-course">
-      ${railHtml('course', c)}
       <div class="tier-body">
         <div class="course-row">
           ${c.cards
             .map(
               (card) => `
-            <button type="button" class="card course-card" ${trigger(c.detail)}>
+            <button type="button" class="card course-card" data-goto="course">
               <span class="card-top">
                 <span class="num-badge">${card.n}</span>
                 <span class="card-titles">
@@ -294,58 +198,44 @@ function coursesHtml() {
               </span>
               <span class="spec-list">${specRowsHtml(c.cardSpecs)}</span>
               <span class="reuse-badge">${icon('check')}${esc(c.reuseBadge)}</span>
-              <span class="more-cue">Learn more</span>
+              ${openCue('Plan a course')}
             </button>`
             )
             .join('')}
-        </div>
-        ${pillHtml(c.pill, 'course')}
-        <div class="callout callout-course">
-          <span class="callout-icon">${icon('layers')}</span>
-          <div>
-            <p class="callout-title">${esc(c.callout.title)}</p>
-            <p class="callout-body">${esc(c.callout.body)}</p>
-          </div>
         </div>
       </div>
     </section>`;
 }
 
-function modulesHtml() {
-  const m = C.modules;
+function homeModulesHtml(m) {
   return `
     <section class="tier tier-module">
-      ${railHtml('module', m)}
       <div class="tier-body">
         <div class="module-row">
           ${m.cards
             .map(
               (card) => `
-            <button type="button" class="card module-card" ${trigger(m.detail)}>
+            <button type="button" class="card module-card" data-goto="module">
               <span class="card-top">
                 <span class="icon-badge">${icon('list')}</span>
                 <span class="card-title">${esc(card.title)} ${card.n}</span>
               </span>
               <span class="card-role">${esc(card.role)}</span>
               <span class="spec-list">${specRowsHtml(m.cardSpecs)}</span>
-              <span class="more-cue">Learn more</span>
+              ${openCue('Plan a module')}
             </button>`
             )
             .join('')}
         </div>
-        ${pillHtml(m.pill, 'module')}
-        <p class="tier-note">${icon('star')}<span>${esc(m.note)}</span></p>
       </div>
     </section>`;
 }
 
-function lessonsHtml() {
-  const l = C.lessons;
+function homeLessonsHtml(l) {
   return `
     <section class="tier tier-lesson">
-      ${railHtml('lesson', l)}
       <div class="tier-body">
-        <button type="button" class="lesson-card" ${trigger(l.detail)}>
+        <button type="button" class="lesson-card" data-goto="module">
           <span class="lesson-card-top">
             <span class="icon-badge">${icon('book')}</span>
             <span class="card-title">Lessons</span>
@@ -353,23 +243,21 @@ function lessonsHtml() {
           </span>
           <span class="card-role">${esc(l.definition)}</span>
           <span class="lesson-count">${icon('list')}${esc(l.count)}</span>
-          <span class="more-cue">Learn more</span>
+          ${openCue('See lessons on the Module page')}
         </button>
       </div>
     </section>`;
 }
 
-function assetsHtml() {
-  const a = C.assets;
+function homeAssetsHtml(a) {
   return `
     <section class="tier tier-asset">
-      ${railHtml('asset', a)}
       <div class="tier-body">
         <div class="asset-band">
           ${a.cards
             .map(
               (card) => `
-            <button type="button" class="asset-tile" ${trigger(card.detail)}>
+            <button type="button" class="asset-tile" data-goto="assets">
               <span class="asset-tile-icon">${icon(card.icon)}</span>
               <span class="asset-tile-title">${esc(card.title)}</span>
               <span class="asset-tile-short">${esc(card.short)}</span>
@@ -377,13 +265,14 @@ function assetsHtml() {
             )
             .join('')}
         </div>
-        <p class="tier-note">${icon('star')}<span>${esc(a.alsoAvailable)}</span></p>
+        <button type="button" class="reference-link" data-goto="assets">
+          Pedagogy, accessibility, and copyright for each type &rarr;
+        </button>
       </div>
     </section>`;
 }
 
-function comparisonHtml() {
-  const c = C.comparison;
+function comparisonHtml(c) {
   return `
     <section class="compare">
       <div class="compare-head">
@@ -413,8 +302,7 @@ function comparisonHtml() {
     </section>`;
 }
 
-function completionHtml() {
-  const c = C.completion;
+function completionHtml(c) {
   return `
     <section class="completion">
       <span class="completion-icon">${icon('trophy')}</span>
@@ -425,8 +313,7 @@ function completionHtml() {
     </section>`;
 }
 
-function handoffHtml() {
-  const h = C.handoff;
+function handoffHtml(h) {
   const href = C.templateUrl ? `href="${C.templateUrl}" target="_blank" rel="noopener"` : 'href="#" aria-disabled="true"';
   return `
     <section class="handoff">
@@ -436,47 +323,277 @@ function handoffHtml() {
     </section>`;
 }
 
-/* ---------- Detail drawer ---------- */
+/* ---------- Drill-down pages ---------- */
 
-function wireDetailTriggers() {
-  document.querySelectorAll('[data-detail]').forEach((el) => {
-    el.addEventListener('click', () => openDrawer(el.dataset.detail, el));
+function pageHtml(id) {
+  const p = C.pages[id];
+  return `
+    <article class="page tier-${p.tier}">
+      <header class="page-head">
+        <p class="page-label tier-${p.tier}">${esc(p.label)}</p>
+        <h1 class="page-title">${esc(p.title)}</h1>
+        <p class="page-lede">${esc(p.lede)}</p>
+        ${p.facts ? factsHtml(p.facts) : ''}
+      </header>
+      ${id === 'assets' ? assetsPageHtml(p) : ''}
+      ${(p.sections || []).map((s) => sectionHtml(s, p.tier)).join('')}
+      ${nextPrevHtml(id)}
+    </article>`;
+}
+
+function factsHtml(facts) {
+  return `
+    <div class="facts-row">
+      ${facts
+        .map(
+          (f) => `
+        <div class="fact">
+          <span class="fact-icon">${icon(f.icon)}</span>
+          <span class="fact-label">${esc(f.label)}</span>
+          <span class="fact-sub">${esc(f.sub)}</span>
+        </div>`
+        )
+        .join('')}
+    </div>`;
+}
+
+function sectionHtml(s, tier) {
+  switch (s.type) {
+    case 'prose':
+      return `
+        <section class="block">
+          <h2 class="section-title">${esc(s.title)}</h2>
+          ${(s.body || []).map((b) => `<p class="block-p">${esc(b)}</p>`).join('')}
+          ${
+            s.tips && s.tips.length
+              ? `<p class="tips-label">Keep in mind</p>
+                 <ul class="tips-list">${s.tips.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>`
+              : ''
+          }
+        </section>`;
+
+    case 'checklist':
+      return `
+        <section class="block">
+          <h2 class="section-title">${esc(s.title)}</h2>
+          ${s.note ? `<p class="section-intro">${esc(s.note)}</p>` : ''}
+          <ul class="prep-list">
+            ${s.items.map((i) => `<li>${icon('check')}<span>${esc(i)}</span></li>`).join('')}
+          </ul>
+        </section>`;
+
+    case 'cards':
+      return `
+        <section class="block">
+          <h2 class="section-title">${esc(s.title)}</h2>
+          ${s.note ? `<p class="section-intro">${esc(s.note)}</p>` : ''}
+          <div class="contents-grid">
+            ${s.items
+              .map(
+                (i) => `
+              <div class="contents-item">
+                <span class="contents-icon">${icon(i.icon)}</span>
+                <span class="contents-label">${esc(i.label)}</span>
+                <span class="contents-sub">${esc(i.sub)}</span>
+              </div>`
+              )
+              .join('')}
+          </div>
+        </section>`;
+
+    case 'callout':
+      return `
+        <div class="callout callout-${tier}">
+          <span class="callout-icon">${icon('layers')}</span>
+          <div>
+            <p class="callout-title">${esc(s.title)}</p>
+            <p class="callout-body">${esc(s.body)}</p>
+          </div>
+        </div>`;
+
+    case 'phases':
+      return `
+        <section class="block">
+          <h2 class="section-title">${esc(s.title)}</h2>
+          <p class="section-intro">${esc(s.intro)}</p>
+          <div class="wwhaa-band">
+            ${s.phases
+              .map(
+                (p, i) => `
+              ${i > 0 ? '<span class="wwhaa-sep" aria-hidden="true">&rarr;</span>' : ''}
+              <div class="wwhaa-phase">
+                <span class="wwhaa-icon">${icon(p.icon)}</span>
+                <span class="wwhaa-key">${esc(p.key)}</span>
+                <span class="wwhaa-headline">${esc(p.headline)}</span>
+                <span class="wwhaa-body">${esc(p.body)}</span>
+                <span class="wwhaa-formats">${esc(p.formats)}</span>
+              </div>`
+              )
+              .join('')}
+          </div>
+          <div class="note-grid">
+            ${s.notes
+              .map(
+                (n) => `
+              <div class="mini-note">
+                <span class="mini-note-icon">${icon(n.icon)}</span>
+                <div>
+                  <p class="mini-note-title">${esc(n.title)}</p>
+                  <p class="mini-note-body">${esc(n.body)}</p>
+                </div>
+              </div>`
+              )
+              .join('')}
+          </div>
+        </section>`;
+
+    case 'sequence':
+      return `
+        <section class="block">
+          <h2 class="section-title">${esc(s.title)}</h2>
+          <p class="section-intro">${esc(s.note)}</p>
+          <ol class="example-list">
+            ${s.items
+              .map(
+                (it) => `
+              <li class="example-item">
+                <span class="example-n">${it.n}</span>
+                <span class="example-body">
+                  <span class="example-type">${esc(it.type)}</span>
+                  <span class="example-what">${esc(it.what)}</span>
+                </span>
+                <span class="example-phase">${esc(it.phase)}</span>
+              </li>`
+              )
+              .join('')}
+          </ol>
+        </section>`;
+
+    case 'compare':
+      return `
+        <section class="block">
+          <h2 class="section-title">${esc(s.title)}</h2>
+          <p class="section-intro">${esc(s.intro)}</p>
+          <div class="phrasing-table">
+            <div class="phrasing-row phrasing-header">
+              <span></span>
+              <span class="col-dont">${esc(s.dontLabel)}</span>
+              <span class="col-do">${esc(s.doLabel)}</span>
+            </div>
+            ${s.rows
+              .map(
+                (r) => `
+              <div class="phrasing-row">
+                <span class="phrasing-aspect">${esc(r.aspect)}</span>
+                <span class="phrasing-dont">${esc(r.dont)}</span>
+                <span class="phrasing-do">${esc(r.do)}</span>
+              </div>`
+              )
+              .join('')}
+          </div>
+        </section>`;
+
+    case 'example':
+      return `
+        <section class="block block-placeholder">
+          <h2 class="section-title">${esc(s.title)}</h2>
+          <p class="placeholder-note">
+            ${icon('star')}
+            <span>A worked example goes here — a real Specialization, course, or module showing what a
+            finished plan looks like. Awaiting the gold-standard example content.</span>
+          </p>
+        </section>`;
+
+    case 'template':
+      return `
+        <section class="block block-placeholder">
+          <h2 class="section-title">${esc(s.title)}</h2>
+          <p class="placeholder-note">
+            ${icon('star')}
+            <span>Guidance on filling in the matching part of the planning template goes here.
+            Awaiting the redrafted template.</span>
+          </p>
+        </section>`;
+
+    default:
+      return '';
+  }
+}
+
+/* Learning Assets page: in-page menu plus one section per asset type */
+function assetsPageHtml(p) {
+  return `
+    <nav class="asset-jump" aria-label="Asset types">
+      ${p.items
+        .map((a) => `<a class="asset-jump-link" href="#assets" data-jump="${a.id}">${icon(a.icon)}${esc(a.title)}</a>`)
+        .join('')}
+    </nav>
+    <p class="tier-note">${icon('star')}<span>${esc(p.alsoAvailable)}</span></p>
+    ${p.items
+      .map(
+        (a) => `
+      <section class="block asset-block" id="asset-${a.id}">
+        <div class="asset-block-head">
+          <span class="asset-block-icon">${icon(a.icon)}</span>
+          <h2 class="section-title">${esc(a.title)}</h2>
+        </div>
+        <p class="block-p">${esc(a.what)}</p>
+        <div class="asset-cols">
+          ${assetColHtml('Pedagogy', 'star', a.pedagogy, 'ped')}
+          ${assetColHtml('Accessibility', 'access', a.accessibility, 'a11y')}
+          ${assetColHtml('Copyright', 'copyright', a.copyright, 'copy')}
+        </div>
+      </section>`
+      )
+      .join('')}`;
+}
+
+function assetColHtml(label, iconName, items, kind) {
+  return `
+    <div class="asset-col asset-col--${kind}">
+      <p class="asset-col-label">${icon(iconName)}${esc(label)}</p>
+      <ul class="asset-col-list">${items.map((i) => `<li>${esc(i)}</li>`).join('')}</ul>
+    </div>`;
+}
+
+/* Previous / next through the flow */
+function nextPrevHtml(id) {
+  const ids = C.nav.map((n) => n.id);
+  const i = ids.indexOf(id);
+  const prev = i > 0 ? C.nav[i - 1] : null;
+  const next = i < ids.length - 1 ? C.nav[i + 1] : null;
+  return `
+    <nav class="page-nav" aria-label="Move through the structure">
+      ${
+        prev
+          ? `<a class="page-nav-link prev" href="#${prev.id}"><span class="page-nav-dir">&larr; Zoom out</span><span class="page-nav-label">${esc(prev.label)}</span></a>`
+          : `<a class="page-nav-link prev" href="#/"><span class="page-nav-dir">&larr; Back</span><span class="page-nav-label">Overview</span></a>`
+      }
+      ${
+        next
+          ? `<a class="page-nav-link next" href="#${next.id}"><span class="page-nav-dir">Zoom in &rarr;</span><span class="page-nav-label">${esc(next.label)}</span></a>`
+          : ''
+      }
+    </nav>`;
+}
+
+/* ---------- Event wiring ---------- */
+
+function wireHomeNavigation() {
+  document.querySelectorAll('[data-goto]').forEach((el) => {
+    el.addEventListener('click', () => {
+      location.hash = `#${el.dataset.goto}`;
+    });
   });
 }
 
-function openDrawer(id, sourceEl) {
-  const d = DETAILS[id];
-  if (!d) return;
-  lastFocused = sourceEl || null;
-
-  document.getElementById('drawer-content').innerHTML = `
-    <h2 class="drawer-title" id="drawer-title">${esc(d.title)}</h2>
-    ${(d.body || []).map((p) => `<p class="drawer-p">${esc(p)}</p>`).join('')}
-    ${
-      d.tips && d.tips.length
-        ? `<p class="drawer-tips-label">Keep in mind</p>
-           <ul class="drawer-tips">${d.tips.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>`
-        : ''
-    }`;
-
-  document.getElementById('drawer').hidden = false;
-  document.getElementById('drawer-backdrop').hidden = false;
-  document.body.classList.add('drawer-open');
-  document.getElementById('drawer-close').focus();
-}
-
-function closeDrawer() {
-  document.getElementById('drawer').hidden = true;
-  document.getElementById('drawer-backdrop').hidden = true;
-  document.body.classList.remove('drawer-open');
-  if (lastFocused) lastFocused.focus();
-}
-
-function wireDrawer() {
-  document.getElementById('drawer-close').addEventListener('click', closeDrawer);
-  document.getElementById('drawer-backdrop').addEventListener('click', closeDrawer);
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !document.getElementById('drawer').hidden) closeDrawer();
+function wireAssetJump() {
+  document.querySelectorAll('[data-jump]').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.getElementById(`asset-${el.dataset.jump}`);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
   });
 }
 

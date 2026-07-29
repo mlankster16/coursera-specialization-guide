@@ -1,10 +1,28 @@
 # Coursera Specialization Guide
 
-An interactive orientation page for Duke CTL faculty leads building a Coursera
-Specialization. It explains the platform's structure — Specialization → Course →
-Module → Lesson → Learning asset — then hands off to a clean fill-in template.
+An interactive guide for Duke CTL faculty leads building a Coursera Specialization.
+It explains the platform's structure — Specialization → Course → Module → Learning
+asset — then hands off to a clean fill-in template.
 
 **Live site:** https://mlankster16.github.io/coursera-specialization-guide/
+
+## Structure
+
+An Overview page plus four drill-down pages, routed by hash so there's no build step
+and every page is directly linkable:
+
+| Route | Page |
+|---|---|
+| `#/` | **Overview** — the hierarchy diagram, how this differs from a for-credit course, certificates |
+| `#specialization` | Planning the whole program |
+| `#course` | Planning a course |
+| `#module` | Planning a module, including WWHAA, the first 10 items, and lessons |
+| `#assets` | All 8 learning asset types, each with pedagogy, accessibility, and copyright |
+
+A persistent flow nav in the header shows the hierarchy and marks the current page, so
+faculty can see both the scale and where they are. Clicking any element in the Overview
+diagram opens that level's page. Lessons deliberately have no page of their own — being
+optional and internal to a module, they live on the Module page.
 
 ## Why it exists
 
@@ -43,18 +61,28 @@ splits them:
 
 ## Still open
 
+- Every drill-down page ends with an **Example** and a **Filling out the template**
+  section rendered as a visible dashed placeholder. They stay that way until the
+  gold-standard example content and the redrafted template exist.
 - `templateUrl` is empty, so both "Open the planning template" buttons are inert.
-- The Copyright and accessibility section holds general guidance only. Duke-specific
-  policy is still to be supplied and slotted in.
+- Duke-specific copyright and accessibility policy still to be folded into the asset
+  sections, which currently carry general guidance only.
 - The `.docx` in `template/` predates several rounds of revision and needs a rebuild
   to match this site.
+- Per-page structure is still being worked out; the four drill-down pages are a first
+  pass, not settled.
 
 ## Editing
 
 Plain HTML/CSS/JS. No build step — open `index.html` directly, or serve the folder.
 
-All copy lives in **`content.json`**; `app.js` renders it. To change wording, counts,
-or the guidance in a detail drawer, edit that file only.
+All copy lives in **`content.json`**; `app.js` renders it. To change wording or counts,
+edit that file only.
+
+Page sections are typed, so a page's shape is data rather than code. Supported section
+types: `prose`, `checklist`, `cards`, `callout`, `phases`, `sequence`, `compare`,
+`example`, `template`. Add or reorder entries in a page's `sections` array and the
+renderer handles the rest.
 
 Icons are inline SVG paths in the `ICONS` map at the top of `app.js` — no icon
 font or external assets, so nothing to install.

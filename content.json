@@ -1,431 +1,891 @@
 {
   "templateUrl": "",
-  "hero": {
-    "title": "Coursera Specialization Structure",
-    "subtitle": "A Specialization is a set of related courses, each built to stand on its own.",
-    "hint": "Click any element below to learn more about it."
-  },
-  "legend": [
-    { "tier": "spec", "label": "Specialization (the whole program)" },
-    { "tier": "course", "label": "Course (self-contained)" },
-    { "tier": "module", "label": "Module (one skill)" },
-    { "tier": "lesson", "label": "Lesson (optional grouping)" },
-    { "tier": "asset", "label": "Learning assets (what learners do)" }
-  ],
-  "specialization": {
-    "label": "SPECIALIZATION",
-    "sublabel": "The Whole Program",
-    "rail": "A set of related courses that together help learners master one competency.",
-    "definition": "A series of related, in-depth courses that help learners master a competency.",
-    "outcome": "Learners who complete every course in the Specialization earn a Specialization Certificate.",
-    "includes": [
-      { "icon": "layers", "label": "3–4 courses" },
-      { "icon": "clock", "label": "12–32 hours of learner time" },
-      { "icon": "flask", "label": "Hands-on projects with real-world application" },
-      { "icon": "certificate", "label": "Specialization Certificate" }
-    ],
-    "detail": {
-      "title": "Specialization",
-      "body": [
-        "A Specialization is a series of related, in-depth courses that help learners master a competency. Specializations include projects — authentic, hands-on assessments with real-world applications that let learners demonstrate the skill.",
-        "Learners who complete every course earn a Specialization Certificate. Learners who complete a single course earn a course certificate for that course alone.",
-        "Design it as a coherent set rather than a fixed path. Learners can enroll in any course in any order, so each course needs to hold up on its own."
-      ],
-      "tips": [
-        "Name the competency the whole set adds up to before planning individual courses.",
-        "Plan for 3–4 courses and 12–32 hours of total learner time.",
-        "Each course should work for someone who takes only that one course.",
-        "Each course should include at least one hands-on project. Plan where those live early — they're expected, not optional.",
-        "Put high-level learning objectives on the Specialization landing page, then chunk them into course- and module-level objectives."
-      ]
-    }
-  },
-  "courses": {
-    "label": "COURSES",
-    "sublabel": "Anchored to Skills",
-    "rail": "Each course is anchored to specific, demonstrable skills. Courses are not chapters — learners can enroll in any course in any order, so each one needs to make sense on its own.",
-    "callout": {
-      "title": "Standalone does not mean unsequenced",
-      "body": "You can absolutely design courses and modules that increase in complexity — that's good pedagogy! What breaks reuse is cross-referencing. Try not to reference other courses, modules, or the Specialization by name or number. Establish the context fresh inside each piece instead, and it works whether a learner arrives first or last. If you're unsure how to best approach this, chat with a Learning Experience Designer!"
+  "nav": [
+    {
+      "id": "specialization",
+      "label": "Specialization",
+      "tier": "spec"
     },
-    "cards": [
-      { "n": 1, "title": "Course", "focus": "Anchored to its own skills" },
-      { "n": 2, "title": "Course", "focus": "Anchored to its own skills" },
-      { "n": 3, "title": "Course", "focus": "Anchored to its own skills" }
-    ],
-    "cardSpecs": [
-      { "icon": "star", "label": "2–4 learning objectives" },
-      { "icon": "list", "label": "3–4 modules" },
-      { "icon": "clock", "label": "2–8 hours" },
-      { "icon": "certificate", "label": "Course Certificate" }
-    ],
-    "reuseBadge": "Stands on its own",
-    "detail": {
-      "title": "Course",
-      "body": [
-        "Courses give learners access to instructional videos, assessments, and other learning content. Learners who pay for and complete a course earn a shareable course certificate.",
-        "Anchor each course to clearly defined skills — concrete, demonstrable abilities tied to real work, like \"clean and validate a dataset\" or \"build a responsive web page layout.\" Content that is clearly skill-aligned is more discoverable on the platform and more valuable to learners.",
-        "Build every course as a self-contained unit. The immediate reason is the learner: anyone can enroll in any course at any time, so plenty of people will meet this course on its own, with no exposure to the rest of the Specialization.",
-        "Designing this way also keeps options open — a self-contained course can more easily be refreshed, or support a new offering down the road, without being rebuilt. Any decision like that would be a conversation with you. Your Specialization stays yours."
-      ],
-      "tips": [
-        "Anchor to skills, not topics — name the ability a learner walks away with.",
-        "Target 2–4 learning objectives, 3–4 modules, and 2–8 hours of learning.",
-        "State needed background as a skill, not as another course a learner should have taken.",
-        "Keep supporting files (glossaries, templates, setup guides) inside readings and activities in the learning path — not in the course Resources section, which doesn't travel with content if it's ever moved.",
-        "Put the syllabus and orienting context on the course landing page so modules can focus purely on teaching."
-      ]
+    {
+      "id": "course",
+      "label": "Course",
+      "tier": "course"
+    },
+    {
+      "id": "module",
+      "label": "Module",
+      "tier": "module"
+    },
+    {
+      "id": "assets",
+      "label": "Learning Assets",
+      "tier": "asset"
     }
-  },
-  "modules": {
-    "label": "MODULES",
-    "sublabel": "One Skill at a Time",
-    "rail": "A module is a self-contained section of a course, built around a single skill or topic.",
-    "note": "Title each module for the skill it teaches — \"Identifying and Handling Missing Data,\" not \"Module 1: Introduction.\" Coursera adds the numbering, and your own numbers break when a module moves.",
-    "cards": [
-      { "n": 1, "title": "Module", "role": "One skill or topic, taught end to end." },
-      { "n": 2, "title": "Module", "role": "One skill or topic, taught end to end." },
-      { "n": 3, "title": "Module", "role": "One skill or topic, taught end to end." }
-    ],
-    "cardSpecs": [
-      { "icon": "star", "label": "2–4 learning objectives" },
-      { "icon": "book", "label": "2–3 lessons (optional)" },
-      { "icon": "check", "label": "1 graded assessment" }
-    ],
-    "detail": {
-      "title": "Module",
-      "body": [
-        "A module is one self-contained section of a course. Modules make up the course structure, and learners work through them at their own pace on personalized deadlines.",
-        "Each module is built around a single skill, carries its own 2–4 learning objectives, and ends with at least one graded assessment that checks those objectives.",
-        "Every module also needs a module description. Learners see it as a message from you, so write it conversationally and address them directly — introduce what the module covers, highlight the objectives, and offer a tip for success."
-      ],
-      "tips": [
-        "Title the module for its skill. The platform supplies the number.",
-        "Open each module by establishing its own context, so a learner doesn't need to have seen anything else first.",
-        "Structure the module with the WWHAA pattern below.",
-        "If a learner needs background, say what they should already know, not where they should have learned it.",
-        "Your first module is the strongest chance to hook learners. Make it a full teaching module rather than a syllabus walkthrough."
-      ]
-    }
-  },
-  "lessons": {
-    "label": "LESSONS",
-    "sublabel": "Optional Grouping",
-    "rail": "Lessons are an optional way to group related content inside a module.",
-    "definition": "Lessons group related items within a module. They're optional — use them when a module has enough content that grouping helps learners find their way.",
-    "count": "2–3 lessons per module, when used",
-    "detail": {
-      "title": "Lesson",
-      "body": [
-        "A lesson is an optional grouping layer inside a module. Lessons let you cluster related items so a longer module is easier for learners to navigate.",
-        "You don't have to use them. A module with only a handful of items usually reads better without them."
-      ],
-      "tips": [
-        "Group by idea rather than by format — aim for topic-based lessons instead of a \"videos\" lesson and a \"readings\" lesson.",
-        "Start a new lesson when the sub-topic changes or a learner would naturally pause.",
-        "If a module only has a few items, skip lessons entirely."
-      ]
-    }
-  },
-  "assets": {
-    "label": "LEARNING ASSETS",
-    "sublabel": "Inside Each Module",
-    "rail": "Modules and lessons contain a mix of assets that teach, let learners practice, and check what they've learned.",
-    "alsoAvailable": "Also available: in-video questions, code blocks, programming assignments, Coursera Labs, AI-graded assignments, and external tools via LTI.",
-    "cards": [
+  ],
+  "home": {
+    "hero": {
+      "title": "Coursera Specialization Structure",
+      "subtitle": "A Specialization is a set of related courses, each built to stand on its own.",
+      "hint": "Click any level below to open its planning guide."
+    },
+    "legend": [
       {
-        "icon": "play",
-        "title": "Video",
-        "short": "Introduces and teaches a topic.",
-        "detail": {
+        "tier": "spec",
+        "label": "Specialization"
+      },
+      {
+        "tier": "course",
+        "label": "Course"
+      },
+      {
+        "tier": "module",
+        "label": "Module"
+      },
+      {
+        "tier": "lesson",
+        "label": "Lesson (optional)"
+      },
+      {
+        "tier": "asset",
+        "label": "Learning assets"
+      }
+    ],
+    "specialization": {
+      "definition": "A series of related, in-depth courses that help learners master a competency.",
+      "outcome": "Learners who complete every course in the Specialization earn a Specialization Certificate.",
+      "includes": [
+        {
+          "icon": "layers",
+          "label": "3–4 courses"
+        },
+        {
+          "icon": "clock",
+          "label": "12–32 hours of learner time"
+        },
+        {
+          "icon": "flask",
+          "label": "Hands-on projects with real-world application"
+        },
+        {
+          "icon": "certificate",
+          "label": "Specialization Certificate"
+        }
+      ]
+    },
+    "courses": {
+      "cards": [
+        {
+          "n": 1,
+          "title": "Course",
+          "focus": "Anchored to its own skills"
+        },
+        {
+          "n": 2,
+          "title": "Course",
+          "focus": "Anchored to its own skills"
+        },
+        {
+          "n": 3,
+          "title": "Course",
+          "focus": "Anchored to its own skills"
+        }
+      ],
+      "cardSpecs": [
+        {
+          "icon": "star",
+          "label": "2–4 learning objectives"
+        },
+        {
+          "icon": "list",
+          "label": "3–4 modules"
+        },
+        {
+          "icon": "clock",
+          "label": "2–8 hours"
+        },
+        {
+          "icon": "certificate",
+          "label": "Course Certificate"
+        }
+      ],
+      "reuseBadge": "Stands on its own"
+    },
+    "modules": {
+      "cards": [
+        {
+          "n": 1,
+          "title": "Module",
+          "role": "One skill or topic, taught end to end."
+        },
+        {
+          "n": 2,
+          "title": "Module",
+          "role": "One skill or topic, taught end to end."
+        },
+        {
+          "n": 3,
+          "title": "Module",
+          "role": "One skill or topic, taught end to end."
+        }
+      ],
+      "cardSpecs": [
+        {
+          "icon": "star",
+          "label": "2–4 learning objectives"
+        },
+        {
+          "icon": "book",
+          "label": "2–3 lessons (optional)"
+        },
+        {
+          "icon": "check",
+          "label": "1 graded assessment"
+        }
+      ]
+    },
+    "lessons": {
+      "definition": "Lessons group related items within a module. They're optional — use them when a module has enough content that grouping helps learners find their way.",
+      "count": "2–3 lessons per module, when used"
+    },
+    "assets": {
+      "cards": [
+        {
+          "icon": "play",
           "title": "Video",
+          "short": "Introduces and teaches a topic."
+        },
+        {
+          "icon": "book",
+          "title": "Reading",
+          "short": "Articles or guides that deepen understanding."
+        },
+        {
+          "icon": "mic",
+          "title": "Audio Podcast",
+          "short": "Audio-only instruction learners take anywhere."
+        },
+        {
+          "icon": "plugin",
+          "title": "Interactive Plugin",
+          "short": "Embedded web apps for interactive practice."
+        },
+        {
+          "icon": "chat",
+          "title": "Coach Dialogue",
+          "short": "AI-driven conversation that applies and reflects."
+        },
+        {
+          "icon": "flask",
+          "title": "Hands-on Practice",
+          "short": "Ungraded labs, activities, and exercises."
+        },
+        {
+          "icon": "question",
+          "title": "Practice Quiz",
+          "short": "Assessment for learning — ungraded self-check."
+        },
+        {
+          "icon": "rosette",
+          "title": "Graded Assessment",
+          "short": "Assessment of learning — checks mastery."
+        }
+      ]
+    },
+    "comparison": {
+      "title": "How this differs from a for-credit course",
+      "intro": "Most of the surprises in a first Coursera build come from assumptions carried over from semester teaching.",
+      "rows": [
+        {
+          "aspect": "Schedule",
+          "credit": "Fixed semester, weekly meetings",
+          "coursera": "No schedule. Learners start any day and work at their own pace on personalized deadlines."
+        },
+        {
+          "aspect": "Your presence",
+          "credit": "You're in the room; you can adjust live",
+          "coursera": "Fully asynchronous. Everything a learner needs has to already be in the course."
+        },
+        {
+          "aspect": "Enrollment",
+          "credit": "Registrar enforces prerequisites and sequence",
+          "coursera": "Anyone can enroll in any course, in any order. Prerequisites are stated, not enforced."
+        },
+        {
+          "aspect": "Structure",
+          "credit": "Courses build on each other within a program",
+          "coursera": "Courses are modular and self-contained. Many learners take one course without the others."
+        },
+        {
+          "aspect": "Length",
+          "credit": "~40+ contact hours per course",
+          "coursera": "2–8 hours of learning per course; 12–32 hours across the whole Specialization."
+        },
+        {
+          "aspect": "Your audience",
+          "credit": "Admitted students with shared background",
+          "coursera": "Working adults worldwide, widely varied backgrounds, mostly self-motivated."
+        },
+        {
+          "aspect": "Assessment",
+          "credit": "Essays, exams, participation, your judgment",
+          "coursera": "Mostly auto-graded. At least one graded assessment per module."
+        },
+        {
+          "aspect": "Attrition",
+          "credit": "Grades and tuition keep students enrolled",
+          "coursera": "Nothing holds anyone. Every module has to earn the next click."
+        }
+      ]
+    },
+    "completion": {
+      "title": "Certificates",
+      "body": "Learners who complete a single course earn a shareable course certificate for that course. Learners who complete every course in the Specialization earn a Specialization Certificate that recognises the full competency."
+    },
+    "handoff": {
+      "title": "Ready to plan yours?",
+      "body": "The template is the blank version of everything here — no guidance, just the fields your design team needs. Come back any time you want a refresher.",
+      "cta": "Open the planning template"
+    }
+  },
+  "pages": {
+    "specialization": {
+      "tier": "spec",
+      "label": "SPECIALIZATION",
+      "title": "Planning your Specialization",
+      "lede": "This is the one thing to define before anything else. Every course, module, and video below it exists to deliver a single competency.",
+      "facts": [
+        {
+          "icon": "layers",
+          "label": "3–4 courses",
+          "sub": "the whole program"
+        },
+        {
+          "icon": "clock",
+          "label": "12–32 hours",
+          "sub": "total learner time"
+        },
+        {
+          "icon": "flask",
+          "label": "1+ project per course",
+          "sub": "hands-on, real-world"
+        },
+        {
+          "icon": "certificate",
+          "label": "Specialization Certificate",
+          "sub": "on completing every course"
+        }
+      ],
+      "sections": [
+        {
+          "type": "prose",
+          "title": "What a Specialization is",
           "body": [
-            "Videos introduce and teach a course topic. Video is powerful for human connection, storytelling, and demonstration — the moments where learners benefit from seeing a real person.",
-            "Chunking is the whole game. Three to six minutes is optimal for retention, and videos under 10 minutes increase lecture completion rates by 16% while raising satisfaction with the course overall. Longer videos often get skipped entirely.",
-            "The strongest-performing courses keep at least two-thirds of their videos under 10 minutes. Break complex topics into a series of short, focused videos with clear, specific titles."
+            "A series of related, in-depth courses that help learners master a competency. Specializations include projects — authentic, hands-on assessments with real-world applications that let learners demonstrate the skill.",
+            "Learners who complete every course earn a Specialization Certificate. Learners who complete a single course earn a course certificate for that course alone.",
+            "Design it as a coherent set rather than a fixed path. Learners can enroll in any course in any order, so each course needs to hold up on its own."
+          ]
+        },
+        {
+          "type": "prose",
+          "title": "Start from the outcome",
+          "body": [
+            "Name the competency the whole set adds up to, in one sentence, before planning individual courses. Everything else is derived from it.",
+            "A useful frame: learners often struggle to ______. This Specialization helps them ______ by learning how to ______, ______, and ______."
           ],
           "tips": [
-            "Aim under 7 minutes; 6 or less is ideal. One idea per video.",
+            "Name one meaningful, demonstrable capability — not a topic area.",
+            "Write it as something a learner could claim about themselves afterwards.",
+            "Check that your 3–4 courses actually add up to it, with nothing important missing.",
+            "Put high-level learning objectives on the Specialization landing page, then chunk them into course- and module-level objectives."
+          ]
+        },
+        {
+          "type": "checklist",
+          "title": "What to prepare at this level",
+          "note": "Your Learning Experience Designer will help shape all of this — it doesn't need to be polished.",
+          "items": [
+            "The competency the full Specialization builds.",
+            "Who it's for: the roles, contexts, or situations of your intended learner.",
+            "What learners should already know or be able to do coming in, stated as a skill.",
+            "A working title for each of the 3–4 courses, and the skill each one owns.",
+            "Where the hands-on project or projects will live.",
+            "Landing page copy: description, audience, prerequisites, and time commitment."
+          ]
+        },
+        {
+          "type": "example",
+          "placeholder": true,
+          "title": "Example: a finished Specialization plan"
+        },
+        {
+          "type": "template",
+          "title": "Filling out the template",
+          "placeholder": true
+        }
+      ]
+    },
+    "course": {
+      "tier": "course",
+      "label": "COURSE",
+      "title": "Planning a course",
+      "lede": "Each course is anchored to specific, demonstrable skills and has to make sense to someone who takes only that one course.",
+      "facts": [
+        {
+          "icon": "star",
+          "label": "2–4 learning objectives",
+          "sub": "per course"
+        },
+        {
+          "icon": "list",
+          "label": "3–4 modules",
+          "sub": "per course"
+        },
+        {
+          "icon": "clock",
+          "label": "2–8 hours",
+          "sub": "of learner time"
+        },
+        {
+          "icon": "certificate",
+          "label": "Course Certificate",
+          "sub": "on completing the course"
+        }
+      ],
+      "sections": [
+        {
+          "type": "prose",
+          "title": "Anchor the course to skills",
+          "body": [
+            "Content on Coursera is organised around skills — concrete, demonstrable abilities tied to real work, like \"clean and validate a dataset\" or \"build a responsive web page layout.\"",
+            "Anchor the course to clearly defined skills, then structure your modules around specific, measurable objectives tied to those skills. Content that is clearly skill-aligned is more discoverable on the platform and more valuable to learners."
+          ],
+          "tips": [
+            "Name the course for its skill or subject, not for a number.",
+            "Anchor to skills, not topics — name the ability a learner walks away with.",
+            "State needed background as a skill, not as another course a learner should have taken.",
+            "Decide the graded evidence of learning before planning any videos or readings."
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Standalone does not mean unsequenced",
+          "body": "You can absolutely design courses and modules that increase in complexity — that's good pedagogy! What breaks reuse is cross-referencing. Try not to reference other courses, modules, or the Specialization by name or number. Establish the context fresh inside each piece instead, and it works whether a learner arrives first or last. If you're unsure how to best approach this, chat with a Learning Experience Designer!"
+        },
+        {
+          "type": "prose",
+          "title": "Why self-contained matters",
+          "body": [
+            "The immediate reason is the learner. Anyone can enroll in any course at any time, so plenty of people will meet this course on its own, with no exposure to the rest of the Specialization.",
+            "Designing this way also keeps options open — a self-contained course can more easily be refreshed, or support a new offering down the road, without being rebuilt. Any decision like that would be a conversation with you. Your Specialization stays yours."
+          ],
+          "tips": [
+            "Keep supporting files (glossaries, templates, setup guides) inside readings and activities in the learning path — not in the course Resources section, which doesn't travel with content if it's ever moved.",
+            "Put the syllabus and orienting context on the course landing page so modules can focus purely on teaching."
+          ]
+        },
+        {
+          "type": "compare",
+          "title": "Write it so it stands on its own",
+          "intro": "This breaks on phrasing more often than on structure. Aim to have every item open by establishing its own context, so a learner doesn't need to have seen anything else first.",
+          "dontLabel": "Instead of this",
+          "doLabel": "Write this",
+          "rows": [
+            {
+              "aspect": "Module titles",
+              "dont": "\"Module 1: Introduction to Data Cleaning\"",
+              "do": "\"Identifying and Handling Missing Data\""
+            },
+            {
+              "aspect": "Module transitions",
+              "dont": "\"Now that you've mastered the basics from Module 1, let's apply those concepts to…\"",
+              "do": "\"Data transformation is essential for analysis. Let's explore how to use SQL functions to…\""
+            },
+            {
+              "aspect": "Program references",
+              "dont": "\"As part of this Data Science Specialization, you'll use these skills in the capstone project…\"",
+              "do": "\"These data preprocessing skills are essential for any machine learning project. Let's practice with a real dataset…\""
+            },
+            {
+              "aspect": "Sequential references",
+              "dont": "\"In the previous lesson, we explored how to optimize this code…\"",
+              "do": "\"Code optimization involves several key strategies…\""
+            },
+            {
+              "aspect": "Assessment references",
+              "dont": "\"Remember this for the final quiz…\"",
+              "do": "\"This concept is fundamental to understanding how databases work…\""
+            },
+            {
+              "aspect": "Prior knowledge",
+              "dont": "\"You learned basic SQL in Module 2.\"",
+              "do": "\"This module assumes familiarity with basic SQL queries.\""
+            }
+          ]
+        },
+        {
+          "type": "checklist",
+          "title": "What to prepare at this level",
+          "note": "Rough phrasing is fine for a first pass.",
+          "items": [
+            "Course title, named for its skill.",
+            "The 2–4 learning objectives this course owns.",
+            "What learners should already know, stated as a skill.",
+            "A working title for each of the 3–4 modules and the skill each one teaches.",
+            "The graded evidence of learning — what proves the objectives were met.",
+            "Where the course's hands-on project sits.",
+            "Landing page copy: description, audience, prerequisites, time commitment, tools needed."
+          ]
+        },
+        {
+          "type": "example",
+          "placeholder": true,
+          "title": "Example: a finished course plan"
+        },
+        {
+          "type": "template",
+          "title": "Filling out the template",
+          "placeholder": true
+        }
+      ]
+    },
+    "module": {
+      "tier": "module",
+      "label": "MODULE",
+      "title": "Planning a module",
+      "lede": "A module is one self-contained section of a course, built around a single skill. This is the level where most of the actual work happens.",
+      "facts": [
+        {
+          "icon": "star",
+          "label": "2–4 learning objectives",
+          "sub": "per module"
+        },
+        {
+          "icon": "clock",
+          "label": "~30 minutes minimum",
+          "sub": "of learner time"
+        },
+        {
+          "icon": "book",
+          "label": "2–3 lessons",
+          "sub": "optional grouping"
+        },
+        {
+          "icon": "check",
+          "label": "1 graded assessment",
+          "sub": "required per module"
+        }
+      ],
+      "sections": [
+        {
+          "type": "prose",
+          "title": "What a module is",
+          "body": [
+            "A module is one self-contained section of a course. Modules make up the course structure, and learners work through them at their own pace on personalized deadlines.",
+            "Each module is built around a single skill, carries its own 2–4 learning objectives, and ends with at least one graded assessment that checks those objectives."
+          ],
+          "tips": [
+            "Title the module for the skill it teaches — \"Identifying and Handling Missing Data,\" not \"Module 1: Introduction.\" Coursera adds the numbering, and your own numbers break if a module moves.",
+            "Open each module by establishing its own context, so a learner doesn't need to have seen anything else first.",
+            "If a learner needs background, say what they should already know, not where they should have learned it."
+          ]
+        },
+        {
+          "type": "cards",
+          "title": "What a typical module contains",
+          "note": "Around 30 minutes of learner time per module, minimum.",
+          "items": [
+            {
+              "icon": "play",
+              "label": "3–6 videos",
+              "sub": "5–10 minutes each"
+            },
+            {
+              "icon": "book",
+              "label": "1–2 readings",
+              "sub": "related to the videos"
+            },
+            {
+              "icon": "flask",
+              "label": "1–2 hands-on activities",
+              "sub": "or practice quizzes"
+            },
+            {
+              "icon": "rosette",
+              "label": "1 graded quiz",
+              "sub": "checks the module objectives"
+            }
+          ]
+        },
+        {
+          "type": "phases",
+          "title": "Structure the module with WWHAA",
+          "intro": "Coursera recommends the Why → What → How → Apply → Assess pattern for each module. It creates a complete, self-contained learning cycle — which is exactly what lets a module hold up on its own.",
+          "phases": [
+            {
+              "key": "Why",
+              "icon": "lightbulb",
+              "headline": "Establish real-world relevance",
+              "body": "Show the learner why this skill matters before teaching it. In a first module, this replaces the traditional course introduction entirely.",
+              "formats": "Instructor video, real-world scenario, Coach Dialogue"
+            },
+            {
+              "key": "What",
+              "icon": "book",
+              "headline": "Teach key concepts",
+              "body": "Introduce the essential ideas the skill rests on — the minimum a learner needs before they can try it.",
+              "formats": "Reading, short video, graphic, audio podcast"
+            },
+            {
+              "key": "How",
+              "icon": "gear",
+              "headline": "Bridge theory and practice",
+              "body": "Show the skill actually being performed. Demonstration is what turns a concept into something a learner can picture doing.",
+              "formats": "Demonstration, walkthrough, worked case"
+            },
+            {
+              "key": "Apply",
+              "icon": "flask",
+              "headline": "Practice in realistic scenarios",
+              "body": "Let learners try it with no stakes and get feedback while it's still cheap to be wrong.",
+              "formats": "Hands-on activity, lab, Dialogue, practice quiz"
+            },
+            {
+              "key": "Assess",
+              "icon": "rosette",
+              "headline": "Validate learning",
+              "body": "Check whether the module's objectives were met, and point learners to review material for anything missed.",
+              "formats": "Graded quiz, graded project"
+            }
+          ],
+          "notes": [
+            {
+              "icon": "star",
+              "title": "Choose the format that fits the phase",
+              "body": "WWHAA guides format decisions too. Try not to default to video for everything — pick what serves the goal of that phase."
+            },
+            {
+              "icon": "layers",
+              "title": "Aim for no more than two of the same type in a row",
+              "body": "Varied sequences — video, then reading, then practice activity — sustain engagement. Coursera's internal research shows learners drop off at significantly higher rates in repetitive sequences."
+            }
+          ]
+        },
+        {
+          "type": "sequence",
+          "title": "The first 10 items",
+          "note": "The recommended opening pattern for a course's first module. Note that it teaches from item 1 — there's no separate syllabus lesson.",
+          "items": [
+            {
+              "n": 1,
+              "type": "Video",
+              "what": "Welcome and why this matters — starts teaching immediately",
+              "phase": "Why"
+            },
+            {
+              "n": 2,
+              "type": "Coach Dialogue",
+              "what": "Connects the topic to the learner's own goals or experience",
+              "phase": "Why"
+            },
+            {
+              "n": 3,
+              "type": "Reading",
+              "what": "Introduces the first key idea",
+              "phase": "What"
+            },
+            {
+              "n": 4,
+              "type": "Video",
+              "what": "Explains or demonstrates topic 1",
+              "phase": "What / How"
+            },
+            {
+              "n": 5,
+              "type": "Hands-on",
+              "what": "Learners apply topic 1",
+              "phase": "Apply"
+            },
+            {
+              "n": 6,
+              "type": "Video",
+              "what": "Introduces topic 2",
+              "phase": "What"
+            },
+            {
+              "n": 7,
+              "type": "Practice quiz",
+              "what": "Practises topics 1 and 2 with feedback",
+              "phase": "Apply"
+            },
+            {
+              "n": 8,
+              "type": "Video",
+              "what": "Shows a real example or case",
+              "phase": "How"
+            },
+            {
+              "n": 9,
+              "type": "Reading",
+              "what": "Reviews and synthesises the key concepts",
+              "phase": "What"
+            },
+            {
+              "n": 10,
+              "type": "Graded quiz",
+              "what": "Checks the module's objectives",
+              "phase": "Assess"
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "title": "Lessons — optional grouping",
+          "body": [
+            "Lessons are an optional layer inside a module. They let you cluster related items so a longer module is easier for learners to navigate — around 2–3 per module, when used.",
+            "You don't have to use them. A module with only a handful of items usually reads better without them."
+          ],
+          "tips": [
+            "Group by idea rather than by format — aim for topic-based lessons instead of a \"videos\" lesson and a \"readings\" lesson.",
+            "Start a new lesson when the sub-topic changes or a learner would naturally pause.",
+            "If a module only has a few items, skip lessons entirely."
+          ]
+        },
+        {
+          "type": "prose",
+          "title": "Module descriptions",
+          "body": [
+            "Every module needs a description. Learners see it as a message from you, so write it conversationally and address them directly — introduce what the module covers, highlight the objectives, and offer a tip for success."
+          ]
+        },
+        {
+          "type": "checklist",
+          "title": "What to prepare at this level",
+          "items": [
+            "Module title, named for its skill.",
+            "The 2–4 learning objectives this module owns.",
+            "A module description written to the learner in your own voice.",
+            "The item sequence — what learners do, in order, and which WWHAA phase each item serves.",
+            "The practice plan: what learners try before the graded check, and how they get feedback.",
+            "The graded assessment, with questions, answers, and feedback for both correct and incorrect responses.",
+            "Any lesson groupings, if you're using them."
+          ]
+        },
+        {
+          "type": "example",
+          "placeholder": true,
+          "title": "Example: a finished module"
+        },
+        {
+          "type": "template",
+          "title": "Filling out the template",
+          "placeholder": true
+        }
+      ]
+    },
+    "assets": {
+      "tier": "asset",
+      "label": "LEARNING ASSETS",
+      "title": "Learning assets",
+      "lede": "The individual items learners watch, read, and do. Each type has its own pedagogy, accessibility requirements, and copyright considerations.",
+      "alsoAvailable": "Also available: in-video questions, code blocks, programming assignments, Coursera Labs, AI-graded assignments, and external tools via LTI.",
+      "items": [
+        {
+          "id": "video",
+          "icon": "play",
+          "title": "Video",
+          "what": "Videos introduce and teach a course topic. Video is powerful for human connection, storytelling, and demonstration — the moments where learners benefit from seeing a real person.",
+          "pedagogy": [
+            "Aim for 5–10 minutes, one idea per video.",
+            "Chunking is the whole game. Shorter videos hold attention; longer ones often get skipped entirely. Videos under 10 minutes increase lecture completion rates by 16% and raise satisfaction with the course overall.",
+            "The strongest-performing courses keep at least two-thirds of their videos under 10 minutes. Break complex topics into a series of short, focused videos with clear, specific titles.",
             "What raises engagement: open with a hook or story, keep the tone conversational, use appropriate humour, add visuals or animation, and keep a relatively brisk speaking pace.",
             "Try not to default to video. Readings, interactives, and labs are often better for reference material and anything that needs frequent updating.",
-            "Use AI tools to speed up production, but aim to keep a real person as the on-screen presenter — learners benefit from seeing real people.",
-            "Accessibility: every video needs accurate captions and a transcript.",
-            "In-video questions can pause a video to prompt a quick check."
+            "Use AI tools to speed up production, but aim to keep a real person as the on-screen presenter — learners benefit from seeing real people."
+          ],
+          "accessibility": [
+            "Accurate captions are required, and a transcript should be available.",
+            "Say aloud what's on screen — try not to rely on visuals alone to carry meaning.",
+            "Check colour contrast on slides, and avoid using colour as the only way to distinguish anything.",
+            "Keep on-screen text large enough to read on a phone."
+          ],
+          "copyright": [
+            "Clear permission for any music, stock footage, or clips you didn't create.",
+            "Every image, figure, and chart in your slides needs to be yours or cleared.",
+            "If anyone other than you appears on camera, you need their release.",
+            "Attribute sources on screen or in the transcript."
           ]
-        }
-      },
-      {
-        "icon": "book",
-        "title": "Reading",
-        "short": "Articles or guides that deepen understanding.",
-        "detail": {
+        },
+        {
+          "id": "reading",
+          "icon": "book",
           "title": "Reading",
-          "body": [
-            "Learner-facing text used to explain, extend, or provide reference material. Best for anything learners will want to scan, search, or return to later.",
-            "Readings are also the right home for supporting files — glossaries, templates, setup guides — because items in the learning path travel with your content if it's ever moved."
-          ],
-          "tips": [
+          "what": "Learner-facing text used to explain, extend, or provide reference material. Best for anything learners will want to scan, search, or return to later.",
+          "pedagogy": [
             "Provide the complete text, not an outline.",
-            "Accessibility: describe every image in alt text, use real headings for structure, and write descriptive link text rather than \"click here.\"",
-            "Copyright: confirm you have permission for every image, figure, and excerpt, and attribute sources.",
-            "Good for reference material, worked examples, and step-by-step instructions."
-          ]
-        }
-      },
-      {
-        "icon": "mic",
-        "title": "Audio Podcast",
-        "short": "Audio-only instruction learners take anywhere.",
-        "detail": {
-          "title": "Audio podcast",
-          "body": [
-            "A recognised instructional format on Coursera alongside video and readings. Audio suits interviews, expert conversations, and narrative explanation — anything a learner might absorb while commuting or walking.",
-            "It's also considerably faster and cheaper to produce than video, which makes it a practical way to add variety to a module."
+            "Strong for reference material, worked examples, and step-by-step instructions.",
+            "Readings are the right home for supporting files — glossaries, templates, setup guides — because items in the learning path travel with your content if it's ever moved."
           ],
-          "tips": [
+          "accessibility": [
+            "Describe every meaningful image in alt text; mark purely decorative images as decorative.",
+            "Use real headings and lists so screen readers can navigate the structure.",
+            "Write descriptive link text rather than \"click here.\"",
+            "Give tables real header rows, and avoid using tables purely for layout."
+          ],
+          "copyright": [
+            "Confirm permission for every image, figure, table, and excerpt that isn't yours.",
+            "Attribute sources, and keep a record of what you cleared and where it came from.",
+            "Link to paywalled articles rather than reproducing them.",
+            "Course content reaches a global public audience — classroom fair-use reasoning generally doesn't carry over."
+          ]
+        },
+        {
+          "id": "audio-podcast",
+          "icon": "mic",
+          "title": "Audio Podcast",
+          "what": "A recognised instructional format alongside video and readings. Audio suits interviews, expert conversations, and narrative explanation — anything a learner might absorb while commuting or walking.",
+          "pedagogy": [
             "Best for conversation, storytelling, and expert perspective — not for anything visual.",
-            "Accessibility: a full transcript is required, since there's no visual channel at all.",
+            "Considerably faster and cheaper to produce than video, which makes it a practical way to add variety.",
             "Keep episodes focused on one idea, same as video.",
             "Audio is a poor fit for content learners will need to reference later — reach for a reading instead."
-          ]
-        }
-      },
-      {
-        "icon": "plugin",
-        "title": "Interactive Plugin",
-        "short": "Embedded web apps for interactive practice.",
-        "detail": {
-          "title": "Interactive plugin",
-          "body": [
-            "Plugins embed single-page web applications directly inside a Coursera course item, so they support nearly any experience the web can deliver — simulations, visualisers, calculators, explorable diagrams.",
-            "They're built by third parties including university partners, independent developers, and researchers. They can be ungraded, used as graded assignment questions, or wired to external tools."
           ],
-          "tips": [
+          "accessibility": [
+            "A full transcript is required. There's no visual channel at all, so the transcript is the only alternative.",
+            "Identify speakers by name in the transcript.",
+            "Keep audio quality clean — background noise disproportionately affects listeners using hearing aids."
+          ],
+          "copyright": [
+            "Clear any music beds, stings, or archival audio.",
+            "Get a release from every guest, covering the intended use.",
+            "Attribute quoted material aloud or in the transcript."
+          ]
+        },
+        {
+          "id": "interactive-plugin",
+          "icon": "plugin",
+          "title": "Interactive Plugin",
+          "what": "Plugins embed single-page web applications directly inside a Coursera course item, so they support nearly any experience the web can deliver — simulations, visualisers, calculators, explorable diagrams.",
+          "pedagogy": [
             "Strong choice for concepts that are easier to manipulate than to describe.",
             "Confirm feasibility early — plugins usually need development effort your team has to plan for.",
-            "Accessibility: interactive content needs keyboard operability and screen-reader labels. Check before committing.",
+            "Can be ungraded, used as graded assignment questions, or wired to external tools.",
             "Related options: code blocks, JavaScript plugins, and external tools via LTI."
-          ]
-        }
-      },
-      {
-        "icon": "chat",
-        "title": "Coach Dialogue",
-        "short": "AI-driven conversation that applies and reflects.",
-        "detail": {
-          "title": "Coach Dialogue",
-          "body": [
-            "Dialogue items let you create AI-driven discussions that simulate interaction with a live instructor, leading learners through structured, text-based conversations designed to hit specific learning objectives.",
-            "The AI guide (Coursera Coach) helps learners think critically and apply concepts to real-world situations by asking adaptive, open-ended questions, tailored to each learner with personalised feedback.",
-            "Coursera recommends at least one Dialogue item per course, and notes that including one improves learner engagement."
           ],
-          "tips": [
+          "accessibility": [
+            "Everything needs to be operable by keyboard alone, not just mouse or touch.",
+            "Interactive controls need screen-reader labels.",
+            "Try not to rely on colour alone to convey state or feedback.",
+            "Have a plan for learners who can't use the interaction at all — an equivalent reading or activity.",
+            "Verify all of this before committing to a plugin; retrofitting accessibility is expensive."
+          ],
+          "copyright": [
+            "Check the licence on any third-party code or library being embedded.",
+            "Confirm you can use any dataset the plugin draws on, including for a public audience.",
+            "Credit the developer or source where appropriate."
+          ]
+        },
+        {
+          "id": "coach-dialogue",
+          "icon": "chat",
+          "title": "Coach Dialogue",
+          "what": "Dialogue items let you create AI-driven discussions that simulate interaction with a live instructor, leading learners through structured, text-based conversations designed to hit specific learning objectives. The AI guide (Coursera Coach) asks adaptive, open-ended questions and gives personalised feedback.",
+          "pedagogy": [
+            "Coursera recommends at least one Dialogue item per course, and notes that including one improves learner engagement.",
             "Write the coach goal: what should the learner think through, decide, or produce?",
             "Provide an opening question, 2–4 follow-up areas, and a closing reflection.",
             "Best for reflection, case analysis, ethical decisions, and complex problem-solving.",
-            "Ungraded unless you specify otherwise.",
-            "A Dialogue in the first module is a strong way to connect the topic to a learner's own goals."
-          ]
-        }
-      },
-      {
-        "icon": "flask",
-        "title": "Hands-on Practice",
-        "short": "Ungraded labs, activities, and exercises.",
-        "detail": {
-          "title": "Hands-on practice",
-          "body": [
-            "Where learners try the skill directly with no stakes. This can be an off-platform activity with step-by-step instructions, an ungraded Coursera Lab, or in-browser coding.",
-            "Ungraded Labs allow trial-and-error learning with immediate feedback and no formal assessment — sandbox environments for exploration without grade pressure."
+            "A Dialogue in the first module is a strong way to connect the topic to a learner's own goals.",
+            "Ungraded unless you specify otherwise."
           ],
-          "tips": [
+          "accessibility": [
+            "Write prompts in plain, direct language — the conversation is the whole experience.",
+            "Don't assume a learner can see an image or diagram unless you've also described it in the prompt.",
+            "Avoid idiom and culturally specific references; the audience is global.",
+            "State roughly how long the Dialogue should take so learners can plan."
+          ],
+          "copyright": [
+            "Scenarios drawn from real cases need to be anonymised or cleared.",
+            "Avoid pasting copyrighted passages into prompts as source material.",
+            "Take care with anything involving real, identifiable people."
+          ]
+        },
+        {
+          "id": "hands-on",
+          "icon": "flask",
+          "title": "Hands-on Practice",
+          "what": "Where learners try the skill directly with no stakes. This can be an off-platform activity with step-by-step instructions, an ungraded Coursera Lab, or in-browser coding. Labs allow trial-and-error learning with immediate feedback and no formal assessment.",
+          "pedagogy": [
             "Provide the activity plus step-by-step learner instructions and any setup details.",
             "Labs need notebooks or files plus environment details — confirm feasibility early.",
             "Structure activities around clear deliverables so completion can be assessed.",
             "No stakes. This is where learners get to fail safely."
-          ]
-        }
-      },
-      {
-        "icon": "question",
-        "title": "Practice Quiz",
-        "short": "Assessment for learning — ungraded self-check.",
-        "detail": {
-          "title": "Practice quiz — assessment for learning",
-          "body": [
-            "Practice assessments are assessment for learning: optional, ungraded, and not counted toward a learner's final grade. They help learners self-assess, catch misconceptions early, and build the confidence to apply a skill for real.",
-            "They're also your best chance to give meaningful feedback while a learner is still forming their understanding.",
-            "Coursera recommends at least one practice quiz and one practice activity per module."
           ],
-          "tips": [
+          "accessibility": [
+            "Check that any required tool is itself accessible before you build around it.",
+            "Write instructions as numbered steps rather than a wall of prose.",
+            "Avoid requiring precise mouse work — drag-and-drop and fine positioning exclude some learners.",
+            "Offer an equivalent path where a learner can't complete the activity as designed."
+          ],
+          "copyright": [
+            "Confirm you can distribute any dataset, starter file, or template you provide.",
+            "Check licences on required tools, especially anything commercial.",
+            "Note anything that requires a learner to create an account or pay."
+          ]
+        },
+        {
+          "id": "practice-quiz",
+          "icon": "question",
+          "title": "Practice Quiz",
+          "what": "Assessment for learning: optional, ungraded, and not counted toward a learner's final grade. Practice quizzes help learners self-assess, catch misconceptions early, and build the confidence to apply a skill for real.",
+          "pedagogy": [
+            "Coursera recommends at least one practice quiz and one practice activity per module.",
             "Provide every question, the correct answers, and feedback for both correct and incorrect responses.",
             "Feedback should help learners identify the error, not just mark it wrong.",
             "Rehearse the same thinking the graded assessment will ask for.",
             "Use them generously — they cost a learner nothing."
-          ]
-        }
-      },
-      {
-        "icon": "rosette",
-        "title": "Graded Assessment",
-        "short": "Assessment of learning — checks mastery.",
-        "detail": {
-          "title": "Graded assessment — assessment of learning",
-          "body": [
-            "Graded assessments are assessment of learning: required, counted toward the final grade, and used to evaluate whether learners actually achieved the stated objectives.",
-            "Every module needs at least one, and every course-level objective should be validated somewhere in the graded assessments. Regular graded checkpoints give learners timely confirmation of progress instead of one high-stakes bottleneck at the end.",
-            "Coursera also recommends at least one graded project per course — an authentic, hands-on assessment with real-world application that learners can put in a portfolio."
           ],
-          "tips": [
-            "Must map to the module's stated learning objectives — not trivia from a reading.",
+          "accessibility": [
+            "Any image in a question stem needs alt text conveying what the question depends on.",
+            "Write stems in plain language; avoid double negatives and unnecessary complexity.",
+            "Avoid questions that require distinguishing colours.",
+            "Avoid time limits on practice."
+          ],
+          "copyright": [
+            "Images, passages, and data used in question stems need clearing like anything else.",
+            "Avoid reusing questions from a commercial test bank without a licence."
+          ]
+        },
+        {
+          "id": "graded-assessment",
+          "icon": "rosette",
+          "title": "Graded Assessment",
+          "what": "Assessment of learning: required, counted toward the final grade, and used to evaluate whether learners achieved the stated objectives. Every module needs at least one, and every course-level objective should be validated somewhere in the graded assessments.",
+          "pedagogy": [
             "A 10-question auto-graded quiz with answer-specific feedback is the common default.",
+            "Must map to the module's stated learning objectives — not trivia from a reading.",
             "Point learners to the specific review material for anything they missed.",
+            "Regular graded checkpoints beat one high-stakes bottleneck at the end.",
+            "Coursera also recommends at least one graded project per course — an authentic, hands-on assessment learners can put in a portfolio.",
             "For projects, AI-graded assignments and programming assignments can evaluate a submitted artifact."
+          ],
+          "accessibility": [
+            "Same requirements as practice quizzes: alt text on anything the question depends on, plain-language stems, no colour-only distinctions.",
+            "If a time limit is genuinely necessary, flag it early so extended-time accommodations can be arranged.",
+            "Make sure the assessment tests the skill, not a learner's ability to use an interface."
+          ],
+          "copyright": [
+            "Clear any images, passages, or datasets used in questions or project briefs.",
+            "Be clear about who owns what learners submit, especially for portfolio projects."
           ]
         }
-      }
-    ]
-  },
-  "wwhaa": {
-    "title": "Structure every module with WWHAA",
-    "intro": "Coursera recommends the Why → What → How → Apply → Assess pattern for each module. It creates a complete, self-contained learning cycle — which is exactly what lets a module hold up on its own.",
-    "phases": [
-      {
-        "key": "Why",
-        "icon": "lightbulb",
-        "headline": "Establish real-world relevance",
-        "body": "Show the learner why this skill matters before teaching it. In a first module, this replaces the traditional course introduction entirely.",
-        "formats": "Instructor video, real-world scenario, Coach Dialogue"
-      },
-      {
-        "key": "What",
-        "icon": "book",
-        "headline": "Teach key concepts",
-        "body": "Introduce the essential ideas the skill rests on — the minimum a learner needs before they can try it.",
-        "formats": "Reading, short video, graphic, audio podcast"
-      },
-      {
-        "key": "How",
-        "icon": "gear",
-        "headline": "Bridge theory and practice",
-        "body": "Show the skill actually being performed. Demonstration is what turns a concept into something a learner can picture doing.",
-        "formats": "Demonstration, walkthrough, worked case"
-      },
-      {
-        "key": "Apply",
-        "icon": "flask",
-        "headline": "Practice in realistic scenarios",
-        "body": "Let learners try it with no stakes and get feedback while it's still cheap to be wrong.",
-        "formats": "Hands-on activity, lab, Dialogue, practice quiz"
-      },
-      {
-        "key": "Assess",
-        "icon": "rosette",
-        "headline": "Validate learning",
-        "body": "Check whether the module's objectives were met, and point learners to review material for anything missed.",
-        "formats": "Graded quiz, graded project"
-      }
-    ],
-    "notes": [
-      {
-        "icon": "star",
-        "title": "Choose the format that fits the phase",
-        "body": "WWHAA guides format decisions too. Try not to default to video for everything — pick what serves the goal of that phase."
-      },
-      {
-        "icon": "layers",
-        "title": "Aim for no more than two of the same type in a row",
-        "body": "Varied sequences — video, then reading, then practice activity — sustain engagement. Coursera's internal research shows learners drop off at significantly higher rates in repetitive sequences."
-      }
-    ]
-  },
-  "phrasing": {
-    "title": "Write it so it stands on its own",
-    "intro": "This breaks on phrasing more often than on structure. Aim to have every item open by establishing its own context, so a learner doesn't need to have seen anything else first.",
-    "dontLabel": "Instead of this",
-    "doLabel": "Write this",
-    "rows": [
-      {
-        "aspect": "Module titles",
-        "dont": "\"Module 1: Introduction to Data Cleaning\"",
-        "do": "\"Identifying and Handling Missing Data\""
-      },
-      {
-        "aspect": "Module transitions",
-        "dont": "\"Now that you've mastered the basics from Module 1, let's apply those concepts to…\"",
-        "do": "\"Data transformation is essential for analysis. Let's explore how to use SQL functions to…\""
-      },
-      {
-        "aspect": "Program references",
-        "dont": "\"As part of this Data Science Specialization, you'll use these skills in the capstone project…\"",
-        "do": "\"These data preprocessing skills are essential for any machine learning project. Let's practice with a real dataset…\""
-      },
-      {
-        "aspect": "Sequential references",
-        "dont": "\"In the previous lesson, we explored how to optimize this code…\"",
-        "do": "\"Code optimization involves several key strategies…\""
-      },
-      {
-        "aspect": "Assessment references",
-        "dont": "\"Remember this for the final quiz…\"",
-        "do": "\"This concept is fundamental to understanding how databases work…\""
-      },
-      {
-        "aspect": "Prior knowledge",
-        "dont": "\"You learned basic SQL in Module 2.\"",
-        "do": "\"This module assumes familiarity with basic SQL queries.\""
-      }
-    ]
-  },
-  "responsibilities": {
-    "title": "Copyright and accessibility",
-    "intro": "These apply to every asset you build, and they're far cheaper to handle while drafting than after production. Duke-specific guidance will be added here.",
-    "groups": [
-      {
-        "icon": "copyright",
-        "label": "Copyright",
-        "items": [
-          "Confirm you have permission for every image, figure, video clip, dataset, and excerpt that isn't yours.",
-          "Attribute sources, and keep a record of what you cleared and where it came from.",
-          "Course content reaches a global public audience — classroom fair-use reasoning generally doesn't carry over.",
-          "Clear permissions broadly rather than for one narrow use, so rights don't have to be chased again if content is refreshed later."
-        ]
-      },
-      {
-        "icon": "access",
-        "label": "Accessibility",
-        "items": [
-          "Video needs accurate captions and a transcript. Audio needs a transcript.",
-          "Describe every meaningful image in alt text; mark purely decorative images as decorative.",
-          "Don't rely on colour alone to carry meaning, and check contrast on slides and graphics.",
-          "Use real headings and lists so screen readers can navigate a reading's structure.",
-          "Write descriptive link text rather than \"click here.\"",
-          "Interactive plugins and labs need keyboard operability — verify before committing to one."
-        ]
-      }
-    ]
-  },
-  "comparison": {
-    "title": "How this differs from a for-credit course",
-    "intro": "Most of the surprises in a first Coursera build come from assumptions carried over from semester teaching.",
-    "rows": [
-      { "aspect": "Schedule", "credit": "Fixed semester, weekly meetings", "coursera": "No schedule. Learners start any day and work at their own pace on personalized deadlines." },
-      { "aspect": "Your presence", "credit": "You're in the room; you can adjust live", "coursera": "Fully asynchronous. Everything a learner needs has to already be in the course." },
-      { "aspect": "Enrollment", "credit": "Registrar enforces prerequisites and sequence", "coursera": "Anyone can enroll in any course, in any order. Prerequisites are stated, not enforced." },
-      { "aspect": "Structure", "credit": "Courses build on each other within a program", "coursera": "Courses are modular and self-contained. Many learners take one course without the others." },
-      { "aspect": "Length", "credit": "~40+ contact hours per course", "coursera": "2–8 hours of learning per course; 12–32 hours across the whole Specialization." },
-      { "aspect": "Your audience", "credit": "Admitted students with shared background", "coursera": "Working adults worldwide, widely varied backgrounds, mostly self-motivated." },
-      { "aspect": "Assessment", "credit": "Essays, exams, participation, your judgment", "coursera": "Mostly auto-graded. At least one graded assessment per module." },
-      { "aspect": "Attrition", "credit": "Grades and tuition keep students enrolled", "coursera": "Nothing holds anyone. Every module has to earn the next click." }
-    ]
-  },
-  "completion": {
-    "title": "Certificates",
-    "body": "Learners who complete a single course earn a shareable course certificate for that course. Learners who complete every course in the Specialization earn a Specialization Certificate that recognises the full competency."
-  },
-  "handoff": {
-    "title": "Ready to plan yours?",
-    "body": "The template is the blank version of everything above — no guidance, just the fields your design team needs. Come back here any time you want a refresher.",
-    "cta": "Open the planning template"
+      ],
+      "sections": [
+        {
+          "type": "template",
+          "title": "Filling out the template",
+          "placeholder": true
+        }
+      ]
+    }
   }
 }
