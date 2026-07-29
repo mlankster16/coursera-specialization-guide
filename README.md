@@ -53,11 +53,18 @@ splits them:
   favour of practice quizzes and Coach Dialogues), peer review assignments (not
   recommended for public courses), and any mention of Specialization certificates
   counting toward a degree (Duke does not opt in).
-- Structural targets are Duke's: 3–4 courses and 12–32 hours per Specialization;
-  2–4 learning objectives, 3–4 modules, and 2–8 hours per course; 2–4 objectives,
-  2–3 optional lessons, and 1 graded assessment per module. Coursera's current
-  Specialization spec requires 3+ courses, so Duke's 3–4 sits inside it; the hour
-  targets are intentionally lighter than Coursera's recommendations.
+- Structural targets are Duke's:
+  - **Specialization** — 3–6 courses, 12–48 hours of learner time
+  - **Course** — 2–4 learning objectives, 3–6 modules, 2–8 hours
+  - **Module** — 1–3 learning objectives, 2–5 optional lessons, 1 graded assessment
+
+  Objectives differ by level deliberately: 2–4 per course, 1–3 per module. Coursera's
+  current Specialization spec requires 3+ courses, so Duke's range sits inside it;
+  the hour targets are intentionally lighter than Coursera's recommendations.
+
+  All of these live in `content.json` only — grep a range before changing it, since
+  some numbers that look alike are unrelated (Coach Dialogue's "2–4 follow-up areas",
+  for one).
 
 ## Still open
 

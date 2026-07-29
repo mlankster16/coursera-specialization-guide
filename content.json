@@ -49,7 +49,7 @@
       "includes": [
         {
           "icon": "layers",
-          "label": "3–4 courses"
+          "label": "3–6 courses"
         },
         {
           "icon": "clock",
@@ -93,7 +93,7 @@
         },
         {
           "icon": "list",
-          "label": "3–4 modules"
+          "label": "3–6 modules"
         },
         {
           "icon": "clock",
@@ -127,11 +127,11 @@
       "cardSpecs": [
         {
           "icon": "star",
-          "label": "2–4 learning objectives"
+          "label": "1–3 learning objectives"
         },
         {
           "icon": "book",
-          "label": "2–3 lessons (optional)"
+          "label": "2–5 lessons (optional)"
         },
         {
           "icon": "check",
@@ -205,7 +205,7 @@
       "facts": [
         {
           "icon": "layers",
-          "label": "3–4 courses",
+          "label": "3–6 courses",
           "sub": "the whole program"
         },
         {
@@ -258,7 +258,7 @@
           "tips": [
             "Name one meaningful, demonstrable capability — not a topic area.",
             "Write it as something a learner could claim about themselves afterwards.",
-            "Check that your 3–4 courses actually add up to it, with nothing important missing.",
+            "Check that your 3–6 courses actually add up to it, with nothing important missing.",
             "Put high-level learning objectives on the Specialization landing page, then chunk them into course- and module-level objectives."
           ]
         },
@@ -270,7 +270,7 @@
             "The competency the full Specialization builds.",
             "Who it's for: the roles, contexts, or situations of your intended learner.",
             "What learners should already know or be able to do coming in, stated as a skill.",
-            "A working title for each of the 3–4 courses, and the skill each one owns.",
+            "A working title for each of the 3–6 courses, and the skill each one owns.",
             "Where the hands-on project or projects will live.",
             "Landing page copy: description, audience, prerequisites, and time commitment."
           ]
@@ -300,7 +300,7 @@
         },
         {
           "icon": "list",
-          "label": "3–4 modules",
+          "label": "3–6 modules",
           "sub": "per course"
         },
         {
@@ -393,7 +393,7 @@
             "Course title, named for its skill.",
             "The 2–4 learning objectives this course owns.",
             "What learners should already know, stated as a skill.",
-            "A working title for each of the 3–4 modules and the skill each one teaches.",
+            "A working title for each of the 3–6 modules and the skill each one teaches.",
             "The graded evidence of learning — what proves the objectives were met.",
             "Where the course's hands-on project sits.",
             "Landing page copy: description, audience, prerequisites, time commitment, tools needed."
@@ -419,7 +419,7 @@
       "facts": [
         {
           "icon": "star",
-          "label": "2–4 learning objectives",
+          "label": "1–3 learning objectives",
           "sub": "per module"
         },
         {
@@ -429,7 +429,7 @@
         },
         {
           "icon": "book",
-          "label": "2–3 lessons",
+          "label": "2–5 lessons",
           "sub": "optional grouping"
         },
         {
@@ -444,7 +444,7 @@
           "title": "What a module is",
           "body": [
             "A module is one self-contained section of a course. Modules make up the course structure, and learners work through them at their own pace on personalized deadlines.",
-            "Each module is built around a single skill, carries its own 2–4 learning objectives, and ends with at least one graded assessment that checks those objectives."
+            "Each module is built around a single skill, carries its own 1–3 learning objectives, and ends with at least one graded assessment that checks those objectives."
           ],
           "tips": [
             "Title the module for the skill it teaches — \"Identifying and Handling Missing Data,\" not \"Module 1: Introduction.\" Coursera adds the numbering, and your own numbers break if a module moves.",
@@ -604,7 +604,7 @@
           "type": "prose",
           "title": "Lessons — optional grouping",
           "body": [
-            "Lessons are an optional layer inside a module. They let you cluster related items so a longer module is easier for learners to navigate — around 2–3 per module, when used.",
+            "Lessons are an optional layer inside a module. They let you cluster related items so a longer module is easier for learners to navigate — around 2–5 per module, when used.",
             "You don't have to use them. A module with only a handful of items usually reads better without them."
           ],
           "tips": [
@@ -625,7 +625,7 @@
           "title": "What to prepare at this level",
           "items": [
             "Module title, named for its skill.",
-            "The 2–4 learning objectives this module owns.",
+            "The 1–3 learning objectives this module owns.",
             "A module description written to the learner in your own voice.",
             "The item sequence — what learners do, in order, and which WWHAA phase each item serves.",
             "The practice plan: what learners try before the graded check, and how they get feedback.",
