@@ -52,7 +52,6 @@
     ],
     "specialization": {
       "definition": "A series of related, in-depth courses that help learners master a competency.",
-      "outcome": "Learners who complete every course in the Specialization earn a Specialization Certificate.",
       "includes": [
         {
           "icon": "layers",
@@ -70,7 +69,11 @@
           "icon": "certificate",
           "label": "Specialization Certificate"
         }
-      ]
+      ],
+      "highlight": {
+        "label": "The headline outcome",
+        "body": "By the end, learners can [observable action] [product or task] [to a standard]. Define this first — every course below exists to deliver it."
+      }
     },
     "courses": {
       "cards": [
@@ -283,6 +286,20 @@
             "A series of related, in-depth courses that help learners master a competency. Specializations include projects — authentic, hands-on assessments with real-world applications that let learners demonstrate the skill.",
             "Learners who complete every course earn a Specialization Certificate. Learners who complete a single course earn a course certificate for that course alone.",
             "Design it as a coherent set rather than a fixed path. Learners can enroll in any course in any order, so each course needs to hold up on its own."
+          ]
+        },
+        {
+          "type": "prose",
+          "title": "Who you're designing for",
+          "body": [
+            "Coursera learners are mostly working adults choosing on career grounds. They arrive scanning for a skill they can use at work and show to someone else, and nothing obliges them to stay — every module has to earn the next click.",
+            "Coursera organises its whole catalogue around skills: the specific, in-demand competencies learners need for their careers. A Specialization that names a high-demand skill plainly is easier for the right learner to find, and easier for them to justify spending 12–32 hours on."
+          ],
+          "tips": [
+            "Name the skill the way a learner would search for it, not the way a syllabus would title it.",
+            "Say what someone will be able to do afterwards — that's what gets read on the landing page.",
+            "The hands-on project is what gives learners something concrete to show. Plan it as part of the value, not as an add-on.",
+            "Assume varied backgrounds and no shared prior coursework. State needed background as a skill."
           ]
         },
         {

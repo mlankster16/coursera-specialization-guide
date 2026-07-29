@@ -1387,3 +1387,16 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   .page-nav { flex-direction: column; }
   .page-nav-link, .page-nav-link.next { min-width: 0; text-align: left; margin-left: 0; }
 }
+
+/* Headline-outcome callout inside the Specialization card */
+.outcome-label {
+  display: block;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--spec);
+  margin-bottom: 4px;
+}
+.outcome-body { display: block; }

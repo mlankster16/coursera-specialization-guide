@@ -164,7 +164,13 @@ function homeSpecHtml(s) {
           <span class="big-card-main">
             <span class="big-card-title">Specialization</span>
             <span class="big-card-def">${esc(s.definition)}</span>
-            <span class="outcome-box">${icon('star')}<span>${esc(s.outcome)}</span></span>
+            <span class="outcome-box">
+              ${icon('star')}
+              <span>
+                <span class="outcome-label">${esc(s.highlight.label)}</span>
+                <span class="outcome-body">${esc(s.highlight.body)}</span>
+              </span>
+            </span>
           </span>
           <span class="big-card-includes">
             <span class="includes-label">Includes</span>
