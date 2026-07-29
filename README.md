@@ -17,15 +17,31 @@ splits them:
 
 ## Design notes
 
-- Modularity over sequence. Courses are framed as self-contained and reusable in
-  another Specialization, not as chapters in a fixed path. There is deliberately
-  no skill ladder or prerequisite chain.
-- Definitions come from Coursera's own "Getting Started: Coursera Terminology"
-  documentation.
+- Modularity over sequence, which is Coursera's own stated first principle
+  ("Design modular, standalone content"). Courses are framed as self-contained and
+  reusable in another Specialization, not as chapters in a fixed path — but note the
+  nuance Coursera is explicit about: standalone does *not* mean unsequenced. Content
+  may increase in complexity; what breaks reuse is cross-referencing other courses,
+  modules, or the Specialization by name.
+- Definitions come from Coursera's "Getting Started: Coursera Terminology," "Course
+  Content Specifications," and "Specialization Content Specifications."
+- Deliberately omitted at Duke's direction: discussion prompts (being sunset in
+  favour of practice quizzes and Coach Dialogues), peer review assignments (not
+  recommended for public courses), and any mention of Specialization certificates
+  counting toward a degree (Duke does not opt in).
 - Structural targets are Duke's: 3–4 courses and 12–32 hours per Specialization;
   2–4 learning objectives, 3–4 modules, and 2–8 hours per course; 2–4 objectives,
-  2–3 optional lessons, and 1 graded assessment per module. These are intentionally
-  lighter than Coursera's public guidance.
+  2–3 optional lessons, and 1 graded assessment per module. Coursera's current
+  Specialization spec requires 3+ courses, so Duke's 3–4 sits inside it; the hour
+  targets are intentionally lighter than Coursera's recommendations.
+
+## Still open
+
+- `templateUrl` is empty, so both "Open the planning template" buttons are inert.
+- The Copyright and accessibility section holds general guidance only. Duke-specific
+  policy is still to be supplied and slotted in.
+- The `.docx` in `template/` predates several rounds of revision and needs a rebuild
+  to match this site.
 
 ## Editing
 

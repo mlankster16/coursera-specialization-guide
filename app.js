@@ -18,6 +18,12 @@ const ICONS = {
   trophy: '<path d="M8 4.2h8v4.6a4 4 0 0 1-8 0V4.2Z"/><path d="M16 5.7h2.4a2.4 2.4 0 0 1-2.4 3.9"/><path d="M8 5.7H5.6A2.4 2.4 0 0 0 8 9.6"/><path d="M12 12.8v2.9"/><path d="M9.4 19.8h5.2"/><path d="M10.6 15.7h2.8l.6 4.1h-4l.6-4.1Z"/>',
   scale: '<path d="M12 4.2v15.6"/><path d="M9 19.8h6"/><path d="M5 7.6h14"/><path d="M7 7.6 4.2 13.4h5.6L7 7.6Z"/><path d="M17 7.6l-2.8 5.8h5.6L17 7.6Z"/>',
   arrow: '<path d="M5 12h13"/><path d="m13 6.5 5.5 5.5L13 17.5"/>',
+  mic: '<path d="M12 3.4a2.9 2.9 0 0 1 2.9 2.9v5a2.9 2.9 0 0 1-5.8 0v-5A2.9 2.9 0 0 1 12 3.4Z"/><path d="M6.6 11.3a5.4 5.4 0 0 0 10.8 0"/><path d="M12 16.7v3.9"/><path d="M9.2 20.6h5.6"/>',
+  plugin: '<path d="M9 3.4v4.2"/><path d="M15 3.4v4.2"/><path d="M6.4 7.6h11.2v3.8a5.6 5.6 0 0 1-11.2 0V7.6Z"/><path d="M12 17v3.6"/>',
+  lightbulb: '<path d="M9.4 17.6h5.2"/><path d="M10.2 20.5h3.6"/><path d="M12 3.4a5.4 5.4 0 0 1 3.2 9.8c-.5.4-.8.9-.8 1.5v.6H9.6v-.6c0-.6-.3-1.1-.8-1.5A5.4 5.4 0 0 1 12 3.4Z"/>',
+  gear: '<circle cx="12" cy="12" r="3"/><path d="M12 3.6v2.3M12 18.1v2.3M5.1 7.7l2 1.2M16.9 15.1l2 1.2M5.1 16.3l2-1.2M16.9 8.9l2-1.2"/>',
+  copyright: '<circle cx="12" cy="12" r="8.5"/><path d="M14.9 9.5a3.7 3.7 0 1 0 0 5"/>',
+  access: '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="7.7" r="1.2"/><path d="M7.6 10.3h8.8"/><path d="M12 10.7v4.4"/><path d="m9.3 19 1.5-3.9h2.4l1.5 3.9"/>',
 };
 
 function icon(name) {
@@ -84,10 +90,107 @@ function pageHtml() {
       ${stemHtml('dashed')}
       ${assetsHtml()}
     </div>
+    ${wwhaaHtml()}
+    ${phrasingHtml()}
+    ${responsibilitiesHtml()}
     ${comparisonHtml()}
     ${completionHtml()}
     ${handoffHtml()}
   `;
+}
+
+/* WWHAA: five clickable phases in a horizontal band */
+function wwhaaHtml() {
+  const w = C.wwhaa;
+  return `
+    <section class="block">
+      <h2 class="section-title">${esc(w.title)}</h2>
+      <p class="section-intro">${esc(w.intro)}</p>
+      <div class="wwhaa-band">
+        ${w.phases
+          .map(
+            (p, i) => `
+          ${i > 0 ? '<span class="wwhaa-sep" aria-hidden="true">&rarr;</span>' : ''}
+          <button type="button" class="wwhaa-phase" ${trigger({
+            title: `${p.key} — ${p.headline}`,
+            body: [p.body],
+            tips: [`Formats that fit this phase: ${p.formats}`],
+          })}>
+            <span class="wwhaa-icon">${icon(p.icon)}</span>
+            <span class="wwhaa-key">${esc(p.key)}</span>
+            <span class="wwhaa-headline">${esc(p.headline)}</span>
+          </button>`
+          )
+          .join('')}
+      </div>
+      <div class="note-grid">
+        ${w.notes
+          .map(
+            (n) => `
+          <div class="mini-note">
+            <span class="mini-note-icon">${icon(n.icon)}</span>
+            <div>
+              <p class="mini-note-title">${esc(n.title)}</p>
+              <p class="mini-note-body">${esc(n.body)}</p>
+            </div>
+          </div>`
+          )
+          .join('')}
+      </div>
+    </section>`;
+}
+
+/* Don't say / Do say */
+function phrasingHtml() {
+  const p = C.phrasing;
+  return `
+    <section class="block">
+      <h2 class="section-title">${esc(p.title)}</h2>
+      <p class="section-intro">${esc(p.intro)}</p>
+      <div class="phrasing-table">
+        <div class="phrasing-row phrasing-header">
+          <span></span>
+          <span class="col-dont">${esc(p.dontLabel)}</span>
+          <span class="col-do">${esc(p.doLabel)}</span>
+        </div>
+        ${p.rows
+          .map(
+            (r) => `
+          <div class="phrasing-row">
+            <span class="phrasing-aspect">${esc(r.aspect)}</span>
+            <span class="phrasing-dont">${esc(r.dont)}</span>
+            <span class="phrasing-do">${esc(r.do)}</span>
+          </div>`
+          )
+          .join('')}
+      </div>
+    </section>`;
+}
+
+/* Copyright + accessibility */
+function responsibilitiesHtml() {
+  const r = C.responsibilities;
+  return `
+    <section class="block">
+      <h2 class="section-title">${esc(r.title)}</h2>
+      <p class="section-intro">${esc(r.intro)}</p>
+      <div class="resp-grid">
+        ${r.groups
+          .map(
+            (g) => `
+          <div class="resp-card">
+            <div class="resp-card-top">
+              <span class="resp-icon">${icon(g.icon)}</span>
+              <span class="resp-label">${esc(g.label)}</span>
+            </div>
+            <ul class="resp-list">
+              ${g.items.map((i) => `<li>${esc(i)}</li>`).join('')}
+            </ul>
+          </div>`
+          )
+          .join('')}
+      </div>
+    </section>`;
 }
 
 function heroHtml() {
