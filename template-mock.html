@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Template design mock — Coursera Specialization Design Template</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #012169;
+    --whisper: #F3F2F1;
+    --hatteras: #E2E6ED;
+    --cast-iron: #262626;
+    --graphite: #666666;
+    --persimmon: #E89923;
+    --white: #fff;
+
+    --spec: #00539B;  --spec-bg: #EFF4FB;  --spec-line: #C6D8EE;
+    --course: #17724A; --course-bg: #EDF6F1; --course-line: #C2DFD1;
+    --module: #6B4E9E; --module-bg: #F3EFFA; --module-line: #D8CCEC;
+    --asset: #B4700C;  --asset-bg: #FDF6EA;  --asset-line: #EFD9AF;
+  }
+
+  body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    background: #E7E9ED;
+    color: var(--cast-iron);
+    padding: 32px 16px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Mock-only banner, not part of the template */
+  .mock-note {
+    max-width: 8.5in; margin: 0 auto 24px;
+    background: var(--navy); color: var(--white);
+    border-radius: 10px; padding: 16px 22px;
+    font-size: 0.84rem; line-height: 1.6;
+  }
+  .mock-note strong { font-family: 'Montserrat', sans-serif; }
+
+  /* The simulated page */
+  .page {
+    max-width: 8.5in;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 0.85in 0.8in 1in;
+    box-shadow: 0 2px 18px rgba(1,33,105,0.13);
+  }
+
+  /* ---- Document title block ---- */
+  .doc-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800; font-size: 1.6rem;
+    color: var(--navy); line-height: 1.2;
+  }
+  .doc-rule { height: 3px; background: var(--navy); margin: 12px 0 18px; }
+
+  /* Tier strip — mirrors the site's legend */
+  .tier-strip { display: flex; gap: 6px; margin-bottom: 18px; }
+  .tier-chip {
+    flex: 1; text-align: center;
+    font-family: 'Montserrat', sans-serif; font-weight: 700;
+    font-size: 0.62rem; letter-spacing: 0.09em; text-transform: uppercase;
+    padding: 7px 4px; border-radius: 5px; border: 1px solid;
+  }
+  .tier-chip.s { color: var(--spec); background: var(--spec-bg); border-color: var(--spec-line); }
+  .tier-chip.c { color: var(--course); background: var(--course-bg); border-color: var(--course-line); }
+  .tier-chip.m { color: var(--module); background: var(--module-bg); border-color: var(--module-line); }
+  .tier-chip.a { color: var(--asset); background: var(--asset-bg); border-color: var(--asset-line); }
+
+  /* ---- Callouts ---- */
+  .callout {
+    background: var(--whisper); border-left: 3px solid var(--navy);
+    border-radius: 0 7px 7px 0; padding: 12px 16px;
+    font-size: 0.82rem; line-height: 1.6; color: var(--cast-iron);
+    margin-bottom: 16px;
+  }
+  .callout.rule {
+    background: #FDF6F0; border-left-color: var(--persimmon);
+  }
+  .callout-label {
+    display: block; font-family: 'Montserrat', sans-serif; font-weight: 700;
+    font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--navy); margin-bottom: 4px;
+  }
+  .callout.rule .callout-label { color: #7a3300; }
+
+  .meta-line { font-size: 0.85rem; color: var(--cast-iron); margin-bottom: 4px; }
+  .meta-line b { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--navy); }
+
+  /* ---- Section banners, colour-coded by level ---- */
+  .band {
+    display: flex; align-items: baseline; gap: 10px;
+    padding: 10px 16px; border-radius: 7px;
+    margin: 30px 0 16px;
+  }
+  .band-num {
+    font-family: 'Montserrat', sans-serif; font-weight: 800;
+    font-size: 0.95rem; color: var(--white);
+    background: rgba(255,255,255,0.25); border-radius: 4px;
+    padding: 1px 8px;
+  }
+  .band-title {
+    font-family: 'Montserrat', sans-serif; font-weight: 800;
+    font-size: 1rem; color: var(--white); letter-spacing: 0.01em;
+  }
+  .band-sub { font-size: 0.76rem; color: rgba(255,255,255,0.85); margin-left: auto; }
+  .band.spec   { background: var(--spec); }
+  .band.course { background: var(--course); }
+  .band.module { background: var(--module); }
+  .band.asset  { background: var(--asset); }
+
+  /* ---- Fields ---- */
+  .field { margin-bottom: 13px; }
+  .field-label {
+    font-family: 'Montserrat', sans-serif; font-weight: 700;
+    font-size: 0.78rem; color: var(--navy); margin-bottom: 4px;
+  }
+  .field-hint { font-size: 0.72rem; color: var(--graphite); font-style: italic; margin-bottom: 4px; }
+  .field-box {
+    border: 1px solid var(--hatteras); border-radius: 6px;
+    background: var(--white);
+    padding: 10px 12px; min-height: 38px;
+    font-size: 0.84rem; color: #9aa3b2;
+  }
+  .field-box.tall { min-height: 66px; }
+  .field-box.numbered { color: #9aa3b2; line-height: 1.9; }
+
+  .field-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+
+  /* Level tinting so a field visually belongs to its section */
+  .lv-spec   .field-box { background: var(--spec-bg);   border-color: var(--spec-line); }
+  .lv-course .field-box { background: var(--course-bg); border-color: var(--course-line); }
+  .lv-module .field-box { background: var(--module-bg); border-color: var(--module-line); }
+  .lv-spec   .field-label { color: var(--spec); }
+  .lv-course .field-label { color: var(--course); }
+  .lv-module .field-label { color: var(--module); }
+
+  /* ---- Tables ---- */
+  table { width: 100%; border-collapse: collapse; margin-bottom: 14px; font-size: 0.78rem; }
+  th {
+    font-family: 'Montserrat', sans-serif; font-weight: 700;
+    font-size: 0.67rem; letter-spacing: 0.05em; text-transform: uppercase;
+    text-align: left; padding: 8px 10px;
+    background: var(--whisper); color: var(--graphite);
+    border: 1px solid var(--hatteras);
+  }
+  td {
+    padding: 8px 10px; border: 1px solid var(--hatteras);
+    color: #9aa3b2; vertical-align: top;
+  }
+  td.n { width: 34px; text-align: center; color: var(--graphite); font-weight: 700; }
+  .lv-course th { background: var(--course-bg); color: var(--course); border-color: var(--course-line); }
+  .lv-course td { border-color: var(--course-line); }
+  .lv-asset th { background: var(--asset-bg); color: var(--asset); border-color: var(--asset-line); }
+  .lv-asset td { border-color: var(--asset-line); }
+
+  /* ---- Quiz placeholder ---- */
+  .quiz-slot {
+    border: 2px dashed var(--asset); background: var(--asset-bg);
+    border-radius: 9px; padding: 16px 18px; margin: 16px 0 8px;
+  }
+  .quiz-slot-title {
+    font-family: 'Montserrat', sans-serif; font-weight: 800;
+    font-size: 0.85rem; color: #7a3300; margin-bottom: 6px;
+  }
+  .quiz-slot p { font-size: 0.8rem; line-height: 1.6; color: var(--cast-iron); }
+  .quiz-slot code {
+    font-family: 'Roboto Mono', ui-monospace, monospace; font-size: 0.74rem;
+    background: var(--white); border: 1px solid var(--asset-line);
+    border-radius: 3px; padding: 1px 5px;
+  }
+
+  .divider { height: 1px; background: var(--hatteras); margin: 26px 0; }
+  .repeat-note {
+    font-size: 0.76rem; color: var(--graphite); font-style: italic;
+    text-align: center; padding: 14px; border: 1px dashed var(--hatteras);
+    border-radius: 7px; margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+
+<div class="mock-note">
+  <strong>Design mock — not the template itself.</strong> This shows the proposed look for the
+  Duke Coursera Specialization Design Template, styled to match the guidance site. Fields are shown
+  empty with grey placeholder text. Once the design is settled, this gets built as a .docx for Google Docs.
+</div>
+
+<div class="page">
+
+  <p class="doc-title">Coursera Specialization Design Template</p>
+  <div class="doc-rule"></div>
+
+  <div class="tier-strip">
+    <span class="tier-chip s">Specialization</span>
+    <span class="tier-chip c">Course</span>
+    <span class="tier-chip m">Module</span>
+    <span class="tier-chip a">Lessons + Assets</span>
+  </div>
+
+  <div class="callout">
+    <span class="callout-label">How to use this</span>
+    Complete the fields and paste links to any source material created outside this document.
+    Duplicate a module section whenever a course has more than three modules. Use the document
+    outline to move between levels.
+  </div>
+
+  <p class="meta-line"><b>Prepared for:</b> [ faculty / program name ]</p>
+  <p class="meta-line"><b>Learning Experience Designer:</b> [ name ]</p>
+
+  <div class="callout rule" style="margin-top:16px">
+    <span class="callout-label">Requirement</span>
+    Every module needs at least one graded quiz with a minimum of 10 questions and learner
+    feedback for both correct and incorrect responses.
+  </div>
+
+  <!-- ============ SPECIALIZATION ============ -->
+  <div class="band spec">
+    <span class="band-num">1</span>
+    <span class="band-title">Specialization Landing Page</span>
+    <span class="band-sub">Complete once</span>
+  </div>
+
+  <div class="lv-spec">
+    <div class="field">
+      <p class="field-label">Specialization title</p>
+      <div class="field-box">[ title ]</div>
+    </div>
+    <div class="field">
+      <p class="field-label">Specialization description</p>
+      <p class="field-hint">Learner-facing. What it covers, who it's for, why it matters.</p>
+      <div class="field-box tall">[ description ]</div>
+    </div>
+    <div class="field-pair">
+      <div class="field">
+        <p class="field-label">Who this is for</p>
+        <div class="field-box">[ audience ]</div>
+      </div>
+      <div class="field">
+        <p class="field-label">Recommended background</p>
+        <div class="field-box">[ what learners should already know ]</div>
+      </div>
+    </div>
+    <div class="field">
+      <p class="field-label">What learners will be able to do by the end</p>
+      <div class="field-box">[ overall Specialization outcome ]</div>
+    </div>
+    <div class="field">
+      <p class="field-label">Skills learners will gain</p>
+      <div class="field-box">[ skill 1, skill 2, skill 3, skill 4, skill 5 ]</div>
+    </div>
+    <div class="field-pair">
+      <div class="field">
+        <p class="field-label">Estimated total learning time</p>
+        <div class="field-box">[ 12–48 hours ]</div>
+      </div>
+      <div class="field">
+        <p class="field-label">Difficulty level</p>
+        <div class="field-box">[ Beginner / Intermediate / Advanced ]</div>
+      </div>
+    </div>
+    <div class="field">
+      <p class="field-label">Tools, technology, or platforms</p>
+      <div class="field-box">[ any required external tools or access ]</div>
+    </div>
+
+    <p class="field-label" style="margin-top:20px">Courses in this Specialization</p>
+    <table>
+      <tr><th style="width:34px">#</th><th>Course title</th><th>Main skill / outcome</th><th style="width:88px">Est. time</th></tr>
+      <tr><td class="n">1</td><td>[ title ]</td><td>[ what learners can do ]</td><td>[ hours ]</td></tr>
+      <tr><td class="n">2</td><td>[ title ]</td><td>[ what learners can do ]</td><td>[ hours ]</td></tr>
+      <tr><td class="n">3</td><td>[ title ]</td><td>[ what learners can do ]</td><td>[ hours ]</td></tr>
+    </table>
+
+    <div class="field">
+      <p class="field-label">Specialization project or culminating experience <span style="font-weight:400;color:var(--graphite)">(optional)</span></p>
+      <div class="field-box">[ description and source link, if applicable ]</div>
+    </div>
+  </div>
+
+  <!-- ============ COURSE ============ -->
+  <div class="band course">
+    <span class="band-num">2.1</span>
+    <span class="band-title">Course 1</span>
+    <span class="band-sub">Landing page, modules, and assets</span>
+  </div>
+
+  <div class="lv-course">
+    <div class="field">
+      <p class="field-label">Course title</p>
+      <p class="field-hint">Name the skill, not a number.</p>
+      <div class="field-box">[ title ]</div>
+    </div>
+    <div class="field">
+      <p class="field-label">Course description</p>
+      <div class="field-box tall">[ learner-facing description ]</div>
+    </div>
+    <div class="field-pair">
+      <div class="field">
+        <p class="field-label">Estimated time to complete</p>
+        <div class="field-box">[ 2–8 hours ]</div>
+      </div>
+      <div class="field">
+        <p class="field-label">Difficulty level</p>
+        <div class="field-box">[ Beginner / Intermediate / Advanced ]</div>
+      </div>
+    </div>
+    <div class="field-pair">
+      <div class="field">
+        <p class="field-label">Primary domain / sub-domain</p>
+        <div class="field-box">[ domain / sub-domain ]</div>
+      </div>
+      <div class="field">
+        <p class="field-label">Secondary domain / sub-domain</p>
+        <div class="field-box">[ domain / sub-domain ]</div>
+      </div>
+    </div>
+    <div class="field">
+      <p class="field-label">Tagged skills</p>
+      <div class="field-box">[ five course-specific skills ]</div>
+    </div>
+    <div class="field">
+      <p class="field-label">Recommended background</p>
+      <div class="field-box">[ what learners should know before starting ]</div>
+    </div>
+    <div class="field">
+      <p class="field-label">What learners will learn</p>
+      <p class="field-hint">2–4 course-level objectives.</p>
+      <div class="field-box tall numbered">1. [ objective ]<br>2. [ objective ]<br>3. [ objective, optional ]<br>4. [ objective, optional ]</div>
+    </div>
+    <div class="field">
+      <p class="field-label">Instructor information and bio source link</p>
+      <div class="field-box">[ bio text, or link to build-ready bio and headshot ]</div>
+    </div>
+  </div>
+
+  <!-- ============ MODULE ============ -->
+  <div class="band module">
+    <span class="band-num">2.1.1</span>
+    <span class="band-title">Course 1 · Module 1</span>
+    <span class="band-sub">Duplicate this section per module</span>
+  </div>
+
+  <div class="lv-module">
+    <div class="field">
+      <p class="field-label">Module title</p>
+      <p class="field-hint">Name the skill it teaches — Coursera adds the number.</p>
+      <div class="field-box">[ title ]</div>
+    </div>
+    <div class="field">
+      <p class="field-label">Module description</p>
+      <p class="field-hint">Learners see this as a message from you. Write conversationally.</p>
+      <div class="field-box tall">[ learner-facing introduction ]</div>
+    </div>
+    <div class="field">
+      <p class="field-label">Module learning objectives</p>
+      <p class="field-hint">1–3 objectives.</p>
+      <div class="field-box numbered">1. [ objective ]<br>2. [ objective, optional ]<br>3. [ objective, optional ]</div>
+    </div>
+    <div class="field-pair">
+      <div class="field">
+        <p class="field-label">Estimated learning time</p>
+        <div class="field-box">[ ~30+ minutes ]</div>
+      </div>
+      <div class="field">
+        <p class="field-label">Graded assessment title</p>
+        <div class="field-box">[ quiz title ]</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ LESSONS + ASSETS ============ -->
+  <div class="band asset">
+    <span class="band-title">Lesson and learning-asset sequence</span>
+    <span class="band-sub">3–6 videos · 1–2 readings · 1–2 activities · 1 graded quiz</span>
+  </div>
+
+  <div class="callout">
+    For anything developed outside this template, paste a link to the final or draft source.
+    Your Learning Experience Designer should be able to build directly from that link.
+  </div>
+
+  <div class="lv-asset">
+    <table>
+      <tr>
+        <th style="width:34px">#</th>
+        <th style="width:104px">Lesson <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></th>
+        <th style="width:104px">Asset type</th>
+        <th>Asset title</th>
+        <th style="width:132px">Build-ready source link</th>
+      </tr>
+      <tr><td class="n">1</td><td>[ lesson ]</td><td>[ type ]</td><td>[ title ]</td><td>[ link ]</td></tr>
+      <tr><td class="n">2</td><td>[ lesson ]</td><td>[ type ]</td><td>[ title ]</td><td>[ link ]</td></tr>
+      <tr><td class="n">3</td><td>[ lesson ]</td><td>[ type ]</td><td>[ title ]</td><td>[ link ]</td></tr>
+      <tr><td class="n">4</td><td>[ lesson ]</td><td>[ type ]</td><td>[ title ]</td><td>[ link ]</td></tr>
+      <tr><td class="n">5</td><td>[ lesson ]</td><td>[ type ]</td><td>[ title ]</td><td>[ link ]</td></tr>
+      <tr><td class="n">…</td><td></td><td></td><td></td><td></td></tr>
+    </table>
+  </div>
+
+  <div class="field">
+    <p class="field-label">Additional build notes, dependencies, or accessibility information</p>
+    <div class="field-box">[ notes for the learning designer ]</div>
+  </div>
+
+  <!-- Quiz placeholder -->
+  <div class="quiz-slot">
+    <p class="quiz-slot-title">Course 1 · Module 1 — Graded Quiz</p>
+    <p>
+      Build this in a copy of <code>Coursera Quiz Template.docx</code>, then paste the link below.
+      That file uses Coursera's import syntax exactly, so it must not be reformatted.
+      Minimum 10 questions, with feedback for correct and incorrect responses.
+    </p>
+    <div class="field" style="margin:12px 0 0">
+      <div class="field-box" style="background:var(--white);border-color:var(--asset-line)">[ link to completed quiz doc ]</div>
+    </div>
+  </div>
+
+  <p class="repeat-note">Module sections repeat for each module · Course sections repeat for each course</p>
+
+</div>
+</body>
+</html>
