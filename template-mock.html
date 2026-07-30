@@ -98,12 +98,14 @@
     padding: 10px 16px; border-radius: 7px;
     margin: 30px 0 16px;
   }
-  .band-num {
-    font-family: 'Montserrat', sans-serif; font-weight: 800;
-    font-size: 0.95rem; color: var(--white);
-    background: rgba(255,255,255,0.25); border-radius: 4px;
-    padding: 1px 8px;
+  /* Level icon, matching the guidance site's icon set */
+  .band-icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 30px; height: 30px; flex-shrink: 0;
+    background: rgba(255,255,255,0.22); border-radius: 6px;
+    align-self: center;
   }
+  .band-icon svg { width: 19px; height: 19px; }
   .band-title {
     font-family: 'Montserrat', sans-serif; font-weight: 800;
     font-size: 1rem; color: var(--white); letter-spacing: 0.01em;
@@ -206,8 +208,9 @@
   <div class="callout">
     <span class="callout-label">How to use this</span>
     Complete the fields and paste links to any source material created outside this document.
-    Duplicate a module section whenever a course has more than three modules. Use the document
-    outline to move between levels.
+    This template is set up for three courses with three modules each — copy a whole course
+    section or a single module section if you need more. Use the document outline to move
+    between levels.
   </div>
 
   <p class="meta-line"><b>Prepared for:</b> [ faculty / program name ]</p>
@@ -221,7 +224,7 @@
 
   <!-- ============ SPECIALIZATION ============ -->
   <div class="band spec">
-    <span class="band-num">1</span>
+    <span class="band-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h9l5 5v13H5V3Z"/><path d="M14 3v5h5"/><circle cx="12" cy="13" r="2.4"/><path d="M10.4 15.2 9.9 19l2.1-1.1 2.1 1.1-.5-3.8"/></svg></span>
     <span class="band-title">Specialization Landing Page</span>
     <span class="band-sub">Complete once</span>
   </div>
@@ -285,7 +288,7 @@
 
   <!-- ============ COURSE ============ -->
   <div class="band course">
-    <span class="band-num">2.1</span>
+    <span class="band-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 3 7.5l9 4.5 9-4.5L12 3Z"/><path d="M3 12.4 12 17l9-4.6"/><path d="M3 16.9 12 21.5l9-4.6"/></svg></span>
     <span class="band-title">Course 1</span>
     <span class="band-sub">Landing page, modules, and assets</span>
   </div>
@@ -341,7 +344,7 @@
 
   <!-- ============ MODULE ============ -->
   <div class="band module">
-    <span class="band-num">2.1.1</span>
+    <span class="band-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 6.5h10"/><path d="M9.5 12h10"/><path d="M9.5 17.5h10"/><circle cx="5" cy="6.5" r="1.3"/><circle cx="5" cy="12" r="1.3"/><circle cx="5" cy="17.5" r="1.3"/></svg></span>
     <span class="band-title">Course 1 · Module 1</span>
     <span class="band-sub">Duplicate this section per module</span>
   </div>
@@ -421,7 +424,7 @@
     </div>
   </div>
 
-  <p class="repeat-note">Module sections repeat for each module · Course sections repeat for each course</p>
+  <p class="repeat-note">Copy a module section to add another module · Copy a whole course section to add another course</p>
 
 </div>
 </body>
