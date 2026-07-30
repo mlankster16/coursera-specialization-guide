@@ -347,8 +347,141 @@ function factsHtml(facts) {
     </div>`;
 }
 
+
+/* ---------- Template preview: a replica of the matching template section ---------- */
+
+function previewFieldHtml(r, tier) {
+  const lines = String(r.ph).split('\n');
+  return `
+    <div class="tp-field">
+      <p class="tp-label">${esc(r.label)}</p>
+      ${r.hint ? `<p class="tp-hint">${esc(r.hint)}</p>` : ''}
+      <div class="tp-box${r.tall ? ' tall' : ''}">
+        ${lines.map((l) => `<span class="tp-ph">${esc(l)}</span>`).join('')}
+      </div>
+    </div>`;
+}
+
+function previewRowHtml(r, tier) {
+  switch (r.kind) {
+    case 'field':
+      return previewFieldHtml(r, tier);
+
+    case 'pair':
+      return `
+        <div class="tp-pair">
+          ${previewFieldHtml(r.left, tier)}
+          ${previewFieldHtml(r.right, tier)}
+        </div>`;
+
+    case 'band':
+      return `
+        <div class="tp-band tier-${r.tier}">
+          <span class="tp-band-icon">${icon(r.icon)}</span>
+          <span class="tp-band-title">${esc(r.title)}</span>
+        </div>`;
+
+    case 'note':
+      return `<p class="tp-note">${esc(r.text)}</p>`;
+
+    case 'grid': {
+      const cls = r.tier ? ` tier-${r.tier}` : '';
+      return `
+        <div class="tp-field">
+          ${r.label ? `<p class="tp-label">${esc(r.label)}</p>` : ''}
+          <div class="tp-grid-wrap">
+            <table class="tp-grid${cls}">
+              <thead><tr>${r.headers
+                .map((h, i) => `<th style="width:${r.widths[i]}%">${esc(h)}</th>`)
+                .join('')}</tr></thead>
+              <tbody>${r.rows
+                .map((row) => `<tr>${row
+                  .map((c, i) => `<td${i === 0 ? ' class="tp-n"' : ''}>${esc(c)}</td>`)
+                  .join('')}</tr>`)
+                .join('')}</tbody>
+            </table>
+          </div>
+        </div>`;
+    }
+
+    case 'quiz':
+      return `
+        <div class="tp-quiz">
+          <p class="tp-quiz-title">${esc(r.title)}</p>
+          <p class="tp-quiz-body">${esc(r.text)}</p>
+        </div>`;
+
+    default:
+      return '';
+  }
+}
+
+function templatePreviewHtml(s, tier) {
+  const href = C.templateUrl
+    ? `href="${C.templateUrl}" target="_blank" rel="noopener"`
+    : 'href="#" aria-disabled="true"';
+  return `
+    <section class="block">
+      <h2 class="section-title">${esc(s.title)}</h2>
+      ${s.note ? `<p class="section-intro">${esc(s.note)}</p>` : ''}
+      <div class="tp-page tier-${s.band.tier}">
+        <div class="tp-band tier-${s.band.tier}">
+          <span class="tp-band-icon">${icon(s.band.icon)}</span>
+          <span class="tp-band-title">${esc(s.band.title)}</span>
+          ${s.band.sub ? `<span class="tp-band-sub">${esc(s.band.sub)}</span>` : ''}
+        </div>
+        ${s.rows.map((r) => previewRowHtml(r, tier)).join('')}
+      </div>
+      <a class="tp-open" ${href}>Open the template in Google Docs &nearr;</a>
+    </section>`;
+}
+
+/* ---------- Three things to get right ---------- */
+
+function considerationsHtml(s, tier) {
+  return `
+    <section class="block">
+      <h2 class="section-title">${esc(s.title)}</h2>
+      <div class="consider-list">
+        ${s.items
+          .map(
+            (it, i) => `
+          <div class="consider tier-${tier}">
+            <span class="consider-n">${i + 1}</span>
+            <div>
+              <p class="consider-heading">${esc(it.heading)}</p>
+              <p class="consider-body">${esc(it.body)}</p>
+            </div>
+          </div>`
+          )
+          .join('')}
+      </div>
+    </section>`;
+}
+
+/* A section marked `collapsed: true` renders inside a <details> — available to the
+   faculty member who wants the depth, invisible to the one who doesn't. */
 function sectionHtml(s, tier) {
+  const inner = sectionBody(s, tier);
+  if (!s.collapsed) return inner;
+  return `
+    <details class="ref-block">
+      <summary>
+        <span class="ref-summary-text">${esc(s.title)}</span>
+        <span class="ref-chevron">&#9662;</span>
+      </summary>
+      <div class="ref-body">${inner}</div>
+    </details>`;
+}
+
+function sectionBody(s, tier) {
   switch (s.type) {
+    case 'templatePreview':
+      return templatePreviewHtml(s, tier);
+
+    case 'considerations':
+      return considerationsHtml(s, tier);
+
     case 'prose':
       return `
         <section class="block">

@@ -1,5 +1,5 @@
 {
-  "templateUrl": "",
+  "templateUrl": "https://docs.google.com/document/d/1C-7HTxae1Xu6AXL8WQou78ctfzDw_s5j76eKeQAMlLI/copy?usp=sharing",
   "nav": [
     {
       "id": "specialization",
@@ -201,7 +201,7 @@
       "tier": "spec",
       "label": "SPECIALIZATION",
       "title": "Planning your Specialization",
-      "lede": "This is the one thing to define before anything else. Every course, module, and video below it exists to deliver a single competency.",
+      "lede": "Everything below this level exists to deliver one competency. Define that first.",
       "facts": [
         {
           "icon": "layers",
@@ -226,53 +226,124 @@
       ],
       "sections": [
         {
-          "type": "prose",
-          "title": "What a Specialization is",
-          "body": [
-            "A series of related, in-depth courses that help learners master a competency. Specializations include projects — authentic, hands-on assessments with real-world applications that let learners demonstrate the skill.",
-            "Learners who complete every course earn a Specialization Certificate. Learners who complete a single course earn a course certificate for that course alone.",
-            "Design it as a coherent set rather than a fixed path. Learners can enroll in any course in any order, so each course needs to hold up on its own."
+          "type": "templatePreview",
+          "title": "What you'll fill in",
+          "note": "This is the Specialization section of the template. Everything on this page is about getting these fields right.",
+          "band": {
+            "tier": "spec",
+            "icon": "certificate",
+            "title": "Specialization Landing Page",
+            "sub": "Complete once"
+          },
+          "rows": [
+            {
+              "kind": "field",
+              "label": "Specialization title",
+              "ph": "[ title ]"
+            },
+            {
+              "kind": "field",
+              "label": "Specialization description",
+              "ph": "[ description ]",
+              "hint": "Learner-facing. What it covers, who it's for, why it matters.",
+              "tall": true
+            },
+            {
+              "kind": "pair",
+              "left": {
+                "label": "Who this is for",
+                "ph": "[ audience ]"
+              },
+              "right": {
+                "label": "Recommended background",
+                "ph": "[ what learners should already know ]"
+              }
+            },
+            {
+              "kind": "field",
+              "label": "What learners will be able to do by the end",
+              "ph": "[ overall Specialization outcome ]"
+            },
+            {
+              "kind": "field",
+              "label": "Skills learners will gain",
+              "ph": "[ skill 1, skill 2, skill 3, skill 4, skill 5 ]"
+            },
+            {
+              "kind": "pair",
+              "left": {
+                "label": "Estimated total learning time",
+                "ph": "[ 12–48 hours ]"
+              },
+              "right": {
+                "label": "Difficulty level",
+                "ph": "[ Beginner / Intermediate / Advanced ]"
+              }
+            },
+            {
+              "kind": "field",
+              "label": "Tools, technology, or platforms",
+              "ph": "[ any required external tools or access ]"
+            },
+            {
+              "kind": "grid",
+              "label": "Courses in this Specialization",
+              "headers": [
+                "#",
+                "Course title",
+                "Main skill / outcome",
+                "Est. time"
+              ],
+              "widths": [
+                8,
+                30,
+                44,
+                18
+              ],
+              "rows": [
+                [
+                  "1",
+                  "[ title ]",
+                  "[ what learners can do ]",
+                  "[ hours ]"
+                ],
+                [
+                  "2",
+                  "[ title ]",
+                  "[ what learners can do ]",
+                  "[ hours ]"
+                ],
+                [
+                  "3",
+                  "[ title ]",
+                  "[ what learners can do ]",
+                  "[ hours ]"
+                ]
+              ]
+            },
+            {
+              "kind": "field",
+              "label": "Specialization project or culminating experience (optional)",
+              "ph": "[ description and source link, if applicable ]"
+            }
           ]
         },
         {
-          "type": "prose",
-          "title": "Who you're designing for",
-          "body": [
-            "Coursera learners are mostly working adults choosing on career grounds. They arrive scanning for a skill they can use at work and show to someone else, and nothing obliges them to stay — every module has to earn the next click.",
-            "Coursera organises its whole catalogue around skills: the specific, in-demand competencies learners need for their careers. A Specialization that names a high-demand skill plainly is easier for the right learner to find, and easier for them to justify spending 12–48 hours on."
-          ],
-          "tips": [
-            "Name the skill the way a learner would search for it, not the way a syllabus would title it.",
-            "Say what someone will be able to do afterwards — that's what gets read on the landing page.",
-            "The hands-on project is what gives learners something concrete to show. Plan it as part of the value, not as an add-on.",
-            "Assume varied backgrounds and no shared prior coursework. State needed background as a skill."
-          ]
-        },
-        {
-          "type": "prose",
-          "title": "Start from the outcome",
-          "body": [
-            "Name the competency the whole set adds up to, in one sentence, before planning individual courses. Everything else is derived from it.",
-            "A useful frame: learners often struggle to ______. This Specialization helps them ______ by learning how to ______, ______, and ______."
-          ],
-          "tips": [
-            "Name one meaningful, demonstrable capability — not a topic area.",
-            "Write it as something a learner could claim about themselves afterwards.",
-            "Check that your 3–6 courses actually add up to it, with nothing important missing.",
-            "Put high-level learning objectives on the Specialization landing page, then chunk them into course- and module-level objectives."
-          ]
-        },
-        {
-          "type": "checklist",
-          "title": "What to prepare at this level",
-          "note": "Your Learning Experience Designer will help shape all of this — it doesn't need to be polished.",
+          "type": "considerations",
+          "title": "Three things to get right",
           "items": [
-            "The competency the full Specialization builds.",
-            "Who it's for: the roles, contexts, or situations of your intended learner.",
-            "What learners should already know or be able to do coming in, stated as a skill.",
-            "A working title for each of the 3–6 courses, and the skill each one owns.",
-            "Where the hands-on project or projects will live.",
-            "Landing page copy: description, audience, prerequisites, and time commitment."
+            {
+              "heading": "Start from one competency, not a topic list",
+              "body": "Name what a learner can do at the end, in a single sentence. The courses are derived from that — not the other way round. If you can't name it yet, the Specialization isn't scoped yet."
+            },
+            {
+              "heading": "Design for the learner who takes only one course",
+              "body": "Coursera doesn't enforce order or prerequisites, and plenty of people will take one course and never see the others. State needed background as a skill, never as \"Course 1.\""
+            },
+            {
+              "heading": "Scope for a working adult",
+              "body": "3–6 courses and 12–48 hours in total — in range of a 15-week course, but spent differently. Self-paced learning time, fitted around a job, rather than scheduled class time."
+            }
           ]
         },
         {
@@ -281,9 +352,18 @@
           "title": "Example: a finished Specialization plan"
         },
         {
-          "type": "template",
-          "title": "Filling out the template",
-          "placeholder": true
+          "type": "checklist",
+          "collapsed": true,
+          "title": "What to have ready before you start",
+          "note": "Your Learning Experience Designer will help shape all of this — none of it needs to be polished.",
+          "items": [
+            "The competency the full Specialization builds.",
+            "Who it's for: the roles, contexts, or situations of your intended learner.",
+            "What learners should already know, stated as a skill.",
+            "A working title for each course, and the skill each one owns.",
+            "Where the hands-on project or projects will live.",
+            "Landing page copy: description, audience, prerequisites, time commitment."
+          ]
         }
       ]
     },
@@ -291,7 +371,7 @@
       "tier": "course",
       "label": "COURSE",
       "title": "Planning a course",
-      "lede": "Each course is anchored to specific, demonstrable skills and has to make sense to someone who takes only that one course.",
+      "lede": "Each course is anchored to its own skills and has to make sense to someone who takes only that one.",
       "facts": [
         {
           "icon": "star",
@@ -316,40 +396,101 @@
       ],
       "sections": [
         {
-          "type": "prose",
-          "title": "Anchor the course to skills",
-          "body": [
-            "Content on Coursera is organised around skills — concrete, demonstrable abilities tied to real work, like \"clean and validate a dataset\" or \"build a responsive web page layout.\"",
-            "Anchor the course to clearly defined skills, then structure your modules around specific, measurable objectives tied to those skills. Content that is clearly skill-aligned is more discoverable on the platform and more valuable to learners."
-          ],
-          "tips": [
-            "Name the course for its skill or subject, not for a number.",
-            "Anchor to skills, not topics — name the ability a learner walks away with.",
-            "State needed background as a skill, not as another course a learner should have taken.",
-            "Decide the graded evidence of learning before planning any videos or readings."
+          "type": "templatePreview",
+          "title": "What you'll fill in",
+          "note": "This is the Course section of the template. It repeats for each course — copy the whole section to add another.",
+          "band": {
+            "tier": "course",
+            "icon": "layers",
+            "title": "Course 1",
+            "sub": "Repeats per course"
+          },
+          "rows": [
+            {
+              "kind": "field",
+              "label": "Course title",
+              "ph": "[ title ]",
+              "hint": "Name the skill, not a number."
+            },
+            {
+              "kind": "field",
+              "label": "Course description",
+              "ph": "[ learner-facing description ]",
+              "tall": true
+            },
+            {
+              "kind": "pair",
+              "left": {
+                "label": "Estimated time to complete",
+                "ph": "[ 2–8 hours ]"
+              },
+              "right": {
+                "label": "Difficulty level",
+                "ph": "[ Beginner / Intermediate / Advanced ]"
+              }
+            },
+            {
+              "kind": "pair",
+              "left": {
+                "label": "Primary domain / sub-domain",
+                "ph": "[ domain / sub-domain ]"
+              },
+              "right": {
+                "label": "Secondary domain / sub-domain",
+                "ph": "[ domain / sub-domain ]"
+              }
+            },
+            {
+              "kind": "field",
+              "label": "Tagged skills",
+              "ph": "[ five course-specific skills ]"
+            },
+            {
+              "kind": "field",
+              "label": "Recommended background",
+              "ph": "[ what learners should know before starting ]"
+            },
+            {
+              "kind": "field",
+              "label": "What learners will learn",
+              "ph": "1. [ objective ]\n2. [ objective ]\n3. [ objective, optional ]\n4. [ objective, optional ]",
+              "hint": "2–4 course-level objectives."
+            },
+            {
+              "kind": "field",
+              "label": "Instructor information and bio source link",
+              "ph": "[ bio text, or link to build-ready bio and headshot ]"
+            }
           ]
         },
         {
-          "type": "callout",
-          "title": "Standalone does not mean unsequenced",
-          "body": "You can absolutely design courses and modules that increase in complexity — that's good pedagogy! What breaks reuse is cross-referencing. Try not to reference other courses, modules, or the Specialization by name or number. Establish the context fresh inside each piece instead, and it works whether a learner arrives first or last. If you're unsure how to best approach this, chat with a Learning Experience Designer!"
+          "type": "considerations",
+          "title": "Three things to get right",
+          "items": [
+            {
+              "heading": "Anchor to skills, not topics",
+              "body": "Coursera organises its whole catalogue around skills — concrete, demonstrable abilities like \"clean and validate a dataset\" or \"build a responsive web page layout.\" A skill-aligned course is easier for the right learner to find."
+            },
+            {
+              "heading": "Decide the graded evidence before you plan content",
+              "body": "Name what will prove the objectives were met, then work backward to the teaching. A 10-question auto-graded quiz per module with answer-specific feedback is the common default."
+            },
+            {
+              "heading": "If you can't say the outcome in one phrase, it's probably two courses",
+              "body": "2–4 objectives, 3–6 modules, 2–8 hours. Consistently running over usually means the course wants splitting — or the Specialization needs another course to carry the overflow."
+            }
+          ]
         },
         {
-          "type": "prose",
-          "title": "Why self-contained matters",
-          "body": [
-            "The immediate reason is the learner. Anyone can enroll in any course at any time, so plenty of people will meet this course on its own, with no exposure to the rest of the Specialization.",
-            "Designing this way also keeps options open — a self-contained course can more easily be refreshed, or support a new offering down the road, without being rebuilt. Any decision like that would be a conversation with you. Your Specialization stays yours."
-          ],
-          "tips": [
-            "Keep supporting files (glossaries, templates, setup guides) inside readings and activities in the learning path — not in the course Resources section, which doesn't travel with content if it's ever moved.",
-            "Put the syllabus and orienting context on the course landing page so modules can focus purely on teaching."
-          ]
+          "type": "example",
+          "placeholder": true,
+          "title": "Example: a finished course plan"
         },
         {
           "type": "compare",
-          "title": "Write it so it stands on its own",
-          "intro": "This breaks on phrasing more often than on structure. Aim to have every item open by establishing its own context, so a learner doesn't need to have seen anything else first.",
+          "collapsed": true,
+          "title": "Writing so a course stands on its own",
+          "intro": "Reuse breaks on phrasing more often than on structure. Aim to have every item open by establishing its own context.",
           "dontLabel": "Instead of this",
           "doLabel": "Write this",
           "rows": [
@@ -360,13 +501,13 @@
             },
             {
               "aspect": "Module transitions",
-              "dont": "\"Now that you've mastered the basics from Module 1, let's apply those concepts to…\"",
+              "dont": "\"Now that you've mastered the basics from Module 1…\"",
               "do": "\"Data transformation is essential for analysis. Let's explore how to use SQL functions to…\""
             },
             {
               "aspect": "Program references",
-              "dont": "\"As part of this Data Science Specialization, you'll use these skills in the capstone project…\"",
-              "do": "\"These data preprocessing skills are essential for any machine learning project. Let's practice with a real dataset…\""
+              "dont": "\"As part of this Data Science Specialization, you'll use these skills in the capstone…\"",
+              "do": "\"These data preprocessing skills are essential for any machine learning project…\""
             },
             {
               "aspect": "Sequential references",
@@ -374,40 +515,11 @@
               "do": "\"Code optimization involves several key strategies…\""
             },
             {
-              "aspect": "Assessment references",
-              "dont": "\"Remember this for the final quiz…\"",
-              "do": "\"This concept is fundamental to understanding how databases work…\""
-            },
-            {
               "aspect": "Prior knowledge",
               "dont": "\"You learned basic SQL in Module 2.\"",
               "do": "\"This module assumes familiarity with basic SQL queries.\""
             }
           ]
-        },
-        {
-          "type": "checklist",
-          "title": "What to prepare at this level",
-          "note": "Rough phrasing is fine for a first pass.",
-          "items": [
-            "Course title, named for its skill.",
-            "The 2–4 learning objectives this course owns.",
-            "What learners should already know, stated as a skill.",
-            "A working title for each of the 3–6 modules and the skill each one teaches.",
-            "The graded evidence of learning — what proves the objectives were met.",
-            "Where the course's hands-on project sits.",
-            "Landing page copy: description, audience, prerequisites, time commitment, tools needed."
-          ]
-        },
-        {
-          "type": "example",
-          "placeholder": true,
-          "title": "Example: a finished course plan"
-        },
-        {
-          "type": "template",
-          "title": "Filling out the template",
-          "placeholder": true
         }
       ]
     },
@@ -415,7 +527,7 @@
       "tier": "module",
       "label": "MODULE",
       "title": "Planning a module",
-      "lede": "A module is one self-contained section of a course, built around a single skill. This is the level where most of the actual work happens.",
+      "lede": "One self-contained section of a course, built around a single skill. This is where most of the work happens.",
       "facts": [
         {
           "icon": "star",
@@ -440,103 +552,138 @@
       ],
       "sections": [
         {
-          "type": "prose",
-          "title": "What a module is",
-          "body": [
-            "A module is one self-contained section of a course. Modules make up the course structure, and learners work through them at their own pace on personalized deadlines.",
-            "Each module is built around a single skill, carries its own 1–3 learning objectives, and ends with at least one graded assessment that checks those objectives."
-          ],
-          "tips": [
-            "Title the module for the skill it teaches — \"Identifying and Handling Missing Data,\" not \"Module 1: Introduction.\" Coursera adds the numbering, and your own numbers break if a module moves.",
-            "Open each module by establishing its own context, so a learner doesn't need to have seen anything else first.",
-            "If a learner needs background, say what they should already know, not where they should have learned it."
+          "type": "templatePreview",
+          "title": "What you'll fill in",
+          "note": "This is the Module section of the template, plus its lesson and asset table. It repeats for every module.",
+          "band": {
+            "tier": "module",
+            "icon": "list",
+            "title": "Course 1 · Module 1",
+            "sub": "Repeats per module"
+          },
+          "rows": [
+            {
+              "kind": "field",
+              "label": "Module title",
+              "ph": "[ title ]",
+              "hint": "Name the skill it teaches — Coursera adds the number."
+            },
+            {
+              "kind": "field",
+              "label": "Module description",
+              "ph": "[ learner-facing introduction ]",
+              "hint": "Learners see this as a message from you. Write conversationally.",
+              "tall": true
+            },
+            {
+              "kind": "field",
+              "label": "Module learning objectives",
+              "ph": "1. [ objective ]\n2. [ objective, optional ]\n3. [ objective, optional ]",
+              "hint": "1–3 objectives."
+            },
+            {
+              "kind": "pair",
+              "left": {
+                "label": "Estimated learning time",
+                "ph": "[ ~30+ minutes ]"
+              },
+              "right": {
+                "label": "Graded assessment title",
+                "ph": "[ quiz title ]"
+              }
+            },
+            {
+              "kind": "band",
+              "tier": "asset",
+              "icon": "play",
+              "title": "Lessons & Learning Assets"
+            },
+            {
+              "kind": "note",
+              "text": "Aim for a minimum of: 3–6 videos · 1–2 readings · 1–2 activities · 1 auto-graded quiz"
+            },
+            {
+              "kind": "grid",
+              "tier": "asset",
+              "headers": [
+                "#",
+                "Lesson (optional)",
+                "Asset type",
+                "Asset title",
+                "Build-ready source link"
+              ],
+              "widths": [
+                6,
+                20,
+                17,
+                30,
+                27
+              ],
+              "rows": [
+                [
+                  "1",
+                  "[ lesson ]",
+                  "[ type ]",
+                  "[ title ]",
+                  "[ link ]"
+                ],
+                [
+                  "2",
+                  "[ lesson ]",
+                  "[ type ]",
+                  "[ title ]",
+                  "[ link ]"
+                ],
+                [
+                  "3",
+                  "[ lesson ]",
+                  "[ type ]",
+                  "[ title ]",
+                  "[ link ]"
+                ],
+                [
+                  "…",
+                  "",
+                  "",
+                  "",
+                  ""
+                ]
+              ]
+            },
+            {
+              "kind": "field",
+              "label": "Additional build notes, dependencies, or accessibility information",
+              "ph": "[ notes for the learning designer ]"
+            },
+            {
+              "kind": "quiz",
+              "title": "Course 1 · Module 1 Graded Quiz",
+              "text": "Review the Coursera Graded Quiz Template and guidelines before you write your questions. Make sure it checks this module's objectives."
+            }
           ]
         },
         {
-          "type": "cards",
-          "title": "What a typical module contains",
-          "note": "Around 30 minutes of learner time per module, minimum.",
+          "type": "considerations",
+          "title": "Three things to get right",
           "items": [
             {
-              "icon": "play",
-              "label": "3–6 videos",
-              "sub": "5–10 minutes each"
+              "heading": "One skill, taught end to end",
+              "body": "A module opens by establishing its own context and closes by checking whether the skill landed. A learner should never need to have seen anything else first. Title it for the skill — Coursera adds the number."
             },
             {
-              "icon": "book",
-              "label": "1–2 readings",
-              "sub": "related to the videos"
+              "heading": "Follow the WWHAA pattern",
+              "body": "Why → What → How → Apply → Assess. Running a complete cycle inside every module is what lets it hold up on its own, and it guides format choices as well as sequence."
             },
             {
-              "icon": "flask",
-              "label": "1–2 hands-on activities",
-              "sub": "or practice quizzes"
-            },
-            {
-              "icon": "rosette",
-              "label": "1 graded quiz",
-              "sub": "checks the module objectives"
-            }
-          ]
-        },
-        {
-          "type": "phases",
-          "title": "Structure the module with WWHAA",
-          "intro": "Coursera recommends the Why → What → How → Apply → Assess pattern for each module. It creates a complete, self-contained learning cycle — which is exactly what lets a module hold up on its own.",
-          "phases": [
-            {
-              "key": "Why",
-              "icon": "lightbulb",
-              "headline": "Establish real-world relevance",
-              "body": "Show the learner why this skill matters before teaching it. In a first module, this replaces the traditional course introduction entirely.",
-              "formats": "Instructor video, real-world scenario, Coach Dialogue"
-            },
-            {
-              "key": "What",
-              "icon": "book",
-              "headline": "Teach key concepts",
-              "body": "Introduce the essential ideas the skill rests on — the minimum a learner needs before they can try it.",
-              "formats": "Reading, short video, graphic, audio podcast"
-            },
-            {
-              "key": "How",
-              "icon": "gear",
-              "headline": "Bridge theory and practice",
-              "body": "Show the skill actually being performed. Demonstration is what turns a concept into something a learner can picture doing.",
-              "formats": "Demonstration, walkthrough, worked case"
-            },
-            {
-              "key": "Apply",
-              "icon": "flask",
-              "headline": "Practice in realistic scenarios",
-              "body": "Let learners try it with no stakes and get feedback while it's still cheap to be wrong.",
-              "formats": "Hands-on activity, lab, Dialogue, practice quiz"
-            },
-            {
-              "key": "Assess",
-              "icon": "rosette",
-              "headline": "Validate learning",
-              "body": "Check whether the module's objectives were met, and point learners to review material for anything missed.",
-              "formats": "Graded quiz, graded project"
-            }
-          ],
-          "notes": [
-            {
-              "icon": "star",
-              "title": "Choose the format that fits the phase",
-              "body": "WWHAA guides format decisions too. Try not to default to video for everything — pick what serves the goal of that phase."
-            },
-            {
-              "icon": "layers",
-              "title": "Aim for no more than two of the same type in a row",
-              "body": "Varied sequences — video, then reading, then practice activity — sustain engagement. Coursera's internal research shows learners drop off at significantly higher rates in repetitive sequences."
+              "heading": "Mix the assets, and practise before you assess",
+              "body": "3–6 videos, 1–2 readings, 1–2 activities, 1 graded quiz. Aim for no more than two of the same type in a row — learners drop off at higher rates in repetitive sequences."
             }
           ]
         },
         {
           "type": "sequence",
-          "title": "The first 10 items",
-          "note": "The recommended opening pattern for a course's first module. Note that it teaches from item 1 — there's no separate syllabus lesson.",
+          "title": "Example: a first module's opening sequence",
+          "note": "The recommended starting pattern for a course's first module. Note that it teaches from item 1 — there's no separate syllabus lesson.",
           "items": [
             {
               "n": 1,
@@ -601,47 +748,48 @@
           ]
         },
         {
-          "type": "prose",
-          "title": "Lessons — optional grouping",
-          "body": [
-            "Lessons are an optional layer inside a module. They let you cluster related items so a longer module is easier for learners to navigate — around 2–5 per module, when used.",
-            "You don't have to use them. A module with only a handful of items usually reads better without them."
+          "type": "phases",
+          "collapsed": true,
+          "title": "The WWHAA phases in detail",
+          "intro": "Choose the format that serves each phase rather than defaulting to video for everything.",
+          "phases": [
+            {
+              "key": "Why",
+              "icon": "lightbulb",
+              "headline": "Establish real-world relevance",
+              "body": "Show the learner why this skill matters before teaching it. In a first module, this replaces the traditional course introduction entirely.",
+              "formats": "Instructor video, real-world scenario, Coach Dialogue"
+            },
+            {
+              "key": "What",
+              "icon": "book",
+              "headline": "Teach key concepts",
+              "body": "Introduce the essential ideas the skill rests on — the minimum a learner needs before they can try it.",
+              "formats": "Reading, short video, graphic, audio podcast"
+            },
+            {
+              "key": "How",
+              "icon": "gear",
+              "headline": "Bridge theory and practice",
+              "body": "Show the skill actually being performed. Demonstration turns a concept into something a learner can picture doing.",
+              "formats": "Demonstration, walkthrough, worked case"
+            },
+            {
+              "key": "Apply",
+              "icon": "flask",
+              "headline": "Practice in realistic scenarios",
+              "body": "Let learners try it with no stakes and get feedback while it's still cheap to be wrong.",
+              "formats": "Hands-on activity, lab, Dialogue, practice quiz"
+            },
+            {
+              "key": "Assess",
+              "icon": "rosette",
+              "headline": "Validate learning",
+              "body": "Check whether the module's objectives were met, and point learners to review material for anything missed.",
+              "formats": "Graded quiz, graded project"
+            }
           ],
-          "tips": [
-            "Group by idea rather than by format — aim for topic-based lessons instead of a \"videos\" lesson and a \"readings\" lesson.",
-            "Start a new lesson when the sub-topic changes or a learner would naturally pause.",
-            "If a module only has a few items, skip lessons entirely."
-          ]
-        },
-        {
-          "type": "prose",
-          "title": "Module descriptions",
-          "body": [
-            "Every module needs a description. Learners see it as a message from you, so write it conversationally and address them directly — introduce what the module covers, highlight the objectives, and offer a tip for success."
-          ]
-        },
-        {
-          "type": "checklist",
-          "title": "What to prepare at this level",
-          "items": [
-            "Module title, named for its skill.",
-            "The 1–3 learning objectives this module owns.",
-            "A module description written to the learner in your own voice.",
-            "The item sequence — what learners do, in order, and which WWHAA phase each item serves.",
-            "The practice plan: what learners try before the graded check, and how they get feedback.",
-            "The graded assessment, with questions, answers, and feedback for both correct and incorrect responses.",
-            "Any lesson groupings, if you're using them."
-          ]
-        },
-        {
-          "type": "example",
-          "placeholder": true,
-          "title": "Example: a finished module"
-        },
-        {
-          "type": "template",
-          "title": "Filling out the template",
-          "placeholder": true
+          "notes": []
         }
       ]
     },
