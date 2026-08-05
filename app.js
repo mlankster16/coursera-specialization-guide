@@ -295,8 +295,8 @@ function comparisonHtml(c) {
       <div class="compare-table">
         <div class="compare-row compare-header">
           <span></span>
-          <span>For-credit course</span>
-          <span class="col-coursera">Coursera course</span>
+          <span>${esc(c.creditLabel || 'For-credit course')}</span>
+          <span class="col-coursera">${esc(c.courseraLabel || 'Coursera course')}</span>
         </div>
         ${c.rows
           .map(
@@ -344,6 +344,7 @@ function pageHtml(id) {
         <h1 class="page-title">${esc(p.title)}</h1>
         <p class="page-lede">${esc(p.lede)}</p>
         ${p.facts ? factsHtml(p.facts) : ''}
+        ${p.factsNote ? `<p class="facts-note">${esc(p.factsNote)}</p>` : ''}
       </header>
       ${id === 'assets' ? assetsPageHtml(p) : ''}
       ${(p.sections || []).map((s) => sectionHtml(s, p.tier)).join('')}
@@ -367,6 +368,75 @@ function factsHtml(facts) {
     </div>`;
 }
 
+
+/* ---------- Topic -> competency ladder ----------
+   Faculty often use these four words interchangeably. Separating them is what makes
+   an outcome writable, so this sits right after the considerations. */
+
+function ladderHtml(s) {
+  return `
+    <section class="block">
+      <h2 class="section-title">${esc(s.title)}</h2>
+      ${s.intro ? `<p class="section-intro">${esc(s.intro)}</p>` : ''}
+      <div class="ladder">
+        ${s.rungs
+          .map(
+            (r, i) => `
+          <div class="rung${i === s.rungs.length - 1 ? ' final' : ''}">
+            <span class="rung-term">${esc(r.term)}</span>
+            <span class="rung-gloss">${esc(r.gloss)}</span>
+            <span class="rung-example">${esc(r.example)}</span>
+          </div>`
+          )
+          .join('')}
+      </div>
+      <div class="verb-panel">
+        <p class="verb-prompt">${esc(s.prompt)}</p>
+        <div class="verb-cols">
+          <div class="verb-col good">
+            <p class="verb-label">Verbs that work</p>
+            <p class="verb-list">${s.goodVerbs.map(esc).join(' · ')}</p>
+          </div>
+          <div class="verb-col weak">
+            <p class="verb-label">Harder to assess</p>
+            <p class="verb-list">${s.weakVerbs.map(esc).join(' · ')}</p>
+            <p class="verb-note">${esc(s.weakNote)}</p>
+          </div>
+        </div>
+      </div>
+    </section>`;
+}
+
+/* ---------- Weaker / stronger versions of the same field ---------- */
+
+function contrastHtml(s) {
+  return `
+    <section class="block">
+      <h2 class="section-title">${esc(s.title)}</h2>
+      ${s.intro ? `<p class="section-intro">${esc(s.intro)}</p>` : ''}
+      <div class="contrast-list">
+        ${s.items
+          .map(
+            (it) => `
+          <div class="contrast">
+            <p class="contrast-field">${esc(it.field)}</p>
+            <div class="contrast-pair">
+              <div class="contrast-side weak">
+                <p class="contrast-label">${esc(s.weakLabel)}</p>
+                <p class="contrast-text">${esc(it.weak)}</p>
+              </div>
+              <div class="contrast-side strong">
+                <p class="contrast-label">${esc(s.strongLabel)}</p>
+                <p class="contrast-text">${esc(it.strong)}</p>
+              </div>
+            </div>
+            <p class="contrast-why">${icon('star')}<span>${esc(it.why)}</span></p>
+          </div>`
+          )
+          .join('')}
+      </div>
+    </section>`;
+}
 
 /* ---------- Template preview: a replica of the matching template section ---------- */
 
@@ -501,6 +571,12 @@ function sectionBody(s, tier) {
 
     case 'considerations':
       return considerationsHtml(s, tier);
+
+    case 'ladder':
+      return ladderHtml(s);
+
+    case 'contrast':
+      return contrastHtml(s);
 
     case 'prose':
       return `

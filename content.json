@@ -143,53 +143,71 @@
       "note": "A variety of asset types helps keep learners engaged and motivated to complete the course."
     },
     "comparison": {
-      "title": "How this differs from a for-credit course",
+      "title": "Translating from a semester course",
       "rows": [
+        {
+          "aspect": "Planning unit",
+          "credit": "A 15-week course",
+          "coursera": "A short series of self-contained courses, any one of which may be someone's whole experience."
+        },
+        {
+          "aspect": "Starting point",
+          "credit": "Weekly topics to cover",
+          "coursera": "What learners should be able to do, with topics chosen to support that."
+        },
         {
           "aspect": "Schedule",
           "credit": "Fixed semester, weekly meetings",
-          "coursera": "No schedule. Learners start any day and work at their own pace on personalized deadlines."
+          "coursera": "No schedule. Learners start any day and work at their own pace."
         },
         {
           "aspect": "Your presence",
-          "credit": "You're in the room; you can adjust live",
-          "coursera": "Fully asynchronous. Everything a learner needs has to already be in the course."
+          "credit": "You're in the room and can adjust live",
+          "coursera": "Fully asynchronous. Instructions, examples, and feedback have to be written in advance."
         },
         {
-          "aspect": "Enrollment",
-          "credit": "Registrar enforces prerequisites and sequence",
-          "coursera": "Anyone can enroll in any course, in any order. Prerequisites are stated, not enforced."
+          "aspect": "Class time",
+          "credit": "Lectures and discussion sections",
+          "coursera": "Short, purposeful activities a learner can finish in one sitting."
         },
         {
-          "aspect": "Structure",
-          "credit": "Courses build on each other within a program",
-          "coursera": "Courses are modular and self-contained. Many learners take one course without the others."
-        },
-        {
-          "aspect": "Length",
-          "credit": "~40+ contact hours per course",
-          "coursera": "2–8 hours of learning per course; 12–48 hours across the whole Specialization."
-        },
-        {
-          "aspect": "Your audience",
+          "aspect": "Who enrolls",
           "credit": "Admitted students with shared background",
-          "coursera": "Working adults worldwide, widely varied backgrounds, mostly self-motivated."
+          "coursera": "Working adults worldwide, varied backgrounds, enrolling for their own reasons."
         },
         {
-          "aspect": "Assessment",
-          "credit": "Essays, exams, participation, your judgment",
-          "coursera": "Mostly auto-graded. At least one graded assessment per module."
+          "aspect": "Prerequisites",
+          "credit": "Enforced by the registrar",
+          "coursera": "Stated plainly in the course. Anyone can enroll in anything, in any order."
         },
         {
-          "aspect": "Attrition",
-          "credit": "Grades and tuition keep students enrolled",
-          "coursera": "Nothing holds anyone. Every module has to earn the next click."
+          "aspect": "How much content",
+          "credit": "Coverage of the disciplinary field",
+          "coursera": "The content needed to reach the stated outcome. Narrowing usually beats compressing."
+        },
+        {
+          "aspect": "Final assessment",
+          "credit": "A paper or an exam",
+          "coursera": "Something a learner makes and could show someone: an analysis, a plan, an artifact."
+        },
+        {
+          "aspect": "Total length",
+          "credit": "~40+ contact hours per course",
+          "coursera": "2–8 hours per course; 12–48 hours across the Specialization."
+        },
+        {
+          "aspect": "What completion means",
+          "credit": "A grade",
+          "coursera": "Evidence the learner can do the thing the course promised."
         }
-      ]
+      ],
+      "intro": "Familiar design decisions, made differently for an open, asynchronous audience.",
+      "creditLabel": "What you're used to",
+      "courseraLabel": "What works on Coursera"
     },
     "completion": {
       "title": "Certificates",
-      "body": "Learners who complete a single course earn a shareable course certificate for that course. Learners who complete every course in the Specialization earn a Specialization Certificate that recognises the full competency."
+      "body": "Learners who complete a single course earn a shareable course certificate for that course. Learners who complete every course in the Specialization earn a Specialization Certificate that recognizes the full competency."
     },
     "handoff": {
       "title": "Ready to plan yours?",
@@ -202,7 +220,7 @@
       "tier": "spec",
       "label": "SPECIALIZATION",
       "title": "Planning your Specialization",
-      "lede": "Everything below this level exists to deliver one competency. Define that first.",
+      "lede": "A Specialization starts with one question: what should learners be able to do when they finish? The courses, modules, and videos all follow from your answer.",
       "facts": [
         {
           "icon": "layers",
@@ -229,7 +247,7 @@
         {
           "type": "templatePreview",
           "title": "What you'll fill in",
-          "note": "This is the Specialization section of the template. Everything on this page is about getting these fields right.",
+          "note": "Use this page to work through the decisions, then record them in the Design Document. This is the section you'll be filling in.",
           "band": {
             "tier": "spec",
             "icon": "certificate",
@@ -334,16 +352,91 @@
           "title": "Three things to consider for highest impact",
           "items": [
             {
-              "heading": "Start from one competency, not a topic list",
-              "body": "Name what a learner can do at the end, in a single sentence. The courses are derived from that — not the other way round. If you can't name it yet, the Specialization isn't scoped yet."
+              "heading": "Begin with what learners should be able to do",
+              "body": "A list of topics describes what you plan to cover. An outcome describes what a learner can do with it. Both are useful, but only the outcome tells you which content is essential, what to assess, and what a project should ask for. It also tells a prospective learner whether this will help them."
             },
             {
-              "heading": "Design for the learner who takes only one course",
-              "body": "Coursera doesn't enforce order or prerequisites, and plenty of people will take one course and never see the others. State needed background as a skill, never as \"Course 1.\""
+              "heading": "Design each course as a useful entry point",
+              "body": "Some learners will work through the whole Specialization. Others will take one course because it meets an immediate need. Both should come away with something complete. A useful test: if a learner finishes only this course, what can they now do that they couldn't before?"
             },
             {
-              "heading": "Scope for a working adult",
-              "body": "3–6 courses and 12–48 hours in total — in range of a 15-week course, but spent differently. Self-paced learning time, fitted around a job, rather than scheduled class time."
+              "heading": "Plan for the time a working adult actually has",
+              "body": "In total hours the Specialization is roughly in range of a semester course, but those hours are spent differently — short sessions, fitted around a job, with nothing holding anyone to a schedule. Content that would fill a semester usually needs narrowing rather than compressing."
+            }
+          ]
+        },
+        {
+          "type": "ladder",
+          "title": "From topics to what learners can do",
+          "intro": "These words often get used interchangeably. Separating them makes the outcome easier to write.",
+          "rungs": [
+            {
+              "term": "Topic",
+              "gloss": "What the course is about",
+              "example": "Data visualization"
+            },
+            {
+              "term": "Knowledge",
+              "gloss": "What learners understand",
+              "example": "Principles of visual encoding and chart selection"
+            },
+            {
+              "term": "Skill",
+              "gloss": "What learners can perform",
+              "example": "Create an appropriate chart from a dataset"
+            },
+            {
+              "term": "Competency",
+              "gloss": "What learners can do in a real situation",
+              "example": "Select, create, and explain visualizations that support a recommendation"
+            }
+          ],
+          "prompt": "Finish this sentence: by the end, learners will be able to…",
+          "goodVerbs": [
+            "analyze",
+            "create",
+            "design",
+            "evaluate",
+            "interpret",
+            "apply",
+            "compare",
+            "diagnose",
+            "recommend",
+            "implement",
+            "communicate"
+          ],
+          "weakVerbs": [
+            "understand",
+            "learn",
+            "become familiar with",
+            "explore"
+          ],
+          "weakNote": "These describe your intention rather than something a learner can show you, which makes them hard to assess."
+        },
+        {
+          "type": "contrast",
+          "title": "Strong and weak versions of the key fields",
+          "intro": "The same field, filled in two ways. The difference is usually topics versus what a learner will be able to do.",
+          "weakLabel": "Weaker",
+          "strongLabel": "Stronger",
+          "items": [
+            {
+              "field": "Specialization description",
+              "weak": "This Specialization covers GIS, spatial analysis, cartography, and environmental applications.",
+              "strong": "In this Specialization you'll use spatial data to investigate environmental questions. Through hands-on projects you'll prepare datasets, create maps, analyze patterns, and communicate findings to non-technical audiences.",
+              "why": "The first lists topics. The second says what a learner will do, and hints at who it's for."
+            },
+            {
+              "field": "What learners will be able to do by the end",
+              "weak": "Understand the principles of environmental policy analysis.",
+              "strong": "Evaluate an environmental policy and make an evidence-based recommendation.",
+              "why": "\"Understand\" can't be observed, so it can't be assessed. \"Evaluate\" and \"recommend\" can."
+            },
+            {
+              "field": "Skills learners will gain",
+              "weak": "Environmental policy, data analysis, communication",
+              "strong": "Policy evaluation, spatial data analysis, evidence-based recommendation writing",
+              "why": "The first names fields of study. The second names things a learner could put on a CV."
             }
           ]
         },
@@ -355,24 +448,25 @@
         {
           "type": "checklist",
           "collapsed": true,
-          "title": "What to have ready before you start",
-          "note": "Your Learning Experience Designer will help shape all of this — none of it needs to be polished.",
+          "title": "Check your draft",
+          "note": "Nothing here needs to be polished — your Learning Experience Designer will help shape all of it.",
           "items": [
-            "The competency the full Specialization builds.",
-            "Who it's for: the roles, contexts, or situations of your intended learner.",
-            "What learners should already know, stated as a skill.",
-            "A working title for each course, and the skill each one owns.",
-            "Where the hands-on project or projects will live.",
-            "Landing page copy: description, audience, prerequisites, time commitment."
+            "Can you state the competency the whole Specialization builds, in one sentence?",
+            "Does that sentence describe something a learner could show you?",
+            "Is it realistic for the total learning time?",
+            "Would each course still be worth taking on its own?",
+            "Have you said what learners should already know, as a skill rather than a course?",
+            "Do you know where the hands-on project or projects will live?"
           ]
         }
-      ]
+      ],
+      "factsNote": "Planning targets rather than requirements. Learner time counts everything a learner does — watching, reading, practicing, and assessment — estimated for a typical learner rather than measured by how much content you have."
     },
     "course": {
       "tier": "course",
       "label": "COURSE",
       "title": "Planning a course",
-      "lede": "Each course is anchored to its own skills and has to make sense to someone who takes only that one.",
+      "lede": "A course teaches one skill well enough that someone could take it on its own and come away able to do something new.",
       "facts": [
         {
           "icon": "star",
@@ -399,7 +493,7 @@
         {
           "type": "templatePreview",
           "title": "What you'll fill in",
-          "note": "This is the Course section of the template. It repeats for each course — copy the whole section to add another.",
+          "note": "Use this page to work through the decisions, then record them in the Design Document. This section repeats for each course.",
           "band": {
             "tier": "course",
             "icon": "layers",
@@ -469,16 +563,16 @@
           "title": "Three things to consider for highest impact",
           "items": [
             {
-              "heading": "Anchor to skills, not topics",
-              "body": "Coursera organises its whole catalogue around skills — concrete, demonstrable abilities like \"clean and validate a dataset\" or \"build a responsive web page layout.\" A skill-aligned course is easier for the right learner to find."
+              "heading": "Name the skill, not the subject area",
+              "body": "Coursera organizes its catalogue around skills — concrete things a learner can do, like \"clean and validate a dataset.\" A course named for a skill is easier for the right learner to find, and easier for you to decide what belongs in it."
             },
             {
-              "heading": "Decide the graded evidence before you plan content",
-              "body": "Name what will prove the objectives were met, then work backward to the teaching. A 10-question auto-graded quiz per module with answer-specific feedback is the common default."
+              "heading": "Decide how you'll know it worked, before you build",
+              "body": "Settle what a learner will do to show they got there, then work backwards to the teaching. It's a quicker route to a coherent course than choosing content first and assessing whatever happens to be there."
             },
             {
-              "heading": "If you can't say the outcome in one phrase, it's probably two courses",
-              "body": "2–4 objectives, 3–6 modules, 2–8 hours. Consistently running over usually means the course wants splitting — or the Specialization needs another course to carry the overflow."
+              "heading": "One phrase should cover it",
+              "body": "If the outcome takes more than a phrase to describe, there may be two courses in there. Around 2–4 objectives, 3–6 modules, and 2–8 hours is a comfortable shape; consistently running over is usually a sign to split."
             }
           ]
         },
@@ -522,13 +616,14 @@
             }
           ]
         }
-      ]
+      ],
+      "factsNote": "Planning targets rather than requirements."
     },
     "module": {
       "tier": "module",
       "label": "MODULE",
       "title": "Planning a module",
-      "lede": "One self-contained section of a course, built around a single skill. This is where most of the work happens.",
+      "lede": "A module is one focused stretch of a course — a single skill or theme, taught from start to finish. Most of the design work happens at this level.",
       "facts": [
         {
           "icon": "star",
@@ -555,7 +650,7 @@
         {
           "type": "templatePreview",
           "title": "What you'll fill in",
-          "note": "This is the Module section of the template, plus its lesson and asset table. It repeats for every module.",
+          "note": "Use this page to work through the decisions, then record them in the Design Document. This section repeats for every module.",
           "band": {
             "tier": "module",
             "icon": "list",
@@ -668,16 +763,16 @@
           "title": "Three things to consider for highest impact",
           "items": [
             {
-              "heading": "One skill, taught end to end",
-              "body": "A module opens by establishing its own context and closes by checking whether the skill landed. A learner should never need to have seen anything else first. Title it for the skill — Coursera adds the number."
+              "heading": "One skill, taught start to finish",
+              "body": "A module opens by setting up its own context and closes by checking whether the skill landed, so a learner who arrives here first isn't lost. Naming it for the skill rather than a number helps — Coursera adds the numbering itself."
             },
             {
-              "heading": "Follow the WWHAA pattern",
-              "body": "Why → What → How → Apply → Assess. Running a complete cycle inside every module is what lets it hold up on its own, and it guides format choices as well as sequence."
+              "heading": "A pattern that helps: Why, What, How, Apply, Assess",
+              "body": "Establish why the skill matters, teach the ideas behind it, show it being done, let learners try it, then check. Running a full cycle inside each module is what lets the module stand on its own, and it makes format choices easier."
             },
             {
-              "heading": "Mix the assets, and practise before you assess",
-              "body": "3–6 videos, 1–2 readings, 1–2 activities, 1 graded quiz. Aim for no more than two of the same type in a row — learners drop off at higher rates in repetitive sequences."
+              "heading": "Vary the formats, and let learners practice first",
+              "body": "Roughly 3–6 videos, 1–2 readings, 1–2 activities, and a graded quiz. Two of the same format in a row is usually fine; more than that and engagement drops. Practice before the graded check gives learners somewhere safe to be wrong."
             }
           ]
         },
@@ -725,7 +820,7 @@
             {
               "n": 7,
               "type": "Practice quiz",
-              "what": "Practises topics 1 and 2 with feedback",
+              "what": "Practices topics 1 and 2 with feedback",
               "phase": "Apply"
             },
             {
@@ -737,7 +832,7 @@
             {
               "n": 9,
               "type": "Reading",
-              "what": "Reviews and synthesises the key concepts",
+              "what": "Reviews and synthesizes the key concepts",
               "phase": "What"
             },
             {
@@ -792,7 +887,8 @@
           ],
           "notes": []
         }
-      ]
+      ],
+      "factsNote": "Planning targets rather than requirements."
     },
     "assets": {
       "tier": "asset",
@@ -811,14 +907,14 @@
             "Aim for 5–10 minutes, one idea per video.",
             "Chunking is the whole game. Shorter videos hold attention; longer ones often get skipped entirely. Videos under 10 minutes increase lecture completion rates by 16% and raise satisfaction with the course overall.",
             "The strongest-performing courses keep at least two-thirds of their videos under 10 minutes. Break complex topics into a series of short, focused videos with clear, specific titles.",
-            "What raises engagement: open with a hook or story, keep the tone conversational, use appropriate humour, add visuals or animation, and keep a relatively brisk speaking pace.",
+            "What raises engagement: open with a hook or story, keep the tone conversational, use appropriate humor, add visuals or animation, and keep a relatively brisk speaking pace.",
             "Try not to default to video. Readings, interactives, and labs are often better for reference material and anything that needs frequent updating.",
             "Use AI tools to speed up production, but aim to keep a real person as the on-screen presenter — learners benefit from seeing real people."
           ],
           "accessibility": [
             "Accurate captions are required, and a transcript should be available.",
             "Say aloud what's on screen — try not to rely on visuals alone to carry meaning.",
-            "Check colour contrast on slides, and avoid using colour as the only way to distinguish anything.",
+            "Check color contrast on slides, and avoid using color as the only way to distinguish anything.",
             "Keep on-screen text large enough to read on a phone."
           ],
           "copyright": [
@@ -857,7 +953,7 @@
           "icon": "mic",
           "title": "Audio Podcast",
           "short": "Audio-only instruction learners take anywhere.",
-          "what": "A recognised instructional format alongside video and readings. Audio suits interviews, expert conversations, and narrative explanation — anything a learner might absorb while commuting or walking.",
+          "what": "A recognized instructional format alongside video and readings. Audio suits interviews, expert conversations, and narrative explanation — anything a learner might absorb while commuting or walking.",
           "pedagogy": [
             "Best for conversation, storytelling, and expert perspective — not for anything visual.",
             "Considerably faster and cheaper to produce than video, which makes it a practical way to add variety.",
@@ -880,7 +976,7 @@
           "icon": "plugin",
           "title": "Interactive Plugin",
           "short": "Embedded web apps for interactive practice.",
-          "what": "Plugins embed single-page web applications directly inside a Coursera course item, so they support nearly any experience the web can deliver — simulations, visualisers, calculators, explorable diagrams.",
+          "what": "Plugins embed single-page web applications directly inside a Coursera course item, so they support nearly any experience the web can deliver — simulations, visualizers, calculators, explorable diagrams.",
           "pedagogy": [
             "Strong choice for concepts that are easier to manipulate than to describe.",
             "Confirm feasibility early — plugins usually need development effort your team has to plan for.",
@@ -890,7 +986,7 @@
           "accessibility": [
             "Everything needs to be operable by keyboard alone, not just mouse or touch.",
             "Interactive controls need screen-reader labels.",
-            "Try not to rely on colour alone to convey state or feedback.",
+            "Try not to rely on color alone to convey state or feedback.",
             "Have a plan for learners who can't use the interaction at all — an equivalent reading or activity.",
             "Verify all of this before committing to a plugin; retrofitting accessibility is expensive."
           ],
@@ -966,7 +1062,7 @@
           "accessibility": [
             "Any image in a question stem needs alt text conveying what the question depends on.",
             "Write stems in plain language; avoid double negatives and unnecessary complexity.",
-            "Avoid questions that require distinguishing colours.",
+            "Avoid questions that require distinguishing colors.",
             "Avoid time limits on practice."
           ],
           "copyright": [
@@ -989,7 +1085,7 @@
             "For projects, AI-graded assignments and programming assignments can evaluate a submitted artifact."
           ],
           "accessibility": [
-            "Same requirements as practice quizzes: alt text on anything the question depends on, plain-language stems, no colour-only distinctions.",
+            "Same requirements as practice quizzes: alt text on anything the question depends on, plain-language stems, no color-only distinctions.",
             "If a time limit is genuinely necessary, flag it early so extended-time accommodations can be arranged.",
             "Make sure the assessment tests the skill, not a learner's ability to use an interface."
           ],
