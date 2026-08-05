@@ -323,8 +323,6 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   font-size: 0.9rem;
 }
 
-.card-titles { display: flex; flex-direction: column; min-width: 0; }
-
 .card-title {
   font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 700;
@@ -332,7 +330,6 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   color: var(--navy);
 }
 
-.card-focus { font-size: 0.76rem; font-weight: 600; color: var(--course); }
 
 /* Spec chips inside a card (learning objectives / modules / hours) */
 .spec-list {
@@ -355,24 +352,6 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .spec-row .ico { width: 17px; height: 17px; color: var(--course); }
 .module-card .spec-row .ico { color: var(--module); }
 
-.reuse-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  margin-top: 12px;
-  padding: 6px 11px;
-  border-radius: 6px;
-  background: var(--white);
-  border: 1px dashed var(--course-line);
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-weight: 700;
-  font-size: 0.68rem;
-  letter-spacing: 0.03em;
-  color: var(--course);
-  line-height: 1.35;
-  text-align: left;
-}
-.reuse-badge .ico { width: 15px; height: 15px; flex-shrink: 0; }
 
 /* Callout (design for reuse) */
 .callout {
@@ -523,9 +502,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 
 /* ---------- Asset band ---------- */
 .asset-band {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  display: block;
   background: var(--asset-bg);
   border: 1px solid var(--asset-line);
   border-radius: 12px;
@@ -1596,4 +1573,66 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   .consider { padding: 14px 15px; gap: 12px; }
   .ref-block > summary { padding: 14px 16px; }
   .ref-body > .block, .ref-body > .compare { padding: 0 16px 18px; }
+}
+
+/* ---------- Course thread: one message spanning all the courses ---------- */
+.thread { --gap: 42px; margin-top: 0; }
+
+.thread-ticks {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  gap: var(--gap);
+}
+.thread-ticks > span { display: flex; justify-content: center; }
+.thread-ticks > span::before {
+  content: '';
+  width: 0;
+  height: 16px;
+  border-left: 1.5px dashed var(--course-line);
+}
+
+.thread-body {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+  background: var(--course-bg);
+  border: 1px dashed var(--course);
+  border-radius: 10px;
+  padding: 15px 18px;
+}
+.thread-icon { display: flex; flex-shrink: 0; }
+.thread-icon .ico { width: 20px; height: 20px; color: var(--course); margin-top: 1px; }
+.thread-body p { font-size: 0.86rem; color: var(--cast-iron); line-height: 1.65; }
+
+/* ---------- Learning Assets band header ---------- */
+.asset-band-head {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+  padding-bottom: 15px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--asset-line);
+}
+.asset-band-icon { display: flex; flex-shrink: 0; }
+.asset-band-icon .ico { width: 22px; height: 22px; color: var(--asset); margin-top: 1px; }
+
+.asset-band-title {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--asset);
+  margin-bottom: 3px;
+}
+.asset-band-note { font-size: 0.85rem; color: var(--cast-iron); line-height: 1.6; }
+
+.asset-tiles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 1000px) { .asset-tiles { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 720px) {
+  .asset-tiles { grid-template-columns: repeat(2, 1fr); }
+  .thread-ticks { display: none; }
 }

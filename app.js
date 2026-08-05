@@ -198,20 +198,31 @@ function homeCoursesHtml(c) {
             <button type="button" class="card course-card" data-goto="course">
               <span class="card-top">
                 <span class="num-badge">${card.n}</span>
-                <span class="card-titles">
-                  <span class="card-title">${esc(card.title)}</span>
-                  <span class="card-focus">${esc(card.focus)}</span>
-                </span>
+                <span class="card-title">${esc(card.title)}</span>
               </span>
               <span class="spec-list">${specRowsHtml(c.cardSpecs)}</span>
-              <span class="reuse-badge">${icon('check')}${esc(c.reuseBadge)}</span>
               ${openCue('Plan a course')}
             </button>`
             )
             .join('')}
         </div>
+        ${threadHtml(c.thread, c.cards.length)}
       </div>
     </section>`;
+}
+
+/* One thread spanning all the courses, rather than a badge repeated on each card.
+   The ticks line up with the card centres so it reads as tying them together. */
+function threadHtml(thread, cols) {
+  if (!thread) return '';
+  return `
+    <div class="thread" style="--cols:${cols};--gap:42px">
+      <div class="thread-ticks">${'<span></span>'.repeat(cols)}</div>
+      <div class="thread-body">
+        <span class="thread-icon">${icon('layers')}</span>
+        <p>${esc(thread.body)}</p>
+      </div>
+    </div>`;
 }
 
 function homeModulesHtml(m) {
@@ -247,6 +258,14 @@ function homeAssetsHtml() {
     <section class="tier tier-asset">
       <div class="tier-body">
         <div class="asset-band">
+          <div class="asset-band-head">
+            <span class="asset-band-icon">${icon('play')}</span>
+            <div>
+              <p class="asset-band-title">${esc(C.home.assets.title)}</p>
+              <p class="asset-band-note">${esc(C.home.assets.note)}</p>
+            </div>
+          </div>
+          <div class="asset-tiles">
           ${C.pages.assets.items
             .map(
               (a) => `
@@ -257,6 +276,7 @@ function homeAssetsHtml() {
             </button>`
             )
             .join('')}
+          </div>
         </div>
       </div>
     </section>`;

@@ -72,18 +72,15 @@
       "cards": [
         {
           "n": 1,
-          "title": "Course",
-          "focus": "Anchored to its own skills"
+          "title": "Course"
         },
         {
           "n": 2,
-          "title": "Course",
-          "focus": "Anchored to its own skills"
+          "title": "Course"
         },
         {
           "n": 3,
-          "title": "Course",
-          "focus": "Anchored to its own skills"
+          "title": "Course"
         }
       ],
       "cardSpecs": [
@@ -104,24 +101,26 @@
           "label": "Course Certificate"
         }
       ],
-      "reuseBadge": "Stands on its own"
+      "thread": {
+        "body": "Ideally, each course is designed to be standalone and modular. These courses tend to do best on the Coursera platform, and they open up a variety of opportunities for repurposing and increasing learner reach."
+      }
     },
     "modules": {
       "cards": [
         {
           "n": 1,
           "title": "Module",
-          "role": "One skill or topic, taught end to end."
+          "role": "Focused on a sub-topic, skill(s), or theme"
         },
         {
           "n": 2,
           "title": "Module",
-          "role": "One skill or topic, taught end to end."
+          "role": "Focused on a sub-topic, skill(s), or theme"
         },
         {
           "n": 3,
           "title": "Module",
-          "role": "One skill or topic, taught end to end."
+          "role": "Focused on a sub-topic, skill(s), or theme"
         }
       ],
       "cardSpecs": [
@@ -139,7 +138,10 @@
         }
       ]
     },
-    "assets": {},
+    "assets": {
+      "title": "Learning Assets",
+      "note": "A variety of asset types helps keep learners engaged and motivated to complete the course."
+    },
     "comparison": {
       "title": "How this differs from a for-credit course",
       "intro": "Most of the surprises in a first Coursera build come from assumptions carried over from semester teaching.",
@@ -192,7 +194,7 @@
     },
     "handoff": {
       "title": "Ready to plan yours?",
-      "body": "The template is the blank version of everything here — no guidance, just the fields your design team needs. Come back any time you want a refresher.",
+      "body": "The template is the blank version of everything here to get started.",
       "cta": "Open the planning template"
     }
   },
@@ -953,14 +955,14 @@
           "id": "practice-quiz",
           "icon": "question",
           "title": "Practice Quiz",
-          "short": "Assessment for learning — ungraded self-check.",
+          "short": "Assessment for learning. Ungraded self-check.",
           "what": "Assessment for learning: optional, ungraded, and not counted toward a learner's final grade. Practice quizzes help learners self-assess, catch misconceptions early, and build the confidence to apply a skill for real.",
           "pedagogy": [
             "Coursera recommends at least one practice quiz and one practice activity per module.",
             "Provide every question, the correct answers, and feedback for both correct and incorrect responses.",
             "Feedback should help learners identify the error, not just mark it wrong.",
             "Rehearse the same thinking the graded assessment will ask for.",
-            "Use them generously — they cost a learner nothing."
+            "Use them generously; they cost a learner nothing."
           ],
           "accessibility": [
             "Any image in a question stem needs alt text conveying what the question depends on.",
@@ -977,14 +979,14 @@
           "id": "graded-assessment",
           "icon": "rosette",
           "title": "Graded Assessment",
-          "short": "Assessment of learning — checks mastery.",
+          "short": "Assessment of learning. Checks mastery.",
           "what": "Assessment of learning: required, counted toward the final grade, and used to evaluate whether learners achieved the stated objectives. Every module needs at least one, and every course-level objective should be validated somewhere in the graded assessments.",
           "pedagogy": [
             "A 10-question auto-graded quiz with answer-specific feedback is the common default.",
-            "Must map to the module's stated learning objectives — not trivia from a reading.",
+            "Must map to the module's stated learning objectives, not trivia from a reading.",
             "Point learners to the specific review material for anything they missed.",
             "Regular graded checkpoints beat one high-stakes bottleneck at the end.",
-            "Coursera also recommends at least one graded project per course — an authentic, hands-on assessment learners can put in a portfolio.",
+            "Coursera also recommends at least one graded project per course: an authentic, hands-on assessment learners can put in a portfolio.",
             "For projects, AI-graded assignments and programming assignments can evaluate a submitted artifact."
           ],
           "accessibility": [
