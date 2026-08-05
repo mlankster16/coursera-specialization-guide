@@ -144,7 +144,6 @@
     },
     "comparison": {
       "title": "How this differs from a for-credit course",
-      "intro": "Most of the surprises in a first Coursera build come from assumptions carried over from semester teaching.",
       "rows": [
         {
           "aspect": "Schedule",

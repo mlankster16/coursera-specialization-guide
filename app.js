@@ -289,7 +289,7 @@ function comparisonHtml(c) {
         <span class="compare-icon">${icon('scale')}</span>
         <div>
           <h2 class="section-title">${esc(c.title)}</h2>
-          <p class="section-intro">${esc(c.intro)}</p>
+          ${c.intro ? `<p class="section-intro">${esc(c.intro)}</p>` : ''}
         </div>
       </div>
       <div class="compare-table">
