@@ -552,7 +552,9 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 
 .block:first-of-type { margin-top: 56px; }
 
-.compare-head { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 22px; }
+/* Centred rather than top-aligned: the heading is a single line now that the
+   intro paragraph is gone, so flex-start left it sitting above the icon. */
+.compare-head { display: flex; gap: 16px; align-items: center; margin-bottom: 22px; }
 
 .compare-icon {
   display: flex;
