@@ -45,8 +45,8 @@
       }
     ],
     "specialization": {
-      "definition": "A series of related, in-depth courses that help learners master a competency.",
-      "includes": [
+      "definition": "A Coursera Specialization is a series of related courses designed to help learners master a specific topic.",
+      "specs": [
         {
           "icon": "layers",
           "label": "3–6 courses"
@@ -57,16 +57,13 @@
         },
         {
           "icon": "flask",
-          "label": "Hands-on projects with real-world application"
+          "label": "Hands-on projects"
         },
         {
           "icon": "certificate",
           "label": "Specialization Certificate"
         }
-      ],
-      "highlight": {
-        "body": "In most cases, the anticipated learning time for a Coursera Specialization parallels a 15-week semester course at Duke. The difference? How self-paced learners use those hours. Your Learning Experience Designer will help you think through how to best adapt your existing or new materials for the Coursera learner."
-      }
+      ]
     },
     "courses": {
       "cards": [
@@ -142,68 +139,81 @@
       "title": "Learning Assets",
       "note": "A variety of asset types helps keep learners engaged and motivated to complete the course."
     },
-    "comparison": {
-      "title": "Translating from a semester course",
+    "mapping": {
+      "title": "How your course maps to Coursera",
+      "intro": "Most of what you already teach has a home in this structure. Here's roughly how the pieces line up.",
+      "yourLabel": "In your course",
+      "courseraLabel": "On Coursera",
       "rows": [
         {
-          "aspect": "Planning unit",
-          "credit": "A 15-week course",
-          "coursera": "A short series of self-contained courses, any one of which may be someone's whole experience."
+          "fromLabel": "Your whole course",
+          "fromDetail": "A semester of material",
+          "toLabel": "A Specialization",
+          "toDetail": "3–6 courses, 12–48 hours in total",
+          "tier": "spec",
+          "icon": "certificate"
         },
         {
-          "aspect": "Starting point",
-          "credit": "Weekly topics to cover",
-          "coursera": "What learners should be able to do, with topics chosen to support that."
+          "fromLabel": "A unit or theme",
+          "fromDetail": "Often several weeks of your syllabus",
+          "toLabel": "A Course",
+          "toDetail": "2–8 hours, and it works on its own",
+          "tier": "course",
+          "icon": "layers"
         },
         {
-          "aspect": "Schedule",
-          "credit": "Fixed semester, weekly meetings",
-          "coursera": "No schedule. Learners start any day and work at their own pace."
+          "fromLabel": "A topic inside that unit",
+          "fromDetail": "A concept, method, or skill",
+          "toLabel": "A Module",
+          "toDetail": "Around 30 minutes — one sitting",
+          "tier": "module",
+          "icon": "list"
         },
         {
-          "aspect": "Your presence",
-          "credit": "You're in the room and can adjust live",
-          "coursera": "Fully asynchronous. Instructions, examples, and feedback have to be written in advance."
-        },
-        {
-          "aspect": "Class time",
-          "credit": "Lectures and discussion sections",
-          "coursera": "Short, purposeful activities a learner can finish in one sitting."
-        },
-        {
-          "aspect": "Who enrolls",
-          "credit": "Admitted students with shared background",
-          "coursera": "Working adults worldwide, varied backgrounds, enrolling for their own reasons."
-        },
-        {
-          "aspect": "Prerequisites",
-          "credit": "Enforced by the registrar",
-          "coursera": "Stated plainly in the course. Anyone can enroll in anything, in any order."
-        },
-        {
-          "aspect": "How much content",
-          "credit": "Coverage of the disciplinary field",
-          "coursera": "The content needed to reach the stated outcome. Narrowing usually beats compressing."
-        },
-        {
-          "aspect": "Final assessment",
-          "credit": "A paper or an exam",
-          "coursera": "Something a learner makes and could show someone: an analysis, a plan, an artifact."
-        },
-        {
-          "aspect": "Total length",
-          "credit": "~40+ contact hours per course",
-          "coursera": "2–8 hours per course; 12–48 hours across the Specialization."
-        },
-        {
-          "aspect": "What completion means",
-          "credit": "A grade",
-          "coursera": "Evidence the learner can do the thing the course promised."
+          "fromLabel": "A lecture, reading, or problem set",
+          "fromDetail": "The pieces you already have",
+          "toLabel": "Learning assets",
+          "toDetail": "Video, reading, activity, quiz",
+          "tier": "asset",
+          "icon": "play"
         }
       ],
-      "intro": "Familiar design decisions, made differently for an open, asynchronous audience.",
-      "creditLabel": "What you're used to",
-      "courseraLabel": "What works on Coursera"
+      "note": {
+        "icon": "clock",
+        "title": "Why modules do more work than they look like they do",
+        "body": "Learners usually come to Coursera in short sessions, often around other work. A module gives someone a complete piece of learning in one sitting, and a natural place to stop and pick up again later."
+      },
+      "existing": {
+        "title": "Can you use what you already have?",
+        "lead": "Usually, yes. Your Learning Experience Designer will work through it with you — here's what we tend to look at together.",
+        "items": [
+          {
+            "icon": "star",
+            "label": "Skills rather than coverage",
+            "body": "Coursera learners are most often working professionals building a specific skill. We start from what someone will be able to do by the end, then work backwards to the materials, framing, and assessments that get them there."
+          },
+          {
+            "icon": "play",
+            "label": "Existing recordings",
+            "body": "Learners stay with videos under about 10 minutes, so longer recordings usually get broken into shorter, more focused pieces. That's something we can help with."
+          },
+          {
+            "icon": "book",
+            "label": "Reading-heavy material",
+            "body": "If a course leans mostly on readings, we'll look together at where a video, an audio conversation, or a hands-on activity would carry the idea better."
+          },
+          {
+            "icon": "access",
+            "label": "Accessibility",
+            "body": "Captions, transcripts, alt text, and readable contrast. Much easier to sort out while we're still planning than after everything is produced."
+          },
+          {
+            "icon": "copyright",
+            "label": "Copyright",
+            "body": "Anything you didn't create — images, figures, clips, datasets — needs permission that covers a public, global audience."
+          }
+        ]
+      }
     },
     "completion": {
       "title": "Certificates",

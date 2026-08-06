@@ -118,7 +118,7 @@ function homeHtml() {
       ${dropHtml(1, 3, 'dashed')}
       ${homeAssetsHtml()}
     </div>
-    ${comparisonHtml(h.comparison)}
+    ${mappingHtml(h.mapping)}
     ${completionHtml(h.completion)}
     ${handoffHtml(h.handoff)}`;
 }
@@ -162,22 +162,19 @@ function openCue(label) {
   return `<span class="more-cue">${esc(label)} &rarr;</span>`;
 }
 
+/* Shaped like the Course and Module cards — a larger container, not a louder one */
 function homeSpecHtml(s) {
   return `
     <section class="tier tier-spec">
-      <div class="tier-body">
-        <button type="button" class="big-card" data-goto="specialization">
-          <span class="big-card-icon">${icon('certificate')}</span>
-          <span class="big-card-main">
-            <span class="big-card-title">Specialization</span>
-            <span class="big-card-def">${esc(s.definition)}</span>
-            <span class="outcome-box">${icon('star')}<span>${esc(s.highlight.body)}</span></span>
-            ${openCue('Plan your Specialization')}
+      <div class="tier-body spec-body">
+        <button type="button" class="card spec-card" data-goto="specialization">
+          <span class="card-top">
+            <span class="icon-badge">${icon('certificate')}</span>
+            <span class="card-title">Specialization</span>
           </span>
-          <span class="big-card-includes">
-            <span class="includes-label">Includes</span>
-            ${s.includes.map((i) => `<span class="include-row">${icon(i.icon)}<span>${esc(i.label)}</span></span>`).join('')}
-          </span>
+          <span class="card-role">${esc(s.definition)}</span>
+          <span class="spec-list">${specRowsHtml(s.specs)}</span>
+          ${openCue('Plan your Specialization')}
         </button>
       </div>
     </section>`;
@@ -282,32 +279,73 @@ function homeAssetsHtml() {
     </section>`;
 }
 
-function comparisonHtml(c) {
+/* ---------- Mapping: a semester course translated into Coursera's shape ----------
+   Replaces the old differences table. Showing faculty that their existing work has
+   a home lands better than listing what's unfamiliar. */
+
+function mappingHtml(m) {
   return `
     <section class="compare">
       <div class="compare-head">
         <span class="compare-icon">${icon('scale')}</span>
         <div>
-          <h2 class="section-title">${esc(c.title)}</h2>
-          ${c.intro ? `<p class="section-intro">${esc(c.intro)}</p>` : ''}
+          <h2 class="section-title">${esc(m.title)}</h2>
+          ${m.intro ? `<p class="section-intro">${esc(m.intro)}</p>` : ''}
         </div>
       </div>
-      <div class="compare-table">
-        <div class="compare-row compare-header">
+
+      <div class="map">
+        <div class="map-heads">
+          <span class="map-head-your">${esc(m.yourLabel)}</span>
           <span></span>
-          <span>${esc(c.creditLabel || 'For-credit course')}</span>
-          <span class="col-coursera">${esc(c.courseraLabel || 'Coursera course')}</span>
+          <span class="map-head-cr">${esc(m.courseraLabel)}</span>
         </div>
-        ${c.rows
+        ${m.rows
           .map(
             (r) => `
-          <div class="compare-row">
-            <span class="compare-aspect">${esc(r.aspect)}</span>
-            <span class="compare-credit">${esc(r.credit)}</span>
-            <span class="compare-coursera">${esc(r.coursera)}</span>
+          <div class="map-row">
+            <div class="map-from">
+              <span class="map-from-label">${esc(r.fromLabel)}</span>
+              <span class="map-detail">${esc(r.fromDetail)}</span>
+            </div>
+            <span class="map-arrow" aria-hidden="true">${icon('arrow')}</span>
+            <div class="map-to tier-${r.tier}">
+              <span class="map-to-top">
+                <span class="map-to-icon">${icon(r.icon)}</span>
+                <span class="map-to-label">${esc(r.toLabel)}</span>
+              </span>
+              <span class="map-detail">${esc(r.toDetail)}</span>
+            </div>
           </div>`
           )
           .join('')}
+      </div>
+
+      <div class="map-note">
+        <span class="map-note-icon">${icon(m.note.icon)}</span>
+        <div>
+          <p class="map-note-title">${esc(m.note.title)}</p>
+          <p class="map-note-body">${esc(m.note.body)}</p>
+        </div>
+      </div>
+
+      <div class="reuse">
+        <h3 class="reuse-title">${esc(m.existing.title)}</h3>
+        <p class="reuse-lead">${esc(m.existing.lead)}</p>
+        <div class="reuse-grid">
+          ${m.existing.items
+            .map(
+              (it) => `
+            <div class="reuse-item">
+              <span class="reuse-icon">${icon(it.icon)}</span>
+              <div>
+                <p class="reuse-label">${esc(it.label)}</p>
+                <p class="reuse-body">${esc(it.body)}</p>
+              </div>
+            </div>`
+            )
+            .join('')}
+        </div>
       </div>
     </section>`;
 }

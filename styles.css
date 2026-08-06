@@ -167,7 +167,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .fan.dashed .fan-drops > span::before { border-left-style: dashed; }
 
 /* ---------- Cards: shared ---------- */
-.card, .big-card, .asset-tile {
+.card, .asset-tile {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -181,8 +181,8 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   width: 100%;
 }
 
-.card:hover, .big-card:hover, .asset-tile:hover { transform: translateY(-2px); }
-.card:focus-visible, .big-card:focus-visible, .asset-tile:focus-visible {
+.card:hover, .asset-tile:hover { transform: translateY(-2px); }
+.card:focus-visible, .asset-tile:focus-visible {
   outline: 3px solid var(--persimmon);
   outline-offset: 2px;
 }
@@ -199,92 +199,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   padding-top: 12px;
 }
 
-.card:hover .more-cue, .big-card:hover .more-cue,
-.card:focus-visible .more-cue, .big-card:focus-visible .more-cue { opacity: 1; }
-
-/* ---------- Specialization card ---------- */
-.big-card {
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 26px;
-  background: var(--spec-bg);
-  border-color: var(--spec-line);
-  padding: 26px 28px;
-}
-
-.big-card:hover { border-color: var(--spec); box-shadow: 0 2px 14px rgba(0,83,155,0.1); }
-.big-card .more-cue { color: var(--spec); }
-
-.big-card-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 58px;
-  height: 58px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: var(--white);
-  border: 1px solid var(--spec-line);
-  color: var(--spec);
-}
-.big-card-icon .ico { width: 28px; height: 28px; }
-
-.big-card-main { display: flex; flex-direction: column; gap: 10px; flex: 1; min-width: 0; }
-
-/* Title case, matching Course and Module — the Specialization is a larger unit,
-   not a more important one */
-.big-card-title {
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-weight: 800;
-  font-size: 1.18rem;
-  color: var(--spec);
-}
-
-.big-card-def { font-size: 0.92rem; color: var(--cast-iron); line-height: 1.6; }
-
-.outcome-box {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  background: var(--white);
-  border: 1px solid var(--spec-line);
-  border-radius: 8px;
-  padding: 12px 14px;
-  font-size: 0.88rem;
-  line-height: 1.55;
-  color: var(--cast-iron);
-  margin-top: 2px;
-}
-.outcome-box .ico { color: var(--spec); margin-top: 1px; }
-
-.big-card-includes {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-  padding-left: 26px;
-  border-left: 1px solid var(--spec-line);
-  flex-shrink: 0;
-  max-width: 220px;
-}
-
-.includes-label {
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-weight: 700;
-  font-size: 0.68rem;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--graphite);
-}
-
-.include-row {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  font-size: 0.83rem;
-  color: var(--cast-iron);
-  line-height: 1.4;
-}
-.include-row .ico { color: var(--spec); width: 20px; height: 20px; }
+.card:hover .more-cue, .card:focus-visible .more-cue { opacity: 1; }
 
 /* ---------- Course row ---------- */
 .course-row {
@@ -431,7 +346,6 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   font-size: 0.82rem;
   color: var(--graphite);
   line-height: 1.6;
-  max-width: 720px;
 }
 .tier-note .ico { width: 17px; height: 17px; margin-top: 2px; flex-shrink: 0; color: var(--graphite); }
 
@@ -761,7 +675,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   line-height: 1.25;
 }
 
-.section-intro { font-size: 0.9rem; color: var(--graphite); line-height: 1.6; margin-top: 5px; max-width: 640px; }
+.section-intro { font-size: 0.9rem; color: var(--graphite); line-height: 1.6; margin-top: 5px; }
 
 .compare-table { border: 1px solid var(--hatteras); border-radius: 10px; overflow: hidden; }
 
@@ -840,7 +754,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   font-size: 0.93rem;
   color: rgba(255,255,255,0.8);
   line-height: 1.65;
-  max-width: 560px;
+  max-width: 680px;
   margin: 10px auto 22px;
 }
 
@@ -1062,7 +976,6 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   font-size: 1rem;
   color: var(--graphite);
   line-height: 1.65;
-  max-width: 700px;
   margin-top: 10px;
 }
 
@@ -1645,7 +1558,6 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   color: var(--graphite);
   line-height: 1.6;
   margin-top: 12px;
-  max-width: 760px;
 }
 
 /* ---------- Topic -> competency ladder ---------- */
@@ -1761,4 +1673,168 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   .rung { grid-template-columns: 1fr; gap: 4px; }
   .verb-cols { grid-template-columns: 1fr; }
   .contrast-pair { grid-template-columns: 1fr; }
+}
+
+/* ---------- Specialization card: a peer of the Course and Module cards ---------- */
+.spec-body { display: flex; justify-content: center; }
+
+.spec-card {
+  max-width: 460px;
+  background: var(--spec-bg);
+  border-color: var(--spec-line);
+  padding: 18px 20px 16px;
+  gap: 11px;
+}
+.spec-card:hover { border-color: var(--spec); box-shadow: 0 2px 14px rgba(0,83,155,0.1); }
+.spec-card .more-cue { color: var(--spec); }
+.spec-card .card-title { color: var(--spec); }
+.spec-card .icon-badge { border-color: var(--spec-line); color: var(--spec); }
+.spec-card .spec-list { border-top-color: var(--spec-line); }
+.spec-card .spec-row .ico { color: var(--spec); }
+
+/* ---------- Mapping: your course -> Coursera ---------- */
+.map { margin-top: 20px; }
+
+.map-heads {
+  display: grid;
+  grid-template-columns: 1fr 44px 1fr;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.map-head-your, .map-head-cr {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--graphite);
+}
+.map-head-cr { color: var(--navy); }
+
+.map-row {
+  display: grid;
+  grid-template-columns: 1fr 44px 1fr;
+  gap: 12px;
+  align-items: stretch;
+  margin-bottom: 10px;
+}
+
+/* Their world: deliberately neutral, so the coloured side reads as the new thing */
+.map-from {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  background: var(--whisper);
+  border: 1px solid var(--hatteras);
+  border-radius: 9px;
+  padding: 13px 16px;
+}
+.map-from-label {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--cast-iron);
+}
+
+.map-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--line);
+}
+.map-arrow .ico { width: 22px; height: 22px; }
+
+.map-to {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  border: 1px solid;
+  border-radius: 9px;
+  padding: 13px 16px;
+}
+.map-to-top { display: flex; align-items: center; gap: 9px; }
+.map-to-icon { display: flex; flex-shrink: 0; }
+.map-to-icon .ico { width: 18px; height: 18px; }
+.map-to-label {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 800;
+  font-size: 0.88rem;
+}
+
+.map-to.tier-spec   { background: var(--spec-bg);   border-color: var(--spec-line); }
+.map-to.tier-course { background: var(--course-bg); border-color: var(--course-line); }
+.map-to.tier-module { background: var(--module-bg); border-color: var(--module-line); }
+.map-to.tier-asset  { background: var(--asset-bg);  border-color: var(--asset-line); }
+.map-to.tier-spec   .map-to-label, .map-to.tier-spec   .map-to-icon { color: var(--spec); }
+.map-to.tier-course .map-to-label, .map-to.tier-course .map-to-icon { color: var(--course); }
+.map-to.tier-module .map-to-label, .map-to.tier-module .map-to-icon { color: var(--module); }
+.map-to.tier-asset  .map-to-label, .map-to.tier-asset  .map-to-icon { color: var(--asset); }
+
+.map-detail { font-size: 0.8rem; color: var(--graphite); line-height: 1.5; }
+
+.map-note {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+  background: var(--module-bg);
+  border: 1px solid var(--module-line);
+  border-radius: 10px;
+  padding: 15px 18px;
+  margin-top: 16px;
+}
+.map-note-icon { display: flex; flex-shrink: 0; }
+.map-note-icon .ico { width: 20px; height: 20px; color: var(--module); margin-top: 1px; }
+.map-note-title {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 800;
+  font-size: 0.87rem;
+  color: var(--module);
+  margin-bottom: 4px;
+}
+.map-note-body { font-size: 0.86rem; color: var(--cast-iron); line-height: 1.65; }
+
+/* ---------- Reusing existing material ---------- */
+.reuse {
+  margin-top: 26px;
+  padding-top: 24px;
+  border-top: 1px solid var(--hatteras);
+}
+.reuse-title {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 800;
+  font-size: 1.08rem;
+  color: var(--navy);
+  margin-bottom: 5px;
+}
+.reuse-lead { font-size: 0.9rem; color: var(--graphite); line-height: 1.65; margin-bottom: 16px; }
+
+.reuse-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+/* The framing point leads, so it gets the full width */
+.reuse-item:first-child { grid-column: 1 / -1; }
+
+.reuse-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: var(--whisper);
+  border-radius: 9px;
+  padding: 14px 16px;
+}
+.reuse-icon { display: flex; flex-shrink: 0; }
+.reuse-icon .ico { width: 19px; height: 19px; color: var(--royal); margin-top: 1px; }
+.reuse-label {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: var(--navy);
+  margin-bottom: 3px;
+}
+.reuse-body { font-size: 0.84rem; color: var(--cast-iron); line-height: 1.6; }
+
+@media (max-width: 720px) {
+  .spec-card { max-width: none; }
+  .map-heads { display: none; }
+  .map-row { grid-template-columns: 1fr; gap: 6px; }
+  .map-arrow { transform: rotate(90deg); }
+  .reuse-grid { grid-template-columns: 1fr; }
 }
