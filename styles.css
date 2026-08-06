@@ -1793,25 +1793,8 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 }
 .map-note-body { font-size: 0.86rem; color: var(--cast-iron); line-height: 1.65; }
 
-/* ---------- Reusing existing material ---------- */
-.reuse {
-  margin-top: 26px;
-  padding-top: 24px;
-  border-top: 1px solid var(--hatteras);
-}
-.reuse-title {
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-weight: 800;
-  font-size: 1.08rem;
-  color: var(--navy);
-  margin-bottom: 5px;
-}
-.reuse-lead { font-size: 0.9rem; color: var(--graphite); line-height: 1.65; margin-bottom: 16px; }
 
-.reuse-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-/* The framing point leads, so it gets the full width */
-.reuse-item:first-child { grid-column: 1 / -1; }
-
+.reuse-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; }
 .reuse-item {
   display: flex;
   gap: 12px;
@@ -1838,3 +1821,25 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   .map-arrow { transform: rotate(90deg); }
   .reuse-grid { grid-template-columns: 1fr; }
 }
+
+/* ---------- Welcome ---------- */
+.intro {
+  background: var(--white);
+  border: 1px solid var(--hatteras);
+  border-left: 3px solid var(--spec);
+  border-radius: 11px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+}
+.intro-body { font-size: 0.95rem; color: var(--cast-iron); line-height: 1.75; }
+
+/* Legend now sits inside the structure section, under its heading */
+.compare .legend { margin: 0 0 22px; }
+
+/* Module-tinted callout, matching the course-tinted one */
+.callout-module { background: var(--module-bg); border: 1px dashed var(--module); }
+.callout-module .callout-icon .ico { color: var(--module); }
+.callout-module .callout-title { color: var(--module); }
+
+/* Course cards carry a description now, same as Module cards */
+.course-card .card-role { font-size: 0.85rem; color: var(--cast-iron); line-height: 1.55; }

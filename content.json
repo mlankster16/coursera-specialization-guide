@@ -24,6 +24,57 @@
   ],
   "home": {
     "hero": {
+      "title": "Designing a Coursera Specialization"
+    },
+    "intro": {
+      "body": "Coursera is a global online learning platform where people take short, self-paced courses to build practical skills. The Learning Experience Design team at the Duke Center for Teaching and Learning (CTL) partners with faculty to design and build these courses. This guide introduces how a Coursera Specialization fits together, and works alongside the planning template you will complete with your designer."
+    },
+    "mapping": {
+      "title": "How your course maps to Coursera",
+      "intro": "Most of what you already teach has a home in this structure. Here's roughly how the pieces line up.",
+      "yourLabel": "In your course",
+      "courseraLabel": "On Coursera",
+      "rows": [
+        {
+          "fromLabel": "Your whole course",
+          "fromDetail": "A semester of material",
+          "toLabel": "A Specialization",
+          "toDetail": "3–6 courses, 12–48 hours learner time total",
+          "tier": "spec",
+          "icon": "certificate"
+        },
+        {
+          "fromLabel": "A unit or theme",
+          "fromDetail": "Often several weeks of your syllabus",
+          "toLabel": "A Course",
+          "toDetail": "2–8 hours learner time, and it works on its own",
+          "tier": "course",
+          "icon": "layers"
+        },
+        {
+          "fromLabel": "A topic inside that unit",
+          "fromDetail": "A concept, method, or skill",
+          "toLabel": "A Module",
+          "toDetail": "30 min–2 hours learner time",
+          "tier": "module",
+          "icon": "list"
+        },
+        {
+          "fromLabel": "A lecture, reading, activity, or assessment",
+          "fromDetail": "The pieces you already have",
+          "toLabel": "Learning assets",
+          "toDetail": "Video, reading, activity, quiz",
+          "tier": "asset",
+          "icon": "play"
+        }
+      ],
+      "note": {
+        "icon": "clock",
+        "title": "What counts as learner time",
+        "body": "Learner time includes videos, readings, quizzes, practice activities, projects, and any other work required to complete the course."
+      }
+    },
+    "structure": {
       "title": "Coursera Specialization Structure"
     },
     "legend": [
@@ -45,7 +96,7 @@
       }
     ],
     "specialization": {
-      "definition": "A Coursera Specialization is a series of related courses designed to help learners master a specific topic.",
+      "definition": "A series of related courses designed to help learners master a specific topic.",
       "specs": [
         {
           "icon": "layers",
@@ -69,15 +120,18 @@
       "cards": [
         {
           "n": 1,
-          "title": "Course"
+          "title": "Course",
+          "role": "Focused on a key skill or topic area"
         },
         {
           "n": 2,
-          "title": "Course"
+          "title": "Course",
+          "role": "Focused on a key skill or topic area"
         },
         {
           "n": 3,
-          "title": "Course"
+          "title": "Course",
+          "role": "Focused on a key skill or topic area"
         }
       ],
       "cardSpecs": [
@@ -91,16 +145,13 @@
         },
         {
           "icon": "clock",
-          "label": "2–8 hours"
+          "label": "2–8 hours of learner time"
         },
         {
           "icon": "certificate",
           "label": "Course Certificate"
         }
-      ],
-      "thread": {
-        "body": "Ideally, each course is designed to be standalone and modular. These courses tend to do best on the Coursera platform, and they open up a variety of opportunities for repurposing and increasing learner reach."
-      }
+      ]
     },
     "modules": {
       "cards": [
@@ -130,6 +181,10 @@
           "label": "2–5 lessons (optional)"
         },
         {
+          "icon": "clock",
+          "label": "30 min–2 hours of learner time"
+        },
+        {
           "icon": "check",
           "label": "1 graded assessment"
         }
@@ -139,85 +194,41 @@
       "title": "Learning Assets",
       "note": "A variety of asset types helps keep learners engaged and motivated to complete the course."
     },
-    "mapping": {
-      "title": "How your course maps to Coursera",
-      "intro": "Most of what you already teach has a home in this structure. Here's roughly how the pieces line up.",
-      "yourLabel": "In your course",
-      "courseraLabel": "On Coursera",
-      "rows": [
+    "reuse": {
+      "title": "Can you use what you already have?",
+      "lead": "In most cases, yes! Your Learning Experience Designer will work with you to ensure that your materials are cleared for public, commercial use. Here's what we will look at together.",
+      "items": [
         {
-          "fromLabel": "Your whole course",
-          "fromDetail": "A semester of material",
-          "toLabel": "A Specialization",
-          "toDetail": "3–6 courses, 12–48 hours in total",
-          "tier": "spec",
-          "icon": "certificate"
+          "icon": "star",
+          "label": "Skills rather than coverage",
+          "body": "Coursera learners are most often working professionals building a specific skill. We start from what someone will be able to do by the end, then work backwards to the materials, framing, and assessments that get them there."
         },
         {
-          "fromLabel": "A unit or theme",
-          "fromDetail": "Often several weeks of your syllabus",
-          "toLabel": "A Course",
-          "toDetail": "2–8 hours, and it works on its own",
-          "tier": "course",
-          "icon": "layers"
+          "icon": "play",
+          "label": "Existing recordings",
+          "body": "Learners stay with videos under about 10 minutes, so longer recordings usually get broken into shorter, more focused pieces. That's something we can help with."
         },
         {
-          "fromLabel": "A topic inside that unit",
-          "fromDetail": "A concept, method, or skill",
-          "toLabel": "A Module",
-          "toDetail": "Around 30 minutes — one sitting",
-          "tier": "module",
-          "icon": "list"
+          "icon": "book",
+          "label": "Reading-heavy material",
+          "body": "If a course leans mostly on readings, we'll look together at where a video, an audio conversation, or a hands-on activity would carry the idea better."
         },
         {
-          "fromLabel": "A lecture, reading, or problem set",
-          "fromDetail": "The pieces you already have",
-          "toLabel": "Learning assets",
-          "toDetail": "Video, reading, activity, quiz",
-          "tier": "asset",
-          "icon": "play"
+          "icon": "access",
+          "label": "Accessibility",
+          "body": "Captions, transcripts, alt text, and readable contrast. Much easier to sort out while we're still planning than after everything is produced."
+        },
+        {
+          "icon": "copyright",
+          "label": "Copyright",
+          "body": "Anything you didn't create — images, figures, clips, datasets — needs permission that covers a public, global audience."
+        },
+        {
+          "icon": "plugin",
+          "label": "External tools and software",
+          "body": "If your course depends on particular tools or software, we will look for a free option wherever one exists. Paid or license restricted tools are often out of reach for learners outside Duke, and some are not available in every country. Where a tool is essential, we will plan together for how learners get access."
         }
-      ],
-      "note": {
-        "icon": "clock",
-        "title": "Why modules do more work than they look like they do",
-        "body": "Learners usually come to Coursera in short sessions, often around other work. A module gives someone a complete piece of learning in one sitting, and a natural place to stop and pick up again later."
-      },
-      "existing": {
-        "title": "Can you use what you already have?",
-        "lead": "Usually, yes. Your Learning Experience Designer will work through it with you — here's what we tend to look at together.",
-        "items": [
-          {
-            "icon": "star",
-            "label": "Skills rather than coverage",
-            "body": "Coursera learners are most often working professionals building a specific skill. We start from what someone will be able to do by the end, then work backwards to the materials, framing, and assessments that get them there."
-          },
-          {
-            "icon": "play",
-            "label": "Existing recordings",
-            "body": "Learners stay with videos under about 10 minutes, so longer recordings usually get broken into shorter, more focused pieces. That's something we can help with."
-          },
-          {
-            "icon": "book",
-            "label": "Reading-heavy material",
-            "body": "If a course leans mostly on readings, we'll look together at where a video, an audio conversation, or a hands-on activity would carry the idea better."
-          },
-          {
-            "icon": "access",
-            "label": "Accessibility",
-            "body": "Captions, transcripts, alt text, and readable contrast. Much easier to sort out while we're still planning than after everything is produced."
-          },
-          {
-            "icon": "copyright",
-            "label": "Copyright",
-            "body": "Anything you didn't create — images, figures, clips, datasets — needs permission that covers a public, global audience."
-          }
-        ]
-      }
-    },
-    "completion": {
-      "title": "Certificates",
-      "body": "Learners who complete a single course earn a shareable course certificate for that course. Learners who complete every course in the Specialization earn a Specialization Certificate that recognizes the full competency."
+      ]
     },
     "handoff": {
       "title": "Ready to plan yours?",
@@ -587,6 +598,12 @@
           ]
         },
         {
+          "type": "callout",
+          "tier": "course",
+          "title": "Design each course to stand on its own",
+          "body": "Ideally, each course is designed to be standalone and modular. These courses tend to do best on the Coursera platform, and they open up a variety of opportunities for repurposing and increasing learner reach."
+        },
+        {
           "type": "example",
           "placeholder": true,
           "title": "Example: a finished course plan"
@@ -785,6 +802,12 @@
               "body": "Roughly 3–6 videos, 1–2 readings, 1–2 activities, and a graded quiz. Two of the same format in a row is usually fine; more than that and engagement drops. Practice before the graded check gives learners somewhere safe to be wrong."
             }
           ]
+        },
+        {
+          "type": "callout",
+          "tier": "module",
+          "title": "Why modules do more work than they look like they do",
+          "body": "Learners usually come to Coursera in short sessions, often around other work. A module gives someone a complete piece of learning in one sitting, and a natural place to stop and pick up again later."
         },
         {
           "type": "sequence",

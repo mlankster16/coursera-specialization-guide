@@ -104,23 +104,45 @@ function renderFlowNav(current) {
 
 /* ---------- Home ---------- */
 
+/* Faculty land on a welcome, then a translation of their own course, then the
+   structure diagram. The diagram used to come first, which asked them to read an
+   unfamiliar shape before anything had connected it to what they already know. */
 function homeHtml() {
   const h = C.home;
   return `
     ${heroHtml(h.hero)}
-    ${legendHtml(h.legend)}
-    <div class="infographic">
-      ${homeSpecHtml(h.specialization)}
-      ${fanHtml(3, '', '42px')}
-      ${homeCoursesHtml(h.courses)}
-      ${dropHtml(1, 3, 'dashed')}
-      ${homeModulesHtml(h.modules)}
-      ${dropHtml(1, 3, 'dashed')}
-      ${homeAssetsHtml()}
-    </div>
+    ${introHtml(h.intro)}
     ${mappingHtml(h.mapping)}
-    ${completionHtml(h.completion)}
+    ${structureHtml(h)}
+    ${reuseHtml(h.reuse)}
     ${handoffHtml(h.handoff)}`;
+}
+
+function introHtml(i) {
+  return `
+    <section class="intro">
+      <p class="intro-body">${esc(i.body)}</p>
+    </section>`;
+}
+
+function structureHtml(h) {
+  return `
+    <section class="compare">
+      <div class="compare-head">
+        <span class="compare-icon">${icon('layers')}</span>
+        <div><h2 class="section-title">${esc(h.structure.title)}</h2></div>
+      </div>
+      ${legendHtml(h.legend)}
+      <div class="infographic">
+        ${homeSpecHtml(h.specialization)}
+        ${fanHtml(3, '', '42px')}
+        ${homeCoursesHtml(h.courses)}
+        ${dropHtml(1, 3, 'dashed')}
+        ${homeModulesHtml(h.modules)}
+        ${dropHtml(1, 3, 'dashed')}
+        ${homeAssetsHtml()}
+      </div>
+    </section>`;
 }
 
 function heroHtml(hero) {
@@ -197,6 +219,7 @@ function homeCoursesHtml(c) {
                 <span class="num-badge">${card.n}</span>
                 <span class="card-title">${esc(card.title)}</span>
               </span>
+              <span class="card-role">${esc(card.role)}</span>
               <span class="spec-list">${specRowsHtml(c.cardSpecs)}</span>
               ${openCue('Plan a course')}
             </button>`
@@ -279,6 +302,33 @@ function homeAssetsHtml() {
     </section>`;
 }
 
+function reuseHtml(r) {
+  return `
+    <section class="compare">
+      <div class="compare-head">
+        <span class="compare-icon">${icon('star')}</span>
+        <div>
+          <h2 class="section-title">${esc(r.title)}</h2>
+          <p class="section-intro">${esc(r.lead)}</p>
+        </div>
+      </div>
+      <div class="reuse-grid">
+        ${r.items
+          .map(
+            (it) => `
+          <div class="reuse-item">
+            <span class="reuse-icon">${icon(it.icon)}</span>
+            <div>
+              <p class="reuse-label">${esc(it.label)}</p>
+              <p class="reuse-body">${esc(it.body)}</p>
+            </div>
+          </div>`
+          )
+          .join('')}
+      </div>
+    </section>`;
+}
+
 /* ---------- Mapping: a semester course translated into Coursera's shape ----------
    Replaces the old differences table. Showing faculty that their existing work has
    a home lands better than listing what's unfamiliar. */
@@ -329,35 +379,6 @@ function mappingHtml(m) {
         </div>
       </div>
 
-      <div class="reuse">
-        <h3 class="reuse-title">${esc(m.existing.title)}</h3>
-        <p class="reuse-lead">${esc(m.existing.lead)}</p>
-        <div class="reuse-grid">
-          ${m.existing.items
-            .map(
-              (it) => `
-            <div class="reuse-item">
-              <span class="reuse-icon">${icon(it.icon)}</span>
-              <div>
-                <p class="reuse-label">${esc(it.label)}</p>
-                <p class="reuse-body">${esc(it.body)}</p>
-              </div>
-            </div>`
-            )
-            .join('')}
-        </div>
-      </div>
-    </section>`;
-}
-
-function completionHtml(c) {
-  return `
-    <section class="completion">
-      <span class="completion-icon">${icon('trophy')}</span>
-      <div>
-        <h2 class="completion-title">${esc(c.title)}</h2>
-        <p class="completion-body">${esc(c.body)}</p>
-      </div>
     </section>`;
 }
 
@@ -660,8 +681,8 @@ function sectionBody(s, tier) {
 
     case 'callout':
       return `
-        <div class="callout callout-${tier}">
-          <span class="callout-icon">${icon('layers')}</span>
+        <div class="callout callout-${s.tier || tier}">
+          <span class="callout-icon">${icon(s.icon || 'layers')}</span>
           <div>
             <p class="callout-title">${esc(s.title)}</p>
             <p class="callout-body">${esc(s.body)}</p>
