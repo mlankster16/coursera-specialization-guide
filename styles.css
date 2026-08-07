@@ -24,9 +24,11 @@
   --module-bg: #F3EFFA;
   --module-line: #D8CCEC;
 
-  --lesson: #0F7B7B;
-  --lesson-bg: #EAF6F6;
-  --lesson-line: #BFDFDF;
+  /* Teal, based on Duke's Eno and darkened to meet AA contrast on its own tint.
+     Reserved for learner-time notes so it never reads as a structure tier. */
+  --time: #1E7A7A;
+  --time-bg: #EAF6F6;
+  --time-line: #BFDFDF;
 
   --asset: #B4700C;
   --asset-bg: #FDF6EA;
@@ -1776,19 +1778,19 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   display: flex;
   gap: 13px;
   align-items: flex-start;
-  background: var(--module-bg);
-  border: 1px solid var(--module-line);
+  background: var(--time-bg);
+  border: 1px solid var(--time-line);
   border-radius: 10px;
   padding: 15px 18px;
   margin-top: 16px;
 }
 .map-note-icon { display: flex; flex-shrink: 0; }
-.map-note-icon .ico { width: 20px; height: 20px; color: var(--module); margin-top: 1px; }
+.map-note-icon .ico { width: 20px; height: 20px; color: var(--time); margin-top: 1px; }
 .map-note-title {
   font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 800;
   font-size: 0.87rem;
-  color: var(--module);
+  color: var(--time);
   margin-bottom: 4px;
 }
 .map-note-body { font-size: 0.86rem; color: var(--cast-iron); line-height: 1.65; }
