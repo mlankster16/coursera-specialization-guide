@@ -377,8 +377,8 @@
               "body": "A list of topics describes what you plan to cover. An outcome describes what a learner can do with it. Both are useful, but only the outcome tells you which content is essential, what to assess, and what a project should ask for. It also tells a prospective learner whether this will help them."
             },
             {
-              "heading": "Design each course as a useful entry point",
-              "body": "Some learners will work through the whole Specialization. Others will take one course because it meets an immediate need. Both should come away with something complete. A useful test: if a learner finishes only this course, what can they now do that they couldn't before?"
+              "heading": "Decide where one course ends and the next begins",
+              "body": "The outcome is usually too large to teach in one go, so much of the planning is deciding where to cut it. Seams that follow a natural stage of the work — prepare the data, analyze it, communicate the result — tend to give courses that each mean something on their own. Seams based on how much content there is tend to give courses that only make sense in order."
             },
             {
               "heading": "Plan for the time a working adult actually has",
@@ -388,6 +388,7 @@
         },
         {
           "type": "ladder",
+          "id": "objectives",
           "title": "From topics to what learners can do",
           "intro": "These words often get used interchangeably. Separating them makes the outcome easier to write.",
           "rungs": [
@@ -512,6 +513,40 @@
       ],
       "sections": [
         {
+          "type": "compare",
+          "title": "Writing so a course stands on its own",
+          "intro": "Some learners will take this course without the rest of the Specialization. That mostly comes down to phrasing — each item reads better when it opens by establishing its own context than when it points back to something earlier.",
+          "weakLabel": "Weaker",
+          "strongLabel": "Stronger",
+          "rows": [
+            {
+              "aspect": "Module titles",
+              "dont": "\"Module 1: Introduction to Data Cleaning\"",
+              "do": "\"Identifying and Handling Missing Data\""
+            },
+            {
+              "aspect": "Module transitions",
+              "dont": "\"Now that you've mastered the basics from Module 1…\"",
+              "do": "\"Data transformation is essential for analysis. Let's explore how to use SQL functions to…\""
+            },
+            {
+              "aspect": "Program references",
+              "dont": "\"As part of this Data Science Specialization, you'll use these skills in the capstone…\"",
+              "do": "\"These data preprocessing skills are essential for any machine learning project…\""
+            },
+            {
+              "aspect": "Sequential references",
+              "dont": "\"In the previous lesson, we explored how to optimize this code…\"",
+              "do": "\"Code optimization involves several key strategies…\""
+            },
+            {
+              "aspect": "Prior knowledge",
+              "dont": "\"You learned basic SQL in Module 2.\"",
+              "do": "\"This module assumes familiarity with basic SQL queries.\""
+            }
+          ]
+        },
+        {
           "type": "templatePreview",
           "title": "What you'll fill in",
           "note": "Use this page to work through the decisions, then record them in the Design Document. This section repeats for each course.",
@@ -584,67 +619,52 @@
           "title": "Three things to consider for highest impact",
           "items": [
             {
-              "heading": "Name the skill, not the subject area",
-              "body": "Coursera organizes its catalogue around skills — concrete things a learner can do, like \"clean and validate a dataset.\" A course named for a skill is easier for the right learner to find, and easier for you to decide what belongs in it."
+              "heading": "Name it for a single skill",
+              "body": "Coursera organizes its catalog around skills — concrete things a learner can do, like “clean and validate a dataset.” Naming a course for its skill helps the right learner find it, and it doubles as a scoping check: if the skill takes more than a phrase to describe, there may be two courses in there. Around 2–4 objectives, 3–6 modules, and 2–8 hours is a comfortable shape."
             },
             {
-              "heading": "Decide how you'll know it worked, before you build",
-              "body": "Settle what a learner will do to show they got there, then work backwards to the teaching. It's a quicker route to a coherent course than choosing content first and assessing whatever happens to be there."
+              "heading": "Let each course work on its own",
+              "body": "Ideally each course is designed to be standalone and modular. Some learners will work through the whole Specialization; others will take one course because it meets an immediate need. Courses that work either way tend to do best on the platform, and they open up more options for reuse later. A question worth asking: if a learner finishes only this course, what can they now do that they couldn’t before?"
             },
             {
-              "heading": "One phrase should cover it",
-              "body": "If the outcome takes more than a phrase to describe, there may be two courses in there. Around 2–4 objectives, 3–6 modules, and 2–8 hours is a comfortable shape; consistently running over is usually a sign to split."
+              "heading": "Decide what will show the skill landed",
+              "body": "Settling on what a learner will do to demonstrate the skill, then working back to the teaching, tends to give a more coherent course than choosing content first and assessing whatever ended up there. It also makes the module-level decisions easier once you get to them."
             }
           ]
         },
         {
-          "type": "callout",
-          "tier": "course",
-          "title": "Design each course to stand on its own",
-          "body": "Ideally, each course is designed to be standalone and modular. These courses tend to do best on the Coursera platform, and they open up a variety of opportunities for repurposing and increasing learner reach."
+          "type": "carryover",
+          "icon": "star",
+          "title": "Objectives at the course level",
+          "body": [
+            "The same distinction carries down from the Specialization: an objective says what a learner will be able to do, not what the course will cover. At this level it should be something they could show you by the end of this course alone.",
+            "Two to four is usually enough. If an objective only makes sense with the rest of the Specialization behind it, it probably belongs to the Specialization outcome instead."
+          ],
+          "recall": {
+            "label": "Verbs that work here",
+            "items": [
+              "analyze",
+              "create",
+              "design",
+              "evaluate",
+              "interpret",
+              "apply",
+              "diagnose",
+              "recommend"
+            ]
+          },
+          "link": {
+            "href": "#specialization/objectives",
+            "label": "See the full ladder from topic to competency"
+          }
         },
         {
           "type": "example",
           "placeholder": true,
           "title": "Example: a finished course plan"
-        },
-        {
-          "type": "compare",
-          "collapsed": true,
-          "title": "Writing so a course stands on its own",
-          "intro": "Reuse breaks on phrasing more often than on structure. Aim to have every item open by establishing its own context.",
-          "dontLabel": "Instead of this",
-          "doLabel": "Write this",
-          "rows": [
-            {
-              "aspect": "Module titles",
-              "dont": "\"Module 1: Introduction to Data Cleaning\"",
-              "do": "\"Identifying and Handling Missing Data\""
-            },
-            {
-              "aspect": "Module transitions",
-              "dont": "\"Now that you've mastered the basics from Module 1…\"",
-              "do": "\"Data transformation is essential for analysis. Let's explore how to use SQL functions to…\""
-            },
-            {
-              "aspect": "Program references",
-              "dont": "\"As part of this Data Science Specialization, you'll use these skills in the capstone…\"",
-              "do": "\"These data preprocessing skills are essential for any machine learning project…\""
-            },
-            {
-              "aspect": "Sequential references",
-              "dont": "\"In the previous lesson, we explored how to optimize this code…\"",
-              "do": "\"Code optimization involves several key strategies…\""
-            },
-            {
-              "aspect": "Prior knowledge",
-              "dont": "\"You learned basic SQL in Module 2.\"",
-              "do": "\"This module assumes familiarity with basic SQL queries.\""
-            }
-          ]
         }
       ],
-      "factsNote": "Planning targets rather than requirements."
+      "factsNote": "Planning targets rather than requirements. Learner time counts everything a learner does — watching, reading, practicing, and assessment — estimated for a typical learner rather than measured by how much content you have."
     },
     "module": {
       "tier": "module",
@@ -921,7 +941,7 @@
           "notes": []
         }
       ],
-      "factsNote": "Planning targets rather than requirements."
+      "factsNote": "Planning targets rather than requirements. Learner time counts everything a learner does — watching, reading, practicing, and assessment — estimated for a typical learner rather than measured by how much content you have."
     },
     "assets": {
       "tier": "asset",
@@ -1024,7 +1044,7 @@
             "Verify all of this before committing to a plugin; retrofitting accessibility is expensive."
           ],
           "copyright": [
-            "Check the licence on any third-party code or library being embedded.",
+            "Check the license on any third-party code or library being embedded.",
             "Confirm you can use any dataset the plugin draws on, including for a public audience.",
             "Credit the developer or source where appropriate."
           ]
@@ -1075,7 +1095,7 @@
           ],
           "copyright": [
             "Confirm you can distribute any dataset, starter file, or template you provide.",
-            "Check licences on required tools, especially anything commercial.",
+            "Check licenses on required tools, especially anything commercial.",
             "Note anything that requires a learner to create an account or pay."
           ]
         },
@@ -1100,7 +1120,7 @@
           ],
           "copyright": [
             "Images, passages, and data used in question stems need clearing like anything else.",
-            "Avoid reusing questions from a commercial test bank without a licence."
+            "Avoid reusing questions from a commercial test bank without a license."
           ]
         },
         {

@@ -614,8 +614,8 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   background: var(--course-bg);
   font-style: italic;
 }
-.phrasing-dont::before { content: '\2715  '; font-style: normal; font-weight: 700; color: #9B2C2C; }
-.phrasing-do::before { content: '\2713  '; font-style: normal; font-weight: 700; color: var(--course); }
+/* No check/cross marks here. The columns read "Weaker" and "Stronger" — a spectrum
+   to move along, not a right answer and a wrong one. */
 
 /* ---------- Copyright + accessibility ---------- */
 .resp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 20px; }
@@ -1671,10 +1671,79 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 }
 .contrast-why .ico { width: 16px; height: 16px; margin-top: 2px; flex-shrink: 0; color: var(--royal); }
 
+/* Arriving from a cross-page link, land with a little air above the heading
+   rather than flush against the viewport edge. */
+.sec-anchor { scroll-margin-top: 24px; }
+
+/* ---------- Carryover panel ----------
+   Deliberately lighter than a full section: it restates an idea taught elsewhere
+   and sends you there for the depth. */
+
+.carry {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  background: var(--whisper);
+  border: 1px solid var(--hatteras);
+  border-left: 3px solid var(--graphite);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-top: 20px;
+}
+.carry.tier-spec { border-left-color: var(--spec); }
+.carry.tier-course { border-left-color: var(--course); }
+.carry.tier-module { border-left-color: var(--module); }
+.carry.tier-asset { border-left-color: var(--asset); }
+
+.carry-icon { display: flex; flex-shrink: 0; }
+.carry-icon .ico { width: 22px; height: 22px; margin-top: 2px; color: var(--graphite); }
+.carry.tier-spec .carry-icon .ico { color: var(--spec); }
+.carry.tier-course .carry-icon .ico { color: var(--course); }
+.carry.tier-module .carry-icon .ico { color: var(--module); }
+.carry.tier-asset .carry-icon .ico { color: var(--asset); }
+
+.carry-main { min-width: 0; }
+.carry-p { font-size: 0.9rem; color: var(--cast-iron); line-height: 1.7; }
+.carry-p + .carry-p { margin-top: 10px; }
+
+.carry-recall {
+  background: #fff;
+  border: 1px solid var(--hatteras);
+  border-radius: 8px;
+  padding: 12px 15px;
+  margin-top: 14px;
+}
+.carry-recall-label {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  margin-bottom: 5px;
+}
+.carry-recall-list { font-size: 0.85rem; color: var(--cast-iron); line-height: 1.7; }
+
+.carry-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.83rem;
+  color: var(--royal);
+  text-decoration: none;
+}
+.carry-link .ico { width: 15px; height: 15px; transition: transform 0.15s ease; }
+.carry-link:hover { text-decoration: underline; }
+.carry-link:hover .ico { transform: translateX(3px); }
+
 @media (max-width: 720px) {
   .rung { grid-template-columns: 1fr; gap: 4px; }
   .verb-cols { grid-template-columns: 1fr; }
   .contrast-pair { grid-template-columns: 1fr; }
+  .carry { padding: 17px 18px; gap: 12px; }
 }
 
 /* ---------- Specialization card: a peer of the Course and Module cards ---------- */

@@ -58,8 +58,11 @@ function render() {
   wireHomeNavigation();
   wireAssetJump();
 
-  // Arriving from a link, jump straight there — the smooth easing is for in-page use
-  const target = section && document.getElementById(`asset-${section}`);
+  // Arriving from a link, jump straight there — the smooth easing is for in-page use.
+  // Learning-asset blocks use asset-*; every other linkable section uses sec-*.
+  const target =
+    section &&
+    (document.getElementById(`asset-${section}`) || document.getElementById(`sec-${section}`));
   if (target) target.scrollIntoView({ behavior: 'instant', block: 'start' });
   else window.scrollTo(0, 0);
 }
@@ -585,6 +588,39 @@ function templatePreviewHtml(s, tier) {
     </section>`;
 }
 
+/* ---------- Carryover: an idea taught in full on an earlier page ----------
+   The topic-to-competency ladder is written out once, on the Specialization page.
+   Courses need the same idea, so this restates it briefly and links back rather
+   than repeating the whole thing — the density the old workbooks suffered from. */
+
+function carryoverHtml(s, tier) {
+  return `
+    <section class="block">
+      <h2 class="section-title">${esc(s.title)}</h2>
+      <div class="carry tier-${tier}">
+        <span class="carry-icon">${icon(s.icon || 'star')}</span>
+        <div class="carry-main">
+          ${(s.body || []).map((b) => `<p class="carry-p">${esc(b)}</p>`).join('')}
+          ${
+            s.recall
+              ? `<div class="carry-recall">
+                   <p class="carry-recall-label">${esc(s.recall.label)}</p>
+                   <p class="carry-recall-list">${s.recall.items.map(esc).join(' · ')}</p>
+                 </div>`
+              : ''
+          }
+          ${
+            s.link
+              ? `<a class="carry-link" href="${esc(s.link.href)}">
+                   <span>${esc(s.link.label)}</span>${icon('arrow')}
+                 </a>`
+              : ''
+          }
+        </div>
+      </div>
+    </section>`;
+}
+
 /* ---------- Three things to get right ---------- */
 
 function considerationsHtml(s, tier) {
@@ -612,15 +648,17 @@ function considerationsHtml(s, tier) {
    faculty member who wants the depth, invisible to the one who doesn't. */
 function sectionHtml(s, tier) {
   const inner = sectionBody(s, tier);
-  if (!s.collapsed) return inner;
-  return `
-    <details class="ref-block">
-      <summary>
-        <span class="ref-summary-text">${esc(s.title)}</span>
-        <span class="ref-chevron">&#9662;</span>
-      </summary>
-      <div class="ref-body">${inner}</div>
-    </details>`;
+  const body = s.collapsed
+    ? `<details class="ref-block">
+         <summary>
+           <span class="ref-summary-text">${esc(s.title)}</span>
+           <span class="ref-chevron">&#9662;</span>
+         </summary>
+         <div class="ref-body">${inner}</div>
+       </details>`
+    : inner;
+  // A section with an id can be linked to from another page, e.g. #specialization/objectives
+  return s.id ? `<div class="sec-anchor" id="sec-${esc(s.id)}">${body}</div>` : body;
 }
 
 function sectionBody(s, tier) {
@@ -636,6 +674,9 @@ function sectionBody(s, tier) {
 
     case 'contrast':
       return contrastHtml(s);
+
+    case 'carryover':
+      return carryoverHtml(s, tier);
 
     case 'prose':
       return `
@@ -755,8 +796,8 @@ function sectionBody(s, tier) {
           <div class="phrasing-table">
             <div class="phrasing-row phrasing-header">
               <span></span>
-              <span class="col-dont">${esc(s.dontLabel)}</span>
-              <span class="col-do">${esc(s.doLabel)}</span>
+              <span class="col-dont">${esc(s.weakLabel)}</span>
+              <span class="col-do">${esc(s.strongLabel)}</span>
             </div>
             ${s.rows
               .map(
