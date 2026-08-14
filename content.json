@@ -463,11 +463,6 @@
           ]
         },
         {
-          "type": "example",
-          "placeholder": true,
-          "title": "Example: a finished Specialization plan"
-        },
-        {
           "type": "checklist",
           "collapsed": true,
           "title": "Check your draft",
@@ -515,7 +510,7 @@
         {
           "type": "compare",
           "title": "Writing so a course stands on its own",
-          "intro": "Some learners will take this course without the rest of the Specialization. That mostly comes down to phrasing — each item reads better when it opens by establishing its own context than when it points back to something earlier.",
+          "intro": "Ideally each course is designed to be standalone and modular — those courses tend to do best on the Coursera platform, and some learners will take this one without the rest of the Specialization. That mostly comes down to phrasing: each item reads better when it opens by establishing its own context than when it points back to something earlier.",
           "weakLabel": "Weaker",
           "strongLabel": "Stronger",
           "rows": [
@@ -547,6 +542,32 @@
           ]
         },
         {
+          "type": "carryover",
+          "icon": "star",
+          "title": "Objectives at the course level",
+          "body": [
+            "The same distinction carries down from the Specialization: an objective says what a learner will be able to do, not what the course will cover. At this level it should be something they could show you by the end of this course alone.",
+            "Two to four is usually enough. If an objective only makes sense with the rest of the Specialization behind it, it probably belongs to the Specialization outcome instead."
+          ],
+          "recall": {
+            "label": "Verbs that work here",
+            "items": [
+              "analyze",
+              "create",
+              "design",
+              "evaluate",
+              "interpret",
+              "apply",
+              "diagnose",
+              "recommend"
+            ]
+          },
+          "link": {
+            "href": "#specialization/objectives",
+            "label": "See the full ladder from topic to competency"
+          }
+        },
+        {
           "type": "templatePreview",
           "title": "What you'll fill in",
           "note": "Use this page to work through the decisions, then record them in the Design Document. This section repeats for each course.",
@@ -560,8 +581,7 @@
             {
               "kind": "field",
               "label": "Course title",
-              "ph": "[ title ]",
-              "hint": "Name the skill, not a number."
+              "ph": "[ title ]"
             },
             {
               "kind": "field",
@@ -613,55 +633,6 @@
               "ph": "[ bio text, or link to build-ready bio and headshot ]"
             }
           ]
-        },
-        {
-          "type": "considerations",
-          "title": "Three things to consider for highest impact",
-          "items": [
-            {
-              "heading": "Name it for a single skill",
-              "body": "Coursera organizes its catalog around skills — concrete things a learner can do, like “clean and validate a dataset.” Naming a course for its skill helps the right learner find it, and it doubles as a scoping check: if the skill takes more than a phrase to describe, there may be two courses in there. Around 2–4 objectives, 3–6 modules, and 2–8 hours is a comfortable shape."
-            },
-            {
-              "heading": "Let each course work on its own",
-              "body": "Ideally each course is designed to be standalone and modular. Some learners will work through the whole Specialization; others will take one course because it meets an immediate need. Courses that work either way tend to do best on the platform, and they open up more options for reuse later. A question worth asking: if a learner finishes only this course, what can they now do that they couldn’t before?"
-            },
-            {
-              "heading": "Decide what will show the skill landed",
-              "body": "Settling on what a learner will do to demonstrate the skill, then working back to the teaching, tends to give a more coherent course than choosing content first and assessing whatever ended up there. It also makes the module-level decisions easier once you get to them."
-            }
-          ]
-        },
-        {
-          "type": "carryover",
-          "icon": "star",
-          "title": "Objectives at the course level",
-          "body": [
-            "The same distinction carries down from the Specialization: an objective says what a learner will be able to do, not what the course will cover. At this level it should be something they could show you by the end of this course alone.",
-            "Two to four is usually enough. If an objective only makes sense with the rest of the Specialization behind it, it probably belongs to the Specialization outcome instead."
-          ],
-          "recall": {
-            "label": "Verbs that work here",
-            "items": [
-              "analyze",
-              "create",
-              "design",
-              "evaluate",
-              "interpret",
-              "apply",
-              "diagnose",
-              "recommend"
-            ]
-          },
-          "link": {
-            "href": "#specialization/objectives",
-            "label": "See the full ladder from topic to competency"
-          }
-        },
-        {
-          "type": "example",
-          "placeholder": true,
-          "title": "Example: a finished course plan"
         }
       ],
       "factsNote": "Planning targets rather than requirements. Learner time counts everything a learner does — watching, reading, practicing, and assessment — estimated for a typical learner rather than measured by how much content you have."
