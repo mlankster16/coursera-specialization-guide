@@ -266,6 +266,100 @@
       ],
       "sections": [
         {
+          "type": "considerations",
+          "title": "Three things to consider for highest impact",
+          "items": [
+            {
+              "heading": "Begin with what learners should be able to do",
+              "body": "A list of topics describes what you plan to cover. An outcome describes what a learner can do with it. Both are useful, but only the outcome tells you which content is essential, what to assess, and what a project should ask for. It also tells a prospective learner whether this will help them."
+            },
+            {
+              "heading": "Decide where one course ends and the next begins",
+              "body": "The outcome is usually too large to teach in one go, so much of the planning is deciding where to cut it. Seams that follow a natural stage of the work — prepare the data, analyze it, communicate the result — tend to give courses that each mean something on their own. Seams based on how much content there is tend to give courses that only make sense in order."
+            },
+            {
+              "heading": "Plan for the time a working adult actually has",
+              "body": "In total hours the Specialization is roughly in range of a semester course, but those hours are spent differently — short sessions, fitted around a job, with nothing holding anyone to a schedule. Content that would fill a semester usually needs narrowing rather than compressing."
+            }
+          ]
+        },
+        {
+          "type": "ladder",
+          "id": "objectives",
+          "title": "From topics to what learners can do",
+          "intro": "These words often get used interchangeably. Separating them makes the outcome easier to write.",
+          "rungs": [
+            {
+              "term": "Topic",
+              "gloss": "What the course is about",
+              "example": "Data visualization"
+            },
+            {
+              "term": "Knowledge",
+              "gloss": "What learners understand",
+              "example": "Principles of visual encoding and chart selection"
+            },
+            {
+              "term": "Skill",
+              "gloss": "What learners can perform",
+              "example": "Create an appropriate chart from a dataset"
+            },
+            {
+              "term": "Competency",
+              "gloss": "What learners can do in a real situation",
+              "example": "Select, create, and explain visualizations that support a recommendation"
+            }
+          ],
+          "prompt": "Finish this sentence: by the end, learners will be able to…",
+          "goodVerbs": [
+            "analyze",
+            "create",
+            "design",
+            "evaluate",
+            "interpret",
+            "apply",
+            "compare",
+            "diagnose",
+            "recommend",
+            "implement",
+            "communicate"
+          ],
+          "weakVerbs": [
+            "understand",
+            "learn",
+            "become familiar with",
+            "explore"
+          ],
+          "weakNote": "These describe your intention rather than something a learner can show you, which makes them hard to assess."
+        },
+        {
+          "type": "contrast",
+          "title": "Strong and weak versions of the key fields",
+          "intro": "The same field, filled in two ways. The difference is usually topics versus what a learner will be able to do.",
+          "weakLabel": "Weaker",
+          "strongLabel": "Stronger",
+          "items": [
+            {
+              "field": "Specialization description",
+              "weak": "This Specialization covers GIS, spatial analysis, cartography, and environmental applications.",
+              "strong": "In this Specialization you'll use spatial data to investigate environmental questions. Through hands-on projects you'll prepare datasets, create maps, analyze patterns, and communicate findings to non-technical audiences.",
+              "why": "The first lists topics. The second says what a learner will do, and hints at who it's for."
+            },
+            {
+              "field": "What learners will be able to do by the end",
+              "weak": "Understand the principles of environmental policy analysis.",
+              "strong": "Evaluate an environmental policy and make an evidence-based recommendation.",
+              "why": "\"Understand\" can't be observed, so it can't be assessed. \"Evaluate\" and \"recommend\" can."
+            },
+            {
+              "field": "Skills learners will gain",
+              "weak": "Environmental policy, data analysis, communication",
+              "strong": "Policy evaluation, spatial data analysis, evidence-based recommendation writing",
+              "why": "The first names fields of study. The second names things a learner could put on a CV."
+            }
+          ]
+        },
+        {
           "type": "templatePreview",
           "title": "What you'll fill in",
           "note": "Use this page to work through the decisions, then record them in the Design Document. This is the section you'll be filling in.",
@@ -365,100 +459,6 @@
               "kind": "field",
               "label": "Specialization project or culminating experience (optional)",
               "ph": "[ description and source link, if applicable ]"
-            }
-          ]
-        },
-        {
-          "type": "considerations",
-          "title": "Three things to consider for highest impact",
-          "items": [
-            {
-              "heading": "Begin with what learners should be able to do",
-              "body": "A list of topics describes what you plan to cover. An outcome describes what a learner can do with it. Both are useful, but only the outcome tells you which content is essential, what to assess, and what a project should ask for. It also tells a prospective learner whether this will help them."
-            },
-            {
-              "heading": "Decide where one course ends and the next begins",
-              "body": "The outcome is usually too large to teach in one go, so much of the planning is deciding where to cut it. Seams that follow a natural stage of the work — prepare the data, analyze it, communicate the result — tend to give courses that each mean something on their own. Seams based on how much content there is tend to give courses that only make sense in order."
-            },
-            {
-              "heading": "Plan for the time a working adult actually has",
-              "body": "In total hours the Specialization is roughly in range of a semester course, but those hours are spent differently — short sessions, fitted around a job, with nothing holding anyone to a schedule. Content that would fill a semester usually needs narrowing rather than compressing."
-            }
-          ]
-        },
-        {
-          "type": "ladder",
-          "id": "objectives",
-          "title": "From topics to what learners can do",
-          "intro": "These words often get used interchangeably. Separating them makes the outcome easier to write.",
-          "rungs": [
-            {
-              "term": "Topic",
-              "gloss": "What the course is about",
-              "example": "Data visualization"
-            },
-            {
-              "term": "Knowledge",
-              "gloss": "What learners understand",
-              "example": "Principles of visual encoding and chart selection"
-            },
-            {
-              "term": "Skill",
-              "gloss": "What learners can perform",
-              "example": "Create an appropriate chart from a dataset"
-            },
-            {
-              "term": "Competency",
-              "gloss": "What learners can do in a real situation",
-              "example": "Select, create, and explain visualizations that support a recommendation"
-            }
-          ],
-          "prompt": "Finish this sentence: by the end, learners will be able to…",
-          "goodVerbs": [
-            "analyze",
-            "create",
-            "design",
-            "evaluate",
-            "interpret",
-            "apply",
-            "compare",
-            "diagnose",
-            "recommend",
-            "implement",
-            "communicate"
-          ],
-          "weakVerbs": [
-            "understand",
-            "learn",
-            "become familiar with",
-            "explore"
-          ],
-          "weakNote": "These describe your intention rather than something a learner can show you, which makes them hard to assess."
-        },
-        {
-          "type": "contrast",
-          "title": "Strong and weak versions of the key fields",
-          "intro": "The same field, filled in two ways. The difference is usually topics versus what a learner will be able to do.",
-          "weakLabel": "Weaker",
-          "strongLabel": "Stronger",
-          "items": [
-            {
-              "field": "Specialization description",
-              "weak": "This Specialization covers GIS, spatial analysis, cartography, and environmental applications.",
-              "strong": "In this Specialization you'll use spatial data to investigate environmental questions. Through hands-on projects you'll prepare datasets, create maps, analyze patterns, and communicate findings to non-technical audiences.",
-              "why": "The first lists topics. The second says what a learner will do, and hints at who it's for."
-            },
-            {
-              "field": "What learners will be able to do by the end",
-              "weak": "Understand the principles of environmental policy analysis.",
-              "strong": "Evaluate an environmental policy and make an evidence-based recommendation.",
-              "why": "\"Understand\" can't be observed, so it can't be assessed. \"Evaluate\" and \"recommend\" can."
-            },
-            {
-              "field": "Skills learners will gain",
-              "weak": "Environmental policy, data analysis, communication",
-              "strong": "Policy evaluation, spatial data analysis, evidence-based recommendation writing",
-              "why": "The first names fields of study. The second names things a learner could put on a CV."
             }
           ]
         },
