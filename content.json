@@ -666,6 +666,83 @@
       ],
       "sections": [
         {
+          "type": "callout",
+          "tier": "module",
+          "title": "Making the Most of Each Module",
+          "body": "Learners often use Coursera in short sessions, fitting coursework around their work and other responsibilities. Each module is designed to provide a complete learning experience in one sitting, while also offering a natural stopping point for learners who want to continue later."
+        },
+        {
+          "type": "sequence",
+          "title": "Example: a first module's opening sequence",
+          "note": "A first module, item by item. What makes a module engaging is variety and frequent practice: notice how the formats alternate rather than defaulting to video for everything, and how learners get to try the skill well before the graded quiz. It also teaches from item 1 — there's no separate syllabus lesson.",
+          "items": [
+            {
+              "n": 1,
+              "type": "Video",
+              "what": "Welcome and why this matters — starts teaching immediately"
+            },
+            {
+              "n": 2,
+              "type": "Coach Dialogue",
+              "what": "Connects the topic to the learner's own goals or experience"
+            },
+            {
+              "n": 3,
+              "type": "Reading",
+              "what": "Introduces the first key idea"
+            },
+            {
+              "n": 4,
+              "type": "Video",
+              "what": "Explains or demonstrates topic 1"
+            },
+            {
+              "n": 5,
+              "type": "Hands-on",
+              "what": "Learners apply topic 1"
+            },
+            {
+              "n": 6,
+              "type": "Video",
+              "what": "Introduces topic 2"
+            },
+            {
+              "n": 7,
+              "type": "Practice quiz",
+              "what": "Practices topics 1 and 2 with feedback"
+            },
+            {
+              "n": 8,
+              "type": "Video",
+              "what": "Shows a real example or case"
+            },
+            {
+              "n": 9,
+              "type": "Reading",
+              "what": "Reviews and synthesizes the key concepts"
+            },
+            {
+              "n": 10,
+              "type": "Graded quiz",
+              "what": "Checks the module's objectives"
+            }
+          ]
+        },
+        {
+          "type": "carryover",
+          "tier": "asset",
+          "icon": "play",
+          "title": "More on each learning asset",
+          "body": [
+            "Videos, readings, Coach Dialogues, hands-on activities, and quizzes each come with their own guidance on length, how they work best, and what to check for accessibility and copyright.",
+            "You don't need to settle any of that here. Sketch the shape of the module first, and your Learning Experience Designer will work through the details with you."
+          ],
+          "link": {
+            "href": "#assets",
+            "label": "See the Learning Assets page"
+          }
+        },
+        {
           "type": "templatePreview",
           "title": "What you'll fill in",
           "note": "Use this page to work through the decisions, then record them in the Design Document. This section repeats for every module.",
@@ -775,141 +852,6 @@
               "text": "Review the Coursera Graded Quiz Template and guidelines before you write your questions. Make sure it checks this module's objectives."
             }
           ]
-        },
-        {
-          "type": "considerations",
-          "title": "Three things to consider for highest impact",
-          "items": [
-            {
-              "heading": "One skill, taught start to finish",
-              "body": "A module opens by setting up its own context and closes by checking whether the skill landed, so a learner who arrives here first isn't lost. Naming it for the skill rather than a number helps — Coursera adds the numbering itself."
-            },
-            {
-              "heading": "A pattern that helps: Why, What, How, Apply, Assess",
-              "body": "Establish why the skill matters, teach the ideas behind it, show it being done, let learners try it, then check. Running a full cycle inside each module is what lets the module stand on its own, and it makes format choices easier."
-            },
-            {
-              "heading": "Vary the formats, and let learners practice first",
-              "body": "Roughly 3–6 videos, 1–2 readings, 1–2 activities, and a graded quiz. Two of the same format in a row is usually fine; more than that and engagement drops. Practice before the graded check gives learners somewhere safe to be wrong."
-            }
-          ]
-        },
-        {
-          "type": "callout",
-          "tier": "module",
-          "title": "Why modules do more work than they look like they do",
-          "body": "Learners usually come to Coursera in short sessions, often around other work. A module gives someone a complete piece of learning in one sitting, and a natural place to stop and pick up again later."
-        },
-        {
-          "type": "sequence",
-          "title": "Example: a first module's opening sequence",
-          "note": "The recommended starting pattern for a course's first module. Note that it teaches from item 1 — there's no separate syllabus lesson.",
-          "items": [
-            {
-              "n": 1,
-              "type": "Video",
-              "what": "Welcome and why this matters — starts teaching immediately",
-              "phase": "Why"
-            },
-            {
-              "n": 2,
-              "type": "Coach Dialogue",
-              "what": "Connects the topic to the learner's own goals or experience",
-              "phase": "Why"
-            },
-            {
-              "n": 3,
-              "type": "Reading",
-              "what": "Introduces the first key idea",
-              "phase": "What"
-            },
-            {
-              "n": 4,
-              "type": "Video",
-              "what": "Explains or demonstrates topic 1",
-              "phase": "What / How"
-            },
-            {
-              "n": 5,
-              "type": "Hands-on",
-              "what": "Learners apply topic 1",
-              "phase": "Apply"
-            },
-            {
-              "n": 6,
-              "type": "Video",
-              "what": "Introduces topic 2",
-              "phase": "What"
-            },
-            {
-              "n": 7,
-              "type": "Practice quiz",
-              "what": "Practices topics 1 and 2 with feedback",
-              "phase": "Apply"
-            },
-            {
-              "n": 8,
-              "type": "Video",
-              "what": "Shows a real example or case",
-              "phase": "How"
-            },
-            {
-              "n": 9,
-              "type": "Reading",
-              "what": "Reviews and synthesizes the key concepts",
-              "phase": "What"
-            },
-            {
-              "n": 10,
-              "type": "Graded quiz",
-              "what": "Checks the module's objectives",
-              "phase": "Assess"
-            }
-          ]
-        },
-        {
-          "type": "phases",
-          "collapsed": true,
-          "title": "The WWHAA phases in detail",
-          "intro": "Choose the format that serves each phase rather than defaulting to video for everything.",
-          "phases": [
-            {
-              "key": "Why",
-              "icon": "lightbulb",
-              "headline": "Establish real-world relevance",
-              "body": "Show the learner why this skill matters before teaching it. In a first module, this replaces the traditional course introduction entirely.",
-              "formats": "Instructor video, real-world scenario, Coach Dialogue"
-            },
-            {
-              "key": "What",
-              "icon": "book",
-              "headline": "Teach key concepts",
-              "body": "Introduce the essential ideas the skill rests on — the minimum a learner needs before they can try it.",
-              "formats": "Reading, short video, graphic, audio podcast"
-            },
-            {
-              "key": "How",
-              "icon": "gear",
-              "headline": "Bridge theory and practice",
-              "body": "Show the skill actually being performed. Demonstration turns a concept into something a learner can picture doing.",
-              "formats": "Demonstration, walkthrough, worked case"
-            },
-            {
-              "key": "Apply",
-              "icon": "flask",
-              "headline": "Practice in realistic scenarios",
-              "body": "Let learners try it with no stakes and get feedback while it's still cheap to be wrong.",
-              "formats": "Hands-on activity, lab, Dialogue, practice quiz"
-            },
-            {
-              "key": "Assess",
-              "icon": "rosette",
-              "headline": "Validate learning",
-              "body": "Check whether the module's objectives were met, and point learners to review material for anything missed.",
-              "formats": "Graded quiz, graded project"
-            }
-          ],
-          "notes": []
         }
       ],
       "factsNote": "Planning targets rather than requirements. Learner time counts everything a learner does — watching, reading, practicing, and assessment — estimated for a typical learner rather than measured by how much content you have."

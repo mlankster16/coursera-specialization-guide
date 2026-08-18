@@ -594,10 +594,12 @@ function templatePreviewHtml(s, tier) {
    than repeating the whole thing — the density the old workbooks suffered from. */
 
 function carryoverHtml(s, tier) {
+  // A cross-reference can carry the tier colour of where it points rather than
+  // the page it sits on, which is the cue that it sends you somewhere else.
   return `
     <section class="block">
       <h2 class="section-title">${esc(s.title)}</h2>
-      <div class="carry tier-${tier}">
+      <div class="carry tier-${s.tier || tier}">
         <span class="carry-icon">${icon(s.icon || 'star')}</span>
         <div class="carry-main">
           ${(s.body || []).map((b) => `<p class="carry-p">${esc(b)}</p>`).join('')}
@@ -730,42 +732,6 @@ function sectionBody(s, tier) {
           </div>
         </div>`;
 
-    case 'phases':
-      return `
-        <section class="block">
-          <h2 class="section-title">${esc(s.title)}</h2>
-          <p class="section-intro">${esc(s.intro)}</p>
-          <div class="wwhaa-band">
-            ${s.phases
-              .map(
-                (p, i) => `
-              ${i > 0 ? '<span class="wwhaa-sep" aria-hidden="true">&rarr;</span>' : ''}
-              <div class="wwhaa-phase">
-                <span class="wwhaa-icon">${icon(p.icon)}</span>
-                <span class="wwhaa-key">${esc(p.key)}</span>
-                <span class="wwhaa-headline">${esc(p.headline)}</span>
-                <span class="wwhaa-body">${esc(p.body)}</span>
-                <span class="wwhaa-formats">${esc(p.formats)}</span>
-              </div>`
-              )
-              .join('')}
-          </div>
-          <div class="note-grid">
-            ${s.notes
-              .map(
-                (n) => `
-              <div class="mini-note">
-                <span class="mini-note-icon">${icon(n.icon)}</span>
-                <div>
-                  <p class="mini-note-title">${esc(n.title)}</p>
-                  <p class="mini-note-body">${esc(n.body)}</p>
-                </div>
-              </div>`
-              )
-              .join('')}
-          </div>
-        </section>`;
-
     case 'sequence':
       return `
         <section class="block">
@@ -781,7 +747,7 @@ function sectionBody(s, tier) {
                   <span class="example-type">${esc(it.type)}</span>
                   <span class="example-what">${esc(it.what)}</span>
                 </span>
-                <span class="example-phase">${esc(it.phase)}</span>
+                ${it.phase ? `<span class="example-phase">${esc(it.phase)}</span>` : ''}
               </li>`
               )
               .join('')}
