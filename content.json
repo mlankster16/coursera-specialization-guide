@@ -666,12 +666,6 @@
       ],
       "sections": [
         {
-          "type": "callout",
-          "tier": "module",
-          "title": "Making the Most of Each Module",
-          "body": "Learners often use Coursera in short sessions, fitting coursework around their work and other responsibilities. Each module is designed to provide a complete learning experience in one sitting, while also offering a natural stopping point for learners who want to continue later."
-        },
-        {
           "type": "sequence",
           "title": "Example: a first module's opening sequence",
           "note": "A first module, item by item. What makes a module engaging is variety and frequent practice: notice how the formats alternate rather than defaulting to video for everything, and how learners get to try the skill well before the graded quiz. It also teaches from item 1 — there's no separate syllabus lesson.",
@@ -741,6 +735,12 @@
             "href": "#assets",
             "label": "See the Learning Assets page"
           }
+        },
+        {
+          "type": "callout",
+          "tier": "module",
+          "title": "Making the Most of Each Module",
+          "body": "Learners often use Coursera in short sessions, fitting coursework around their work and other responsibilities. Each module is designed to provide a complete learning experience in one sitting, while also offering a natural stopping point for learners who want to continue later."
         },
         {
           "type": "templatePreview",
