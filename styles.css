@@ -1599,9 +1599,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
    and sends you there for the depth. */
 
 .carry {
-  display: flex;
-  gap: 15px;
-  align-items: flex-start;
+  display: block;
   background: var(--whisper);
   border: 1px solid var(--hatteras);
   border-left: 3px solid var(--graphite);
@@ -1614,12 +1612,6 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .carry.tier-module { border-left-color: var(--module); }
 .carry.tier-asset { border-left-color: var(--asset); }
 
-.carry-icon { display: flex; flex-shrink: 0; }
-.carry-icon .ico { width: 22px; height: 22px; margin-top: 2px; color: var(--graphite); }
-.carry.tier-spec .carry-icon .ico { color: var(--spec); }
-.carry.tier-course .carry-icon .ico { color: var(--course); }
-.carry.tier-module .carry-icon .ico { color: var(--module); }
-.carry.tier-asset .carry-icon .ico { color: var(--asset); }
 
 .carry-main { min-width: 0; }
 .carry-p { font-size: 0.9rem; color: var(--cast-iron); line-height: 1.7; }

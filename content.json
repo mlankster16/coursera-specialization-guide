@@ -24,7 +24,7 @@
   ],
   "home": {
     "hero": {
-      "title": "Designing a Coursera Specialization"
+      "title": "What is a Coursera Specialization?"
     },
     "intro": {
       "body": "Coursera is a global online learning platform where people take short, self-paced courses to build practical skills. The Learning Experience Design team at the Duke Center for Teaching and Learning (CTL) partners with faculty to design and build these courses. This guide introduces how a Coursera Specialization fits together, and works alongside the planning template you will complete with your designer."
@@ -200,33 +200,33 @@
       "items": [
         {
           "icon": "star",
-          "label": "Skills rather than coverage",
-          "body": "Coursera learners are most often working professionals building a specific skill. We start from what someone will be able to do by the end, then work backwards to the materials, framing, and assessments that get them there."
+          "label": "Start with skills",
+          "body": "Coursera learners are often working professionals who are building a specific skill. We'll start with what learners should be able to do by the end, then work backward to the materials, framing, and assessments that will help them get there."
         },
         {
           "icon": "play",
-          "label": "Existing recordings",
-          "body": "Learners stay with videos under about 10 minutes, so longer recordings usually get broken into shorter, more focused pieces. That's something we can help with."
+          "label": "Keep videos focused",
+          "body": "Learners tend to engage best with videos under about 10 minutes. If you have longer recordings, we can help identify natural breaks and shape them into shorter, more focused segments."
         },
         {
           "icon": "book",
-          "label": "Reading-heavy material",
-          "body": "If a course leans mostly on readings, we'll look together at where a video, an audio conversation, or a hands-on activity would carry the idea better."
+          "label": "Balance learning formats",
+          "body": "Readings can be valuable, but a course made up mostly of readings may not provide enough variety or practice. We'll look together at where a video, audio conversation, visual, or hands-on activity might communicate an idea more effectively."
         },
         {
           "icon": "access",
-          "label": "Accessibility",
-          "body": "Captions, transcripts, alt text, and readable contrast. Much easier to sort out while we're still planning than after everything is produced."
+          "label": "Build in accessibility",
+          "body": "Captions, transcripts, alt text, and readable color contrast help make a course accessible to more learners. These elements are much easier to address during planning than after materials have been produced."
         },
         {
           "icon": "copyright",
-          "label": "Copyright",
-          "body": "Anything you didn't create — images, figures, clips, datasets — needs permission that covers a public, global audience."
+          "label": "Check content permissions",
+          "body": "Images, figures, video clips, datasets, and other materials you didn't create may require permission or an appropriate license. We'll review materials together to make sure they can be used with a public, global audience, including for commercial purposes."
         },
         {
           "icon": "plugin",
-          "label": "External tools and software",
-          "body": "If your course depends on particular tools or software, we will look for a free option wherever one exists. Paid or license restricted tools are often out of reach for learners outside Duke, and some are not available in every country. Where a tool is essential, we will plan together for how learners get access."
+          "label": "Plan for tool access",
+          "body": "If your course depends on particular software or external tools, we'll look for a free or widely available option whenever possible. Paid or license-restricted tools may be out of reach for learners outside Duke or unavailable in some countries, so where a tool is essential, we'll plan together for how learners can access it."
         }
       ]
     },
@@ -285,7 +285,8 @@
               "heading": "Make the experience worth continuing.",
               "body": "Learners are fitting coursework around jobs, families, and other responsibilities. Focus on what is essential, make progress visible, and give learners meaningful opportunities to apply what they are learning."
             }
-          ]
+          ],
+          "icon": "person"
         },
         {
           "type": "templatePreview",
@@ -301,13 +302,21 @@
             {
               "kind": "field",
               "label": "Specialization title",
-              "ph": "[ title ]"
+              "ph": "[ title ]",
+              "hint": "Choose a clear, compelling title that helps the right learners discover your Specialization."
             },
             {
               "kind": "field",
-              "label": "Specialization description",
+              "label": "About this Specialization",
               "ph": "[ description ]",
-              "hint": "Learner-facing. What it covers, who it's for, why it matters.",
+              "hint": "Create a 2-3 sentence summary of the content, learning outcomes, and any industry partners. Highlight the main value or application learners will get from the Specialization.",
+              "tall": true
+            },
+            {
+              "kind": "field",
+              "label": "Projects overview",
+              "ph": "[ description ]",
+              "hint": "In 1-2 sentences, describe the nature of the included projects and how learners will apply the skills to solve an authentic problem.",
               "tall": true
             },
             {
@@ -323,13 +332,15 @@
             },
             {
               "kind": "field",
-              "label": "What learners will be able to do by the end",
-              "ph": "[ overall Specialization outcome ]"
+              "label": "What will you learn",
+              "ph": "[ overall Specialization outcome ]",
+              "hint": "Write 1-3 actionable, measurable learning objectives that describe what learners will be able to do by the end of the Specialization."
             },
             {
               "kind": "field",
               "label": "Skills learners will gain",
-              "ph": "[ skill 1, skill 2, skill 3, skill 4, skill 5 ]"
+              "ph": "[ skill 1, skill 2, skill 3, skill 4, skill 5 ]",
+              "hint": "Skill tags enhance Specialization discoverability."
             },
             {
               "kind": "pair",
@@ -349,18 +360,19 @@
             },
             {
               "kind": "grid",
+              "tier": "spec",
               "label": "Courses in this Specialization",
               "headers": [
                 "#",
                 "Course title",
-                "Main skill / outcome",
+                "Main outcomes",
                 "Est. time"
               ],
               "widths": [
-                8,
-                30,
-                44,
-                18
+                6,
+                34,
+                40,
+                20
               ],
               "rows": [
                 [
@@ -388,7 +400,8 @@
               "label": "Specialization project or culminating experience (optional)",
               "ph": "[ description and source link, if applicable ]"
             }
-          ]
+          ],
+          "icon": "list"
         }
       ],
       "factsNote": "Planning targets rather than requirements. Learner time counts everything a learner does — watching, reading, practicing, and assessment — estimated for a typical learner rather than measured by how much content you have."
@@ -453,7 +466,8 @@
               "dont": "\"You learned basic SQL in Module 2.\"",
               "do": "\"This module assumes familiarity with basic SQL queries.\""
             }
-          ]
+          ],
+          "icon": "scale"
         },
         {
           "type": "ladder",
@@ -502,11 +516,12 @@
             "become familiar with",
             "explore"
           ],
-          "weakNote": "These describe your intention rather than something a learner can show you, which makes them hard to assess."
+          "weakNote": "These describe your intention rather than something a learner can show you, which makes them hard to assess.",
+          "icon": "star"
         },
         {
           "type": "carryover",
-          "icon": "star",
+          "icon": "check",
           "title": "Objectives at the course level",
           "body": [
             "The same distinction carries down from the Specialization: an objective says what a learner will be able to do, not what the course will cover. At this level it should be something they could show you by the end of this course alone.",
@@ -527,13 +542,15 @@
             {
               "kind": "field",
               "label": "Course title",
-              "ph": "[ title ]"
+              "ph": "[ title ]",
+              "hint": "Choose a clear, compelling title that helps the right learners discover your Course."
             },
             {
               "kind": "field",
               "label": "Course description",
               "ph": "[ learner-facing description ]",
-              "tall": true
+              "tall": true,
+              "hint": "Draft a learner-friendly 2-3 sentence summary of the content and learning outcomes. Highlight the main value or application learners will get from the Course."
             },
             {
               "kind": "pair",
@@ -560,7 +577,8 @@
             {
               "kind": "field",
               "label": "Tagged skills",
-              "ph": "[ five course-specific skills ]"
+              "ph": "[ five course-specific skills ]",
+              "hint": "Skill tags enhance Course discoverability."
             },
             {
               "kind": "field",
@@ -571,14 +589,15 @@
               "kind": "field",
               "label": "What learners will learn",
               "ph": "1. [ objective ]\n2. [ objective ]\n3. [ objective, optional ]\n4. [ objective, optional ]",
-              "hint": "2–4 course-level objectives."
+              "hint": "Write 2-4 actionable, measurable learning objectives that describe what learners will be able to do by the end of the Course."
             },
             {
               "kind": "field",
               "label": "Instructor information and bio source link",
               "ph": "[ bio text, or link to build-ready bio and headshot ]"
             }
-          ]
+          ],
+          "icon": "list"
         }
       ],
       "factsNote": "Planning targets rather than requirements. Learner time counts everything a learner does — watching, reading, practicing, and assessment — estimated for a typical learner rather than measured by how much content you have."
@@ -666,12 +685,13 @@
               "type": "Graded quiz",
               "what": "Checks the module's objectives"
             }
-          ]
+          ],
+          "icon": "play"
         },
         {
           "type": "carryover",
           "tier": "asset",
-          "icon": "play",
+          "icon": "book",
           "title": "More on each learning asset",
           "body": [
             "Videos, readings, Coach Dialogues, hands-on activities, and quizzes each come with their own guidance on length, how they work best, and what to check for accessibility and copyright.",
@@ -703,20 +723,20 @@
               "kind": "field",
               "label": "Module title",
               "ph": "[ title ]",
-              "hint": "Name the skill it teaches — Coursera adds the number."
+              "hint": "Draft what learners will learn, do, or produce in this Module."
             },
             {
               "kind": "field",
               "label": "Module description",
               "ph": "[ learner-facing introduction ]",
-              "hint": "Learners see this as a message from you. Write conversationally.",
+              "hint": "Draft a learner-friendly 2-3 sentence summary of the Module content and learning outcomes.",
               "tall": true
             },
             {
               "kind": "field",
               "label": "Module learning objectives",
               "ph": "1. [ objective ]\n2. [ objective, optional ]\n3. [ objective, optional ]",
-              "hint": "1–3 objectives."
+              "hint": "Write 1-3 actionable, measurable learning objectives that describe what learners will be able to do by the end of the Module."
             },
             {
               "kind": "pair",
@@ -734,6 +754,10 @@
               "tier": "asset",
               "icon": "play",
               "title": "Lessons & Learning Assets"
+            },
+            {
+              "kind": "note",
+              "text": "For anything created outside this template, please include a link to the final or draft source. This will help your Learning Experience Designer build the content directly from the source. Lessons are optional, so you may leave this column blank or remove it if you're not using lessons."
             },
             {
               "kind": "note",
@@ -779,6 +803,27 @@
                   "[ link ]"
                 ],
                 [
+                  "4",
+                  "[ lesson ]",
+                  "[ type ]",
+                  "[ title ]",
+                  "[ link ]"
+                ],
+                [
+                  "5",
+                  "[ lesson ]",
+                  "[ type ]",
+                  "[ title ]",
+                  "[ link ]"
+                ],
+                [
+                  "6",
+                  "[ lesson ]",
+                  "[ type ]",
+                  "[ title ]",
+                  "[ link ]"
+                ],
+                [
                   "…",
                   "",
                   "",
@@ -795,9 +840,10 @@
             {
               "kind": "quiz",
               "title": "Course 1 · Module 1 Graded Quiz",
-              "text": "Review the Coursera Graded Quiz Template and guidelines before you write your questions. Make sure it checks this module's objectives."
+              "text": "Before writing your questions, please review the Coursera Graded Quiz Template and Guidelines. The quiz should assess the objectives for this module."
             }
-          ]
+          ],
+          "icon": "list"
         }
       ],
       "factsNote": "Planning targets rather than requirements. Learner time counts everything a learner does — watching, reading, practicing, and assessment — estimated for a typical learner rather than measured by how much content you have."

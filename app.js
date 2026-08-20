@@ -414,6 +414,22 @@ function pageHtml(id) {
     </article>`;
 }
 
+/* Section header. With an `icon` it takes the Overview's shape — a circular badge
+   beside the title — so the interior pages read as the same family of blocks.
+   Without one it stays a plain heading. Carries whichever of intro/note the
+   section uses, so callers don't emit it a second time. */
+function sectionHeadHtml(s) {
+  const title = `<h2 class="section-title">${esc(s.title)}</h2>`;
+  const sub = s.intro || s.note;
+  const intro = sub ? `<p class="section-intro">${esc(sub)}</p>` : '';
+  if (!s.icon) return title + intro;
+  return `
+    <div class="compare-head">
+      <span class="compare-icon">${icon(s.icon)}</span>
+      <div>${title}${intro}</div>
+    </div>`;
+}
+
 /* A lede may be one string or several paragraphs. */
 function ledeHtml(lede) {
   if (!lede) return '';
@@ -445,8 +461,7 @@ function factsHtml(facts) {
 function ladderHtml(s) {
   return `
     <section class="block">
-      <h2 class="section-title">${esc(s.title)}</h2>
-      ${s.intro ? `<p class="section-intro">${esc(s.intro)}</p>` : ''}
+      ${sectionHeadHtml(s)}
       <div class="ladder">
         ${s.rungs
           .map(
@@ -581,8 +596,7 @@ function templatePreviewHtml(s, tier) {
     : 'href="#" aria-disabled="true"';
   return `
     <section class="block">
-      <h2 class="section-title">${esc(s.title)}</h2>
-      ${s.note ? `<p class="section-intro">${esc(s.note)}</p>` : ''}
+      ${sectionHeadHtml(s)}
       <div class="tp-page tier-${s.band.tier}">
         <div class="tp-band tier-${s.band.tier}">
           <span class="tp-band-icon">${icon(s.band.icon)}</span>
@@ -605,9 +619,8 @@ function carryoverHtml(s, tier) {
   // the page it sits on, which is the cue that it sends you somewhere else.
   return `
     <section class="block">
-      <h2 class="section-title">${esc(s.title)}</h2>
+      ${sectionHeadHtml(s)}
       <div class="carry tier-${s.tier || tier}">
-        <span class="carry-icon">${icon(s.icon || 'star')}</span>
         <div class="carry-main">
           ${(s.body || []).map((b) => `<p class="carry-p">${esc(b)}</p>`).join('')}
           ${
@@ -638,8 +651,7 @@ function considerationsHtml(s, tier) {
   const numbered = s.numbered !== false;
   return `
     <section class="block">
-      <h2 class="section-title">${esc(s.title)}</h2>
-      ${s.intro ? `<p class="section-intro">${esc(s.intro)}</p>` : ''}
+      ${sectionHeadHtml(s)}
       <div class="consider-list">
         ${s.items
           .map(
@@ -746,8 +758,7 @@ function sectionBody(s, tier) {
     case 'sequence':
       return `
         <section class="block">
-          <h2 class="section-title">${esc(s.title)}</h2>
-          <p class="section-intro">${esc(s.note)}</p>
+          ${sectionHeadHtml(s)}
           <ol class="example-list">
             ${s.items
               .map(
@@ -768,8 +779,7 @@ function sectionBody(s, tier) {
     case 'compare':
       return `
         <section class="block">
-          <h2 class="section-title">${esc(s.title)}</h2>
-          <p class="section-intro">${esc(s.intro)}</p>
+          ${sectionHeadHtml(s)}
           <div class="phrasing-table">
             <div class="phrasing-row phrasing-header">
               <span></span>
