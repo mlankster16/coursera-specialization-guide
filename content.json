@@ -39,7 +39,7 @@
           "fromLabel": "Your whole course",
           "fromDetail": "A semester of material",
           "toLabel": "A Specialization",
-          "toDetail": "3–6 courses, 12–48 hours learner time total",
+          "toDetail": "3–6 courses, 8–48 hours learner time total",
           "tier": "spec",
           "icon": "certificate"
         },
@@ -104,7 +104,7 @@
         },
         {
           "icon": "clock",
-          "label": "12–48 hours of learner time"
+          "label": "8–48 hours of learner time"
         },
         {
           "icon": "flask",
@@ -250,7 +250,7 @@
         },
         {
           "icon": "clock",
-          "label": "12–48 hours",
+          "label": "8–48 hours",
           "sub": "total learner time"
         },
         {
@@ -407,7 +407,7 @@
               "kind": "pair",
               "left": {
                 "label": "Estimated total learning time",
-                "ph": "[ 12–48 hours ]"
+                "ph": "[ 8–48 hours ]"
               },
               "right": {
                 "label": "Difficulty level",

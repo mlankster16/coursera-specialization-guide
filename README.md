@@ -54,7 +54,7 @@ splits them:
   recommended for public courses), and any mention of Specialization certificates
   counting toward a degree (Duke does not opt in).
 - Structural targets are Duke's:
-  - **Specialization** — 3–6 courses, 12–48 hours of learner time
+  - **Specialization** — 3–6 courses, 8–48 hours of learner time
   - **Course** — 2–4 learning objectives, 3–6 modules, 2–8 hours
   - **Module** — 1–3 learning objectives, 2–5 optional lessons, 1 graded assessment
 

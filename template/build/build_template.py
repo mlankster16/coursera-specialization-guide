@@ -341,7 +341,7 @@ field(doc, "What learners will be able to do by the end",
       ["[ overall Specialization outcome ]"], "spec")
 field(doc, "Skills learners will gain",
       ["[ skill 1, skill 2, skill 3, skill 4, skill 5 ]"], "spec")
-field_pair(doc, ("Estimated total learning time", "[ 12–48 hours ]"),
+field_pair(doc, ("Estimated total learning time", "[ 8–48 hours ]"),
            ("Difficulty level", "[ Beginner / Intermediate / Advanced ]"), "spec")
 field(doc, "Tools, technology, or platforms",
       ["[ any required external tools or access ]"], "spec")
