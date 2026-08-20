@@ -39,7 +39,6 @@ let C = null;
 async function init() {
   const res = await fetch('content.json');
   C = await res.json();
-  wireTemplateLink();
   window.addEventListener('hashchange', render);
   render();
 }
@@ -57,6 +56,7 @@ function render() {
   document.getElementById('page').innerHTML = page ? pageHtml(page) : homeHtml();
   wireHomeNavigation();
   wireAssetJump();
+  wireAdvice();
 
   // Arriving from a link, jump straight there — the smooth easing is for in-page use.
   // Learning-asset blocks use asset-*; every other linkable section uses sec-*.
@@ -65,18 +65,6 @@ function render() {
     (document.getElementById(`asset-${section}`) || document.getElementById(`sec-${section}`));
   if (target) target.scrollIntoView({ behavior: 'instant', block: 'start' });
   else window.scrollTo(0, 0);
-}
-
-function wireTemplateLink() {
-  const link = document.getElementById('template-link');
-  if (C.templateUrl) {
-    link.href = C.templateUrl;
-  } else {
-    link.removeAttribute('href');
-    link.setAttribute('aria-disabled', 'true');
-    link.title = 'Add your template URL to content.json (templateUrl) to activate this link.';
-    link.addEventListener('click', (e) => e.preventDefault());
-  }
 }
 
 function esc(str) {
@@ -401,10 +389,18 @@ function pageHtml(id) {
   const p = C.pages[id];
   return `
     <article class="page tier-${p.tier}">
-      <header class="page-head">
+      <header class="page-head${p.lead === 'hero' ? ' page-head-hero' : ''}">
         <p class="page-label tier-${p.tier}">${esc(p.label)}</p>
         <h1 class="page-title">${esc(p.title)}</h1>
-        ${ledeHtml(p.lede)}
+        ${
+          // `lead: "hero"` borrows the Overview's shape: centred title, then the
+          // intro inside a white callout rather than running as plain page text.
+          p.lead === 'hero'
+            ? `<section class="intro">${(Array.isArray(p.lede) ? p.lede : [p.lede])
+                .map((t) => `<p class="intro-body">${esc(t)}</p>`)
+                .join('')}</section>`
+            : ledeHtml(p.lede)
+        }
         ${p.facts ? factsHtml(p.facts) : ''}
         ${p.factsNote ? `<p class="facts-note">${esc(p.factsNote)}</p>` : ''}
       </header>
@@ -412,6 +408,87 @@ function pageHtml(id) {
       ${(p.sections || []).map((s) => sectionHtml(s, p.tier)).join('')}
       ${nextPrevHtml(id)}
     </article>`;
+}
+
+/* ---------- Field advice overlays ----------
+   Each template field can carry `advice`, shown in a popover on click. Native
+   `popover` gives light-dismiss, Escape, and top-layer stacking for free; only
+   the placement needs script. Fields without advice get no button, so nothing
+   looks clickable that isn't. */
+
+let adviceSeq = 0;
+
+function adviceExampleHtml(ex) {
+  if (!ex) return '';
+  const parts = [];
+  if (ex.lead) parts.push(`<p class="adv-lead">${esc(ex.lead)}</p>`);
+  if (ex.swap) {
+    parts.push(`
+      <p class="adv-swap"><span class="adv-swap-k">Instead of</span>
+        <span class="adv-swap-weak">${esc(ex.swap.instead)}</span></p>
+      <p class="adv-swap"><span class="adv-swap-k">Consider</span>
+        <span class="adv-swap-strong">${esc(ex.swap.consider)}</span></p>`);
+  }
+  (ex.paras || []).forEach((t) => parts.push(`<p class="adv-p">${esc(t)}</p>`));
+  if (ex.bullets) {
+    parts.push(`<ul class="adv-list">${ex.bullets
+      .map((b) => `<li>${esc(b)}</li>`)
+      .join('')}</ul>`);
+  }
+  if (ex.table) {
+    parts.push(`
+      <div class="adv-table-wrap">
+        <table class="adv-table">
+          <thead><tr>${ex.table.headers.map((h) => `<th>${esc(h)}</th>`).join('')}</tr></thead>
+          <tbody>${ex.table.rows
+            .map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`)
+            .join('')}</tbody>
+        </table>
+      </div>`);
+  }
+  if (ex.note) parts.push(`<p class="adv-note">${esc(ex.note)}</p>`);
+  return `<p class="adv-kicker">Example</p>${parts.join('')}`;
+}
+
+function adviceHtml(label, advice) {
+  if (!advice) return '';
+  const id = `adv-${++adviceSeq}`;
+  return `
+    <button class="adv-btn" type="button" popovertarget="${id}"
+            aria-label="Guidance for ${esc(label)}">${icon('question')}</button>
+    <div class="adv-pop" id="${id}" popover>
+      <p class="adv-field">${esc(label)}</p>
+      <p class="adv-kicker">Best practice</p>
+      <p class="adv-p">${esc(advice.best)}</p>
+      ${adviceExampleHtml(advice.example)}
+    </div>`;
+}
+
+/* Anchor the panel under its button, clamped to the viewport. CSS anchor
+   positioning is not portable enough to rely on yet. */
+function wireAdvice() {
+  document.querySelectorAll('.adv-pop').forEach((pop) => {
+    pop.addEventListener('beforetoggle', (e) => {
+      if (e.newState !== 'open') return;
+      const btn = document.querySelector(`[popovertarget="${pop.id}"]`);
+      if (!btn) return;
+      const r = btn.getBoundingClientRect();
+      const w = Math.min(430, window.innerWidth - 24);
+      pop.style.width = `${w}px`;
+      let left = r.left + r.width / 2 - w / 2;
+      left = Math.max(12, Math.min(left, window.innerWidth - w - 12));
+      pop.style.left = `${left}px`;
+      // flip above the button when there isn't room below
+      const below = window.innerHeight - r.bottom;
+      if (below < 240 && r.top > below) {
+        pop.style.top = 'auto';
+        pop.style.bottom = `${window.innerHeight - r.top + 8}px`;
+      } else {
+        pop.style.bottom = 'auto';
+        pop.style.top = `${r.bottom + 8}px`;
+      }
+    });
+  });
 }
 
 /* Section header. With an `icon` it takes the Overview's shape — a circular badge
@@ -528,7 +605,7 @@ function previewFieldHtml(r, tier) {
   const lines = String(r.ph).split('\n');
   return `
     <div class="tp-field">
-      <p class="tp-label">${esc(r.label)}</p>
+      <p class="tp-label">${esc(r.label)}${adviceHtml(r.label, r.advice)}</p>
       ${r.hint ? `<p class="tp-hint">${esc(r.hint)}</p>` : ''}
       <div class="tp-box${r.tall ? ' tall' : ''}">
         ${lines.map((l) => `<span class="tp-ph">${esc(l)}</span>`).join('')}
@@ -566,7 +643,13 @@ function previewRowHtml(r, tier) {
           <div class="tp-grid-wrap">
             <table class="tp-grid${cls}">
               <thead><tr>${r.headers
-                .map((h, i) => `<th style="width:${r.widths[i]}%">${esc(h)}</th>`)
+                .map(
+                  (h, i) =>
+                    `<th style="width:${r.widths[i]}%">${esc(h)}${adviceHtml(
+                      h,
+                      (r.advice || {})[h]
+                    )}</th>`
+                )
                 .join('')}</tr></thead>
               <tbody>${r.rows
                 .map((row) => `<tr>${row
