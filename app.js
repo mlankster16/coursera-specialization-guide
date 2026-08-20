@@ -464,29 +464,43 @@ function adviceHtml(label, advice) {
     </div>`;
 }
 
-/* Anchor the panel under its button, clamped to the viewport. CSS anchor
-   positioning is not portable enough to rely on yet. */
+/* Anchor the panel to its button, clamped so it can never render off-screen.
+   CSS anchor positioning is not portable enough to rely on yet. Placement runs
+   twice: once before open using the height cap as an estimate, then again once
+   the panel is measurable, so a tall panel on a short window still fits. */
+function placeAdvice(pop, btn) {
+  const MARGIN = 12;
+  const GAP = 8;
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const r = btn.getBoundingClientRect();
+
+  const w = Math.min(430, vw - MARGIN * 2);
+  pop.style.width = `${w}px`;
+  let left = r.left + r.width / 2 - w / 2;
+  pop.style.left = `${Math.max(MARGIN, Math.min(left, vw - w - MARGIN))}px`;
+
+  const below = vh - r.bottom - GAP - MARGIN;
+  const above = r.top - GAP - MARGIN;
+  const useAbove = below < 200 && above > below;
+  const cap = Math.max(140, Math.min(520, useAbove ? above : below));
+  pop.style.maxHeight = `${cap}px`;
+
+  const h = pop.offsetHeight ? Math.min(pop.offsetHeight, cap) : cap;
+  let top = useAbove ? r.top - GAP - h : r.bottom + GAP;
+  pop.style.bottom = 'auto';
+  pop.style.top = `${Math.max(MARGIN, Math.min(top, vh - h - MARGIN))}px`;
+}
+
 function wireAdvice() {
   document.querySelectorAll('.adv-pop').forEach((pop) => {
+    const btn = document.querySelector(`[popovertarget="${pop.id}"]`);
+    if (!btn) return;
     pop.addEventListener('beforetoggle', (e) => {
-      if (e.newState !== 'open') return;
-      const btn = document.querySelector(`[popovertarget="${pop.id}"]`);
-      if (!btn) return;
-      const r = btn.getBoundingClientRect();
-      const w = Math.min(430, window.innerWidth - 24);
-      pop.style.width = `${w}px`;
-      let left = r.left + r.width / 2 - w / 2;
-      left = Math.max(12, Math.min(left, window.innerWidth - w - 12));
-      pop.style.left = `${left}px`;
-      // flip above the button when there isn't room below
-      const below = window.innerHeight - r.bottom;
-      if (below < 240 && r.top > below) {
-        pop.style.top = 'auto';
-        pop.style.bottom = `${window.innerHeight - r.top + 8}px`;
-      } else {
-        pop.style.bottom = 'auto';
-        pop.style.top = `${r.bottom + 8}px`;
-      }
+      if (e.newState === 'open') placeAdvice(pop, btn);
+    });
+    pop.addEventListener('toggle', (e) => {
+      if (e.newState === 'open') placeAdvice(pop, btn);
     });
   });
 }
