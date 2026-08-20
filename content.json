@@ -548,7 +548,6 @@
           "icon": "list"
         }
       ],
-      "factsNote": "Planning targets rather than requirements. Learner time counts everything a learner does — watching, reading, practicing, and assessment — estimated for a typical learner rather than measured by how much content you have.",
       "lead": "hero"
     },
     "course": {
@@ -744,8 +743,7 @@
           ],
           "icon": "list"
         }
-      ],
-      "factsNote": "Planning targets rather than requirements. Learner time counts everything a learner does — watching, reading, practicing, and assessment — estimated for a typical learner rather than measured by how much content you have."
+      ]
     },
     "module": {
       "tier": "module",
@@ -990,8 +988,7 @@
           ],
           "icon": "list"
         }
-      ],
-      "factsNote": "Planning targets rather than requirements. Learner time counts everything a learner does — watching, reading, practicing, and assessment — estimated for a typical learner rather than measured by how much content you have."
+      ]
     },
     "assets": {
       "tier": "asset",

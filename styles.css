@@ -38,6 +38,11 @@
   --asset-line: #EFD9AF;
 
   --line: #CBD3E1;
+
+  /* Snapshot boxes on the interior pages. #DFE9F7 is the deepest blue that still
+     clears AA for the grey sub-label on it (4.69:1); one step darker fails. */
+  --fact-bg: #DFE9F7;
+  --fact-line: #B9CFE8;
 }
 
 html { scroll-behavior: smooth; }
@@ -907,13 +912,15 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   margin-top: 26px;
 }
 
+/* Tinted rather than white, to break up the run of white cards. One blue for
+   every page: the icon inside stays tier-coloured, so the page keeps its cue. */
 .fact {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 5px;
-  background: var(--white);
-  border: 1px solid var(--hatteras);
+  background: var(--fact-bg);
+  border: 1px solid var(--fact-line);
   border-radius: 11px;
   padding: 16px 18px;
 }
@@ -1933,3 +1940,8 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   .flow-nav { justify-content: flex-start; }
   .page-head-hero { padding-top: 22px; }
 }
+
+
+/* The learner-time note used to sit between the facts row and the first block;
+   without it, the old 56px gap reads as a hole. */
+.page .block:first-of-type { margin-top: 34px; }
