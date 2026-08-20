@@ -47,7 +47,7 @@
           "fromLabel": "A unit or theme",
           "fromDetail": "Often several weeks of your syllabus",
           "toLabel": "A Course",
-          "toDetail": "2–8 hours learner time, and it works on its own",
+          "toDetail": "2–8 hours learner time",
           "tier": "course",
           "icon": "layers"
         },
