@@ -898,6 +898,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   line-height: 1.65;
   margin-top: 10px;
 }
+.page-lede + .page-lede { margin-top: 14px; }
 
 /* Key numbers row */
 .facts-row {
@@ -1343,6 +1344,14 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .consider.tier-spec   .consider-n { background: var(--spec); }
 .consider.tier-course .consider-n { background: var(--course); }
 .consider.tier-module .consider-n { background: var(--module); }
+
+/* Parallel principles rather than ranked steps: no numeral, a tier rule instead. */
+.consider.plain { border-left: 3px solid var(--graphite); }
+.consider.plain.tier-spec   { border-left-color: var(--spec); }
+.consider.plain.tier-course { border-left-color: var(--course); }
+.consider.plain.tier-module { border-left-color: var(--module); }
+.consider.plain.tier-asset  { border-left-color: var(--asset); }
+.consider.plain .consider-heading { font-size: 0.95rem; }
 
 .consider-heading {
   font-family: 'Open Sans', Arial, sans-serif;

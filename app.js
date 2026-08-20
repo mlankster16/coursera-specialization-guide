@@ -404,7 +404,7 @@ function pageHtml(id) {
       <header class="page-head">
         <p class="page-label tier-${p.tier}">${esc(p.label)}</p>
         <h1 class="page-title">${esc(p.title)}</h1>
-        <p class="page-lede">${esc(p.lede)}</p>
+        ${ledeHtml(p.lede)}
         ${p.facts ? factsHtml(p.facts) : ''}
         ${p.factsNote ? `<p class="facts-note">${esc(p.factsNote)}</p>` : ''}
       </header>
@@ -412,6 +412,13 @@ function pageHtml(id) {
       ${(p.sections || []).map((s) => sectionHtml(s, p.tier)).join('')}
       ${nextPrevHtml(id)}
     </article>`;
+}
+
+/* A lede may be one string or several paragraphs. */
+function ledeHtml(lede) {
+  if (!lede) return '';
+  const paras = Array.isArray(lede) ? lede : [lede];
+  return paras.map((t) => `<p class="page-lede">${esc(t)}</p>`).join('');
 }
 
 function factsHtml(facts) {
@@ -626,15 +633,19 @@ function carryoverHtml(s, tier) {
 /* ---------- Three things to get right ---------- */
 
 function considerationsHtml(s, tier) {
+  // `numbered: false` for a set of parallel principles, where 1-2-3 would imply
+  // an order that isn't there.
+  const numbered = s.numbered !== false;
   return `
     <section class="block">
       <h2 class="section-title">${esc(s.title)}</h2>
+      ${s.intro ? `<p class="section-intro">${esc(s.intro)}</p>` : ''}
       <div class="consider-list">
         ${s.items
           .map(
             (it, i) => `
-          <div class="consider tier-${tier}">
-            <span class="consider-n">${i + 1}</span>
+          <div class="consider tier-${tier}${numbered ? '' : ' plain'}">
+            ${numbered ? `<span class="consider-n">${i + 1}</span>` : ''}
             <div>
               <p class="consider-heading">${esc(it.heading)}</p>
               <p class="consider-body">${esc(it.body)}</p>
