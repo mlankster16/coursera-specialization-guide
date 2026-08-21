@@ -561,7 +561,7 @@ function ladderHtml(s) {
   return `
     <section class="block">
       ${sectionHeadHtml(s)}
-      ${(s.body || []).map((b) => `<p class="block-p">${esc(b)}</p>`).join('')}
+      ${bodyBlocksHtml(s.body)}
       <div class="ladder">
         ${
           s.headers
@@ -722,6 +722,24 @@ function templatePreviewHtml(s, tier) {
     </section>`;
 }
 
+/* Body copy that may interleave paragraphs and bullet lists, the same shape the
+   hero lede accepts. A bullet may lead with a bolded word. */
+function bodyBlocksHtml(items) {
+  return (items || [])
+    .map((t) =>
+      typeof t === 'string'
+        ? `<p class="block-p">${esc(t)}</p>`
+        : `<ul class="prose-list">${t.bullets
+            .map((b) =>
+              typeof b === 'string'
+                ? `<li>${esc(b)}</li>`
+                : `<li><strong>${esc(b.bold)}</strong> ${esc(b.rest)}</li>`
+            )
+            .join('')}</ul>`
+    )
+    .join('');
+}
+
 /* ---------- Two panels, side by side ----------
    Deliberately neutral by default. Some pairs here are a better/worse framing
    ("you might ask instead"), but others are two legitimate choices — a sequenced
@@ -731,12 +749,26 @@ function sideBySideHtml(s, tier) {
   const panel = (side, key) => `
     <div class="sbs-panel${s.emphasis === key ? ` emphasis tier-${s.tier || tier}` : ''}">
       <p class="sbs-label">${esc(side.label)}</p>
-      <p class="sbs-body">${esc(side.body)}</p>
+      ${side.body ? `<p class="sbs-body">${esc(side.body)}</p>` : ''}
+      ${
+        side.bullets
+          ? `<ul class="sbs-list">${side.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>`
+          : ''
+      }
     </div>`;
   return `
     <section class="block">
       ${sectionHeadHtml(s)}
-      ${(s.body || []).map((b) => `<p class="block-p">${esc(b)}</p>`).join('')}
+      ${bodyBlocksHtml(s.body)}
+      ${
+        // the fixed thing the two columns are being judged against
+        s.anchor
+          ? `<div class="sbs-anchor tier-${s.tier || tier}">
+               <p class="sbs-anchor-label">${esc(s.anchor.label)}</p>
+               <p class="sbs-anchor-body">${esc(s.anchor.body)}</p>
+             </div>`
+          : ''
+      }
       <div class="sbs">
         ${panel(s.left, 'left')}
         ${panel(s.right, 'right')}
@@ -852,7 +884,7 @@ function sectionBody(s, tier) {
       return `
         <section class="block">
           ${sectionHeadHtml(s)}
-          ${(s.body || []).map((b) => `<p class="block-p">${esc(b)}</p>`).join('')}
+          ${bodyBlocksHtml(s.body)}
           ${
             s.bullets && s.bullets.length
               ? `<ul class="prose-list">${s.bullets

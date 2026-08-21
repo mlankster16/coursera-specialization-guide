@@ -2093,3 +2093,58 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 /* Body copy introducing a ladder or a table sits closer to it than to the
    heading above. */
 .block-p + .ladder { margin-top: 14px; }
+
+
+/* ---------- The fixed reference the two columns are judged against ---------- */
+.sbs-anchor {
+  border-left: 3px solid var(--graphite);
+  background: var(--whisper);
+  border-radius: 0 10px 10px 0;
+  padding: 14px 18px;
+  margin-top: 20px;
+}
+.sbs-anchor.tier-course { border-left-color: var(--course); }
+.sbs-anchor.tier-spec { border-left-color: var(--spec); }
+.sbs-anchor.tier-module { border-left-color: var(--module); }
+
+.sbs-anchor-label {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  margin-bottom: 4px;
+}
+.sbs-anchor.tier-course .sbs-anchor-label { color: var(--course); }
+.sbs-anchor-body { font-size: 0.92rem; color: var(--cast-iron); line-height: 1.6; font-weight: 700; }
+
+/* An anchor already opens the comparison, so the columns tuck under it. */
+.sbs-anchor + .sbs { margin-top: 12px; }
+
+/* ---------- Bulleted panel contents ---------- */
+.sbs-list { margin: 0 0 0 2px; list-style: none; }
+.sbs-list li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 0.86rem;
+  color: var(--cast-iron);
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+.sbs-list li:last-child { margin-bottom: 0; }
+.sbs-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--graphite);
+}
+.sbs-panel.emphasis.tier-course .sbs-list li::before { background: var(--course); }
+
+/* A bullet list inside a section body needs air above it, like a paragraph. */
+.block-p + .prose-list { margin-top: 12px; }
+.prose-list + .block-p { margin-top: 14px; }
