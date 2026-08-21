@@ -24,14 +24,17 @@
   ],
   "home": {
     "hero": {
-      "title": "What is a Coursera Specialization?"
+      "title": "Designing for Coursera"
     },
     "intro": {
-      "body": "Coursera is a global online learning platform where people take short, self-paced courses to build practical skills. The Learning Experience Design team at the Duke Center for Teaching and Learning (CTL) partners with faculty to design and build these courses. This guide introduces how a Coursera Specialization fits together, and works alongside the planning template you will complete with your designer."
+      "body": [
+        "Coursera is a global online learning platform where learners take short, self-paced Courses to build practical skills and apply what they learn. Duke's Learning Experience Design team partners with faculty to shape those experiences for an asynchronous, global audience.",
+        "This guide walks through the different levels of Coursera design, from the larger learning journey to individual learning assets. It is intended to be used alongside the Design Document you'll complete with your Learning Experience Designer."
+      ]
     },
     "mapping": {
       "title": "How your course maps to Coursera",
-      "intro": "Most of what you already teach has a home in this structure. Here's roughly how the pieces line up.",
+      "intro": "These are rough comparisons rather than one-to-one equivalents. Designing for Coursera usually means narrowing and reshaping existing material rather than simply dividing a semester Course into smaller pieces.",
       "yourLabel": "In your course",
       "courseraLabel": "On Coursera",
       "rows": [
@@ -71,11 +74,11 @@
       "note": {
         "icon": "clock",
         "title": "What counts as learner time",
-        "body": "Learner time includes videos, readings, quizzes, practice activities, projects, and any other work required to complete the course."
+        "body": "Learner time includes videos, readings, quizzes, practice activities, projects, and any other work required to complete the Course. Estimate the time the learner spends, not the amount of material you provide."
       }
     },
     "structure": {
-      "title": "Coursera Specialization Structure"
+      "title": "How a Coursera learning experience fits together"
     },
     "legend": [
       {
@@ -96,7 +99,7 @@
       }
     ],
     "specialization": {
-      "definition": "A series of related courses designed to help learners master a specific topic.",
+      "definition": "A connected learning journey across several Courses",
       "specs": [
         {
           "icon": "layers",
@@ -114,24 +117,25 @@
           "icon": "certificate",
           "label": "Specialization Certificate"
         }
-      ]
+      ],
+      "question": "What larger goal are learners working toward?"
     },
     "courses": {
       "cards": [
         {
           "n": 1,
           "title": "Course",
-          "role": "Focused on a key skill or topic area"
+          "role": "A focused learning experience with clear outcomes"
         },
         {
           "n": 2,
           "title": "Course",
-          "role": "Focused on a key skill or topic area"
+          "role": "A focused learning experience with clear outcomes"
         },
         {
           "n": 3,
           "title": "Course",
-          "role": "Focused on a key skill or topic area"
+          "role": "A focused learning experience with clear outcomes"
         }
       ],
       "cardSpecs": [
@@ -151,24 +155,25 @@
           "icon": "certificate",
           "label": "Course Certificate"
         }
-      ]
+      ],
+      "question": "What meaningful skills should learners develop?"
     },
     "modules": {
       "cards": [
         {
           "n": 1,
           "title": "Module",
-          "role": "Focused on a sub-topic, skill(s), or theme"
+          "role": "A manageable sequence of learning, practice, and assessment"
         },
         {
           "n": 2,
           "title": "Module",
-          "role": "Focused on a sub-topic, skill(s), or theme"
+          "role": "A manageable sequence of learning, practice, and assessment"
         },
         {
           "n": 3,
           "title": "Module",
-          "role": "Focused on a sub-topic, skill(s), or theme"
+          "role": "A manageable sequence of learning, practice, and assessment"
         }
       ],
       "cardSpecs": [
@@ -188,11 +193,13 @@
           "icon": "check",
           "label": "1 graded assessment"
         }
-      ]
+      ],
+      "question": "What smaller learning steps will help them get there?"
     },
     "assets": {
       "title": "Learning Assets",
-      "note": "A variety of asset types helps keep learners engaged and motivated to complete the course."
+      "note": "The individual experiences learners watch, read, and do",
+      "question": "What experience will best support each step?"
     },
     "reuse": {
       "title": "Can you use what you already have?",

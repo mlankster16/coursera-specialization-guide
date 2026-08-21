@@ -121,9 +121,10 @@ function homeHtml() {
 }
 
 function introHtml(i) {
+  const paras = Array.isArray(i.body) ? i.body : [i.body];
   return `
     <section class="intro">
-      <p class="intro-body">${esc(i.body)}</p>
+      ${paras.map((t) => `<p class="intro-body">${rich(t)}</p>`).join('')}
     </section>`;
 }
 
@@ -191,6 +192,7 @@ function homeSpecHtml(s) {
   return `
     <section class="tier tier-spec">
       <div class="tier-body spec-body">
+        ${s.question ? `<p class="tier-question">${esc(s.question)}</p>` : ''}
         <button type="button" class="card spec-card" data-goto="specialization">
           <span class="card-top">
             <span class="icon-badge">${icon('certificate')}</span>
@@ -212,6 +214,7 @@ function homeCoursesHtml(c) {
   return `
     <section class="tier tier-course">
       <div class="tier-body">
+        ${c.question ? `<p class="tier-question">${esc(c.question)}</p>` : ''}
         <div class="course-row">
           ${c.cards
             .map(
@@ -251,6 +254,7 @@ function homeModulesHtml(m) {
   return `
     <section class="tier tier-module">
       <div class="tier-body">
+        ${m.question ? `<p class="tier-question">${esc(m.question)}</p>` : ''}
         <div class="module-row">
           ${m.cards
             .map(
@@ -279,6 +283,7 @@ function homeAssetsHtml() {
   return `
     <section class="tier tier-asset">
       <div class="tier-body">
+        ${C.home.assets.question ? `<p class="tier-question">${esc(C.home.assets.question)}</p>` : ''}
         <div class="asset-band">
           <div class="asset-band-head">
             <span class="asset-band-icon">${icon('play')}</span>
@@ -340,11 +345,9 @@ function mappingHtml(m) {
     <section class="compare">
       <div class="compare-head">
         <span class="compare-icon">${icon('scale')}</span>
-        <div>
-          <h2 class="section-title">${esc(m.title)}</h2>
-          ${m.intro ? `<p class="section-intro">${esc(m.intro)}</p>` : ''}
-        </div>
+        <div><h2 class="section-title">${esc(m.title)}</h2></div>
       </div>
+      ${m.intro ? `<p class="section-intro below">${esc(m.intro)}</p>` : ''}
 
       <div class="map">
         <div class="map-heads">
