@@ -1843,7 +1843,11 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .page-head-hero { text-align: center; padding-top: 34px; }
 .page-head-hero .page-title { margin-bottom: 4px; }
 .page-head-hero .intro { text-align: left; margin-top: 20px; }
-.page-head-hero .intro-body + .intro-body { margin-top: 12px; }
+/* Spacing between anything in the intro callout — paragraph to paragraph,
+   paragraph to list, and list back to paragraph. The old adjacent-sibling
+   rule needed the previous sibling to be a paragraph, so the paragraph after
+   a bullet list got no gap at all. */
+.page-head-hero .intro > * + * { margin-top: 12px; }
 .page-head-hero .facts-note { text-align: left; }
 
 /* ---------- Field advice overlays ---------- */
@@ -1961,7 +1965,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .page.tier-asset  .fact { background: var(--fact-bg-asset);  border-color: var(--fact-line-asset); }
 
 /* ---------- Bullets inside the hero intro callout ---------- */
-.intro-list { margin: 12px 0 0 4px; list-style: none; }
+.intro-list { margin: 0 0 0 4px; list-style: none; }
 .intro-list li {
   position: relative;
   padding-left: 18px;
