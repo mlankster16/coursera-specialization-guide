@@ -338,7 +338,7 @@
               "hint": "In 1-2 sentences, describe the nature of the included projects and how learners will apply the skills to solve an authentic problem.",
               "tall": true,
               "advice": {
-                "best": "Describe what learners will **make, analyze, evaluate, or solve**. Projects should reflect realistic situations learners may encounter beyond the course, not simply serve as longer versions of quizzes.",
+                "best": "Describe what learners will **make, analyze, evaluate, or solve**. Projects should reflect realistic situations learners may encounter beyond the course — not simply serve as longer versions of quizzes.",
                 "example": {
                   "paras": [
                     "Learners will analyze business data to investigate a practical question, identify meaningful trends, create visualizations, and recommend an action. Projects are designed around common workplace tasks such as evaluating customer behavior, monitoring performance, or identifying opportunities for improvement."
@@ -379,7 +379,7 @@
               "ph": "[ overall Specialization outcome ]",
               "hint": "Write 1-3 actionable, measurable learning objectives that describe what learners will be able to do by the end of the Specialization.",
               "advice": {
-                "best": "Describe **observable capabilities**, not topics learners will encounter or ideas they will “understand.” Begin with an action verb such as evaluate, apply, analyze, design, or recommend, and make sure the objectives represent the **full Specialization**, not just one course.",
+                "best": "Describe **observable capabilities**, not topics learners will encounter or ideas they will “understand.” Begin with an action verb such as **evaluate, apply, analyze, design,** or **recommend**, and make sure the objectives represent the **full Specialization**, not just one course.",
                 "example": {
                   "lead": "By the end of the Specialization, learners will be able to:",
                   "bullets": [
@@ -426,9 +426,8 @@
                 "advice": {
                   "best": "Choose the level based on the **knowledge, skills, and independence required of the learner**, not on the sophistication of the subject itself. A complex topic can still be appropriate for beginners when concepts are introduced from the ground up.",
                   "example": {
-                    "lead": "Beginner",
                     "paras": [
-                      "No previous experience with data analytics or programming is required. Learners will be guided through foundational concepts and tools before completing independent analyses."
+                      "**Beginner** — No previous experience with data analytics or programming is required. Learners will be guided through foundational concepts and tools before completing independent analyses."
                     ]
                   }
                 }
@@ -487,12 +486,13 @@
                 "Course title": {
                   "best": "Give each course a **distinct purpose within the larger learner journey**. Learners should be able to see how their capabilities will develop from one course to the next.",
                   "example": {
+                    "ordered": true,
                     "bullets": [
-                      "Foundations of Data Analytics for Business",
-                      "Analyzing and Visualizing Business Data",
-                      "Communicating Data-Driven Recommendations"
+                      "**Foundations of Data Analytics for Business**",
+                      "**Analyzing and Visualizing Business Data**",
+                      "**Communicating Data-Driven Recommendations**"
                     ],
-                    "note": "The progression tells a clear story: learn the foundations → analyze the data → communicate and act on the findings."
+                    "note": "The progression tells a clear story: **learn the foundations → analyze the data → communicate and act on the findings**."
                   }
                 },
                 "Main outcomes": {
@@ -521,13 +521,13 @@
                   }
                 },
                 "Est. time": {
-                  "best": "Aim for a **reasonable and relatively balanced learner experience across courses**, while allowing the work itself to determine the exact length. Include all learning activities (video, readings, activities, and assessments) in this estimate.",
+                  "best": "Aim for a **reasonable and relatively balanced learner experience across courses**, while allowing the work itself to determine the exact length. Include all learning activities (i.e., video, readings, activities, and assessments) in this estimate.",
                   "example": {
-                    "bullets": [
-                      "Course 1: 7 hours",
-                      "Course 2: 9 hours",
-                      "Course 3: 8 hours",
-                      "Total: approximately 24 hours"
+                    "paras": [
+                      "**Course 1:** 7 hours",
+                      "**Course 2:** 9 hours",
+                      "**Course 3:** 8 hours",
+                      "**Total:** Approximately 24 hours"
                     ]
                   }
                 }

@@ -446,9 +446,11 @@ function adviceExampleHtml(ex) {
   }
   (ex.paras || []).forEach((t) => parts.push(`<p class="adv-p">${rich(t)}</p>`));
   if (ex.bullets) {
-    parts.push(`<ul class="adv-list">${ex.bullets
+    // an ordered list where the items are genuinely a sequence
+    const tag = ex.ordered ? 'ol' : 'ul';
+    parts.push(`<${tag} class="adv-list">${ex.bullets
       .map((b) => `<li>${rich(b)}</li>`)
-      .join('')}</ul>`);
+      .join('')}</${tag}>`);
   }
   if (ex.table) {
     parts.push(`
