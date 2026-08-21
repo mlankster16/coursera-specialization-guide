@@ -77,7 +77,9 @@ function esc(str) {
    is escaped first and the markers replaced after, so the only markup content can
    ever produce is <strong> — there is no injection path through content.json. */
 function rich(str) {
-  return esc(str).replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+  return esc(str)
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*([^*]+)\*/g, '<em>$1</em>');
 }
 
 /* ---------- Flow navigation (shows scale and where you are) ---------- */
