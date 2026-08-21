@@ -90,7 +90,7 @@ body.drawer-open { overflow: hidden; }
 .template-link {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 600;
-  font-size: 0.74rem;
+  font-size: 0.82rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--white);
@@ -207,7 +207,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 
 .more-cue {
   font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -351,7 +351,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   line-height: 1.3;
 }
 
-.contents-sub { font-size: 0.75rem; color: var(--graphite); line-height: 1.4; }
+.contents-sub { font-size: 0.82rem; color: var(--graphite); line-height: 1.4; }
 
 /* Small note under a tier */
 .tier-note {
@@ -468,7 +468,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   color: var(--navy);
 }
 
-.asset-tile-short { font-size: 0.76rem; color: var(--graphite); line-height: 1.45; }
+.asset-tile-short { font-size: 0.82rem; color: var(--graphite); line-height: 1.45; }
 
 /* ---------- Shared section block ---------- */
 /* CTL's cards: white, square, 30px of padding, and a hairline shadow instead of
@@ -523,7 +523,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   font-weight: 700;
 }
 .phrasing-header > span {
-  font-size: 0.74rem;
+  font-size: 0.82rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -630,7 +630,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
 }
-.compare-header > span { font-size: 0.76rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--graphite); }
+.compare-header > span { font-size: 0.82rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--graphite); }
 .compare-header .col-coursera { color: var(--spec); }
 
 .compare-aspect { font-weight: 700; color: var(--navy); }
@@ -715,7 +715,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .drawer-example-label {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--module);
@@ -750,7 +750,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   color: var(--white);
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: 0.78rem;
 }
 
 .example-body { display: flex; flex-direction: column; gap: 1px; flex: 1; min-width: 0; }
@@ -769,7 +769,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   align-self: center;
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
-  font-size: 0.64rem;
+  font-size: 0.75rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--asset);
@@ -850,7 +850,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   border-radius: 0;
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 600;
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: rgba(255,255,255,0.7);
@@ -892,7 +892,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .page-label {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 800;
-  font-size: 0.76rem;
+  font-size: 0.82rem;
   letter-spacing: 0.1em;
   margin-bottom: 8px;
 }
@@ -953,7 +953,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   color: var(--navy);
   line-height: 1.3;
 }
-.fact-sub { font-size: 0.76rem; color: var(--graphite); line-height: 1.4; }
+.fact-sub { font-size: 0.82rem; color: var(--graphite); line-height: 1.4; }
 
 /* Page body text */
 .block-p { font-size: 0.94rem; color: var(--cast-iron); line-height: 1.7; margin-bottom: 13px; }
@@ -962,7 +962,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .tips-label {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--royal);
@@ -1079,7 +1079,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   gap: 8px;
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 800;
-  font-size: 0.74rem;
+  font-size: 0.82rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -1136,7 +1136,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .page-nav-dir {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--graphite);
@@ -1165,7 +1165,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   display: block;
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 800;
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--spec);
@@ -1228,7 +1228,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   font-size: 0.92rem;
   color: var(--white);
 }
-.tp-band-sub { margin-left: auto; font-size: 0.74rem; color: rgba(255,255,255,0.85); }
+.tp-band-sub { margin-left: auto; font-size: 0.82rem; color: rgba(255,255,255,0.85); }
 
 /* Not the first band in a preview — separate it from what came before */
 .tp-page .tp-band:not(:first-child) { margin-top: 26px; }
@@ -1245,7 +1245,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .tp-page.tier-course .tp-label { color: var(--course); }
 .tp-page.tier-module .tp-label { color: var(--module); }
 
-.tp-hint { font-size: 0.73rem; color: var(--graphite); font-style: italic; margin-bottom: 4px; }
+.tp-hint { font-size: 0.8rem; color: var(--graphite); font-style: italic; margin-bottom: 4px; }
 
 .tp-box {
   border: 1px solid var(--hatteras);
@@ -1278,11 +1278,11 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 }
 
 .tp-grid-wrap { overflow-x: auto; }
-.tp-grid { width: 100%; border-collapse: collapse; font-size: 0.76rem; }
+.tp-grid { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
 .tp-grid th {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
-  font-size: 0.66rem;
+  font-size: 0.76rem;
   letter-spacing: 0.04em;
   text-align: left;
   padding: 7px 9px;
@@ -1411,7 +1411,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   color: var(--royal);
 }
 .ref-block > summary:hover .ref-summary-text { color: var(--navy); }
-.ref-chevron { color: var(--graphite); font-size: 0.75rem; transition: transform 0.15s; }
+.ref-chevron { color: var(--graphite); font-size: 0.82rem; transition: transform 0.15s; }
 .ref-block[open] > summary .ref-chevron { transform: rotate(180deg); }
 
 /* The nested section shouldn't repeat the card chrome */
@@ -1560,7 +1560,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .verb-label {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   margin-bottom: 5px;
@@ -1595,7 +1595,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .contrast-label {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
-  font-size: 0.66rem;
+  font-size: 0.76rem;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   margin-bottom: 5px;
@@ -1653,7 +1653,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .carry-recall-label {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--graphite);
@@ -1712,7 +1712,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .map-head-your, .map-head-cr {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--graphite);
@@ -1911,7 +1911,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 }
 .adv-kicker {
   font-weight: 700;
-  font-size: 0.66rem;
+  font-size: 0.76rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--royal);
@@ -1926,7 +1926,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .adv-swap-k {
   display: block;
   font-weight: 700;
-  font-size: 0.64rem;
+  font-size: 0.75rem;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--graphite);
@@ -2016,7 +2016,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .sbs-label {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--graphite);
@@ -2046,7 +2046,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .rung.rung-head span {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
-  font-size: 0.64rem;
+  font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--graphite);
@@ -2122,7 +2122,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .sbs-anchor-label {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
-  font-size: 0.66rem;
+  font-size: 0.76rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--graphite);
@@ -2182,7 +2182,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .anchor-note-label {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
-  font-size: 0.66rem;
+  font-size: 0.76rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--module);
@@ -2203,7 +2203,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .chips-label {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
-  font-size: 0.66rem;
+  font-size: 0.76rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--graphite);
@@ -2227,7 +2227,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   background: var(--whisper);
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--graphite);
@@ -2325,7 +2325,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .block-eyebrow {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
-  font-size: 0.66rem;
+  font-size: 0.76rem;
   letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--graphite);
@@ -2363,7 +2363,7 @@ a.flow-step-card:focus-visible { outline: 3px solid var(--persimmon); outline-of
   color: var(--white);
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 800;
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   line-height: 1;
 }
 .step-badge.final { background: var(--navy); }
@@ -2452,7 +2452,7 @@ a.flow-step-card:focus-visible { outline: 3px solid var(--persimmon); outline-of
 .example-marker {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
-  font-size: 0.64rem;
+  font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--graphite);
@@ -2539,12 +2539,18 @@ a.flow-step-card:focus-visible { outline: 3px solid var(--persimmon); outline-of
 .intro.bare .intro-body { font-size: 1.06rem; line-height: 1.7; color: var(--cast-iron); }
 
 /* A line set off by a rule rather than a fill. */
+/* Same type as the paragraph above it, and the block hugs its text so it can
+   centre on the page rather than running the full column width. */
 .intro-rule {
   border-left: 3px solid var(--spec);
-  padding: 2px 0 2px 18px;
-  font-size: 0.98rem;
-  line-height: 1.65;
-  color: var(--graphite);
+  padding: 2px 0 2px 20px;
+  font-size: 1.06rem;
+  line-height: 1.7;
+  color: var(--cast-iron);
+  width: fit-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .intro-rule.tier-course { border-left-color: var(--course); }
 .intro-rule.tier-module { border-left-color: var(--module); }
@@ -2553,3 +2559,7 @@ a.flow-step-card:focus-visible { outline: 3px solid var(--persimmon); outline-of
 /* the ruled line earns a little more air than paragraph-to-paragraph spacing */
 .page-head-hero .intro.bare > * + .intro-rule,
 .page-head-hero .intro.bare > .intro-rule + * { margin-top: 20px; }
+
+/* The Overview intro is not inside a hero head, so it needs its own spacing. */
+.intro.bare { margin-bottom: 26px; }
+.intro.bare .intro-body + .intro-body { margin-top: 14px; }

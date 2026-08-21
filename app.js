@@ -123,7 +123,7 @@ function homeHtml() {
 function introHtml(i) {
   const paras = Array.isArray(i.body) ? i.body : [i.body];
   return `
-    <section class="intro">
+    <section class="intro${i.style === 'bare' ? ' bare' : ''}">
       ${paras.map((t) => `<p class="intro-body">${rich(t)}</p>`).join('')}
     </section>`;
 }

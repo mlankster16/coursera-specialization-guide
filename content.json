@@ -30,7 +30,8 @@
       "body": [
         "Coursera is a global online learning platform where learners take short, self-paced Courses to build practical skills and apply what they learn. Duke's Learning Experience Design team partners with faculty to shape those experiences for an asynchronous, global audience.",
         "This guide walks through the different levels of Coursera design, from the larger learning journey to individual learning assets. It is intended to be used alongside the Design Document you'll complete with your Learning Experience Designer."
-      ]
+      ],
+      "style": "bare"
     },
     "mapping": {
       "title": "How your course maps to Coursera",
@@ -243,7 +244,9 @@
       "lede": [
         "A Coursera Specialization brings several Courses together into a purposeful learning journey, with each Course helping learners build toward a larger skill or goal.",
         "Unlike students in a traditional Duke course, Coursera learners choose whether and when to participate. They may be fitting learning around work and other responsibilities, or taking only one Course within a larger pathway.",
-        "They are likely to ask: **Is this for me? What will I be able to do? Is it worth my time?**",
+        {
+          "rule": "They are likely to ask: **Is this for me? What will I be able to do? Is it worth my time?**"
+        },
         "Design from those questions backward. Identify the learners you hope to reach, the goals they are working toward, and the skills or capabilities they should develop by the end of the Specialization."
       ],
       "facts": [
@@ -656,7 +659,8 @@
           "id": "template"
         }
       ],
-      "lead": "hero"
+      "lead": "hero",
+      "introStyle": "bare"
     },
     "course": {
       "tier": "course",
