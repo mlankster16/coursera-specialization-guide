@@ -738,7 +738,13 @@ function sideBySideHtml(s, tier) {
         ${panel(s.left, 'left')}
         ${panel(s.right, 'right')}
       </div>
-      ${s.note ? `<p class="sbs-note">${esc(s.note)}</p>` : ''}
+      ${
+        s.note
+          ? (Array.isArray(s.note) ? s.note : [s.note])
+              .map((t, i) => `<p class="sbs-note${i ? ' sbs-note-cont' : ''}">${esc(t)}</p>`)
+              .join('')
+          : ''
+      }
     </section>`;
 }
 
@@ -846,7 +852,13 @@ function sectionBody(s, tier) {
           ${(s.body || []).map((b) => `<p class="block-p">${esc(b)}</p>`).join('')}
           ${
             s.bullets && s.bullets.length
-              ? `<ul class="prose-list">${s.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>`
+              ? `<ul class="prose-list">${s.bullets
+                  .map((b) =>
+                    typeof b === 'string'
+                      ? `<li>${esc(b)}</li>`
+                      : `<li><strong>${esc(b.bold)}</strong> ${esc(b.rest)}</li>`
+                  )
+                  .join('')}</ul>`
               : ''
           }
           ${s.after ? `<p class="block-p block-after">${esc(s.after)}</p>` : ''}

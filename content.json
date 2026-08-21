@@ -242,8 +242,9 @@
       "label": "SPECIALIZATION",
       "title": "Designing a Coursera Specialization",
       "lede": [
-        "A Coursera Specialization is more than a series of online courses. It is a focused learning experience designed to help learners build a meaningful set of skills or capabilities over several connected courses.",
-        "Designing for Coursera may feel different from designing a Duke course. Learners are choosing the experience for themselves, often fitting it around work and other responsibilities, and looking for a clear return on the time they invest. A helpful first step is identifying who the Specialization is for, what they want or need to accomplish, and what they should be able to do when they finish."
+        "A Coursera Specialization is a focused learning experience designed to help learners build a meaningful set of skills or capabilities across several connected Courses.",
+        "Designing for Coursera may feel different from designing a Duke course. Learners choose the experience for themselves, often fitting it around work and other responsibilities, and look for clear value from the time they invest. A helpful first step is to identify who the Specialization is for, what they want or need to accomplish, and what they should be able to do by the end.",
+        "As you plan the sequence, consider what each Course contributes to the larger learner journey. Courses may build intentionally on one another, while others may be designed to stand on their own. What matters most is that the relationship among the Courses is purposeful and clear."
       ],
       "facts": [
         {
@@ -555,17 +556,17 @@
       "label": "COURSE",
       "title": "Planning a Course",
       "lede": [
-        "Each course in a Specialization should have a clear purpose: helping learners develop a meaningful capability they can use beyond the course.",
-        "On Coursera, courses often work well as focused, modular learning experiences. Learners may take a course on its own, and a strong course may also fit within more than one Specialization or learning pathway. When possible, design each course so learners can understand its purpose, complete a meaningful learning experience, and leave able to do something new.",
-        "Not every Specialization needs to work this way. Some subjects build naturally through a sequence in which concepts or skills introduced in one course are needed for the next. The goal is not to avoid progression, but to make that progression intentional and clear.",
-        "At the Course level, it can help to begin with two questions:",
+        "A Coursera Course is a focused learning experience designed to help learners develop a meaningful capability they can use beyond the Course.",
+        "Courses often work especially well on Coursera when they are modular and self-contained. Learners should be able to understand the purpose of the Course, engage in a meaningful learning experience, and leave able to do something new. This approach also gives a Course the flexibility to be taken independently or included in different learning pathways.",
+        "Some Courses are intentionally part of a progression, and that can be entirely appropriate when later learning genuinely depends on earlier knowledge or skills. The goal is not to eliminate prerequisites or sequencing, but to make those dependencies intentional and clear.",
+        "At the Course level, begin with two questions:",
         {
           "bullets": [
-            "What distinct role does this Course play in the Specialization?",
+            "What meaningful capability should this Course help learners develop?",
             "What should learners be able to do when they finish it?"
           ]
         },
-        "At the Module level, you'll begin designing the activities and assessments that support those outcomes."
+        "On the Module page, you'll break those Course-level outcomes into manageable learning steps and begin aligning them with activities and assessments."
       ],
       "facts": [
         {
@@ -593,26 +594,29 @@
         {
           "type": "sidebyside",
           "icon": "star",
-          "title": "Give each Course a clear job",
+          "title": "Give each Course a clear purpose",
           "body": [
-            "A strong course does more than cover a portion of a subject. It contributes a distinct capability to the larger Specialization."
+            "A strong Course does more than cover a portion of a subject. It helps learners develop a specific, meaningful capability they can use by the end of the experience."
           ],
           "left": {
             "label": "Rather than asking",
-            "body": "Which topics belong in Course 1?"
+            "body": "Which topics should this Course cover?"
           },
           "right": {
             "label": "You might ask",
             "body": "What should learners be able to do after this Course that they could not do before?"
           },
           "emphasis": "right",
-          "note": "The answer can help you decide what belongs in the Course, what might be left out, and where one Course should end and the next should begin."
+          "note": [
+            "The answer can help you decide what belongs in the Course, what might be left out, and how to organize the learning around a clear purpose.",
+            "If the Course is part of a Specialization or learning pathway, also consider how its purpose relates to the Courses around it. It might build on earlier learning, prepare learners for what comes next, or stand on its own as one valuable part of a larger journey."
+          ]
         },
         {
           "type": "sequence",
           "icon": "layers",
           "tier": "course",
-          "title": "Example: three Courses, three capabilities",
+          "title": "Example: when Courses are part of a Specialization",
           "note": "Specialization: Data Analytics for Business Decisions",
           "items": [
             {
@@ -649,8 +653,7 @@
           "right": {
             "label": "More dependent on a specific sequence",
             "body": "As you learned in Course 1, you will now build on the framework introduced in Module 3…"
-          },
-          "note": "The second approach may be entirely appropriate when the learning requires it. The key question is whether the dependency is necessary for learning, rather than simply a result of how the content happened to be organized."
+          }
         },
         {
           "type": "ladder",
@@ -699,7 +702,7 @@
             "recommend",
             "communicate"
           ],
-          "weakLabel": "Use verbs such as these thoughtfully",
+          "weakLabel": "These verbs may need more specificity:",
           "weakVerbs": [
             "understand",
             "learn",
@@ -742,10 +745,22 @@
             "For Foundations of Data Analytics for Business, learners might be able to:"
           ],
           "bullets": [
-            "Translate a business need into a focused question that can be investigated with data.",
-            "Identify the data needed to investigate a business question.",
-            "Evaluate a dataset for relevance, completeness, and basic quality concerns.",
-            "Prepare data for an introductory business analysis."
+            {
+              "bold": "Translate",
+              "rest": "a business need into a focused question that can be investigated with data."
+            },
+            {
+              "bold": "Identify",
+              "rest": "the data needed to investigate a business question."
+            },
+            {
+              "bold": "Evaluate",
+              "rest": "a dataset for relevance, completeness, and basic quality concerns."
+            },
+            {
+              "bold": "Prepare",
+              "rest": "data for an introductory business analysis."
+            }
           ],
           "after": "At this stage, you do not need to determine exactly which videos, readings, activities, or assessments will support each objective. On the Module page, you'll break these larger Course objectives into manageable stages of learning and begin aligning them with opportunities for practice and assessment."
         },

@@ -2018,6 +2018,8 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   padding-top: 14px;
   border-top: 1px solid var(--hatteras);
 }
+/* Only the first note paragraph carries the divider. */
+.sbs-note-cont { margin-top: 10px; padding-top: 0; border-top: none; }
 
 /* ---------- Ladder column headers ---------- */
 .rung.rung-head {
@@ -2074,3 +2076,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 @media (max-width: 720px) {
   .sbs { grid-template-columns: 1fr; }
 }
+
+
+/* The bolded action verb that opens an objective. */
+.prose-list strong { color: var(--course); font-weight: 700; }
