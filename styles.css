@@ -1905,7 +1905,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   margin: 14px 0 5px;
 }
 .adv-kicker:first-of-type { margin-top: 0; }
-.adv-p { font-size: 0.85rem; font-weight: 700; color: var(--cast-iron); line-height: 1.65; }
+.adv-p { font-size: 0.85rem; color: var(--cast-iron); line-height: 1.65; }
 .adv-p + .adv-p { margin-top: 8px; }
 .adv-lead { font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
 
@@ -1919,11 +1919,11 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   color: var(--graphite);
   margin-bottom: 2px;
 }
-.adv-swap-weak { color: var(--graphite); font-weight: 700; font-style: italic; }
+.adv-swap-weak { color: var(--graphite); font-style: italic; }
 .adv-swap-strong { color: var(--cast-iron); font-weight: 700; }
 
 .adv-list { margin: 4px 0 0 18px; }
-.adv-list li { font-size: 0.85rem; font-weight: 700; color: var(--cast-iron); line-height: 1.6; margin-bottom: 5px; }
+.adv-list li { font-size: 0.85rem; color: var(--cast-iron); line-height: 1.6; margin-bottom: 5px; }
 
 .adv-table-wrap { overflow-x: auto; margin-top: 6px; }
 .adv-table { width: 100%; border-collapse: collapse; }
@@ -1936,11 +1936,10 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   line-height: 1.5;
 }
 .adv-table th { background: var(--whisper); font-weight: 700; color: var(--navy); }
-.adv-table td { color: var(--cast-iron); font-weight: 700; }
+.adv-table td { color: var(--cast-iron); }
 
 .adv-note {
   font-size: 0.81rem;
-  font-weight: 700;
   color: var(--graphite);
   line-height: 1.6;
   margin-top: 10px;
@@ -2148,3 +2147,8 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 /* A bullet list inside a section body needs air above it, like a paragraph. */
 .block-p + .prose-list { margin-top: 12px; }
 .prose-list + .block-p { margin-top: 14px; }
+
+
+/* Emphasis inside an overlay: navy against the grey body copy, so a marked
+   phrase reads as emphasis rather than as another label. */
+.adv-p strong, .adv-list strong, .adv-note strong { font-weight: 700; color: var(--navy); }

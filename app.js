@@ -73,6 +73,13 @@ function esc(str) {
   return d.innerHTML;
 }
 
+/* Body copy may mark a phrase for emphasis with **double asterisks**. The string
+   is escaped first and the markers replaced after, so the only markup content can
+   ever produce is <strong> — there is no injection path through content.json. */
+function rich(str) {
+  return esc(str).replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+}
+
 /* ---------- Flow navigation (shows scale and where you are) ---------- */
 
 function renderFlowNav(current) {
@@ -399,7 +406,7 @@ function pageHtml(id) {
             ? `<section class="intro">${(Array.isArray(p.lede) ? p.lede : [p.lede])
                 .map((t) =>
                   typeof t === 'string'
-                    ? `<p class="intro-body">${esc(t)}</p>`
+                    ? `<p class="intro-body">${rich(t)}</p>`
                     : `<ul class="intro-list">${t.bullets
                         .map((b) => `<li>${esc(b)}</li>`)
                         .join('')}</ul>`
@@ -427,7 +434,7 @@ let adviceSeq = 0;
 function adviceExampleHtml(ex) {
   if (!ex) return '';
   const parts = [];
-  if (ex.lead) parts.push(`<p class="adv-lead">${esc(ex.lead)}</p>`);
+  if (ex.lead) parts.push(`<p class="adv-lead">${rich(ex.lead)}</p>`);
   if (ex.swap) {
     parts.push(`
       <p class="adv-swap"><span class="adv-swap-k">Instead of</span>
@@ -435,10 +442,10 @@ function adviceExampleHtml(ex) {
       <p class="adv-swap"><span class="adv-swap-k">Consider</span>
         <span class="adv-swap-strong">${esc(ex.swap.consider)}</span></p>`);
   }
-  (ex.paras || []).forEach((t) => parts.push(`<p class="adv-p">${esc(t)}</p>`));
+  (ex.paras || []).forEach((t) => parts.push(`<p class="adv-p">${rich(t)}</p>`));
   if (ex.bullets) {
     parts.push(`<ul class="adv-list">${ex.bullets
-      .map((b) => `<li>${esc(b)}</li>`)
+      .map((b) => `<li>${rich(b)}</li>`)
       .join('')}</ul>`);
   }
   if (ex.table) {
@@ -452,7 +459,7 @@ function adviceExampleHtml(ex) {
         </table>
       </div>`);
   }
-  if (ex.note) parts.push(`<p class="adv-note">${esc(ex.note)}</p>`);
+  if (ex.note) parts.push(`<p class="adv-note">${rich(ex.note)}</p>`);
   return `<p class="adv-kicker">Example</p>${parts.join('')}`;
 }
 
@@ -466,7 +473,7 @@ function adviceHtml(label, advice) {
       <p class="adv-field">${esc(label)}</p>
       <p class="adv-kicker">Best practice</p>
       ${(Array.isArray(advice.best) ? advice.best : [advice.best])
-        .map((t) => `<p class="adv-p">${esc(t)}</p>`)
+        .map((t) => `<p class="adv-p">${rich(t)}</p>`)
         .join('')}
       ${adviceExampleHtml(advice.example)}
     </div>`;
@@ -533,7 +540,7 @@ function sectionHeadHtml(s) {
 function ledeHtml(lede) {
   if (!lede) return '';
   const paras = Array.isArray(lede) ? lede : [lede];
-  return paras.map((t) => `<p class="page-lede">${esc(t)}</p>`).join('');
+  return paras.map((t) => `<p class="page-lede">${rich(t)}</p>`).join('');
 }
 
 function factsHtml(facts) {
@@ -728,11 +735,11 @@ function bodyBlocksHtml(items) {
   return (items || [])
     .map((t) =>
       typeof t === 'string'
-        ? `<p class="block-p">${esc(t)}</p>`
+        ? `<p class="block-p">${rich(t)}</p>`
         : `<ul class="prose-list">${t.bullets
             .map((b) =>
               typeof b === 'string'
-                ? `<li>${esc(b)}</li>`
+                ? `<li>${rich(b)}</li>`
                 : `<li><strong>${esc(b.bold)}</strong> ${esc(b.rest)}</li>`
             )
             .join('')}</ul>`

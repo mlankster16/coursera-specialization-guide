@@ -243,7 +243,7 @@
       "title": "Designing a Coursera Specialization",
       "lede": [
         "A Coursera Specialization brings together several Courses to help learners develop a meaningful set of skills or capabilities they can apply beyond the learning experience.",
-        "Unlike students enrolled in a traditional Duke course, Coursera learners choose whether and when to participate. They may be working, balancing other responsibilities, or taking only one Course within a larger pathway. They are likely to ask: Is this for me? What will I be able to do? And is it worth the time?",
+        "Unlike students enrolled in a traditional Duke course, Coursera learners choose whether and when to participate. They may be working, balancing other responsibilities, or taking only one Course within a larger pathway. They are likely to ask: **Is this for me? What will I be able to do? And is it worth the time?**",
         "Begin by identifying the learners you hope to reach, the goals they are working toward, and the capabilities they should develop by the end of the Specialization.",
         "Then consider the role of each Course in that journey. Courses may introduce, develop, or integrate skills; they may build on one another or offer useful standalone experiences. What matters most is that each Course has a clear purpose and that the relationship among the Courses is intentional and easy for learners to understand."
       ],
@@ -307,7 +307,7 @@
               "ph": "[ title ]",
               "hint": "Choose a clear, compelling title that helps the right learners discover your Specialization.",
               "advice": {
-                "best": "Write for the learner deciding whether to click. A strong title makes the topic and value of the Specialization immediately clear. Favor specific, familiar language over academic or internally meaningful terminology.",
+                "best": "Write for the learner deciding whether to click. A strong title makes the **topic and value of the Specialization immediately clear**. Favor specific, familiar language over academic or internally meaningful terminology.",
                 "example": {
                   "swap": {
                     "instead": "Introduction to Business Data Analysis",
@@ -323,7 +323,7 @@
               "hint": "Create a 2-3 sentence summary of the content, learning outcomes, and any industry partners. Highlight the main value or application learners will get from the Specialization.",
               "tall": true,
               "advice": {
-                "best": "Lead with what learners will gain or be able to do, rather than with a list of topics. Help learners quickly understand who the Specialization is for, what they will experience, and why it is worth their time.",
+                "best": "Lead with what learners will **gain or be able to do**, rather than with a list of topics. Help learners quickly understand who the Specialization is for, what they will experience, and why it is worth their time.",
                 "example": {
                   "paras": [
                     "Learn to use data to answer business questions and make evidence-informed recommendations. Across three courses, you'll practice working with real-world datasets, identify patterns and trends, create clear visualizations, and communicate insights to support better decisions."
@@ -338,7 +338,7 @@
               "hint": "In 1-2 sentences, describe the nature of the included projects and how learners will apply the skills to solve an authentic problem.",
               "tall": true,
               "advice": {
-                "best": "Describe what learners will make, analyze, evaluate, or solve. Projects should reflect realistic situations learners may encounter beyond the course, not simply serve as longer versions of quizzes.",
+                "best": "Describe what learners will **make, analyze, evaluate, or solve**. Projects should reflect realistic situations learners may encounter beyond the course, not simply serve as longer versions of quizzes.",
                 "example": {
                   "paras": [
                     "Learners will analyze business data to investigate a practical question, identify meaningful trends, create visualizations, and recommend an action. Projects are designed around common workplace tasks such as evaluating customer behavior, monitoring performance, or identifying opportunities for improvement."
@@ -352,7 +352,7 @@
                 "label": "Who this is for",
                 "ph": "[ audience ]",
                 "advice": {
-                  "best": "Describe learners in terms they are likely to recognize: their role, goals, or reasons for learning. Be specific enough to help the right learners identify themselves, while avoiding requirements that unnecessarily exclude interested learners.",
+                  "best": "Describe learners in terms they are likely to recognize: their **role, goals, or reasons for learning**. Be specific enough to help the right learners identify themselves, while avoiding requirements that unnecessarily exclude interested learners.",
                   "example": {
                     "paras": [
                       "Early-career professionals, managers, analysts, and other business professionals who want to use data more confidently in their day-to-day work."
@@ -364,7 +364,7 @@
                 "label": "Recommended background",
                 "ph": "[ what learners should already know ]",
                 "advice": {
-                  "best": "Include only the knowledge or experience learners actually need to succeed. Distinguish essential preparation from helpful context so that ideal qualifications do not become unnecessary barriers to enrollment.",
+                  "best": "Include only the knowledge or experience learners **actually need to succeed**. Distinguish essential preparation from helpful context so that ideal qualifications do not become unnecessary barriers to enrollment.",
                   "example": {
                     "paras": [
                       "No prior experience in data analytics or programming is required. Familiarity with basic workplace math and an interest in using data to support decisions will be helpful."
@@ -379,13 +379,13 @@
               "ph": "[ overall Specialization outcome ]",
               "hint": "Write 1-3 actionable, measurable learning objectives that describe what learners will be able to do by the end of the Specialization.",
               "advice": {
-                "best": "Describe observable capabilities, not topics learners will encounter or ideas they will “understand.” Begin with an action verb such as evaluate, apply, analyze, design, or recommend, and make sure the objectives represent the full Specialization, not just one course.",
+                "best": "Describe **observable capabilities**, not topics learners will encounter or ideas they will “understand.” Begin with an action verb such as evaluate, apply, analyze, design, or recommend, and make sure the objectives represent the **full Specialization**, not just one course.",
                 "example": {
                   "lead": "By the end of the Specialization, learners will be able to:",
                   "bullets": [
-                    "Analyze business datasets to identify patterns, trends, and relevant findings.",
-                    "Create clear data visualizations that communicate insights to a defined audience.",
-                    "Recommend evidence-informed actions in response to a business question."
+                    "**Analyze** business datasets to identify patterns, trends, and relevant findings.",
+                    "**Create** clear data visualizations that communicate insights to a defined audience.",
+                    "**Recommend** evidence-informed actions in response to a business question."
                   ]
                 }
               }
@@ -396,7 +396,7 @@
               "ph": "[ skill 1, skill 2, skill 3, skill 4, skill 5 ]",
               "hint": "Skill tags enhance Specialization discoverability.",
               "advice": {
-                "best": "Name specific, recognizable skills learners can demonstrate, rather than broad subject areas. Choose terms learners might use to describe their capabilities on a résumé, on LinkedIn, or in a conversation with an employer.",
+                "best": "Name **specific, recognizable skills learners can demonstrate**, rather than broad subject areas. Choose terms learners might use to describe their capabilities on a résumé, on LinkedIn, or in a conversation with an employer.",
                 "example": {
                   "swap": {
                     "instead": "Business, Data, Analytics",
@@ -411,7 +411,7 @@
                 "label": "Estimated total learning time",
                 "ph": "[ 8–48 hours ]",
                 "advice": {
-                  "best": "Estimate the learner's total experience, not just the length of the instructional content. Include time for watching, reading, practicing, completing projects, and taking assessments. Account for the reality that Coursera learners often study in shorter sessions around other responsibilities.",
+                  "best": "Estimate the learner's **total experience**, not just the length of the instructional content. Include time for watching, reading, practicing, completing projects, and taking assessments. Account for the reality that Coursera learners often study in shorter sessions around other responsibilities.",
                   "example": {
                     "lead": "Approximately 24 hours total",
                     "paras": [
@@ -424,7 +424,7 @@
                 "label": "Difficulty level",
                 "ph": "[ Beginner / Intermediate / Advanced ]",
                 "advice": {
-                  "best": "Choose the level based on the knowledge, skills, and independence required of the learner, not on the sophistication of the subject itself. A complex topic can still be appropriate for beginners when concepts are introduced from the ground up.",
+                  "best": "Choose the level based on the **knowledge, skills, and independence required of the learner**, not on the sophistication of the subject itself. A complex topic can still be appropriate for beginners when concepts are introduced from the ground up.",
                   "example": {
                     "lead": "Beginner",
                     "paras": [
@@ -439,7 +439,7 @@
               "label": "Tools, technology, or platforms",
               "ph": "[ any required external tools or access ]",
               "advice": {
-                "best": "Identify anything learners need to access or use to complete the learning experience, including external tools, software, accounts, or platforms. Make requirements visible early, and flag any paid licenses or institutional access requirements.",
+                "best": "Identify anything learners need to **access or use to complete the learning experience**, including external tools, software, accounts, or platforms. Make requirements visible early, and flag any paid licenses or institutional access requirements.",
                 "example": {
                   "paras": [
                     "Learners will need access to a web browser and spreadsheet software. All required datasets and practice materials will be provided. No specialized or institution-restricted software is required."
@@ -485,7 +485,7 @@
               ],
               "advice": {
                 "Course title": {
-                  "best": "Give each course a distinct purpose within the larger learner journey. Learners should be able to see how their capabilities will develop from one course to the next.",
+                  "best": "Give each course a **distinct purpose within the larger learner journey**. Learners should be able to see how their capabilities will develop from one course to the next.",
                   "example": {
                     "bullets": [
                       "Foundations of Data Analytics for Business",
@@ -496,7 +496,7 @@
                   }
                 },
                 "Main outcomes": {
-                  "best": "Give each course an outcome that is meaningful on its own while contributing to the larger Specialization outcome. Organize courses around meaningful stages of the work learners will do, rather than dividing them simply by topic or amount of content.",
+                  "best": "Give each course an outcome that is **meaningful on its own while contributing to the larger Specialization outcome**. Organize courses around meaningful stages of the work learners will do, rather than dividing them simply by topic or amount of content.",
                   "example": {
                     "table": {
                       "headers": [
@@ -521,7 +521,7 @@
                   }
                 },
                 "Est. time": {
-                  "best": "Aim for a reasonable and relatively balanced learner experience across courses, while allowing the work itself to determine the exact length. Include all learning activities (video, readings, activities, and assessments) in this estimate.",
+                  "best": "Aim for a **reasonable and relatively balanced learner experience across courses**, while allowing the work itself to determine the exact length. Include all learning activities (video, readings, activities, and assessments) in this estimate.",
                   "example": {
                     "bullets": [
                       "Course 1: 7 hours",
@@ -538,7 +538,7 @@
               "label": "Specialization project or culminating experience (optional)",
               "ph": "[ description and source link, if applicable ]",
               "advice": {
-                "best": "Use a culminating experience to help learners integrate skills from across the Specialization, rather than simply repeat an assignment from the final course. Give learners a realistic problem, decision, product, or scenario that requires them to draw on multiple capabilities.",
+                "best": "Use a culminating experience to help learners **integrate skills from across the Specialization**, rather than simply repeat an assignment from the final course. Give learners a realistic problem, decision, product, or scenario that requires them to draw on multiple capabilities.",
                 "example": {
                   "paras": [
                     "Learners will investigate a business question using a provided dataset, clean and analyze the data, create visualizations to communicate key findings, and develop an evidence-informed recommendation for a business audience."
@@ -558,7 +558,7 @@
       "title": "Planning a Course",
       "lede": [
         "A Coursera Course is a focused learning experience that helps learners develop a specific set of skills or knowledge they can use beyond the Course.",
-        "A helpful place to begin is by defining the Course's distinct contribution: What should learners be able to do or know after completing this Course that they could not do before? This question can help guide decisions about what to include, what to leave out, and how to organize the learning around a clear purpose.",
+        "A helpful place to begin is by defining the Course's **distinct contribution**: **What should learners be able to do or know after completing this Course that they could not do before?**",
         "You can then translate that purpose into a small set of Course-level objectives. These objectives will guide the design of the Modules, where you'll break the larger capabilities into manageable stages and begin aligning them with opportunities for practice and assessment.",
         "If the Course is part of a Specialization or learning pathway, consider how it supports the larger sequence. It might introduce, develop, integrate, or apply skills, but it should still have a clear purpose and meaningful outcomes of its own."
       ],
@@ -585,105 +585,6 @@
         }
       ],
       "sections": [
-        {
-          "type": "sidebyside",
-          "icon": "check",
-          "title": "Use the Course objectives to guide your design",
-          "body": [
-            "Once you have identified what learners should be able to do, use the Course objectives to guide decisions about the Course's scope.",
-            "For each topic, resource, or activity, ask:",
-            {
-              "bullets": [
-                "What knowledge or skills will learners gain from this?",
-                "Will they need it to achieve the Course objectives?",
-                "Will it help them practice or demonstrate what they should be able to do?",
-                "What could learners reasonably do without it?"
-              ]
-            },
-            "These questions can help you decide what to include, what to leave out, and how to organize the learning around the Course's purpose. A strong Course is not simply a collection of related topics; each element should help learners develop the knowledge and skills they need to achieve the intended outcomes."
-          ],
-          "left": {
-            "label": "Rather than asking",
-            "body": "Which topics should this Course cover?"
-          },
-          "right": {
-            "label": "You might ask",
-            "body": "What knowledge and skills do learners need to achieve the Course objectives?"
-          },
-          "emphasis": "right"
-        },
-        {
-          "type": "sidebyside",
-          "icon": "scale",
-          "tier": "course",
-          "title": "Example: using a Course objective to guide scope",
-          "anchor": {
-            "label": "Course objective",
-            "body": "Learners will be able to prepare data for an introductory business analysis."
-          },
-          "left": {
-            "label": "Include",
-            "bullets": [
-              "Identifying relevant data fields",
-              "Checking for missing or inconsistent values",
-              "Restructuring a simple dataset",
-              "Documenting data-preparation decisions"
-            ]
-          },
-          "right": {
-            "label": "Consider leaving out",
-            "bullets": [
-              "Advanced statistical modeling",
-              "Complex programming techniques",
-              "Topics that do not support the introductory analysis"
-            ]
-          },
-          "emphasis": "left",
-          "note": "This approach keeps the Course focused on what learners need to know and do, rather than on how much content can be included."
-        },
-        {
-          "type": "sidebyside",
-          "icon": "layers",
-          "title": "Design Courses to stand on their own",
-          "body": [
-            "Coursera Courses often work best when they are modular and self-contained. When possible, give learners enough context to understand what the Course is for, why the learning matters, and how to succeed without needing to complete another Course first. This makes the Course more useful to learners who take it independently and gives it greater flexibility within different learning pathways.",
-            "Some subjects, however, are best learned through a sequence. If learners genuinely need knowledge or skills from one Course before they can succeed in another, it is appropriate to design the Courses as a progression. Make those dependencies clear, and ensure that each Course still has a meaningful purpose and achievable outcomes of its own."
-          ],
-          "left": {
-            "label": "More dependent on a specific sequence",
-            "body": "As you learned in Course 1, you will now build on the framework introduced in Module 3…"
-          },
-          "right": {
-            "label": "More modular",
-            "body": "This course assumes familiarity with basic spreadsheet formulas and functions."
-          },
-          "emphasis": "right"
-        },
-        {
-          "type": "sequence",
-          "icon": "layers",
-          "tier": "course",
-          "title": "Example: when Courses are part of a Specialization",
-          "note": "Specialization: Data Analytics for Business Decisions",
-          "items": [
-            {
-              "n": 1,
-              "type": "Foundations of Data Analytics for Business",
-              "what": "Learners can frame a business question and identify the data needed to investigate it."
-            },
-            {
-              "n": 2,
-              "type": "Analyzing and Visualizing Business Data",
-              "what": "Learners can analyze a dataset and create visualizations that reveal meaningful patterns and trends."
-            },
-            {
-              "n": 3,
-              "type": "Communicating Data-Driven Recommendations",
-              "what": "Learners can develop and communicate an evidence-informed recommendation for a business audience."
-            }
-          ],
-          "footnote": "Each Course contributes something meaningful on its own while building toward the larger Specialization goal."
-        },
         {
           "type": "ladder",
           "id": "objectives",
@@ -744,6 +645,32 @@
           "weakNote": "They may describe your instructional intention, but they do not clearly indicate what learners will be able to demonstrate."
         },
         {
+          "type": "prose",
+          "icon": "list",
+          "title": "Example: objectives for Course 1",
+          "body": [
+            "For Foundations of Data Analytics for Business, learners might be able to:"
+          ],
+          "bullets": [
+            {
+              "bold": "Translate",
+              "rest": "a business need into a focused question that can be investigated with data."
+            },
+            {
+              "bold": "Identify",
+              "rest": "the data needed to investigate a business question."
+            },
+            {
+              "bold": "Evaluate",
+              "rest": "a dataset for relevance, completeness, and basic quality concerns."
+            },
+            {
+              "bold": "Prepare",
+              "rest": "data for an introductory business analysis."
+            }
+          ]
+        },
+        {
           "type": "considerations",
           "numbered": false,
           "icon": "check",
@@ -773,30 +700,102 @@
           ]
         },
         {
-          "type": "prose",
-          "icon": "list",
-          "title": "Example: objectives for Course 1",
+          "type": "sidebyside",
+          "icon": "check",
+          "title": "Use the Course objectives to guide your design",
           "body": [
-            "For Foundations of Data Analytics for Business, learners might be able to:"
+            "Once you have identified what learners should be able to do, use the Course objectives to guide decisions about the Course's scope.",
+            "For each topic, resource, or activity, ask:",
+            {
+              "bullets": [
+                "What knowledge or skills will learners gain from this?",
+                "Will they need it to achieve the Course objectives?",
+                "Will it help them practice or demonstrate what they should be able to do?",
+                "What could learners reasonably do without it?"
+              ]
+            },
+            "These questions can help you decide what to include, what to leave out, and how to organize the learning around the Course's purpose. A strong Course is not simply a collection of related topics; each element should help learners develop the knowledge and skills they need to achieve the intended outcomes."
           ],
-          "bullets": [
+          "left": {
+            "label": "Rather than asking",
+            "body": "Which topics should this Course cover?"
+          },
+          "right": {
+            "label": "You might ask",
+            "body": "What knowledge and skills do learners need to achieve the Course objectives?"
+          },
+          "emphasis": "right"
+        },
+        {
+          "type": "sidebyside",
+          "icon": "scale",
+          "tier": "course",
+          "title": "Example: using a Course objective to guide scope",
+          "anchor": {
+            "label": "Course objective",
+            "body": "Learners will be able to prepare data for an introductory business analysis."
+          },
+          "left": {
+            "label": "Include",
+            "bullets": [
+              "Identifying relevant data fields",
+              "Checking for missing or inconsistent values",
+              "Restructuring a simple dataset",
+              "Documenting data-preparation decisions"
+            ]
+          },
+          "right": {
+            "label": "Consider leaving out",
+            "bullets": [
+              "Advanced statistical modeling",
+              "Complex programming techniques",
+              "Topics that do not support the introductory analysis"
+            ]
+          },
+          "emphasis": "left"
+        },
+        {
+          "type": "sidebyside",
+          "icon": "layers",
+          "title": "Design Courses to stand on their own",
+          "body": [
+            "Coursera Courses often work best when they are modular and self-contained. When possible, give learners enough context to understand what the Course is for, why the learning matters, and how to succeed without needing to complete another Course first. This makes the Course more useful to learners who take it independently and gives it greater flexibility within different learning pathways.",
+            "Some subjects, however, are best learned through a sequence. If learners genuinely need knowledge or skills from one Course before they can succeed in another, it is appropriate to design the Courses as a progression. Make those dependencies clear, and ensure that each Course still has a meaningful purpose and achievable outcomes of its own."
+          ],
+          "left": {
+            "label": "More dependent on a specific sequence",
+            "body": "As you learned in Course 1, you will now build on the framework introduced in Module 3…"
+          },
+          "right": {
+            "label": "More modular",
+            "body": "This course assumes familiarity with basic spreadsheet formulas and functions."
+          },
+          "emphasis": "right"
+        },
+        {
+          "type": "sequence",
+          "icon": "layers",
+          "tier": "course",
+          "title": "Example: when Courses are part of a Specialization",
+          "note": "Specialization: Data Analytics for Business Decisions",
+          "items": [
             {
-              "bold": "Translate",
-              "rest": "a business need into a focused question that can be investigated with data."
+              "n": 1,
+              "type": "Foundations of Data Analytics for Business",
+              "what": "Learners can frame a business question and identify the data needed to investigate it."
             },
             {
-              "bold": "Identify",
-              "rest": "the data needed to investigate a business question."
+              "n": 2,
+              "type": "Analyzing and Visualizing Business Data",
+              "what": "Learners can analyze a dataset and create visualizations that reveal meaningful patterns and trends."
             },
             {
-              "bold": "Evaluate",
-              "rest": "a dataset for relevance, completeness, and basic quality concerns."
-            },
-            {
-              "bold": "Prepare",
-              "rest": "data for an introductory business analysis."
+              "n": 3,
+              "type": "Communicating Data-Driven Recommendations",
+              "what": "Learners can develop and communicate an evidence-informed recommendation for a business audience."
             }
-          ]
+          ],
+          "footnote": "Each Course contributes something meaningful on its own while building toward the larger Specialization goal."
         },
         {
           "type": "templatePreview",
