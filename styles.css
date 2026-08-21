@@ -2465,4 +2465,13 @@ a.flow-step-card:focus-visible { outline: 3px solid var(--persimmon); outline-of
 }
 .page.tier-spec .flow-row.tracker a.flow-step-card.current .flow-step-label { color: var(--spec); }
 .page.tier-spec a.flow-step-card:hover { border-color: var(--spec); }
-.page.tier-spec .consider-check .ico { color: var(--spec); }
+
+/* The tier rules above match .final at equal specificity and come later in the
+   file, so the final step needs restating or it loses its navy on this page. */
+.page.tier-spec .compare-icon.step-num.final { background: var(--navy); }
+.page.tier-spec .step-badge.final { background: var(--navy); }
+.page.tier-spec .flow-row.tracker a.flow-step-card.final.current {
+  background: var(--spec-bg);
+  border-color: var(--navy);
+}
+.page.tier-spec .flow-row.tracker a.flow-step-card.final.current .flow-step-label { color: var(--navy); }
