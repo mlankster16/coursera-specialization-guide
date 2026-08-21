@@ -586,6 +586,33 @@
       ],
       "sections": [
         {
+          "type": "steps",
+          "variant": "tracker",
+          "tier": "course",
+          "steps": [
+            {
+              "label": "Define",
+              "href": "#course/objectives"
+            },
+            {
+              "label": "Check",
+              "href": "#course/check"
+            },
+            {
+              "label": "Use",
+              "href": "#course/scope"
+            },
+            {
+              "label": "Design",
+              "href": "#course/standalone"
+            },
+            {
+              "label": "Fill in template",
+              "href": "#course/template"
+            }
+          ]
+        },
+        {
           "type": "ladder",
           "id": "objectives",
           "icon": "star",
@@ -617,7 +644,7 @@
             {
               "term": "Course-level capability",
               "gloss": "What learners can do in a meaningful context",
-              "example": "Evaluate whether available data is appropriate for investigating a business question."
+              "example": "Evaluate whether available data is appropriate for investigating a business question"
             }
           ],
           "prompt": "By the end of this Course, learners will be able to…",
@@ -647,7 +674,7 @@
         {
           "type": "prose",
           "icon": "list",
-          "title": "Example: objectives for Course 1",
+          "title": "Objectives for a sample Course",
           "body": [
             "For Foundations of Data Analytics for Business, learners might be able to:"
           ],
@@ -668,7 +695,8 @@
               "bold": "Prepare",
               "rest": "data for an introductory business analysis."
             }
-          ]
+          ],
+          "variant": "example"
         },
         {
           "type": "considerations",
@@ -697,14 +725,16 @@
               "heading": "If this Course is part of a larger learning pathway, does it fit?",
               "body": "Do the objectives support the broader goals of the Specialization, certificate, or program while still giving the Course a clear purpose of its own?"
             }
-          ]
+          ],
+          "marker": "check",
+          "id": "check"
         },
         {
           "type": "sidebyside",
           "icon": "check",
           "title": "Use the Course objectives to guide your design",
           "body": [
-            "Once you have identified what learners should be able to do, use the Course objectives to guide decisions about the Course's scope.",
+            "Now that you've checked your objectives, use them to guide decisions about the Course's scope.",
             "For each topic, resource, or activity, ask:",
             {
               "bullets": [
@@ -724,13 +754,14 @@
             "label": "You might ask",
             "body": "What knowledge and skills do learners need to achieve the Course objectives?"
           },
-          "emphasis": "right"
+          "emphasis": "right",
+          "id": "scope"
         },
         {
           "type": "sidebyside",
           "icon": "scale",
           "tier": "course",
-          "title": "Example: using a Course objective to guide scope",
+          "title": "Using a Course objective to guide scope",
           "anchor": {
             "label": "Course objective",
             "body": "Learners will be able to prepare data for an introductory business analysis."
@@ -752,7 +783,8 @@
               "Topics that do not support the introductory analysis"
             ]
           },
-          "emphasis": "left"
+          "emphasis": "left",
+          "variant": "example"
         },
         {
           "type": "sidebyside",
@@ -770,13 +802,14 @@
             "label": "More modular",
             "body": "This course assumes familiarity with basic spreadsheet formulas and functions."
           },
-          "emphasis": "right"
+          "emphasis": "right",
+          "id": "standalone"
         },
         {
           "type": "sequence",
           "icon": "layers",
           "tier": "course",
-          "title": "Example: when Courses are part of a Specialization",
+          "title": "When Courses are part of a Specialization",
           "note": "Specialization: Data Analytics for Business Decisions",
           "items": [
             {
@@ -795,7 +828,8 @@
               "what": "Learners can develop and communicate an evidence-informed recommendation for a business audience."
             }
           ],
-          "footnote": "Each Course contributes something meaningful on its own while building toward the larger Specialization goal."
+          "footnote": "Each Course contributes something meaningful on its own while building toward the larger Specialization goal.",
+          "variant": "example"
         },
         {
           "type": "templatePreview",
@@ -956,7 +990,8 @@
               }
             }
           ],
-          "icon": "list"
+          "icon": "list",
+          "id": "template"
         }
       ],
       "lead": "hero"

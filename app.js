@@ -25,6 +25,7 @@ const ICONS = {
   copyright: '<circle cx="12" cy="12" r="8.5"/><path d="M14.9 9.5a3.7 3.7 0 1 0 0 5"/>',
   access: '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="7.7" r="1.2"/><path d="M7.6 10.3h8.8"/><path d="M12 10.7v4.4"/><path d="m9.3 19 1.5-3.9h2.4l1.5 3.9"/>',
   home: '<path d="M4 10.5 12 4l8 6.5"/><path d="M6 9.4V20h12V9.4"/><path d="M10 20v-5.5h4V20"/>',
+  checkbox: '<rect x="3.6" y="3.6" width="16.8" height="16.8" rx="3"/><path d="m8 12.2 2.7 2.7L16.2 9.3"/>',
 };
 
 function icon(name) {
@@ -529,14 +530,16 @@ function wireAdvice() {
    Without one it stays a plain heading. Carries whichever of intro/note the
    section uses, so callers don't emit it a second time. */
 function sectionHeadHtml(s) {
+  if (!s.title) return '';
+  const eyebrow = s.variant === 'example' ? '<p class="block-eyebrow">Example</p>' : '';
   const title = `<h2 class="section-title">${esc(s.title)}</h2>`;
   const sub = s.intro || s.note;
   const intro = sub ? `<p class="section-intro">${esc(sub)}</p>` : '';
-  if (!s.icon) return title + intro;
+  if (!s.icon) return eyebrow + title + intro;
   return `
     <div class="compare-head">
       <span class="compare-icon">${icon(s.icon)}</span>
-      <div>${title}${intro}</div>
+      <div>${eyebrow}${title}${intro}</div>
     </div>`;
 }
 
@@ -792,15 +795,15 @@ function bodyBlocksHtml(items) {
 function stepsHtml(s, tier) {
   const t = s.tier || tier;
   const row = () => `
-    <div class="flow-row">
+    <div class="flow-row${s.variant === 'tracker' ? ' tracker' : ''}">
       ${s.steps
         .map(
           (st, i) => `
         ${i ? '<span class="flow-sep" aria-hidden="true">&rarr;</span>' : ''}
-        <div class="flow-step-card tier-${t}">
+        <${st.href ? 'a' : 'div'} class="flow-step-card tier-${t}"${st.href ? ` href="${esc(st.href)}"` : ''}>
           <span class="flow-step-label">${esc(st.label)}</span>
           ${st.caption ? `<span class="flow-step-caption">${esc(st.caption)}</span>` : ''}
-        </div>`
+        </${st.href ? 'a' : 'div'}>`
         )
         .join('')}
     </div>`;
@@ -831,7 +834,7 @@ function stepsHtml(s, tier) {
         .join('')}
     </div>`;
   return `
-    <section class="block">
+    <section class="block${s.variant === 'tracker' ? ' tracker-block' : ''}">
       ${sectionHeadHtml(s)}
       ${bodyBlocksHtml(s.body)}
       ${s.orientation === 'column' ? column() : row()}
@@ -922,6 +925,7 @@ function considerationsHtml(s, tier) {
   // `numbered: false` for a set of parallel principles, where 1-2-3 would imply
   // an order that isn't there.
   const numbered = s.numbered !== false;
+  const checked = s.marker === 'check';
   return `
     <section class="block">
       ${sectionHeadHtml(s)}
@@ -929,8 +933,9 @@ function considerationsHtml(s, tier) {
         ${s.items
           .map(
             (it, i) => `
-          <div class="consider tier-${tier}${numbered ? '' : ' plain'}">
+          <div class="consider tier-${tier}${numbered ? '' : ' plain'}${checked ? ' checked' : ''}">
             ${numbered ? `<span class="consider-n">${i + 1}</span>` : ''}
+            ${checked ? `<span class="consider-check">${icon('checkbox')}</span>` : ''}
             <div>
               <p class="consider-heading">${esc(it.heading)}</p>
               <p class="consider-body">${esc(it.body)}</p>
@@ -955,8 +960,14 @@ function sectionHtml(s, tier) {
          <div class="ref-body">${inner}</div>
        </details>`
     : inner;
+  // Each renderer emits its own <section class="block">, so the example variant is
+  // applied here rather than threaded through every one of them.
+  const out =
+    s.variant === 'example'
+      ? body.replace('class="block"', 'class="block block-example"')
+      : body;
   // A section with an id can be linked to from another page, e.g. #specialization/objectives
-  return s.id ? `<div class="sec-anchor" id="sec-${esc(s.id)}">${body}</div>` : body;
+  return s.id ? `<div class="sec-anchor" id="sec-${esc(s.id)}">${out}</div>` : out;
 }
 
 function sectionBody(s, tier) {

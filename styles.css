@@ -1528,11 +1528,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .rung-gloss { font-size: 0.82rem; color: var(--graphite); line-height: 1.5; }
 .rung-example { font-size: 0.84rem; color: var(--cast-iron); line-height: 1.5; font-style: italic; }
 
-.verb-panel {
-  background: var(--whisper);
-  border-radius: 10px;
-  padding: 17px 20px;
-}
+.verb-panel { padding: 4px 0 0; }
 
 .verb-prompt {
   font-family: 'Open Sans', Arial, sans-serif;
@@ -1542,7 +1538,17 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   margin-bottom: 13px;
 }
 
-.verb-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+/* Same two-column treatment as .sbs-panel: green for the option to reach for,
+   neutral for the one to reconsider. Was a bare grid with a red label, which made
+   this read as a different pattern from the other two comparisons on the page. */
+.verb-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.verb-col {
+  background: var(--whisper);
+  border: 1px solid var(--hatteras);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.verb-col.good { background: var(--course-bg); border-color: var(--course-line); }
 
 .verb-label {
   font-family: 'Open Sans', Arial, sans-serif;
@@ -1553,7 +1559,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   margin-bottom: 5px;
 }
 .verb-col.good .verb-label { color: var(--course); }
-.verb-col.weak .verb-label { color: #9B2C2C; }
+.verb-col.weak .verb-label { color: var(--graphite); }
 
 .verb-list { font-size: 0.84rem; color: var(--cast-iron); line-height: 1.65; }
 .verb-note { font-size: 0.78rem; color: var(--graphite); line-height: 1.55; margin-top: 6px; }
@@ -2294,3 +2300,45 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   .flow-sep { transform: rotate(90deg); align-self: center; }
   .body-table td:first-child { width: auto; }
 }
+
+
+/* ---------- Checklist markers ---------- */
+.consider.checked { border-left: none; }
+.consider-check { display: flex; flex-shrink: 0; }
+.consider-check .ico { width: 21px; height: 21px; margin-top: 1px; color: var(--course); }
+.page.tier-spec .consider-check .ico { color: var(--spec); }
+.page.tier-module .consider-check .ico { color: var(--module); }
+
+/* ---------- Example cards ---------- */
+.block-example {
+  background: var(--whisper);
+  box-shadow: none;
+  border: 1px solid var(--hatteras);
+}
+.block-eyebrow {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.66rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  margin-bottom: 5px;
+}
+/* Panels and lists inside an example need to lift off the tinted card */
+.block-example .sbs-panel,
+.block-example .anchor-note,
+.block-example .example-item { background: var(--white); }
+.block-example .sbs-panel.emphasis.tier-course { background: var(--course-bg); }
+.block-example .example-list.tier-course .example-item { background: var(--course-bg); }
+
+/* ---------- Step tracker ---------- */
+.flow-row.tracker { margin-top: 0; gap: 6px; }
+.flow-row.tracker .flow-step-card { min-width: 104px; padding: 11px 13px; text-align: center; align-items: center; }
+.flow-row.tracker .flow-step-label { font-size: 0.84rem; }
+
+a.flow-step-card { text-decoration: none; transition: border-color 0.15s, background 0.15s, transform 0.15s; }
+a.flow-step-card:hover { background: var(--white); border-color: var(--course); transform: translateY(-2px); }
+a.flow-step-card:focus-visible { outline: 3px solid var(--persimmon); outline-offset: 2px; }
+
+/* A titleless tracker block sits tighter than a full section */
+.block.tracker-block { padding: 18px 20px; }
