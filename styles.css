@@ -2451,3 +2451,18 @@ a.flow-step-card:focus-visible { outline: 3px solid var(--persimmon); outline-of
   color: var(--graphite);
   margin-bottom: 4px;
 }
+
+
+/* ---------- Step components on a blue page ----------
+   The badges and current-step highlight were written against the Course green;
+   the Specialization page runs the same pattern in its own tier colour. */
+.page.tier-spec .compare-icon.step-num { background: var(--spec); }
+.page.tier-spec .step-badge { background: var(--spec); }
+.page.tier-spec .step-badge.ghost { border-color: var(--spec-line); color: var(--spec); }
+.page.tier-spec .flow-row.tracker a.flow-step-card.current {
+  background: var(--spec-bg);
+  border-color: var(--spec);
+}
+.page.tier-spec .flow-row.tracker a.flow-step-card.current .flow-step-label { color: var(--spec); }
+.page.tier-spec a.flow-step-card:hover { border-color: var(--spec); }
+.page.tier-spec .consider-check .ico { color: var(--spec); }

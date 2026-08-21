@@ -591,7 +591,7 @@ function sectionHeadHtml(s) {
   // A step section shows its number in the badge; everything else keeps its icon.
   const stepped = s.step && s.variant !== 'example';
   const badge = stepped
-    ? `<span class="compare-icon step-num${s.step.n === 5 ? ' final' : ''}">${esc(String(s.step.n))}</span>`
+    ? `<span class="compare-icon step-num${s.step.final ? ' final' : ''}">${esc(String(s.step.n))}</span>`
     : s.icon
       ? `<span class="compare-icon">${icon(s.icon)}</span>`
       : '';
@@ -1106,6 +1106,7 @@ function sectionBody(s, tier) {
                  <ul class="tips-list">${s.tips.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>`
               : ''
           }
+          ${nestedBlocksHtml(s.children, tier)}
         </section>`;
 
     case 'checklist':
@@ -1166,7 +1167,7 @@ function sectionBody(s, tier) {
               )
               .join('')}
           </ol>
-          ${s.footnote ? `<p class="seq-foot">${esc(s.footnote)}</p>` : ''}
+          ${s.footnote ? `<p class="seq-foot">${rich(s.footnote)}</p>` : ''}
         </section>`;
 
     case 'compare':

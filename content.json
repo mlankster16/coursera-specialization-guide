@@ -242,10 +242,9 @@
       "label": "SPECIALIZATION",
       "title": "Designing a Coursera Specialization",
       "lede": [
-        "A Coursera Specialization brings together several Courses to help learners develop a meaningful set of skills or capabilities they can apply beyond the learning experience.",
+        "A Coursera Specialization brings several Courses together into a purposeful learning journey, with each Course helping learners build toward a larger skill or goal.",
         "Unlike students enrolled in a traditional Duke course, Coursera learners choose whether and when to participate. They may be working, balancing other responsibilities, or taking only one Course within a larger pathway. They are likely to ask: **Is this for me? What will I be able to do? And is it worth the time?**",
-        "Begin by identifying the learners you hope to reach, the goals they are working toward, and the capabilities they should develop by the end of the Specialization.",
-        "Then consider the role of each Course in that journey. Courses may introduce, develop, or integrate skills; they may build on one another or offer useful standalone experiences. What matters most is that each Course has a clear purpose and that the relationship among the Courses is intentional and easy for learners to understand."
+        "Begin by identifying the learners you hope to reach, the goals they are working toward, and the skills they should develop by the end of the Specialization."
       ],
       "facts": [
         {
@@ -271,29 +270,137 @@
       ],
       "sections": [
         {
-          "type": "considerations",
-          "numbered": false,
-          "title": "Coursera learners approach a Specialization differently",
-          "items": [
+          "type": "steps",
+          "variant": "tracker",
+          "tier": "spec",
+          "steps": [
             {
-              "heading": "Give learners a reason to choose it.",
-              "body": "Coursera learners may be comparing your Specialization with many other ways to spend their time. Make it immediately clear who the experience is for, what it will help them accomplish, and why that matters."
+              "n": 1,
+              "label": "Define the goal",
+              "href": "#specialization/goal"
             },
             {
-              "heading": "Connect learning to practical goals.",
-              "body": "Learners often come to Coursera because they want to build a skill, solve a problem, advance professionally, or explore a new area. Help them see how what they are learning connects to something they can actually do."
+              "n": 2,
+              "label": "Shape the journey",
+              "href": "#specialization/journey"
             },
             {
-              "heading": "Make the experience worth continuing.",
-              "body": "Learners are fitting coursework around jobs, families, and other responsibilities. Focus on what is essential, make progress visible, and give learners meaningful opportunities to apply what they are learning."
+              "n": 3,
+              "label": "Complete the plan",
+              "href": "#specialization/template",
+              "final": true
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "id": "goal",
+          "step": {
+            "n": 1,
+            "label": "Define the goal"
+          },
+          "title": "Define the goal",
+          "intro": "What is this Specialization helping learners accomplish?",
+          "body": [
+            "A strong Specialization begins with a clear learner need and a meaningful end goal. Before planning individual Courses, identify who the experience is for, what they are trying to accomplish, and what they should be able to do by the end.",
+            "Coursera learners often choose learning based on its relevance, usefulness, and fit with their available time. Make it easy for them to recognize the value of the experience.",
+            "Keep in mind:",
+            {
+              "bullets": [
+                {
+                  "bold": "Make the value clear.",
+                  "rest": "Help learners quickly understand who the Specialization is for, what it will help them accomplish, and why that matters."
+                },
+                {
+                  "bold": "Connect learning to practical goals.",
+                  "rest": "Focus on skills and knowledge learners can use in a professional, academic, or other real-world context."
+                },
+                {
+                  "bold": "Respect the learner’s time.",
+                  "rest": "Prioritize what is essential and design toward a focused, achievable outcome."
+                }
+              ]
+            },
+            {
+              "anchor": {
+                "label": "A helpful question",
+                "body": "What should learners be able to do by the end of this Specialization?"
+              }
             }
           ],
-          "icon": "person"
+          "children": [
+            {
+              "type": "prose",
+              "variant": "example",
+              "icon": "certificate",
+              "title": "A Specialization goal",
+              "body": [
+                {
+                  "anchor": {
+                    "label": "Specialization",
+                    "body": "Data Analytics for Business Decisions"
+                  }
+                },
+                "Learners will be able to use business data to identify meaningful findings, communicate insights, and make evidence-informed recommendations."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "sidebyside",
+          "id": "journey",
+          "step": {
+            "n": 2,
+            "label": "Shape the journey"
+          },
+          "title": "Shape the journey",
+          "intro": "How should the Courses work together to help learners reach that goal?",
+          "body": [
+            "Once the destination is clear, consider the role each Course will play in helping learners get there.",
+            "Courses may introduce, develop, integrate, or apply different skills. Some Specializations work best as a clear progression in which each Course builds on the one before it. Others may include Courses that are more modular and useful on their own.",
+            "There is no single required structure. What matters is that each Course has a distinct purpose and that the relationship among the Courses is intentional and easy for learners to understand."
+          ],
+          "left": {
+            "label": "Rather than asking",
+            "body": "How should I divide my content into three Courses?"
+          },
+          "right": {
+            "label": "You might ask",
+            "body": "What should each Course contribute to the larger learner journey?"
+          },
+          "emphasis": "right",
+          "children": [
+            {
+              "type": "sequence",
+              "variant": "example",
+              "icon": "layers",
+              "tier": "spec",
+              "title": "Data Analytics for Business Decisions",
+              "items": [
+                {
+                  "n": 1,
+                  "type": "Foundations of Data Analytics for Business",
+                  "what": "Learners frame a business question and identify and prepare the data needed to investigate it."
+                },
+                {
+                  "n": 2,
+                  "type": "Analyzing and Visualizing Business Data",
+                  "what": "Learners analyze data and create visualizations that reveal meaningful patterns and trends."
+                },
+                {
+                  "n": 3,
+                  "type": "Communicating Data-Driven Recommendations",
+                  "what": "Learners use their findings to develop and communicate an evidence-informed recommendation."
+                }
+              ],
+              "footnote": "Together, the Courses create a clear progression: **Frame and prepare → Analyze and visualize → Recommend and communicate**. Each Course has a recognizable purpose of its own while contributing to the larger Specialization goal."
+            }
+          ]
         },
         {
           "type": "templatePreview",
-          "title": "What you'll fill in",
-          "note": "Use this page to work through the decisions, then record them in the Design Document. This is the section you'll be filling in.",
+          "title": "Complete your Specialization plan",
+          "note": "Use this page to work through the decisions, then record them in the Design Document.",
           "band": {
             "tier": "spec",
             "icon": "certificate",
@@ -547,7 +654,13 @@
               }
             }
           ],
-          "icon": "list"
+          "icon": "list",
+          "step": {
+            "n": 3,
+            "label": "Complete the plan",
+            "final": true
+          },
+          "id": "template"
         }
       ],
       "lead": "hero"
@@ -557,7 +670,7 @@
       "label": "COURSE",
       "title": "Planning a Course",
       "lede": [
-        "A Coursera Course is a focused learning experience that helps learners develop a specific set of skills or knowledge they can use beyond the Course.",
+        "A Coursera Course offers a focused learning experience that helps learners develop specific skills and achieve a meaningful outcome.",
         "A helpful place to begin is by defining the Course's distinct contribution: **What should learners be able to do by the end of this Course?**",
         "You can then translate that purpose into a small set of Course-level objectives. These objectives will guide the design of the Modules, where you'll break the larger capabilities into manageable stages and begin aligning them with opportunities for practice and assessment."
       ],
@@ -810,8 +923,8 @@
           "icon": "layers",
           "title": "Design for flexibility",
           "body": [
-            "Coursera Courses often work best when they are modular and self-contained. When possible, give learners enough context to understand what the Course is for, why the learning matters, and how to succeed without needing to complete another Course first. This makes the Course more useful to learners who take it independently and gives it greater flexibility within different learning pathways.",
-            "Some subjects, however, are best learned through a sequence. If learners genuinely need knowledge or skills from one Course before they can succeed in another, it is appropriate to design the Courses as a progression. Make those dependencies clear, and ensure that each Course still has a meaningful purpose and achievable outcomes of its own."
+            "Coursera Courses often work well when they are modular and self-contained. When possible, provide enough context for learners to understand the Course's purpose, why the learning matters, and what prior knowledge or skills they need to succeed without requiring them to have completed a specific earlier Course.",
+            "Some subjects are best learned through a sequence. When learners genuinely need knowledge or skills from an earlier Course, make that dependency clear. The goal is not to eliminate prerequisites, but to make Courses as portable and understandable on their own as the learning allows."
           ],
           "left": {
             "label": "More dependent on a specific sequence",
@@ -826,35 +939,7 @@
           "step": {
             "n": 4,
             "label": "Design for flexibility"
-          },
-          "children": [
-            {
-              "type": "sequence",
-              "icon": "layers",
-              "tier": "course",
-              "title": "When Courses are part of a Specialization",
-              "note": "Specialization: Data Analytics for Business Decisions",
-              "items": [
-                {
-                  "n": 1,
-                  "type": "Foundations of Data Analytics for Business",
-                  "what": "Learners will be able to frame a business question and identify the data needed to investigate it."
-                },
-                {
-                  "n": 2,
-                  "type": "Analyzing and Visualizing Business Data",
-                  "what": "Learners will be able to analyze a dataset and create visualizations that reveal meaningful patterns and trends."
-                },
-                {
-                  "n": 3,
-                  "type": "Communicating Data-Driven Recommendations",
-                  "what": "Learners will be able to develop and communicate an evidence-informed recommendation for a business audience."
-                }
-              ],
-              "footnote": "Each Course contributes something meaningful on its own while building toward the larger Specialization goal.",
-              "variant": "example"
-            }
-          ]
+          }
         },
         {
           "type": "templatePreview",
@@ -1019,7 +1104,8 @@
           "id": "template",
           "step": {
             "n": 5,
-            "label": "Complete the plan"
+            "label": "Complete the plan",
+            "final": true
           }
         }
       ],
