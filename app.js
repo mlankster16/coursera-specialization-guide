@@ -581,33 +581,41 @@ function wireAdvice() {
    beside the title — so the interior pages read as the same family of blocks.
    Without one it stays a plain heading. Carries whichever of intro/note the
    section uses, so callers don't emit it a second time. */
-function stepEyebrowHtml(s) {
-  // An example belongs to a step but is not one, so its badge is outlined and the
-  // word stays "Example" — the number is what ties it to the step above it.
-  if (s.variant === 'example') {
-    const badge = s.step ? `<span class="step-badge ghost">${esc(String(s.step.n))}</span>` : '';
-    return `<p class="step-eyebrow">${badge}<span class="step-word">Example</span></p>`;
-  }
-  if (!s.step) return '';
-  return `
-    <p class="step-eyebrow">
-      <span class="step-badge${s.step.n === 5 ? ' final' : ''}">${esc(String(s.step.n))}</span>
-      <span class="step-word${s.step.n === 5 ? ' final' : ''}">${esc(s.step.label)}</span>
-    </p>`;
-}
-
 function sectionHeadHtml(s) {
   if (!s.title) return '';
-  const eyebrow = stepEyebrowHtml(s);
   const title = `<h2 class="section-title">${esc(s.title)}</h2>`;
   const sub = s.intro || s.note;
   const intro = sub ? `<p class="section-intro">${esc(sub)}</p>` : '';
-  if (!s.icon) return eyebrow + title + intro;
+
+  // A step section shows its number in the badge; everything else keeps its icon.
+  const stepped = s.step && s.variant !== 'example';
+  const badge = stepped
+    ? `<span class="compare-icon step-num${s.step.n === 5 ? ' final' : ''}">${esc(String(s.step.n))}</span>`
+    : s.icon
+      ? `<span class="compare-icon">${icon(s.icon)}</span>`
+      : '';
+
+  if (!badge) return title + intro;
   return `
     <div class="compare-head">
-      <span class="compare-icon">${icon(s.icon)}</span>
-      <div>${eyebrow}${title}${intro}</div>
+      ${badge}
+      <div>${title}${intro}</div>
     </div>`;
+}
+
+/* An example lives inside the block it illustrates. Each renderer emits its own
+   <section class="block">, so the child's outer element is rewritten to a div
+   rather than threading a "nested" flag through all of them. */
+function nestedBlocksHtml(children, tier) {
+  return (children || [])
+    .map((c) => {
+      const cls = c.variant === 'example' ? 'nested-block block-example' : 'nested-block';
+      return sectionBody(c, tier)
+        .trim()
+        .replace(/^<section class="block[^"]*"/, `<div class="${cls}"`)
+        .replace(/<\/section>$/, '</div>');
+    })
+    .join('');
 }
 
 /* A lede may be one string or several paragraphs. */
@@ -638,7 +646,7 @@ function factsHtml(facts) {
    Faculty often use these four words interchangeably. Separating them is what makes
    an outcome writable, so this sits right after the considerations. */
 
-function ladderHtml(s) {
+function ladderHtml(s, tier) {
   return `
     <section class="block">
       ${sectionHeadHtml(s)}
@@ -676,6 +684,7 @@ function ladderHtml(s) {
           </div>
         </div>
       </div>
+      ${nestedBlocksHtml(s.children, tier)}
     </section>`;
 }
 
@@ -961,6 +970,7 @@ function sideBySideHtml(s, tier) {
               .join('')
           : ''
       }
+      ${nestedBlocksHtml(s.children, tier)}
     </section>`;
 }
 
@@ -1058,7 +1068,7 @@ function sectionBody(s, tier) {
       return considerationsHtml(s, tier);
 
     case 'ladder':
-      return ladderHtml(s);
+      return ladderHtml(s, tier);
 
     case 'contrast':
       return contrastHtml(s);

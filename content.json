@@ -680,37 +680,36 @@
           "step": {
             "n": 1,
             "label": "Define"
-          }
-        },
-        {
-          "type": "prose",
-          "icon": "list",
-          "title": "Objectives for a sample Course",
-          "body": [
-            "For Foundations of Data Analytics for Business, learners might be able to:"
-          ],
-          "bullets": [
+          },
+          "children": [
             {
-              "bold": "Translate",
-              "rest": "a business need into a focused question that can be investigated with data."
-            },
-            {
-              "bold": "Identify",
-              "rest": "the data needed to investigate a business question."
-            },
-            {
-              "bold": "Evaluate",
-              "rest": "a dataset for relevance, completeness, and basic quality concerns."
-            },
-            {
-              "bold": "Prepare",
-              "rest": "data for an introductory business analysis."
+              "type": "prose",
+              "icon": "list",
+              "title": "Objectives for a sample Course",
+              "body": [
+                "For Foundations of Data Analytics for Business, learners might be able to:"
+              ],
+              "bullets": [
+                {
+                  "bold": "Translate",
+                  "rest": "a business need into a focused question that can be investigated with data."
+                },
+                {
+                  "bold": "Identify",
+                  "rest": "the data needed to investigate a business question."
+                },
+                {
+                  "bold": "Evaluate",
+                  "rest": "a dataset for relevance, completeness, and basic quality concerns."
+                },
+                {
+                  "bold": "Prepare",
+                  "rest": "data for an introductory business analysis."
+                }
+              ],
+              "variant": "example"
             }
-          ],
-          "variant": "example",
-          "step": {
-            "n": 1
-          }
+          ]
         },
         {
           "type": "considerations",
@@ -777,39 +776,38 @@
           "step": {
             "n": 3,
             "label": "Use"
-          }
-        },
-        {
-          "type": "sidebyside",
-          "icon": "scale",
-          "tier": "course",
-          "title": "Using a Course objective to guide scope",
-          "anchor": {
-            "label": "Course objective",
-            "body": "Learners will be able to prepare data for an introductory business analysis."
           },
-          "left": {
-            "label": "Include",
-            "bullets": [
-              "Identifying relevant data fields",
-              "Checking for missing or inconsistent values",
-              "Restructuring a simple dataset",
-              "Documenting data-preparation decisions"
-            ]
-          },
-          "right": {
-            "label": "Consider leaving out",
-            "bullets": [
-              "Advanced statistical modeling",
-              "Complex programming techniques",
-              "Topics that do not support the introductory analysis"
-            ]
-          },
-          "emphasis": "left",
-          "variant": "example",
-          "step": {
-            "n": 3
-          }
+          "children": [
+            {
+              "type": "sidebyside",
+              "icon": "scale",
+              "tier": "course",
+              "title": "Using a Course objective to guide scope",
+              "anchor": {
+                "label": "Course objective",
+                "body": "Learners will be able to prepare data for an introductory business analysis."
+              },
+              "left": {
+                "label": "Include",
+                "bullets": [
+                  "Identifying relevant data fields",
+                  "Checking for missing or inconsistent values",
+                  "Restructuring a simple dataset",
+                  "Documenting data-preparation decisions"
+                ]
+              },
+              "right": {
+                "label": "Consider leaving out",
+                "bullets": [
+                  "Advanced statistical modeling",
+                  "Complex programming techniques",
+                  "Topics that do not support the introductory analysis"
+                ]
+              },
+              "emphasis": "left",
+              "variant": "example"
+            }
+          ]
         },
         {
           "type": "sidebyside",
@@ -832,36 +830,35 @@
           "step": {
             "n": 4,
             "label": "Design"
-          }
-        },
-        {
-          "type": "sequence",
-          "icon": "layers",
-          "tier": "course",
-          "title": "When Courses are part of a Specialization",
-          "note": "Specialization: Data Analytics for Business Decisions",
-          "items": [
+          },
+          "children": [
             {
-              "n": 1,
-              "type": "Foundations of Data Analytics for Business",
-              "what": "Learners can frame a business question and identify the data needed to investigate it."
-            },
-            {
-              "n": 2,
-              "type": "Analyzing and Visualizing Business Data",
-              "what": "Learners can analyze a dataset and create visualizations that reveal meaningful patterns and trends."
-            },
-            {
-              "n": 3,
-              "type": "Communicating Data-Driven Recommendations",
-              "what": "Learners can develop and communicate an evidence-informed recommendation for a business audience."
+              "type": "sequence",
+              "icon": "layers",
+              "tier": "course",
+              "title": "When Courses are part of a Specialization",
+              "note": "Specialization: Data Analytics for Business Decisions",
+              "items": [
+                {
+                  "n": 1,
+                  "type": "Foundations of Data Analytics for Business",
+                  "what": "Learners can frame a business question and identify the data needed to investigate it."
+                },
+                {
+                  "n": 2,
+                  "type": "Analyzing and Visualizing Business Data",
+                  "what": "Learners can analyze a dataset and create visualizations that reveal meaningful patterns and trends."
+                },
+                {
+                  "n": 3,
+                  "type": "Communicating Data-Driven Recommendations",
+                  "what": "Learners can develop and communicate an evidence-informed recommendation for a business audience."
+                }
+              ],
+              "footnote": "Each Course contributes something meaningful on its own while building toward the larger Specialization goal.",
+              "variant": "example"
             }
-          ],
-          "footnote": "Each Course contributes something meaningful on its own while building toward the larger Specialization goal.",
-          "variant": "example",
-          "step": {
-            "n": 4
-          }
+          ]
         },
         {
           "type": "templatePreview",
