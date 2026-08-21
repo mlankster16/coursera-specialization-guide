@@ -58,6 +58,7 @@ function render() {
   wireHomeNavigation();
   wireAssetJump();
   wireAdvice();
+  wireTracker();
 
   // Arriving from a link, jump straight there — the smooth easing is for in-page use.
   // Learning-asset blocks use asset-*; every other linkable section uses sec-*.
@@ -426,6 +427,57 @@ function pageHtml(id) {
     </article>`;
 }
 
+/* ---------- Tracker scrollspy ----------
+   The sticky tracker is only useful past the first glance if it says where you
+   are. Listeners are torn down before each re-render, since render() replaces the
+   markup they were bound to. */
+
+let trackerCleanup = null;
+
+function wireTracker() {
+  if (trackerCleanup) {
+    trackerCleanup();
+    trackerCleanup = null;
+  }
+  const tracker = document.querySelector('.flow-row.tracker');
+  if (!tracker) return;
+
+  const targets = [...tracker.querySelectorAll('a.flow-step-card')]
+    .map((card) => ({ card, el: document.getElementById(`sec-${card.getAttribute('href').split('/')[1]}`) }))
+    .filter((t) => t.el);
+  if (!targets.length) return;
+
+  let queued = false;
+  const update = () => {
+    queued = false;
+    // anything above the tracker's own lower edge has been scrolled past
+    const line = tracker.getBoundingClientRect().bottom + 24;
+    let active = targets[0];
+    targets.forEach((t) => {
+      if (t.el.getBoundingClientRect().top <= line) active = t;
+    });
+    targets.forEach((t) => {
+      const on = t === active;
+      t.card.classList.toggle('current', on);
+      if (on) t.card.setAttribute('aria-current', 'step');
+      else t.card.removeAttribute('aria-current');
+    });
+  };
+  const onScroll = () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(update);
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
+  trackerCleanup = () => {
+    window.removeEventListener('scroll', onScroll);
+    window.removeEventListener('resize', onScroll);
+  };
+}
+
 /* ---------- Field advice overlays ----------
    Each template field can carry `advice`, shown in a popover on click. Native
    `popover` gives light-dismiss, Escape, and top-layer stacking for free; only
@@ -529,9 +581,24 @@ function wireAdvice() {
    beside the title — so the interior pages read as the same family of blocks.
    Without one it stays a plain heading. Carries whichever of intro/note the
    section uses, so callers don't emit it a second time. */
+function stepEyebrowHtml(s) {
+  // An example belongs to a step but is not one, so its badge is outlined and the
+  // word stays "Example" — the number is what ties it to the step above it.
+  if (s.variant === 'example') {
+    const badge = s.step ? `<span class="step-badge ghost">${esc(String(s.step.n))}</span>` : '';
+    return `<p class="step-eyebrow">${badge}<span class="step-word">Example</span></p>`;
+  }
+  if (!s.step) return '';
+  return `
+    <p class="step-eyebrow">
+      <span class="step-badge${s.step.n === 5 ? ' final' : ''}">${esc(String(s.step.n))}</span>
+      <span class="step-word${s.step.n === 5 ? ' final' : ''}">${esc(s.step.label)}</span>
+    </p>`;
+}
+
 function sectionHeadHtml(s) {
   if (!s.title) return '';
-  const eyebrow = s.variant === 'example' ? '<p class="block-eyebrow">Example</p>' : '';
+  const eyebrow = stepEyebrowHtml(s);
   const title = `<h2 class="section-title">${esc(s.title)}</h2>`;
   const sub = s.intro || s.note;
   const intro = sub ? `<p class="section-intro">${esc(sub)}</p>` : '';
@@ -799,9 +866,21 @@ function stepsHtml(s, tier) {
       ${s.steps
         .map(
           (st, i) => `
-        ${i ? '<span class="flow-sep" aria-hidden="true">&rarr;</span>' : ''}
-        <${st.href ? 'a' : 'div'} class="flow-step-card tier-${t}"${st.href ? ` href="${esc(st.href)}"` : ''}>
-          <span class="flow-step-label">${esc(st.label)}</span>
+        ${
+          i
+            ? st.final
+              ? '<span class="flow-divider-v" aria-hidden="true"></span>'
+              : '<span class="flow-sep" aria-hidden="true">&rarr;</span>'
+            : ''
+        }
+        <${st.href ? 'a' : 'div'} class="flow-step-card tier-${t}${st.final ? ' final' : ''}"${
+          st.href ? ` href="${esc(st.href)}"` : ''
+        }>
+          <span class="flow-step-top">
+            ${st.n ? `<span class="step-badge${st.final ? ' final' : ''}">${esc(String(st.n))}</span>` : ''}
+            ${st.icon ? `<span class="flow-step-icon">${icon(st.icon)}</span>` : ''}
+            <span class="flow-step-label">${esc(st.label)}</span>
+          </span>
           ${st.caption ? `<span class="flow-step-caption">${esc(st.caption)}</span>` : ''}
         </${st.href ? 'a' : 'div'}>`
         )

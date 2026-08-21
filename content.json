@@ -591,24 +591,31 @@
           "tier": "course",
           "steps": [
             {
+              "n": 1,
               "label": "Define",
               "href": "#course/objectives"
             },
             {
+              "n": 2,
               "label": "Check",
               "href": "#course/check"
             },
             {
+              "n": 3,
               "label": "Use",
               "href": "#course/scope"
             },
             {
+              "n": 4,
               "label": "Design",
               "href": "#course/standalone"
             },
             {
+              "n": 5,
               "label": "Fill in template",
-              "href": "#course/template"
+              "href": "#course/template",
+              "icon": "certificate",
+              "final": true
             }
           ]
         },
@@ -669,7 +676,11 @@
             "become familiar with",
             "explore"
           ],
-          "weakNote": "They may describe your instructional intention, but they do not clearly indicate what learners will be able to demonstrate."
+          "weakNote": "They may describe your instructional intention, but they do not clearly indicate what learners will be able to demonstrate.",
+          "step": {
+            "n": 1,
+            "label": "Define"
+          }
         },
         {
           "type": "prose",
@@ -696,7 +707,10 @@
               "rest": "data for an introductory business analysis."
             }
           ],
-          "variant": "example"
+          "variant": "example",
+          "step": {
+            "n": 1
+          }
         },
         {
           "type": "considerations",
@@ -727,7 +741,11 @@
             }
           ],
           "marker": "check",
-          "id": "check"
+          "id": "check",
+          "step": {
+            "n": 2,
+            "label": "Check"
+          }
         },
         {
           "type": "sidebyside",
@@ -755,7 +773,11 @@
             "body": "What knowledge and skills do learners need to achieve the Course objectives?"
           },
           "emphasis": "right",
-          "id": "scope"
+          "id": "scope",
+          "step": {
+            "n": 3,
+            "label": "Use"
+          }
         },
         {
           "type": "sidebyside",
@@ -784,7 +806,10 @@
             ]
           },
           "emphasis": "left",
-          "variant": "example"
+          "variant": "example",
+          "step": {
+            "n": 3
+          }
         },
         {
           "type": "sidebyside",
@@ -803,7 +828,11 @@
             "body": "This course assumes familiarity with basic spreadsheet formulas and functions."
           },
           "emphasis": "right",
-          "id": "standalone"
+          "id": "standalone",
+          "step": {
+            "n": 4,
+            "label": "Design"
+          }
         },
         {
           "type": "sequence",
@@ -829,7 +858,10 @@
             }
           ],
           "footnote": "Each Course contributes something meaningful on its own while building toward the larger Specialization goal.",
-          "variant": "example"
+          "variant": "example",
+          "step": {
+            "n": 4
+          }
         },
         {
           "type": "templatePreview",
@@ -991,7 +1023,11 @@
             }
           ],
           "icon": "list",
-          "id": "template"
+          "id": "template",
+          "step": {
+            "n": 5,
+            "label": "Fill in template"
+          }
         }
       ],
       "lead": "hero"
