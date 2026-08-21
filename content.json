@@ -566,7 +566,7 @@
             "What should learners be able to do when they finish it?"
           ]
         },
-        "On the Module page, you'll break those Course-level outcomes into manageable learning steps and begin aligning them with activities and assessments."
+        "At this stage, you do not need to determine exactly which videos, readings, activities, or assessments will support each objective. On the Module page, you'll break these larger Course objectives into manageable stages of learning and begin aligning them with opportunities for practice and assessment."
       ],
       "facts": [
         {
@@ -596,7 +596,7 @@
           "icon": "star",
           "title": "Give each Course a clear purpose",
           "body": [
-            "A strong Course does more than cover a portion of a subject. It helps learners develop a specific, meaningful capability they can use by the end of the experience."
+            "A strong Course does more than cover a portion of a subject. It helps learners develop a specific, meaningful capability they can use by the end of the experience. The answer can help you decide what belongs in the Course, what might be left out, and how to organize the learning around a clear purpose."
           ],
           "left": {
             "label": "Rather than asking",
@@ -606,11 +606,7 @@
             "label": "You might ask",
             "body": "What should learners be able to do after this Course that they could not do before?"
           },
-          "emphasis": "right",
-          "note": [
-            "The answer can help you decide what belongs in the Course, what might be left out, and how to organize the learning around a clear purpose.",
-            "If the Course is part of a Specialization or learning pathway, also consider how its purpose relates to the Courses around it. It might build on earlier learning, prepare learners for what comes next, or stand on its own as one valuable part of a larger journey."
-          ]
+          "emphasis": "right"
         },
         {
           "type": "sequence",
@@ -647,13 +643,14 @@
             "That does not mean every Course needs to be independent of every other Course. When prior knowledge is genuinely necessary, describe that requirement clearly and design the sequence accordingly."
           ],
           "left": {
+            "label": "More dependent on a specific sequence",
+            "body": "As you learned in Course 1, you will now build on the framework introduced in Module 3…"
+          },
+          "right": {
             "label": "More modular",
             "body": "This course assumes familiarity with basic spreadsheet formulas and functions."
           },
-          "right": {
-            "label": "More dependent on a specific sequence",
-            "body": "As you learned in Course 1, you will now build on the framework introduced in Module 3…"
-          }
+          "emphasis": "right"
         },
         {
           "type": "ladder",
@@ -761,8 +758,7 @@
               "bold": "Prepare",
               "rest": "data for an introductory business analysis."
             }
-          ],
-          "after": "At this stage, you do not need to determine exactly which videos, readings, activities, or assessments will support each objective. On the Module page, you'll break these larger Course objectives into manageable stages of learning and begin aligning them with opportunities for practice and assessment."
+          ]
         },
         {
           "type": "templatePreview",
