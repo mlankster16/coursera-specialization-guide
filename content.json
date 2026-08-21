@@ -99,7 +99,6 @@
       }
     ],
     "specialization": {
-      "definition": "A connected learning journey across several Courses",
       "specs": [
         {
           "icon": "layers",
@@ -124,18 +123,15 @@
       "cards": [
         {
           "n": 1,
-          "title": "Course",
-          "role": "A focused learning experience with clear outcomes"
+          "title": "Course"
         },
         {
           "n": 2,
-          "title": "Course",
-          "role": "A focused learning experience with clear outcomes"
+          "title": "Course"
         },
         {
           "n": 3,
-          "title": "Course",
-          "role": "A focused learning experience with clear outcomes"
+          "title": "Course"
         }
       ],
       "cardSpecs": [
@@ -162,18 +158,15 @@
       "cards": [
         {
           "n": 1,
-          "title": "Module",
-          "role": "A manageable sequence of learning, practice, and assessment"
+          "title": "Module"
         },
         {
           "n": 2,
-          "title": "Module",
-          "role": "A manageable sequence of learning, practice, and assessment"
+          "title": "Module"
         },
         {
           "n": 3,
-          "title": "Module",
-          "role": "A manageable sequence of learning, practice, and assessment"
+          "title": "Module"
         }
       ],
       "cardSpecs": [
@@ -198,7 +191,6 @@
     },
     "assets": {
       "title": "Learning Assets",
-      "note": "The individual experiences learners watch, read, and do",
       "question": "What experience will best support each step?"
     },
     "reuse": {

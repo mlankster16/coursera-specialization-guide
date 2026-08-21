@@ -198,7 +198,7 @@ function homeSpecHtml(s) {
             <span class="icon-badge">${icon('certificate')}</span>
             <span class="card-title">Specialization</span>
           </span>
-          <span class="card-role">${esc(s.definition)}</span>
+          ${s.definition ? `<span class="card-role">${esc(s.definition)}</span>` : ''}
           <span class="spec-list">${specRowsHtml(s.specs)}</span>
           ${openCue('Plan your Specialization')}
         </button>
@@ -224,7 +224,7 @@ function homeCoursesHtml(c) {
                 <span class="num-badge">${card.n}</span>
                 <span class="card-title">${esc(card.title)}</span>
               </span>
-              <span class="card-role">${esc(card.role)}</span>
+              ${card.role ? `<span class="card-role">${esc(card.role)}</span>` : ''}
               <span class="spec-list">${specRowsHtml(c.cardSpecs)}</span>
               ${openCue('Plan a course')}
             </button>`
@@ -264,7 +264,7 @@ function homeModulesHtml(m) {
                 <span class="icon-badge">${icon('list')}</span>
                 <span class="card-title">${esc(card.title)} ${card.n}</span>
               </span>
-              <span class="card-role">${esc(card.role)}</span>
+              ${card.role ? `<span class="card-role">${esc(card.role)}</span>` : ''}
               <span class="spec-list">${specRowsHtml(m.cardSpecs)}</span>
               ${openCue('Plan a module')}
             </button>`
@@ -289,7 +289,7 @@ function homeAssetsHtml() {
             <span class="asset-band-icon">${icon('play')}</span>
             <div>
               <p class="asset-band-title">${esc(C.home.assets.title)}</p>
-              <p class="asset-band-note">${esc(C.home.assets.note)}</p>
+              ${C.home.assets.note ? `<p class="asset-band-note">${esc(C.home.assets.note)}</p>` : ''}
             </div>
           </div>
           <div class="asset-tiles">
