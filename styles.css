@@ -39,10 +39,17 @@
 
   --line: #CBD3E1;
 
-  /* Snapshot boxes on the interior pages. #DFE9F7 is the deepest blue that still
-     clears AA for the grey sub-label on it (4.69:1); one step darker fails. */
+  /* Snapshot boxes, tinted per tier. Each is the deepest of its hue that still
+     clears AA for the grey sub-label sitting on it — 4.69x to 4.78x across the
+     set, so they read as one family rather than four different depths. */
   --fact-bg: #DFE9F7;
   --fact-line: #B9CFE8;
+  --fact-bg-course: #DCEDE3;
+  --fact-line-course: #B4D6C3;
+  --fact-bg-module: #EDE7F9;
+  --fact-line-module: #CFC2EA;
+  --fact-bg-asset: #F7E9CC;
+  --fact-line-asset: #E3CB9B;
 }
 
 html { scroll-behavior: smooth; }
@@ -1946,3 +1953,124 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 /* The learner-time note used to sit between the facts row and the first block;
    without it, the old 56px gap reads as a hole. */
 .page .block:first-of-type { margin-top: 34px; }
+
+
+/* Fact boxes follow the page's tier; blue is the Specialization default. */
+.page.tier-course .fact { background: var(--fact-bg-course); border-color: var(--fact-line-course); }
+.page.tier-module .fact { background: var(--fact-bg-module); border-color: var(--fact-line-module); }
+.page.tier-asset  .fact { background: var(--fact-bg-asset);  border-color: var(--fact-line-asset); }
+
+/* ---------- Bullets inside the hero intro callout ---------- */
+.intro-list { margin: 12px 0 0 4px; list-style: none; }
+.intro-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.95rem;
+  color: var(--cast-iron);
+  line-height: 1.7;
+  margin-bottom: 7px;
+}
+.intro-list li:last-child { margin-bottom: 0; }
+.intro-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--spec);
+}
+.page.tier-course .intro-list li::before { background: var(--course); }
+.page.tier-module .intro-list li::before { background: var(--module); }
+
+/* ---------- Two panels, side by side ---------- */
+.sbs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+
+.sbs-panel {
+  background: var(--whisper);
+  border: 1px solid var(--hatteras);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+.sbs-panel.emphasis.tier-spec   { background: var(--spec-bg);   border-color: var(--spec-line); }
+.sbs-panel.emphasis.tier-course { background: var(--course-bg); border-color: var(--course-line); }
+.sbs-panel.emphasis.tier-module { background: var(--module-bg); border-color: var(--module-line); }
+
+.sbs-label {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  margin-bottom: 7px;
+}
+.sbs-panel.emphasis.tier-course .sbs-label { color: var(--course); }
+.sbs-panel.emphasis.tier-spec .sbs-label { color: var(--spec); }
+.sbs-body { font-size: 0.88rem; color: var(--cast-iron); line-height: 1.65; }
+
+.sbs-note {
+  font-size: 0.85rem;
+  color: var(--graphite);
+  line-height: 1.7;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--hatteras);
+}
+
+/* ---------- Ladder column headers ---------- */
+.rung.rung-head {
+  background: none;
+  border: none;
+  padding-bottom: 4px;
+}
+.rung.rung-head span {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--graphite);
+}
+
+/* ---------- Bulleted list inside a prose section ---------- */
+.prose-list { margin: 4px 0 0 4px; list-style: none; }
+.prose-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.94rem;
+  color: var(--cast-iron);
+  line-height: 1.7;
+  margin-bottom: 7px;
+}
+.prose-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--course);
+}
+.block-after { margin-top: 16px; }
+
+/* ---------- Sequence list, tinted per tier ---------- */
+.example-list.tier-course .example-item { background: var(--course-bg); }
+.example-list.tier-course .example-n { background: var(--course); }
+.example-list.tier-spec .example-item { background: var(--spec-bg); }
+.example-list.tier-spec .example-n { background: var(--spec); }
+
+.seq-foot {
+  font-size: 0.85rem;
+  color: var(--graphite);
+  line-height: 1.7;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--hatteras);
+}
+
+@media (max-width: 720px) {
+  .sbs { grid-template-columns: 1fr; }
+}

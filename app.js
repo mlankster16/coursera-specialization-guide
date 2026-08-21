@@ -397,7 +397,13 @@ function pageHtml(id) {
           // intro inside a white callout rather than running as plain page text.
           p.lead === 'hero'
             ? `<section class="intro">${(Array.isArray(p.lede) ? p.lede : [p.lede])
-                .map((t) => `<p class="intro-body">${esc(t)}</p>`)
+                .map((t) =>
+                  typeof t === 'string'
+                    ? `<p class="intro-body">${esc(t)}</p>`
+                    : `<ul class="intro-list">${t.bullets
+                        .map((b) => `<li>${esc(b)}</li>`)
+                        .join('')}</ul>`
+                )
                 .join('')}</section>`
             : ledeHtml(p.lede)
         }
@@ -554,6 +560,13 @@ function ladderHtml(s) {
     <section class="block">
       ${sectionHeadHtml(s)}
       <div class="ladder">
+        ${
+          s.headers
+            ? `<div class="rung rung-head">${s.headers
+                .map((h) => `<span>${esc(h)}</span>`)
+                .join('')}</div>`
+            : ''
+        }
         ${s.rungs
           .map(
             (r, i) => `
@@ -569,11 +582,11 @@ function ladderHtml(s) {
         <p class="verb-prompt">${esc(s.prompt)}</p>
         <div class="verb-cols">
           <div class="verb-col good">
-            <p class="verb-label">Verbs that work</p>
+            <p class="verb-label">${esc(s.goodLabel || 'Verbs that work')}</p>
             <p class="verb-list">${s.goodVerbs.map(esc).join(' · ')}</p>
           </div>
           <div class="verb-col weak">
-            <p class="verb-label">Harder to assess</p>
+            <p class="verb-label">${esc(s.weakLabel || 'Harder to assess')}</p>
             <p class="verb-list">${s.weakVerbs.map(esc).join(' · ')}</p>
             <p class="verb-note">${esc(s.weakNote)}</p>
           </div>
@@ -706,6 +719,29 @@ function templatePreviewHtml(s, tier) {
     </section>`;
 }
 
+/* ---------- Two panels, side by side ----------
+   Deliberately neutral by default. Some pairs here are a better/worse framing
+   ("you might ask instead"), but others are two legitimate choices — a sequenced
+   course is not a mistake — so only an explicit `emphasis` tints a side. */
+
+function sideBySideHtml(s, tier) {
+  const panel = (side, key) => `
+    <div class="sbs-panel${s.emphasis === key ? ` emphasis tier-${s.tier || tier}` : ''}">
+      <p class="sbs-label">${esc(side.label)}</p>
+      <p class="sbs-body">${esc(side.body)}</p>
+    </div>`;
+  return `
+    <section class="block">
+      ${sectionHeadHtml(s)}
+      ${(s.body || []).map((b) => `<p class="block-p">${esc(b)}</p>`).join('')}
+      <div class="sbs">
+        ${panel(s.left, 'left')}
+        ${panel(s.right, 'right')}
+      </div>
+      ${s.note ? `<p class="sbs-note">${esc(s.note)}</p>` : ''}
+    </section>`;
+}
+
 /* ---------- Carryover: an idea taught in full on an earlier page ----------
    The topic-to-competency ladder is written out once, on the Specialization page.
    Courses need the same idea, so this restates it briefly and links back rather
@@ -800,11 +836,20 @@ function sectionBody(s, tier) {
     case 'carryover':
       return carryoverHtml(s, tier);
 
+    case 'sidebyside':
+      return sideBySideHtml(s, tier);
+
     case 'prose':
       return `
         <section class="block">
           <h2 class="section-title">${esc(s.title)}</h2>
           ${(s.body || []).map((b) => `<p class="block-p">${esc(b)}</p>`).join('')}
+          ${
+            s.bullets && s.bullets.length
+              ? `<ul class="prose-list">${s.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>`
+              : ''
+          }
+          ${s.after ? `<p class="block-p block-after">${esc(s.after)}</p>` : ''}
           ${
             s.tips && s.tips.length
               ? `<p class="tips-label">Keep in mind</p>
@@ -856,7 +901,7 @@ function sectionBody(s, tier) {
       return `
         <section class="block">
           ${sectionHeadHtml(s)}
-          <ol class="example-list">
+          <ol class="example-list${s.tier ? ` tier-${s.tier}` : ''}">
             ${s.items
               .map(
                 (it) => `
@@ -871,6 +916,7 @@ function sectionBody(s, tier) {
               )
               .join('')}
           </ol>
+          ${s.footnote ? `<p class="seq-foot">${esc(s.footnote)}</p>` : ''}
         </section>`;
 
     case 'compare':

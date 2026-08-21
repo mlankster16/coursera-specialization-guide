@@ -553,8 +553,20 @@
     "course": {
       "tier": "course",
       "label": "COURSE",
-      "title": "Planning a course",
-      "lede": "A course teaches one skill well enough that someone could take it on its own and come away able to do something new.",
+      "title": "Planning a Course",
+      "lede": [
+        "Each course in a Specialization should have a clear purpose: helping learners develop a meaningful capability they can use beyond the course.",
+        "On Coursera, courses often work well as focused, modular learning experiences. Learners may take a course on its own, and a strong course may also fit within more than one Specialization or learning pathway. When possible, design each course so learners can understand its purpose, complete a meaningful learning experience, and leave able to do something new.",
+        "Not every Specialization needs to work this way. Some subjects build naturally through a sequence in which concepts or skills introduced in one course are needed for the next. The goal is not to avoid progression, but to make that progression intentional and clear.",
+        "At the Course level, it can help to begin with two questions:",
+        {
+          "bullets": [
+            "What distinct role does this Course play in the Specialization?",
+            "What should learners be able to do when they finish it?"
+          ]
+        },
+        "At the Module level, you'll begin designing the activities and assessments that support those outcomes."
+      ],
       "facts": [
         {
           "icon": "star",
@@ -579,98 +591,163 @@
       ],
       "sections": [
         {
-          "type": "compare",
-          "title": "Writing so a course stands on its own",
-          "intro": "Ideally each course is designed to be standalone and modular — those courses tend to do best on the Coursera platform, and some learners will take this one without the rest of the Specialization. That mostly comes down to phrasing: each item reads better when it opens by establishing its own context than when it points back to something earlier.",
-          "weakLabel": "Weaker",
-          "strongLabel": "Stronger",
-          "rows": [
+          "type": "sidebyside",
+          "icon": "star",
+          "title": "Give each Course a clear job",
+          "body": [
+            "A strong course does more than cover a portion of a subject. It contributes a distinct capability to the larger Specialization."
+          ],
+          "left": {
+            "label": "Rather than asking",
+            "body": "Which topics belong in Course 1?"
+          },
+          "right": {
+            "label": "You might ask",
+            "body": "What should learners be able to do after this Course that they could not do before?"
+          },
+          "emphasis": "right",
+          "note": "The answer can help you decide what belongs in the Course, what might be left out, and where one Course should end and the next should begin."
+        },
+        {
+          "type": "sequence",
+          "icon": "layers",
+          "tier": "course",
+          "title": "Example: three Courses, three capabilities",
+          "note": "Specialization: Data Analytics for Business Decisions",
+          "items": [
             {
-              "aspect": "Module titles",
-              "dont": "\"Module 1: Introduction to Data Cleaning\"",
-              "do": "\"Identifying and Handling Missing Data\""
+              "n": 1,
+              "type": "Foundations of Data Analytics for Business",
+              "what": "Learners can frame a business question and identify the data needed to investigate it."
             },
             {
-              "aspect": "Module transitions",
-              "dont": "\"Now that you've mastered the basics from Module 1…\"",
-              "do": "\"Data transformation is essential for analysis. Let's explore how to use SQL functions to…\""
+              "n": 2,
+              "type": "Analyzing and Visualizing Business Data",
+              "what": "Learners can analyze a dataset and create visualizations that reveal meaningful patterns and trends."
             },
             {
-              "aspect": "Program references",
-              "dont": "\"As part of this Data Science Specialization, you'll use these skills in the capstone…\"",
-              "do": "\"These data preprocessing skills are essential for any machine learning project…\""
-            },
-            {
-              "aspect": "Sequential references",
-              "dont": "\"In the previous lesson, we explored how to optimize this code…\"",
-              "do": "\"Code optimization involves several key strategies…\""
-            },
-            {
-              "aspect": "Prior knowledge",
-              "dont": "\"You learned basic SQL in Module 2.\"",
-              "do": "\"This module assumes familiarity with basic SQL queries.\""
+              "n": 3,
+              "type": "Communicating Data-Driven Recommendations",
+              "what": "Learners can develop and communicate an evidence-informed recommendation for a business audience."
             }
           ],
-          "icon": "scale"
+          "footnote": "Each Course contributes something meaningful on its own while building toward the larger Specialization goal."
+        },
+        {
+          "type": "sidebyside",
+          "icon": "layers",
+          "title": "Design for modularity when it serves the learning",
+          "body": [
+            "Whenever possible, give a Course enough context to make sense on its own. Learners should not need to understand the structure of the entire Specialization to know what the Course is for or why the learning matters.",
+            "This can also make a Course more flexible. It may be taken independently, included in another learning pathway, or reused in a future Specialization.",
+            "That does not mean every Course needs to be independent of every other Course. When prior knowledge is genuinely necessary, describe that requirement clearly and design the sequence accordingly."
+          ],
+          "left": {
+            "label": "More modular",
+            "body": "This course assumes familiarity with basic spreadsheet formulas and functions."
+          },
+          "right": {
+            "label": "More dependent on a specific sequence",
+            "body": "As you learned in Course 1, you will now build on the framework introduced in Module 3…"
+          },
+          "note": "The second approach may be entirely appropriate when the learning requires it. The key question is whether the dependency is necessary for learning, rather than simply a result of how the content happened to be organized."
         },
         {
           "type": "ladder",
           "id": "objectives",
-          "title": "From topics to what learners can do",
-          "intro": "These words often get used interchangeably. Separating them makes the outcome easier to write.",
+          "icon": "star",
+          "title": "Define what learners will be able to do",
+          "intro": "Once the Course has a clear purpose, translate that purpose into 2–4 course-level learning objectives. A strong Course objective describes something learners can demonstrate by the end of the Course. It should be narrower than the overall Specialization outcome, while still broad enough for several Modules to contribute to its development.",
+          "headers": [
+            "Level",
+            "Focus",
+            "Example"
+          ],
           "rungs": [
             {
               "term": "Topic",
-              "gloss": "What the course is about",
-              "example": "Data visualization"
+              "gloss": "What the Course is about",
+              "example": "Business data"
             },
             {
               "term": "Knowledge",
-              "gloss": "What learners understand",
-              "example": "Principles of visual encoding and chart selection"
+              "gloss": "What learners know or understand",
+              "example": "Characteristics of useful business data"
             },
             {
               "term": "Skill",
               "gloss": "What learners can perform",
-              "example": "Create an appropriate chart from a dataset"
+              "example": "Evaluate the quality of a dataset"
             },
             {
-              "term": "Competency",
-              "gloss": "What learners can do in a real situation",
-              "example": "Select, create, and explain visualizations that support a recommendation"
+              "term": "Course-level capability",
+              "gloss": "What learners can do in a meaningful context",
+              "example": "Evaluate whether available data is appropriate for investigating a business question."
             }
           ],
-          "prompt": "Finish this sentence: by the end, learners will be able to…",
+          "prompt": "By the end of this Course, learners will be able to…",
+          "goodLabel": "Consider using observable action verbs such as",
           "goodVerbs": [
             "analyze",
+            "apply",
             "create",
+            "compare",
             "design",
             "evaluate",
+            "identify",
             "interpret",
-            "apply",
-            "compare",
-            "diagnose",
             "recommend",
-            "implement",
             "communicate"
           ],
+          "weakLabel": "Use verbs such as these thoughtfully",
           "weakVerbs": [
             "understand",
             "learn",
+            "know",
             "become familiar with",
             "explore"
           ],
-          "weakNote": "These describe your intention rather than something a learner can show you, which makes them hard to assess.",
-          "icon": "star"
+          "weakNote": "They may describe your instructional intention, but they do not clearly indicate what learners will be able to demonstrate."
         },
         {
-          "type": "carryover",
+          "type": "considerations",
+          "numbered": false,
           "icon": "check",
-          "title": "Objectives at the course level",
-          "body": [
-            "The same distinction carries down from the Specialization: an objective says what a learner will be able to do, not what the course will cover. At this level it should be something they could show you by the end of this course alone.",
-            "Two to four is usually enough. If an objective only makes sense with the rest of the Specialization behind it, it probably belongs to the Specialization outcome instead."
+          "title": "Check your Course objectives",
+          "intro": "Before moving on, you might consider the following questions.",
+          "items": [
+            {
+              "heading": "Is it observable?",
+              "body": "Could learners demonstrate the objective through something they do, create, analyze, or decide?"
+            },
+            {
+              "heading": "Is it achievable within this Course?",
+              "body": "Can learners reasonably reach the objective through the learning experience contained in this Course?"
+            },
+            {
+              "heading": "Is it meaningful on its own?",
+              "body": "Even within a larger Specialization, does the capability have recognizable value for learners?"
+            },
+            {
+              "heading": "Does it contribute to the Specialization?",
+              "body": "Do the Course objectives collectively move learners toward the larger Specialization outcomes?"
+            }
           ]
+        },
+        {
+          "type": "prose",
+          "icon": "list",
+          "title": "Example: objectives for Course 1",
+          "body": [
+            "For Foundations of Data Analytics for Business, learners might be able to:"
+          ],
+          "bullets": [
+            "Translate a business need into a focused question that can be investigated with data.",
+            "Identify the data needed to investigate a business question.",
+            "Evaluate a dataset for relevance, completeness, and basic quality concerns.",
+            "Prepare data for an introductory business analysis."
+          ],
+          "after": "At this stage, you do not need to determine exactly which videos, readings, activities, or assessments will support each objective. On the Module page, you'll break these larger Course objectives into manageable stages of learning and begin aligning them with opportunities for practice and assessment."
         },
         {
           "type": "templatePreview",
@@ -743,7 +820,8 @@
           ],
           "icon": "list"
         }
-      ]
+      ],
+      "lead": "hero"
     },
     "module": {
       "tier": "module",
