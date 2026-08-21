@@ -558,7 +558,6 @@
       "lede": [
         "A Coursera Course is a focused learning experience designed to help learners develop a meaningful capability they can use beyond the Course.",
         "Courses often work especially well on Coursera when they are modular and self-contained. Learners should be able to understand the purpose of the Course, engage in a meaningful learning experience, and leave able to do something new. This approach also gives a Course the flexibility to be taken independently or included in different learning pathways.",
-        "Some Courses are intentionally part of a progression, and that can be entirely appropriate when later learning genuinely depends on earlier knowledge or skills. The goal is not to eliminate prerequisites or sequencing, but to make those dependencies intentional and clear.",
         "At the Course level, begin with two questions:",
         {
           "bullets": [
@@ -716,23 +715,27 @@
           "numbered": false,
           "icon": "check",
           "title": "Check your Course objectives",
-          "intro": "Before moving on, you might consider the following questions.",
+          "intro": "Before moving on, consider whether each objective is clear, achievable, and meaningful for a Coursera learner.",
           "items": [
             {
               "heading": "Is it observable?",
-              "body": "Could learners demonstrate the objective through something they do, create, analyze, or decide?"
+              "body": "Could learners demonstrate the objective through something they do, create, analyze, evaluate, or decide?"
             },
             {
               "heading": "Is it achievable within this Course?",
-              "body": "Can learners reasonably reach the objective through the learning experience contained in this Course?"
+              "body": "Can learners reasonably reach the objective through the instruction, practice, feedback, and assessment included in the Course?"
             },
             {
-              "heading": "Is it meaningful on its own?",
-              "body": "Even within a larger Specialization, does the capability have recognizable value for learners?"
+              "heading": "Is it meaningful to learners?",
+              "body": "Does the capability have recognizable value beyond completing the Course? Can learners see how they might use it in a professional, academic, or other real-world context?"
             },
             {
-              "heading": "Does it contribute to the Specialization?",
-              "body": "Do the Course objectives collectively move learners toward the larger Specialization outcomes?"
+              "heading": "Is it appropriate for a self-paced online experience?",
+              "body": "Can learners build and demonstrate the capability without depending on live discussion, immediate instructor support, or synchronous participation?"
+            },
+            {
+              "heading": "If this Course is part of a larger learning pathway, does it fit?",
+              "body": "Do the objectives support the broader goals of the Specialization, certificate, or program while still giving the Course a clear purpose of its own?"
             }
           ]
         },
