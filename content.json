@@ -243,7 +243,10 @@
       "title": "Designing a Coursera Specialization",
       "lede": [
         "A Coursera Specialization brings several Courses together into a purposeful learning journey, with each Course helping learners build toward a larger skill or goal.",
-        "Unlike students enrolled in a traditional Duke course, Coursera learners choose whether and when to participate. They may be working, balancing other responsibilities, or taking only one Course within a larger pathway. They are likely to ask: **Is this for me? What will I be able to do? And is it worth the time?**",
+        "Unlike students enrolled in a traditional Duke course, Coursera learners choose whether and when to participate. They may be working, balancing other responsibilities, or taking only one Course within a larger pathway. They are likely to ask:",
+        {
+          "question": "Is this for me? What will I be able to do? And is it worth the time?"
+        },
         "Begin by identifying the learners you hope to reach, the goals they are working toward, and the skills they should develop by the end of the Specialization."
       ],
       "facts": [
@@ -300,7 +303,6 @@
             "label": "Define the goal"
           },
           "title": "Define the goal",
-          "intro": "What is this Specialization helping learners accomplish?",
           "body": [
             "A strong Specialization begins with a clear learner need and a meaningful end goal. Before planning individual Courses, identify who the experience is for, what they are trying to accomplish, and what they should be able to do by the end.",
             "Coursera learners often choose learning based on its relevance, usefulness, and fit with their available time. Make it easy for them to recognize the value of the experience.",
@@ -354,9 +356,8 @@
             "label": "Shape the journey"
           },
           "title": "Shape the journey",
-          "intro": "How should the Courses work together to help learners reach that goal?",
           "body": [
-            "Once the destination is clear, consider the role each Course will play in helping learners get there.",
+            "How should the Courses work together to help learners reach that goal?",
             "Courses may introduce, develop, integrate, or apply different skills. Some Specializations work best as a clear progression in which each Course builds on the one before it. Others may include Courses that are more modular and useful on their own.",
             "There is no single required structure. What matters is that each Course has a distinct purpose and that the relationship among the Courses is intentional and easy for learners to understand."
           ],
@@ -671,7 +672,10 @@
       "title": "Planning a Course",
       "lede": [
         "A Coursera Course offers a focused learning experience that helps learners develop specific skills and achieve a meaningful outcome.",
-        "A helpful place to begin is by defining the Course's distinct contribution: **What should learners be able to do by the end of this Course?**",
+        "A helpful place to begin is by defining the Course's distinct contribution.",
+        {
+          "question": "What should learners be able to do by the end of this Course?"
+        },
         "You can then translate that purpose into a small set of Course-level objectives. These objectives will guide the design of the Modules, where you'll break the larger capabilities into manageable stages and begin aligning them with opportunities for practice and assessment."
       ],
       "facts": [

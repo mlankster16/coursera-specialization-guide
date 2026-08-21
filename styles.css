@@ -2475,3 +2475,21 @@ a.flow-step-card:focus-visible { outline: 3px solid var(--persimmon); outline-of
   border-color: var(--navy);
 }
 .page.tier-spec .flow-row.tracker a.flow-step-card.final.current .flow-step-label { color: var(--navy); }
+
+/* ---------- A question lifted out of the intro prose ---------- */
+.intro-question {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: var(--spec);
+  background: var(--spec-bg);
+  border-left: 3px solid var(--spec);
+  border-radius: 0 8px 8px 0;
+  padding: 13px 18px;
+}
+.intro-question.tier-course { color: var(--course); background: var(--course-bg); border-left-color: var(--course); }
+.intro-question.tier-module { color: var(--module); background: var(--module-bg); border-left-color: var(--module); }
+
+/* The template note now sits under the head rather than inside it. */
+.section-intro.below { margin-bottom: 4px; }

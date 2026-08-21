@@ -406,17 +406,7 @@ function pageHtml(id) {
         ${
           // `lead: "hero"` borrows the Overview's shape: centred title, then the
           // intro inside a white callout rather than running as plain page text.
-          p.lead === 'hero'
-            ? `<section class="intro">${(Array.isArray(p.lede) ? p.lede : [p.lede])
-                .map((t) =>
-                  typeof t === 'string'
-                    ? `<p class="intro-body">${rich(t)}</p>`
-                    : `<ul class="intro-list">${t.bullets
-                        .map((b) => `<li>${esc(b)}</li>`)
-                        .join('')}</ul>`
-                )
-                .join('')}</section>`
-            : ledeHtml(p.lede)
+          p.lead === 'hero' ? heroLedeHtml(p.lede, p.tier) : ledeHtml(p.lede)
         }
         ${p.facts ? factsHtml(p.facts) : ''}
         ${p.factsNote ? `<p class="facts-note">${esc(p.factsNote)}</p>` : ''}
@@ -619,6 +609,23 @@ function nestedBlocksHtml(children, tier) {
     .join('');
 }
 
+/* The hero intro is a small stream too: paragraphs, an optional bullet list, and
+   a question lifted onto its own line where the prose was burying it. */
+function heroLedeHtml(lede, tier) {
+  const items = Array.isArray(lede) ? lede : [lede];
+  const body = items
+    .map((t) => {
+      if (typeof t === 'string') return `<p class="intro-body">${rich(t)}</p>`;
+      if (t.bullets) {
+        return `<ul class="intro-list">${t.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>`;
+      }
+      if (t.question) return `<p class="intro-question tier-${tier}">${rich(t.question)}</p>`;
+      return '';
+    })
+    .join('');
+  return `<section class="intro">${body}</section>`;
+}
+
 /* A lede may be one string or several paragraphs. */
 function ledeHtml(lede) {
   if (!lede) return '';
@@ -800,7 +807,8 @@ function templatePreviewHtml(s, tier) {
     : 'href="#" aria-disabled="true"';
   return `
     <section class="block">
-      ${sectionHeadHtml(s)}
+      ${sectionHeadHtml({ ...s, note: undefined, intro: undefined })}
+      ${s.note ? `<p class="section-intro below">${esc(s.note)}</p>` : ''}
       <div class="tp-page tier-${s.band.tier}">
         <div class="tp-band tier-${s.band.tier}">
           <span class="tp-band-icon">${icon(s.band.icon)}</span>
