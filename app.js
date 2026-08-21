@@ -191,8 +191,8 @@ function openCue(label) {
 function homeSpecHtml(s) {
   return `
     <section class="tier tier-spec">
+      ${s.question ? `<p class="tier-question">${esc(s.question)}</p>` : ''}
       <div class="tier-body spec-body">
-        ${s.question ? `<p class="tier-question">${esc(s.question)}</p>` : ''}
         <button type="button" class="card spec-card" data-goto="specialization">
           <span class="card-top">
             <span class="icon-badge">${icon('certificate')}</span>
