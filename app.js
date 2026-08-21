@@ -622,6 +622,7 @@ function heroLedeHtml(lede, tier) {
       if (t.bullets) {
         return `<ul class="intro-list">${t.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>`;
       }
+      if (t.lead) return `<p class="intro-lead">${rich(t.lead)}</p>`;
       if (t.question) return `<p class="intro-question tier-${tier}">${rich(t.question)}</p>`;
       return '';
     })

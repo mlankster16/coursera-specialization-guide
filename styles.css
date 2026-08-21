@@ -2477,19 +2477,27 @@ a.flow-step-card:focus-visible { outline: 3px solid var(--persimmon); outline-of
 .page.tier-spec .flow-row.tracker a.flow-step-card.final.current .flow-step-label { color: var(--navy); }
 
 /* ---------- A question lifted out of the intro prose ---------- */
+/* No fill: the question reads as emphasis in the flow of the intro rather than
+   as a tinted block sitting inside the callout. */
 .intro-question {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
-  font-size: 1.02rem;
-  line-height: 1.55;
+  font-size: 1.08rem;
+  line-height: 1.5;
   color: var(--spec);
-  background: var(--spec-bg);
-  border-left: 3px solid var(--spec);
-  border-radius: 0 8px 8px 0;
-  padding: 13px 18px;
 }
-.intro-question.tier-course { color: var(--course); background: var(--course-bg); border-left-color: var(--course); }
-.intro-question.tier-module { color: var(--module); background: var(--module-bg); border-left-color: var(--module); }
+.intro-question.tier-course { color: var(--course); }
+.intro-question.tier-module { color: var(--module); }
+
+.intro-lead {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--cast-iron);
+}
+/* the lead-in and its question are a pair, so they sit closer than paragraphs do */
+.intro-lead + .intro-question { margin-top: 5px; }
 
 /* The template note now sits under the head rather than inside it. */
 .section-intro.below { margin-bottom: 4px; }

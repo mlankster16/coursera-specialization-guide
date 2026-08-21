@@ -671,11 +671,13 @@
       "title": "Planning a Course",
       "lede": [
         "A Coursera Course offers a focused learning experience that helps learners develop specific skills and achieve a meaningful outcome.",
-        "A helpful place to begin is by defining the Course's distinct contribution.",
+        {
+          "lead": "Start by defining the Course's purpose."
+        },
         {
           "question": "What should learners be able to do by the end of this Course?"
         },
-        "You can then translate that purpose into a small set of Course-level objectives. These objectives will guide the design of the Modules, where you'll break the larger capabilities into manageable stages and begin aligning them with opportunities for practice and assessment."
+        "Use that answer to write a small set of Course-level objectives. Those objectives will guide the Modules, where you'll break the larger capability into manageable stages and align it with practice and assessment."
       ],
       "facts": [
         {
@@ -876,14 +878,14 @@
             "These questions can help you decide what to include, what to leave out, and how to organize the learning around the Course's purpose. A strong Course is not simply a collection of related topics; each element should help learners develop the knowledge and skills they need to achieve the intended outcomes."
           ],
           "left": {
-            "label": "Rather than asking",
-            "body": "Which topics should this Course cover?"
-          },
-          "right": {
             "label": "You might ask",
             "body": "What knowledge and skills do learners need to achieve the Course objectives?"
           },
-          "emphasis": "right",
+          "right": {
+            "label": "Rather than asking",
+            "body": "Which topics should this Course cover?"
+          },
+          "emphasis": "left",
           "id": "scope",
           "step": {
             "n": 3,
@@ -930,14 +932,14 @@
             "Some subjects are best learned through a sequence. When learners genuinely need knowledge or skills from an earlier Course, make that dependency clear. The goal is not to eliminate prerequisites, but to make Courses as portable and understandable on their own as the learning allows."
           ],
           "left": {
-            "label": "More dependent on a specific sequence",
-            "body": "As you learned in Course 1, you will now build on the framework introduced in Module 3…"
-          },
-          "right": {
             "label": "More modular",
             "body": "This course assumes familiarity with basic spreadsheet formulas and functions."
           },
-          "emphasis": "right",
+          "right": {
+            "label": "More dependent on a specific sequence",
+            "body": "As you learned in Course 1, you will now build on the framework introduced in Module 3…"
+          },
+          "emphasis": "left",
           "id": "standalone",
           "step": {
             "n": 4,
