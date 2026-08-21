@@ -30,14 +30,21 @@
   --time-bg: #EAF6F6;
   --time-line: #BFDFDF;
 
-  --asset: #B4700C;
-  /* --asset carries white text at only 3.99:1, so filled gold surfaces use this
-     darker step instead (5.1:1). Same hue; only used behind white. */
-  --asset-deep: #9C6109;
+  /* One gold, dark enough for both roles: 4.7:1 as text on the gold tint and
+     5.1:1 behind white. The lighter #B4700C failed both. */
+  --asset: #9C6109;
   --asset-bg: #FDF6EA;
   --asset-line: #EFD9AF;
 
   --line: #CBD3E1;
+
+  /* Field placeholders in the template replica. #9AA3B2 sat at 2.25:1 on the
+     module-tinted box; this clears 4.5:1 on every tint they appear over. */
+  --placeholder: #646D7C;
+
+  /* Flow arrows. Decorative and aria-hidden, but --line left them at 1.5:1;
+     this meets the 3:1 bar for graphical indicators. */
+  --connector: #8A93A3;
 
   /* Snapshot boxes, tinted per tier. Each is the deepest of its hue that still
      clears AA for the grey sub-label sitting on it — 4.69x to 4.78x across the
@@ -739,7 +746,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   height: 21px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: var(--asset-deep);
+  background: var(--asset);
   color: var(--white);
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
@@ -1211,7 +1218,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .tp-band.tier-spec   { background: var(--spec); }
 .tp-band.tier-course { background: var(--course); }
 .tp-band.tier-module { background: var(--module); }
-.tp-band.tier-asset  { background: var(--asset-deep); }
+.tp-band.tier-asset  { background: var(--asset); }
 
 .tp-band-icon { display: flex; flex-shrink: 0; color: var(--white); }
 .tp-band-icon .ico { width: 17px; height: 17px; }
@@ -1253,7 +1260,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .tp-page.tier-course .tp-box { background: var(--course-bg); border-color: var(--course-line); }
 .tp-page.tier-module .tp-box { background: var(--module-bg); border-color: var(--module-line); }
 
-.tp-ph { font-size: 0.82rem; color: #9aa3b2; line-height: 1.5; }
+.tp-ph { font-size: 0.82rem; color: var(--placeholder); line-height: 1.5; }
 
 .tp-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
@@ -1286,7 +1293,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 .tp-grid td {
   padding: 7px 9px;
   border: 1px solid var(--hatteras);
-  color: #9aa3b2;
+  color: var(--placeholder);
 }
 .tp-grid td.tp-n { color: var(--graphite); font-weight: 700; }
 .tp-grid.tier-asset th { background: var(--asset-bg); color: var(--asset); border-color: var(--asset-line); }
@@ -2237,7 +2244,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   flex-wrap: wrap;
   margin-top: 20px;
 }
-.flow-sep { display: flex; align-items: center; color: var(--line); font-size: 1.1rem; font-weight: 700; }
+.flow-sep { display: flex; align-items: center; color: var(--connector); font-size: 1.1rem; font-weight: 700; }
 
 .flow-step-card {
   flex: 1;
@@ -2264,7 +2271,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 
 /* ---------- Stage flow, down ---------- */
 .flow-stack { display: flex; flex-direction: column; margin-top: 20px; }
-.flow-down { text-align: center; color: var(--line); font-size: 1.2rem; font-weight: 700; padding: 6px 0; }
+.flow-down { text-align: center; color: var(--connector); font-size: 1.2rem; font-weight: 700; padding: 6px 0; }
 
 .flow-stage {
   background: var(--white);
@@ -2515,7 +2522,7 @@ a.flow-step-card:focus-visible { outline: 3px solid var(--persimmon); outline-of
 .tier-spec .tier-question { color: var(--spec); }
 .tier-course .tier-question { color: var(--course); }
 .tier-module .tier-question { color: var(--module); }
-.tier-asset .tier-question { color: var(--asset-deep); }
+.tier-asset .tier-question { color: var(--asset); }
 
 /* The intro callout now holds more than one paragraph. */
 .intro-body + .intro-body { margin-top: 13px; }
