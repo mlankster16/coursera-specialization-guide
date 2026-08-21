@@ -556,8 +556,7 @@
       "label": "COURSE",
       "title": "Planning a Course",
       "lede": [
-        "A Coursera Course is a focused learning experience designed to help learners develop a meaningful capability they can use beyond the Course.",
-        "Courses often work especially well on Coursera when they are modular and self-contained. Learners should be able to understand the purpose of the Course, engage in a meaningful learning experience, and leave able to do something new. This approach also gives a Course the flexibility to be taken independently or included in different learning pathways.",
+        "A Coursera Course is a focused learning experience designed to help learners develop a meaningful skill or capability they can use beyond the Course.",
         "At the Course level, begin with two questions:",
         {
           "bullets": [
@@ -565,7 +564,7 @@
             "What should learners be able to do when they finish it?"
           ]
         },
-        "At this stage, you do not need to determine exactly which videos, readings, activities, or assessments will support each objective. On the Module page, you'll break these larger Course objectives into manageable stages of learning and begin aligning them with opportunities for practice and assessment."
+        "These questions will help you determine what belongs in the Course, what can be left out, and how to organize the learning around a clear purpose. At this stage, you do not need to determine exactly which videos, readings, activities, or assessments will support each objective. On the Module page, you'll break these larger Course objectives into manageable stages of learning and begin aligning them with opportunities for practice and assessment."
       ],
       "facts": [
         {
@@ -635,11 +634,10 @@
         {
           "type": "sidebyside",
           "icon": "layers",
-          "title": "Design for modularity when it serves the learning",
+          "title": "Design Courses to stand on their own",
           "body": [
-            "Whenever possible, give a Course enough context to make sense on its own. Learners should not need to understand the structure of the entire Specialization to know what the Course is for or why the learning matters.",
-            "This can also make a Course more flexible. It may be taken independently, included in another learning pathway, or reused in a future Specialization.",
-            "That does not mean every Course needs to be independent of every other Course. When prior knowledge is genuinely necessary, describe that requirement clearly and design the sequence accordingly."
+            "Coursera Courses often work best when they are modular and self-contained. When possible, give learners enough context to understand what the Course is for, why the learning matters, and how to succeed without needing to complete another Course first. This makes the Course more useful to learners who take it independently and gives it greater flexibility within different learning pathways.",
+            "Some subjects, however, are best learned through a sequence. If learners genuinely need knowledge or skills from one Course before they can succeed in another, it is appropriate to design the Courses as a progression. Make those dependencies clear, and ensure that each Course still has a meaningful purpose and achievable outcomes of its own."
           ],
           "left": {
             "label": "More dependent on a specific sequence",
