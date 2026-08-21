@@ -778,58 +778,148 @@
               "kind": "field",
               "label": "Course title",
               "ph": "[ title ]",
-              "hint": "Choose a clear, compelling title that helps the right learners discover your Course."
+              "hint": "Choose a clear, compelling title that helps the right learners discover your Course.",
+              "advice": {
+                "best": "Write for the learner deciding whether this Course is relevant to them. A strong title makes the topic and learner value immediately clear while giving the Course a distinct purpose. Favor specific, familiar language over academic numbering or internal terminology.",
+                "example": {
+                  "swap": {
+                    "instead": "Business Analytics I",
+                    "consider": "Foundations of Data Analytics for Business"
+                  }
+                }
+              }
             },
             {
               "kind": "field",
               "label": "Course description",
               "ph": "[ learner-facing description ]",
               "tall": true,
-              "hint": "Draft a learner-friendly 2-3 sentence summary of the content and learning outcomes. Highlight the main value or application learners will get from the Course."
+              "hint": "Draft a learner-friendly 2-3 sentence summary of the content and learning outcomes. Highlight the main value or application learners will get from the Course.",
+              "advice": {
+                "best": "Describe the Course from the learner's perspective. Lead with what learners will gain or be able to do, rather than with a list of topics. Provide enough context for the Course to make sense on its own, even when it is part of a larger learning pathway.",
+                "example": {
+                  "paras": [
+                    "Learn how to turn a business need into a question that data can help answer. You'll practice identifying useful data, evaluating its relevance and quality, and preparing data for an introductory analysis using realistic business examples."
+                  ]
+                }
+              }
             },
             {
               "kind": "pair",
               "left": {
                 "label": "Estimated time to complete",
-                "ph": "[ 2–8 hours ]"
+                "ph": "[ 2–8 hours ]",
+                "advice": {
+                  "best": "Estimate the learner's total experience, including videos, readings, practice, activities, and assessments — not just instructional content. Keep the scope realistic for a self-paced Coursera Course that learners may complete in shorter sessions around other responsibilities.",
+                  "example": {
+                    "paras": [
+                      "Approximately 7 hours, including instruction, guided practice, assessments, and applied activities."
+                    ]
+                  }
+                }
               },
               "right": {
                 "label": "Difficulty level",
-                "ph": "[ Beginner / Intermediate / Advanced ]"
+                "ph": "[ Beginner / Intermediate / Advanced ]",
+                "advice": {
+                  "best": "Choose the level based on the knowledge, skills, and independence learners need to succeed, not on how sophisticated the subject sounds. A complex topic can still be appropriate for beginners when foundational concepts and sufficient support are built into the Course.",
+                  "example": {
+                    "lead": "Beginner",
+                    "paras": [
+                      "No prior data analytics or programming experience is required. Learners will be introduced to foundational concepts and guided through their first data-focused business tasks."
+                    ]
+                  }
+                }
               }
             },
             {
               "kind": "pair",
               "left": {
                 "label": "Primary domain / sub-domain",
-                "ph": "[ domain / sub-domain ]"
+                "ph": "[ domain / sub-domain ]",
+                "advice": {
+                  "best": "Choose the category that most directly reflects the Course's primary subject and learner value. Use the most specific appropriate Coursera domain rather than trying to represent every discipline the Course touches.",
+                  "example": {
+                    "lead": "Business → Business Analytics"
+                  }
+                }
               },
               "right": {
                 "label": "Secondary domain / sub-domain",
-                "ph": "[ domain / sub-domain ]"
+                "ph": "[ domain / sub-domain ]",
+                "advice": {
+                  "best": "Use a secondary domain when another area meaningfully represents the Course. It should describe a substantial part of the learning experience, not simply broaden discoverability.",
+                  "example": {
+                    "lead": "Data Science → Data Analysis"
+                  }
+                }
               }
             },
             {
               "kind": "field",
               "label": "Tagged skills",
               "ph": "[ five course-specific skills ]",
-              "hint": "Skill tags enhance Course discoverability."
+              "hint": "Skill tags enhance Course discoverability.",
+              "advice": {
+                "best": "Choose specific skills learners will actively practice or demonstrate in this Course. Avoid broad subject labels, and select tags that align closely with the Course objectives, activities, and assessments.",
+                "example": {
+                  "swap": {
+                    "instead": "Business · Data · Analytics",
+                    "consider": "Business Problem Framing · Data Requirements Analysis · Data Quality Assessment · Spreadsheet Analysis · Exploratory Data Analysis"
+                  }
+                }
+              }
             },
             {
               "kind": "field",
               "label": "Recommended background",
-              "ph": "[ what learners should know before starting ]"
+              "ph": "[ what learners should know before starting ]",
+              "advice": {
+                "best": "Include only the knowledge or experience learners actually need before beginning the Course. Distinguish true prerequisites from experience that may simply be helpful, and avoid creating unnecessary barriers for otherwise appropriate learners.",
+                "example": {
+                  "paras": [
+                    "No prior experience with data analytics or programming is required. Basic familiarity with spreadsheets and workplace math will be helpful."
+                  ]
+                }
+              }
             },
             {
               "kind": "field",
               "label": "What learners will learn",
               "ph": "1. [ objective ]\n2. [ objective ]\n3. [ objective, optional ]\n4. [ objective, optional ]",
-              "hint": "Write 2-4 actionable, measurable learning objectives that describe what learners will be able to do by the end of the Course."
+              "hint": "Write 2-4 actionable, measurable learning objectives that describe what learners will be able to do by the end of the Course.",
+              "advice": {
+                "best": [
+                  "Write 2–4 observable, measurable Course objectives that describe meaningful capabilities learners should be able to demonstrate by the end of the Course. Objectives should be achievable within the Course and valuable to learners beyond simply completing it.",
+                  "Begin with action verbs such as analyze, apply, create, evaluate, identify, interpret, recommend, or communicate. Verbs such as understand, learn, or become familiar with may describe your instructional intention, but they do not clearly indicate what learners will be able to demonstrate."
+                ],
+                "example": {
+                  "lead": "By the end of the Course, learners will be able to:",
+                  "bullets": [
+                    "Translate a business need into a focused question that can be investigated with data.",
+                    "Identify the data needed to investigate a business question.",
+                    "Evaluate a dataset for relevance, completeness, and basic quality concerns.",
+                    "Prepare data for an introductory business analysis."
+                  ],
+                  "note": "These objectives give the Course a clear purpose and provide a foundation for planning Module-level objectives, activities, and assessments."
+                }
+              }
             },
             {
               "kind": "field",
               "label": "Instructor information and bio source link",
-              "ph": "[ bio text, or link to build-ready bio and headshot ]"
+              "ph": "[ bio text, or link to build-ready bio and headshot ]",
+              "advice": {
+                "best": [
+                  "Provide concise, learner-facing information that establishes the instructor's relevant expertise and connection to the Course topic. Prioritize experience that helps learners understand why this instructor is well positioned to guide the learning experience.",
+                  "If an approved faculty bio and headshot already exist, provide a build-ready source link rather than recreating the material."
+                ],
+                "example": {
+                  "paras": [
+                    "Jordan Lee is a faculty member specializing in business analytics and evidence-informed decision-making. Their teaching and research focus on helping organizations use data to frame questions, evaluate performance, and make more informed decisions."
+                  ]
+                }
+              }
             }
           ],
           "icon": "list"

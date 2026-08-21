@@ -465,7 +465,9 @@ function adviceHtml(label, advice) {
     <div class="adv-pop" id="${id}" popover>
       <p class="adv-field">${esc(label)}</p>
       <p class="adv-kicker">Best practice</p>
-      <p class="adv-p">${esc(advice.best)}</p>
+      ${(Array.isArray(advice.best) ? advice.best : [advice.best])
+        .map((t) => `<p class="adv-p">${esc(t)}</p>`)
+        .join('')}
       ${adviceExampleHtml(advice.example)}
     </div>`;
 }
