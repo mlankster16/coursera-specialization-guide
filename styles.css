@@ -2382,6 +2382,9 @@ a.flow-step-card:focus-visible { outline: 3px solid var(--persimmon); outline-of
   padding: 9px 11px;
   text-align: left;
   align-items: flex-start;
+  /* cards stretch to a shared height, so centre the contents — otherwise a label
+     that wraps to two lines leaves the others sitting high in their cards */
+  justify-content: center;
   background: var(--white);
   border: 1px solid var(--hatteras);
   border-top-width: 1px;

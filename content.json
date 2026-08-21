@@ -613,7 +613,6 @@
               "n": 5,
               "label": "Complete the plan",
               "href": "#course/template",
-              "icon": "certificate",
               "final": true
             }
           ]
@@ -715,7 +714,6 @@
           "numbered": false,
           "icon": "check",
           "title": "Check your objectives",
-          "intro": "Before moving on, consider whether each objective is clear, achievable, and meaningful for a Coursera learner.",
           "items": [
             {
               "heading": "Is it observable?",
@@ -840,17 +838,17 @@
                 {
                   "n": 1,
                   "type": "Foundations of Data Analytics for Business",
-                  "what": "Learners can frame a business question and identify the data needed to investigate it."
+                  "what": "Learners will be able to frame a business question and identify the data needed to investigate it."
                 },
                 {
                   "n": 2,
                   "type": "Analyzing and Visualizing Business Data",
-                  "what": "Learners can analyze a dataset and create visualizations that reveal meaningful patterns and trends."
+                  "what": "Learners will be able to analyze a dataset and create visualizations that reveal meaningful patterns and trends."
                 },
                 {
                   "n": 3,
                   "type": "Communicating Data-Driven Recommendations",
-                  "what": "Learners can develop and communicate an evidence-informed recommendation for a business audience."
+                  "what": "Learners will be able to develop and communicate an evidence-informed recommendation for a business audience."
                 }
               ],
               "footnote": "Each Course contributes something meaningful on its own while building toward the larger Specialization goal.",
