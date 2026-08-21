@@ -664,7 +664,9 @@
       "title": "Designing a Coursera Course",
       "lede": [
         "A Coursera Course offers a focused learning experience that helps learners develop specific skills and achieve a meaningful outcome.",
-        "Start by defining the Course's purpose: **What should learners be able to do by the end of this Course?**",
+        {
+          "rule": "Start by defining the Course's purpose: **What should learners be able to do by the end of this Course?**"
+        },
         "Use that answer to write a small set of Course-level objectives. Those objectives will guide the Modules, where you'll break the larger capability into manageable stages and align it with practice and assessment."
       ],
       "facts": [
@@ -1102,7 +1104,8 @@
           }
         }
       ],
-      "lead": "hero"
+      "lead": "hero",
+      "introStyle": "bare"
     },
     "module": {
       "tier": "module",

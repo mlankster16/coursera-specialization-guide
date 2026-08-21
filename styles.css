@@ -2526,3 +2526,30 @@ a.flow-step-card:focus-visible { outline: 3px solid var(--persimmon); outline-of
 
 /* The intro callout now holds more than one paragraph. */
 .intro-body + .intro-body { margin-top: 13px; }
+
+/* ---------- Bare intro: no card, text sits on the page ---------- */
+.intro.bare {
+  background: none;
+  border: none;
+  border-left: none;
+  border-radius: 0;
+  padding: 0;
+}
+.page-head-hero .intro.bare { margin-top: 22px; }
+.intro.bare .intro-body { font-size: 1.06rem; line-height: 1.7; color: var(--cast-iron); }
+
+/* A line set off by a rule rather than a fill. */
+.intro-rule {
+  border-left: 3px solid var(--spec);
+  padding: 2px 0 2px 18px;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--graphite);
+}
+.intro-rule.tier-course { border-left-color: var(--course); }
+.intro-rule.tier-module { border-left-color: var(--module); }
+.intro-rule strong { color: var(--navy); font-weight: 700; }
+
+/* the ruled line earns a little more air than paragraph-to-paragraph spacing */
+.page-head-hero .intro.bare > * + .intro-rule,
+.page-head-hero .intro.bare > .intro-rule + * { margin-top: 20px; }

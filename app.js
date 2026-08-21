@@ -409,7 +409,7 @@ function pageHtml(id) {
         ${
           // `lead: "hero"` borrows the Overview's shape: centred title, then the
           // intro inside a white callout rather than running as plain page text.
-          p.lead === 'hero' ? heroLedeHtml(p.lede, p.tier) : ledeHtml(p.lede)
+          p.lead === 'hero' ? heroLedeHtml(p.lede, p.tier, p.introStyle) : ledeHtml(p.lede)
         }
         ${p.facts ? factsHtml(p.facts) : ''}
         ${p.factsNote ? `<p class="facts-note">${esc(p.factsNote)}</p>` : ''}
@@ -614,7 +614,7 @@ function nestedBlocksHtml(children, tier) {
 
 /* The hero intro is a small stream too: paragraphs, an optional bullet list, and
    a question lifted onto its own line where the prose was burying it. */
-function heroLedeHtml(lede, tier) {
+function heroLedeHtml(lede, tier, style) {
   const items = Array.isArray(lede) ? lede : [lede];
   const body = items
     .map((t) => {
@@ -622,12 +622,14 @@ function heroLedeHtml(lede, tier) {
       if (t.bullets) {
         return `<ul class="intro-list">${t.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>`;
       }
+      // a line set off by a tier-coloured rule rather than a filled box
+      if (t.rule) return `<p class="intro-rule tier-${tier}">${rich(t.rule)}</p>`;
       if (t.lead) return `<p class="intro-lead">${rich(t.lead)}</p>`;
       if (t.question) return `<p class="intro-question tier-${tier}">${rich(t.question)}</p>`;
       return '';
     })
     .join('');
-  return `<section class="intro">${body}</section>`;
+  return `<section class="intro${style === 'bare' ? ' bare' : ''}">${body}</section>`;
 }
 
 /* A lede may be one string or several paragraphs. */
