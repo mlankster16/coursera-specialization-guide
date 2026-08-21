@@ -583,7 +583,8 @@ function wireAdvice() {
    section uses, so callers don't emit it a second time. */
 function sectionHeadHtml(s) {
   if (!s.title) return '';
-  const title = `<h2 class="section-title">${esc(s.title)}</h2>`;
+  const marker = s.variant === 'example' ? '<p class="example-marker">Example</p>' : '';
+  const title = `${marker}<h2 class="section-title">${esc(s.title)}</h2>`;
   const sub = s.intro || s.note;
   const intro = sub ? `<p class="section-intro">${esc(sub)}</p>` : '';
 

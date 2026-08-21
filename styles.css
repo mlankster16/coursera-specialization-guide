@@ -2311,9 +2311,9 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 
 /* ---------- Example cards ---------- */
 .block-example {
-  background: var(--whisper);
+  background: var(--white);
   box-shadow: none;
-  border: 1px solid var(--hatteras);
+  border: 1px solid var(--line);
 }
 .block-eyebrow {
   font-family: 'Open Sans', Arial, sans-serif;
@@ -2324,12 +2324,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
   color: var(--graphite);
   margin-bottom: 5px;
 }
-/* Panels and lists inside an example need to lift off the tinted card */
-.block-example .sbs-panel,
-.block-example .anchor-note,
-.block-example .example-item { background: var(--white); }
-.block-example .sbs-panel.emphasis.tier-course { background: var(--course-bg); }
-.block-example .example-list.tier-course .example-item { background: var(--course-bg); }
+/* On a white example card the inner panels keep their normal tints. */
 
 /* ---------- Step tracker ---------- */
 .flow-row.tracker { margin-top: 0; gap: 6px; }
@@ -2442,3 +2437,14 @@ a.flow-step-card:focus-visible { outline: 3px solid var(--persimmon); outline-of
 .nested-block .compare-icon { width: 36px; height: 36px; }
 .nested-block .compare-icon .ico { width: 19px; height: 19px; }
 .nested-block .section-title { font-size: 1.12rem; }
+
+
+.example-marker {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  margin-bottom: 4px;
+}

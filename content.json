@@ -558,9 +558,8 @@
       "title": "Planning a Course",
       "lede": [
         "A Coursera Course is a focused learning experience that helps learners develop a specific set of skills or knowledge they can use beyond the Course.",
-        "A helpful place to begin is by defining the Course's distinct contribution: **What should learners be able to do or know after completing this Course that they could not do before?**",
-        "You can then translate that purpose into a small set of Course-level objectives. These objectives will guide the design of the Modules, where you'll break the larger capabilities into manageable stages and begin aligning them with opportunities for practice and assessment.",
-        "If the Course is part of a Specialization or learning pathway, consider how it supports the larger sequence. It might introduce, develop, integrate, or apply skills, but it should still have a clear purpose and meaningful outcomes of its own."
+        "A helpful place to begin is by defining the Course's distinct contribution: **What should learners be able to do by the end of this Course?**",
+        "You can then translate that purpose into a small set of Course-level objectives. These objectives will guide the design of the Modules, where you'll break the larger capabilities into manageable stages and begin aligning them with opportunities for practice and assessment."
       ],
       "facts": [
         {
@@ -592,27 +591,27 @@
           "steps": [
             {
               "n": 1,
-              "label": "Define",
+              "label": "Write objectives",
               "href": "#course/objectives"
             },
             {
               "n": 2,
-              "label": "Check",
+              "label": "Check objectives",
               "href": "#course/check"
             },
             {
               "n": 3,
-              "label": "Use",
+              "label": "Focus the scope",
               "href": "#course/scope"
             },
             {
               "n": 4,
-              "label": "Design",
+              "label": "Design for flexibility",
               "href": "#course/standalone"
             },
             {
               "n": 5,
-              "label": "Fill in template",
+              "label": "Complete the plan",
               "href": "#course/template",
               "icon": "certificate",
               "final": true
@@ -623,9 +622,9 @@
           "type": "ladder",
           "id": "objectives",
           "icon": "star",
-          "title": "Define what learners will be able to do",
+          "title": "Write Course objectives",
           "body": [
-            "Once the Course has a clear purpose, translate that purpose into 2–4 course-level learning objectives. A strong Course objective describes something learners can demonstrate by the end of the Course. It should be narrower than the overall Specialization outcome, while still broad enough for several Modules to contribute to its development."
+            "Once the Course has a clear purpose, translate that purpose into 2–4 course-level learning objectives. A strong Course objective describes something learners can demonstrate by the end of the Course. It should be broad enough for several Modules to contribute to its development, while still being achievable within the Course itself."
           ],
           "headers": [
             "Level",
@@ -649,7 +648,7 @@
               "example": "Evaluate the quality of a dataset"
             },
             {
-              "term": "Course-level capability",
+              "term": "Course-level objective",
               "gloss": "What learners can do in a meaningful context",
               "example": "Evaluate whether available data is appropriate for investigating a business question"
             }
@@ -679,7 +678,7 @@
           "weakNote": "They may describe your instructional intention, but they do not clearly indicate what learners will be able to demonstrate.",
           "step": {
             "n": 1,
-            "label": "Define"
+            "label": "Write objectives"
           },
           "children": [
             {
@@ -687,7 +686,7 @@
               "icon": "list",
               "title": "Objectives for a sample Course",
               "body": [
-                "For Foundations of Data Analytics for Business, learners might be able to:"
+                "For Foundations of Data Analytics for Business, learners will be able to:"
               ],
               "bullets": [
                 {
@@ -715,7 +714,7 @@
           "type": "considerations",
           "numbered": false,
           "icon": "check",
-          "title": "Check your Course objectives",
+          "title": "Check your objectives",
           "intro": "Before moving on, consider whether each objective is clear, achievable, and meaningful for a Coursera learner.",
           "items": [
             {
@@ -743,13 +742,13 @@
           "id": "check",
           "step": {
             "n": 2,
-            "label": "Check"
+            "label": "Check objectives"
           }
         },
         {
           "type": "sidebyside",
           "icon": "check",
-          "title": "Use the Course objectives to guide your design",
+          "title": "Focus the Course scope",
           "body": [
             "Now that you've checked your objectives, use them to guide decisions about the Course's scope.",
             "For each topic, resource, or activity, ask:",
@@ -757,8 +756,7 @@
               "bullets": [
                 "What knowledge or skills will learners gain from this?",
                 "Will they need it to achieve the Course objectives?",
-                "Will it help them practice or demonstrate what they should be able to do?",
-                "What could learners reasonably do without it?"
+                "Will it help them practice or demonstrate what they should be able to do?"
               ]
             },
             "These questions can help you decide what to include, what to leave out, and how to organize the learning around the Course's purpose. A strong Course is not simply a collection of related topics; each element should help learners develop the knowledge and skills they need to achieve the intended outcomes."
@@ -775,7 +773,7 @@
           "id": "scope",
           "step": {
             "n": 3,
-            "label": "Use"
+            "label": "Focus the scope"
           },
           "children": [
             {
@@ -812,7 +810,7 @@
         {
           "type": "sidebyside",
           "icon": "layers",
-          "title": "Design Courses to stand on their own",
+          "title": "Design for flexibility",
           "body": [
             "Coursera Courses often work best when they are modular and self-contained. When possible, give learners enough context to understand what the Course is for, why the learning matters, and how to succeed without needing to complete another Course first. This makes the Course more useful to learners who take it independently and gives it greater flexibility within different learning pathways.",
             "Some subjects, however, are best learned through a sequence. If learners genuinely need knowledge or skills from one Course before they can succeed in another, it is appropriate to design the Courses as a progression. Make those dependencies clear, and ensure that each Course still has a meaningful purpose and achievable outcomes of its own."
@@ -829,7 +827,7 @@
           "id": "standalone",
           "step": {
             "n": 4,
-            "label": "Design"
+            "label": "Design for flexibility"
           },
           "children": [
             {
@@ -862,7 +860,7 @@
         },
         {
           "type": "templatePreview",
-          "title": "What you'll fill in",
+          "title": "Complete your Course plan",
           "note": "Use this page to work through the decisions, then record them in the Design Document. This section repeats for each course.",
           "band": {
             "tier": "course",
@@ -1023,7 +1021,7 @@
           "id": "template",
           "step": {
             "n": 5,
-            "label": "Fill in template"
+            "label": "Complete the plan"
           }
         }
       ],
