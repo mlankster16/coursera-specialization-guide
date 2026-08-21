@@ -596,7 +596,7 @@
           "icon": "star",
           "title": "Give each Course a clear purpose",
           "body": [
-            "A strong Course does more than cover a specific topic or subject. It helps learners develop a specific, meaningful capability they can use by the end of the experience. The answer can help you decide what belongs in the Course, what might be left out, and how to organize the learning around a clear purpose."
+            "A strong Course does more than cover a topic or subject. It helps learners develop a specific, meaningful capability they can use by the end of the experience. The answer can help you decide what belongs in the Course, what might be left out, and how to organize the learning around a clear purpose."
           ],
           "left": {
             "label": "Rather than asking",
@@ -657,7 +657,9 @@
           "id": "objectives",
           "icon": "star",
           "title": "Define what learners will be able to do",
-          "intro": "Once the Course has a clear purpose, translate that purpose into 2–4 course-level learning objectives. A strong Course objective describes something learners can demonstrate by the end of the Course. It should be narrower than the overall Specialization outcome, while still broad enough for several Modules to contribute to its development.",
+          "body": [
+            "Once the Course has a clear purpose, translate that purpose into 2–4 course-level learning objectives. A strong Course objective describes something learners can demonstrate by the end of the Course. It should be narrower than the overall Specialization outcome, while still broad enough for several Modules to contribute to its development."
+          ],
           "headers": [
             "Level",
             "Focus",

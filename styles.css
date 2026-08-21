@@ -2041,7 +2041,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 }
 
 /* ---------- Bulleted list inside a prose section ---------- */
-.prose-list { margin: 4px 0 0 4px; list-style: none; }
+.prose-list { margin: 12px 0 0 4px; list-style: none; }
 .prose-list li {
   position: relative;
   padding-left: 18px;
@@ -2084,3 +2084,12 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 28px 80px; }
 
 /* The bolded action verb that opens an objective. */
 .prose-list strong { color: var(--course); font-weight: 700; }
+
+
+/* A title that is not inside an icon-badge head has no .compare-head margin to
+   sit on, so it needs its own gap. */
+.block > .section-title { margin-bottom: 14px; }
+
+/* Body copy introducing a ladder or a table sits closer to it than to the
+   heading above. */
+.block-p + .ladder { margin-top: 14px; }

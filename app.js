@@ -559,6 +559,7 @@ function ladderHtml(s) {
   return `
     <section class="block">
       ${sectionHeadHtml(s)}
+      ${(s.body || []).map((b) => `<p class="block-p">${esc(b)}</p>`).join('')}
       <div class="ladder">
         ${
           s.headers
@@ -848,7 +849,7 @@ function sectionBody(s, tier) {
     case 'prose':
       return `
         <section class="block">
-          <h2 class="section-title">${esc(s.title)}</h2>
+          ${sectionHeadHtml(s)}
           ${(s.body || []).map((b) => `<p class="block-p">${esc(b)}</p>`).join('')}
           ${
             s.bullets && s.bullets.length
