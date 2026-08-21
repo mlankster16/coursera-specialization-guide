@@ -733,22 +733,110 @@ function templatePreviewHtml(s, tier) {
     </section>`;
 }
 
-/* Body copy that may interleave paragraphs and bullet lists, the same shape the
-   hero lede accepts. A bullet may lead with a bolded word. */
+/* Body copy as a stream of blocks. A plain string is a paragraph; an object
+   selects a shape. Keeping these in one array lets a section interleave prose,
+   lists, callouts, verb strips and tables in whatever order the writing needs,
+   rather than fixing the order in the renderer. */
 function bodyBlocksHtml(items) {
   return (items || [])
-    .map((t) =>
-      typeof t === 'string'
-        ? `<p class="block-p">${rich(t)}</p>`
-        : `<ul class="prose-list">${t.bullets
-            .map((b) =>
-              typeof b === 'string'
-                ? `<li>${rich(b)}</li>`
-                : `<li><strong>${esc(b.bold)}</strong> ${esc(b.rest)}</li>`
-            )
-            .join('')}</ul>`
-    )
+    .map((t) => {
+      if (typeof t === 'string') return `<p class="block-p">${rich(t)}</p>`;
+
+      if (t.bullets) {
+        return `<ul class="prose-list">${t.bullets
+          .map((b) =>
+            typeof b === 'string'
+              ? `<li>${rich(b)}</li>`
+              : `<li><strong>${esc(b.bold)}</strong> ${esc(b.rest)}</li>`
+          )
+          .join('')}</ul>`;
+      }
+
+      // A question or fixed reference the surrounding prose turns on
+      if (t.anchor) {
+        return `
+          <div class="anchor-note">
+            ${t.anchor.label ? `<p class="anchor-note-label">${esc(t.anchor.label)}</p>` : ''}
+            <p class="anchor-note-body">${rich(t.anchor.body)}</p>
+          </div>`;
+      }
+
+      if (t.verbs) {
+        return `
+          <div class="chips">
+            ${t.verbs.label ? `<p class="chips-label">${esc(t.verbs.label)}</p>` : ''}
+            <p class="chips-list">${t.verbs.items.map(esc).join(' · ')}</p>
+          </div>`;
+      }
+
+      if (t.table) {
+        return `
+          <div class="body-table-wrap">
+            <table class="body-table">
+              <thead><tr>${t.table.headers.map((h) => `<th>${esc(h)}</th>`).join('')}</tr></thead>
+              <tbody>${t.table.rows
+                .map((r) => `<tr>${r.map((c) => `<td>${rich(c)}</td>`).join('')}</tr>`)
+                .join('')}</tbody>
+            </table>
+          </div>`;
+      }
+
+      return '';
+    })
     .join('');
+}
+
+/* ---------- Stage flow ----------
+   `row` for a compact progression, each stage optionally paired with a caption.
+   `column` when each stage carries its own items, as in a worked example. */
+function stepsHtml(s, tier) {
+  const t = s.tier || tier;
+  const row = () => `
+    <div class="flow-row">
+      ${s.steps
+        .map(
+          (st, i) => `
+        ${i ? '<span class="flow-sep" aria-hidden="true">&rarr;</span>' : ''}
+        <div class="flow-step-card tier-${t}">
+          <span class="flow-step-label">${esc(st.label)}</span>
+          ${st.caption ? `<span class="flow-step-caption">${esc(st.caption)}</span>` : ''}
+        </div>`
+        )
+        .join('')}
+    </div>`;
+  const column = () => `
+    <div class="flow-stack">
+      ${s.steps
+        .map(
+          (st, i) => `
+        ${i ? '<span class="flow-down" aria-hidden="true">&darr;</span>' : ''}
+        <div class="flow-stage tier-${t}">
+          <p class="flow-stage-label">${esc(st.label)}</p>
+          ${st.caption ? `<p class="flow-stage-caption">${rich(st.caption)}</p>` : ''}
+          ${
+            st.items
+              ? `<div class="flow-items">${st.items
+                  .map(
+                    (it) => `
+                  <div class="flow-item">
+                    <span class="flow-item-label">${esc(it.label)}</span>
+                    <span class="flow-item-body">${rich(it.body)}</span>
+                  </div>`
+                  )
+                  .join('')}</div>`
+              : ''
+          }
+        </div>`
+        )
+        .join('')}
+    </div>`;
+  return `
+    <section class="block">
+      ${sectionHeadHtml(s)}
+      ${bodyBlocksHtml(s.body)}
+      ${s.orientation === 'column' ? column() : row()}
+      ${s.after ? `<p class="block-p block-after">${rich(s.after)}</p>` : ''}
+    </section>`;
 }
 
 /* ---------- Two panels, side by side ----------
@@ -891,6 +979,9 @@ function sectionBody(s, tier) {
     case 'sidebyside':
       return sideBySideHtml(s, tier);
 
+    case 'steps':
+      return stepsHtml(s, tier);
+
     case 'prose':
       return `
         <section class="block">
@@ -907,7 +998,7 @@ function sectionBody(s, tier) {
                   .join('')}</ul>`
               : ''
           }
-          ${s.after ? `<p class="block-p block-after">${esc(s.after)}</p>` : ''}
+          ${s.after ? `<p class="block-p block-after">${rich(s.after)}</p>` : ''}
           ${
             s.tips && s.tips.length
               ? `<p class="tips-label">Keep in mind</p>

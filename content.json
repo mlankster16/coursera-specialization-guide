@@ -558,7 +558,7 @@
       "title": "Planning a Course",
       "lede": [
         "A Coursera Course is a focused learning experience that helps learners develop a specific set of skills or knowledge they can use beyond the Course.",
-        "A helpful place to begin is by defining the Course's **distinct contribution**: **What should learners be able to do or know after completing this Course that they could not do before?**",
+        "A helpful place to begin is by defining the Course's distinct contribution: **What should learners be able to do or know after completing this Course that they could not do before?**",
         "You can then translate that purpose into a small set of Course-level objectives. These objectives will guide the design of the Modules, where you'll break the larger capabilities into manageable stages and begin aligning them with opportunities for practice and assessment.",
         "If the Course is part of a Specialization or learning pathway, consider how it supports the larger sequence. It might introduce, develop, integrate, or apply skills, but it should still have a clear purpose and meaningful outcomes of its own."
       ],
@@ -964,8 +964,23 @@
     "module": {
       "tier": "module",
       "label": "MODULE",
-      "title": "Planning a module",
-      "lede": "A module is one focused stretch of a course — a single skill or theme, taught from start to finish. Most of the design work happens at this level.",
+      "title": "Designing a Coursera Module",
+      "lede": [
+        "A Module is a focused part of a Course that helps learners move from encountering a new idea to using it themselves. It typically includes some combination of explanation, examples, practice, feedback, and assessment.",
+        "In a face-to-face course, you can adjust your explanation when learners look confused, answer questions as they arise, and provide clarification in the moment. In an asynchronous Coursera Course, learners move through the experience on their own and may not have an instructor or classmate available when a question arises.",
+        "A well-designed Module builds the necessary structure and support into the learning experience. Learners should be able to understand:",
+        {
+          "bullets": [
+            "What are they trying to do?",
+            "Why does it matter?",
+            "What do they need to know first?",
+            "Where can they try it?",
+            "How will they know whether they are on the right track?",
+            "What can they do if they get stuck?"
+          ]
+        },
+        "This does not mean eliminating challenge or anticipating every possible question. It means giving learners a clear path forward."
+      ],
       "facts": [
         {
           "icon": "star",
@@ -990,82 +1005,441 @@
       ],
       "sections": [
         {
-          "type": "sequence",
-          "title": "Example: a first module's opening sequence",
-          "note": "A first module, item by item. What makes a module engaging is variety and frequent practice: notice how the formats alternate rather than defaulting to video for everything, and how learners get to try the skill well before the graded quiz. It also teaches from item 1 — there's no separate syllabus lesson.",
-          "items": [
+          "type": "steps",
+          "icon": "list",
+          "title": "A helpful way to plan",
+          "steps": [
             {
-              "n": 1,
-              "type": "Video",
-              "what": "Welcome and why this matters — starts teaching immediately"
+              "label": "Define"
             },
             {
-              "n": 2,
-              "type": "Coach Dialogue",
-              "what": "Connects the topic to the learner's own goals or experience"
+              "label": "Prepare"
             },
             {
-              "n": 3,
-              "type": "Reading",
-              "what": "Introduces the first key idea"
+              "label": "Practice"
             },
             {
-              "n": 4,
-              "type": "Video",
-              "what": "Explains or demonstrates topic 1"
-            },
-            {
-              "n": 5,
-              "type": "Hands-on",
-              "what": "Learners apply topic 1"
-            },
-            {
-              "n": 6,
-              "type": "Video",
-              "what": "Introduces topic 2"
-            },
-            {
-              "n": 7,
-              "type": "Practice quiz",
-              "what": "Practices topics 1 and 2 with feedback"
-            },
-            {
-              "n": 8,
-              "type": "Video",
-              "what": "Shows a real example or case"
-            },
-            {
-              "n": 9,
-              "type": "Reading",
-              "what": "Reviews and synthesizes the key concepts"
-            },
-            {
-              "n": 10,
-              "type": "Graded quiz",
-              "what": "Checks the module's objectives"
+              "label": "Demonstrate"
             }
           ],
-          "icon": "play"
+          "after": "The sequence may not always be linear. Learners may move back and forth between preparation and practice, but each element should help them work toward the Module objectives."
+        },
+        {
+          "type": "sidebyside",
+          "icon": "star",
+          "title": "Start with the learner's next step",
+          "body": [
+            "Course objectives describe the larger skills learners should develop by the end of the Course. Module objectives break those skills into smaller, achievable steps."
+          ],
+          "left": {
+            "label": "Rather than asking",
+            "body": "What topics should I cover in this Module?"
+          },
+          "right": {
+            "label": "You might ask",
+            "body": "What should learners be able to do next as they work toward the Course objective?"
+          },
+          "emphasis": "right",
+          "note": "A Module might introduce a concept, guide learners through a process, help them analyze an example, or give them an opportunity to apply a skill in a realistic situation."
+        },
+        {
+          "type": "prose",
+          "icon": "check",
+          "title": "Example: from Course objective to Module objectives",
+          "body": [
+            {
+              "anchor": {
+                "label": "Course objective",
+                "body": "Analyze business datasets to identify patterns, trends, and relevant findings."
+              }
+            },
+            "**Module objectives** — by the end of this Module, learners will be able to:",
+            {
+              "bullets": [
+                "Identify variables relevant to a business question.",
+                "Calculate appropriate summary measures for a dataset.",
+                "Interpret those measures in the context of the business question."
+              ]
+            }
+          ],
+          "after": "These objectives are narrower than the Course objective, but each one helps learners move toward it."
+        },
+        {
+          "type": "prose",
+          "icon": "star",
+          "title": "Keep Module objectives actionable",
+          "body": [
+            "Describe something learners can demonstrate, rather than simply a topic they will encounter or something they will “understand.”",
+            {
+              "verbs": {
+                "label": "Consider observable verbs such as",
+                "items": [
+                  "identify",
+                  "compare",
+                  "calculate",
+                  "apply",
+                  "analyze",
+                  "interpret",
+                  "evaluate",
+                  "create",
+                  "recommend",
+                  "communicate"
+                ]
+              }
+            }
+          ],
+          "after": "The Module planning template calls for approximately **1–3** actionable, measurable learning objectives per Module."
+        },
+        {
+          "type": "prose",
+          "icon": "rosette",
+          "title": "1. Define what learners will do",
+          "body": [
+            "Once you have identified the Module objectives, decide what learners will do to show that they are making progress toward them.",
+            {
+              "anchor": {
+                "label": "Ask",
+                "body": "What would convince you that learners achieved this objective?"
+              }
+            },
+            "The verb in the objective can help you choose an appropriate form of assessment.",
+            {
+              "table": {
+                "headers": [
+                  "If learners need to…",
+                  "They might demonstrate it by…"
+                ],
+                "rows": [
+                  [
+                    "Identify or distinguish",
+                    "Classifying examples or responding to scenario-based questions"
+                  ],
+                  [
+                    "Apply or calculate",
+                    "Completing a problem, exercise, lab, or task"
+                  ],
+                  [
+                    "Analyze or diagnose",
+                    "Examining a dataset, case, artifact, or scenario"
+                  ],
+                  [
+                    "Evaluate or recommend",
+                    "Applying criteria, weighing evidence, and making a decision"
+                  ],
+                  [
+                    "Create or design",
+                    "Producing an artifact, plan, solution, or response"
+                  ],
+                  [
+                    "Communicate or respond",
+                    "Practicing a realistic professional interaction"
+                  ]
+                ]
+              }
+            },
+            "The assessment should ask learners to demonstrate the same kind of thinking or performance described in the objective.",
+            {
+              "anchor": {
+                "label": "A useful question",
+                "body": "If I could see only one thing learners did in this Module, what would show me they achieved the objective?"
+              }
+            },
+            "The answer does not need to be an elaborate project. It does need to provide evidence of the intended learning.",
+            {
+              "anchor": {
+                "label": "Example — objective",
+                "body": "Interpret summary measures in the context of a business question."
+              }
+            },
+            "**Possible assessment** — learners review summary statistics from a customer dataset and identify which conclusions are supported by the data. Feedback explains why each response is or is not appropriate."
+          ]
+        },
+        {
+          "type": "prose",
+          "icon": "book",
+          "title": "2. Prepare learners to get started",
+          "body": [
+            "After deciding what learners will do, identify what they need before they can complete the task successfully.",
+            {
+              "anchor": {
+                "label": "Ask",
+                "body": "What does a learner need to know, see, or use before attempting this activity?"
+              }
+            },
+            "Preparation might include a brief explanation of a new concept, a demonstration or worked example, a reading or reference guide, an expert conversation, a model or annotated example, a job aid, template, or checklist, background information about a case, or instructions for accessing a tool, dataset, or platform.",
+            {
+              "anchor": {
+                "label": "Rather than starting with",
+                "body": "What videos do I need to record?"
+              }
+            },
+            {
+              "anchor": {
+                "label": "Start with",
+                "body": "What does the learner need in order to succeed?"
+              }
+            },
+            "Then choose the format that best supports that need.",
+            {
+              "bullets": [
+                {
+                  "bold": "A video",
+                  "rest": "may help with explaining a difficult idea, demonstrating a process, walking through an example, introducing a case, or bringing instructor presence into the Course."
+                },
+                {
+                  "bold": "A reading",
+                  "rest": "may work better for detailed reference information, material learners may want to revisit, definitions, procedures, or examples, or content learners need to scan quickly."
+                },
+                {
+                  "bold": "An activity",
+                  "rest": "may be the best way to introduce a process learners will need to perform."
+                },
+                {
+                  "bold": "Audio",
+                  "rest": "may be useful for an expert perspective, conversation, or narrative explanation."
+                }
+              ]
+            }
+          ],
+          "after": "You do not need to select every format here. The Learning Assets page provides more detailed guidance on Coursera formats and when each one may be useful."
+        },
+        {
+          "type": "prose",
+          "icon": "lightbulb",
+          "title": "Make the invisible visible",
+          "body": [
+            "In a classroom, learners can often infer what matters from your emphasis, gestures, examples, and responses to questions. In an asynchronous Course, those cues need to be made more explicit.",
+            "For each important activity, consider telling learners:",
+            {
+              "bullets": [
+                "why the topic or task matters;",
+                "what they should pay attention to;",
+                "what they are expected to do;",
+                "how much time the activity may take;",
+                "what a successful response includes;",
+                "whether the activity is for practice or a grade;",
+                "what to do if they are unsure; and",
+                "how the activity connects to the larger Course objective."
+              ]
+            }
+          ],
+          "after": "These details may feel obvious to an instructor, but they help learners navigate the experience independently."
+        },
+        {
+          "type": "prose",
+          "icon": "flask",
+          "title": "3. Give learners a chance to practice",
+          "body": [
+            "Once you know what learners will do to demonstrate the objective, ask:",
+            {
+              "anchor": {
+                "label": "Ask",
+                "body": "What will learners need to try before they are ready to succeed on the assessment?"
+              }
+            },
+            "Learners should practice the same kind of thinking or performance they will later be asked to demonstrate. Practice should not simply repeat information from a video; it should give learners an opportunity to use what they are learning. Depending on the objective, learners might:",
+            {
+              "bullets": [
+                "work through a realistic case or scenario;",
+                "analyze a dataset;",
+                "complete a guided lab or programming exercise;",
+                "make a decision using defined criteria;",
+                "use a template, framework, or checklist;",
+                "respond to an application or reflection prompt;",
+                "practice a professional interaction; or",
+                "answer questions and receive feedback before a graded attempt."
+              ]
+            },
+            "For hands-on work, provide enough structure for learners to get started while preserving an appropriate level of challenge. Useful supports might include a sample file, a model, a checklist, a hint, or a partially completed example."
+          ]
+        },
+        {
+          "type": "prose",
+          "icon": "question",
+          "title": "Build in both practice and demonstration",
+          "body": [
+            "Not every assessment needs to be graded.",
+            "**Practice assessments** give learners low-stakes opportunities to ask whether they can do this yet. They can help learners check their understanding, identify misconceptions, and receive feedback before a graded attempt.",
+            "**Graded assessments** provide evidence that learners have achieved the Module objectives. Each Coursera Module requires at least one graded assessment, and Course-level objectives should be represented in the Course's graded assessments.",
+            "For many Modules, an auto-graded quiz with meaningful feedback can be an effective option. Other formats — including labs, programming assignments, and assignments that evaluate submitted work — may be more appropriate when learners need to perform or create something.",
+            "Practice quizzes should rehearse the thinking required by the graded assessment. Feedback should help learners understand why an answer is correct or incorrect, not simply indicate whether they got it right."
+          ],
+          "after": "Choose the assessment based on the objective, not the other way around."
+        },
+        {
+          "type": "prose",
+          "icon": "access",
+          "title": "Design for moments when learners get stuck",
+          "body": [
+            "Asynchronous learners may not be able to ask a question at the moment they need help. As you plan each activity, consider what support you can build into the experience. Learners may benefit from:",
+            {
+              "bullets": [
+                "clear instructions and success criteria;",
+                "setup details and technology requirements;",
+                "a defined deliverable;",
+                "worked examples;",
+                "step-by-step guidance for unfamiliar tasks;",
+                "templates, frameworks, or checklists;",
+                "hints or optional scaffolding;",
+                "feedback for both correct and incorrect responses;",
+                "opportunities to retry when appropriate;",
+                "links back to relevant content; and",
+                "model responses or explanations after practice."
+              ]
+            },
+            {
+              "anchor": {
+                "label": "Ask",
+                "body": "If a learner gets stuck here, what might help them take the next step?"
+              }
+            },
+            "The goal is not to remove productive challenge. It is to provide a clear path forward without requiring an instructor or peer to be available in the moment."
+          ],
+          "after": "For hands-on practice, clear setup details, defined deliverables, and opportunities for low-stakes trial and error can be especially helpful."
+        },
+        {
+          "type": "steps",
+          "icon": "scale",
+          "orientation": "column",
+          "title": "Example: build a Module backward",
+          "body": [
+            {
+              "anchor": {
+                "label": "Course objective",
+                "body": "Analyze business datasets to identify patterns, trends, and relevant findings."
+              }
+            }
+          ],
+          "steps": [
+            {
+              "label": "Define",
+              "caption": "**Module objective** — interpret summary measures in the context of a business question."
+            },
+            {
+              "label": "Prepare",
+              "items": [
+                {
+                  "label": "Video",
+                  "body": "Choosing and interpreting common summary measures"
+                },
+                {
+                  "label": "Reading",
+                  "body": "Quick reference: when to use mean, median, range, and percentage"
+                },
+                {
+                  "label": "Worked example",
+                  "body": "From customer data to a business insight"
+                },
+                {
+                  "label": "Learner support",
+                  "body": "A step-by-step checklist for interpreting summary measures in context"
+                }
+              ]
+            },
+            {
+              "label": "Practice",
+              "items": [
+                {
+                  "label": "Guided case activity",
+                  "body": "Learners calculate and interpret summary measures for a smaller dataset. Prompts help them connect the results to a business question."
+                },
+                {
+                  "label": "Practice check",
+                  "body": "Learners respond to scenario-based questions and receive feedback explaining common interpretation errors."
+                }
+              ]
+            },
+            {
+              "label": "Demonstrate",
+              "items": [
+                {
+                  "label": "Graded assessment",
+                  "body": "Learners review summary statistics from a customer dataset and determine which conclusions are supported by the evidence."
+                }
+              ]
+            }
+          ],
+          "after": "Each element has a clear purpose because it connects back to the same Module objective."
+        },
+        {
+          "type": "steps",
+          "icon": "arrow",
+          "title": "Think of the Module as a learning pathway",
+          "body": [
+            "A strong Module gives learners a clear path from preparation to successful application. Each stage below pairs what you are designing with what the learner experiences."
+          ],
+          "steps": [
+            {
+              "label": "Prepare",
+              "caption": "Learn what I need"
+            },
+            {
+              "label": "Practice",
+              "caption": "Try it with support"
+            },
+            {
+              "label": "Demonstrate",
+              "caption": "Show what I can do"
+            }
+          ],
+          "after": "The exact mix will vary. Some Modules may require more explanation, while others may center on a substantial hands-on activity or project. What matters is that each element helps learners move toward the Module objectives."
+        },
+        {
+          "type": "prose",
+          "icon": "check",
+          "title": "Before you finalize a Module",
+          "body": [
+            {
+              "bullets": [
+                {
+                  "bold": "Purpose.",
+                  "rest": "Is it clear what learners are learning to do?"
+                },
+                {
+                  "bold": "Focus.",
+                  "rest": "Is the learning step small enough to be manageable?"
+                },
+                {
+                  "bold": "Assessment.",
+                  "rest": "Does the graded task match the objective?"
+                },
+                {
+                  "bold": "Practice.",
+                  "rest": "Have learners had a chance to try the same kind of work?"
+                },
+                {
+                  "bold": "Preparation.",
+                  "rest": "Do they have the knowledge, examples, and tools they need?"
+                },
+                {
+                  "bold": "Feedback.",
+                  "rest": "Will they learn why a response is or is not successful?"
+                },
+                {
+                  "bold": "Navigation.",
+                  "rest": "Will they know what to do, why it matters, and what comes next?"
+                },
+                {
+                  "bold": "Independence.",
+                  "rest": "Can they continue if an instructor or peer is not immediately available?"
+                }
+              ]
+            },
+            "As you plan, keep asking: what should learners be able to do, how will they demonstrate it, what practice will help them get there, what do they need to know, see, or use first, and what support will help them continue if they get stuck?"
+          ]
         },
         {
           "type": "carryover",
           "tier": "asset",
-          "icon": "book",
-          "title": "More on each learning asset",
+          "icon": "play",
+          "title": "Choosing the formats",
           "body": [
-            "Videos, readings, Coach Dialogues, hands-on activities, and quizzes each come with their own guidance on length, how they work best, and what to check for accessibility and copyright.",
-            "You don't need to settle any of that here. Sketch the shape of the module first, and your Learning Experience Designer will work through the details with you."
+            "On the Learning Assets page you'll explore the Coursera formats available for delivering each part of the experience — from videos and readings to hands-on practice, interactive tools, Dialogue, practice quizzes, and graded assessments."
           ],
           "link": {
             "href": "#assets",
             "label": "See the Learning Assets page"
           }
-        },
-        {
-          "type": "callout",
-          "tier": "module",
-          "title": "Making the Most of Each Module",
-          "body": "Learners often use Coursera in short sessions, fitting coursework around their work and other responsibilities. Each module is designed to provide a complete learning experience in one sitting, while also offering a natural stopping point for learners who want to continue later."
         },
         {
           "type": "templatePreview",
@@ -1204,7 +1578,8 @@
           ],
           "icon": "list"
         }
-      ]
+      ],
+      "lead": "hero"
     },
     "assets": {
       "tier": "asset",
