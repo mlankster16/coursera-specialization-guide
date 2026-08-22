@@ -957,9 +957,10 @@ function sideBySideHtml(s, tier) {
       ${side.body ? `<p class="sbs-body">${esc(side.body)}</p>` : ''}
       ${
         side.bullets
-          ? `<ul class="sbs-list">${side.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>`
+          ? `<ul class="sbs-list">${side.bullets.map((b) => `<li>${rich(b)}</li>`).join('')}</ul>`
           : ''
       }
+      ${side.note ? `<p class="sbs-panel-note">${rich(side.note)}</p>` : ''}
     </div>`;
   return `
     <section class="block">
@@ -1166,6 +1167,7 @@ function sectionBody(s, tier) {
       return `
         <section class="block">
           ${sectionHeadHtml(s)}
+          ${bodyBlocksHtml(s.body)}
           <ol class="example-list${s.tier ? ` tier-${s.tier}` : ''}">
             ${s.items
               .map(
@@ -1174,7 +1176,8 @@ function sectionBody(s, tier) {
                 <span class="example-n">${it.n}</span>
                 <span class="example-body">
                   <span class="example-type">${esc(it.type)}</span>
-                  <span class="example-what">${esc(it.what)}</span>
+                  <span class="example-what">${rich(it.what)}</span>
+                  ${it.outcome ? `<span class="example-outcome">${rich(it.outcome)}</span>` : ''}
                 </span>
                 ${it.phase ? `<span class="example-phase">${esc(it.phase)}</span>` : ''}
               </li>`

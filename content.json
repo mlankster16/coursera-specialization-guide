@@ -34,7 +34,7 @@
       "style": "bare"
     },
     "mapping": {
-      "title": "How your course maps to Coursera",
+      "title": "How your Duke course maps to Coursera",
       "intro": "These are rough comparisons rather than one-to-one equivalents. Designing for Coursera usually means narrowing and reshaping existing material rather than simply dividing a semester Course into smaller pieces.",
       "yourLabel": "In your course",
       "courseraLabel": "On Coursera",
@@ -330,15 +330,18 @@
               "type": "prose",
               "variant": "example",
               "icon": "certificate",
-              "title": "Answering that question",
+              "title": "Defining the goal for Data Analytics for Business Decisions",
               "body": [
+                "Suppose you are designing a Specialization on Data Analytics for Business Decisions. It may be tempting to begin with a list of topics or tools to cover. Instead, begin with the learner and a practical need.",
+                "This Specialization is intended for professionals who use data or make decisions informed by data but may not have formal training in analytics. They want to become more confident asking useful questions, interpreting evidence, and recommending a course of action.",
+                "That learner need leads to a focused end goal:",
                 {
                   "anchor": {
-                    "label": "Specialization",
-                    "body": "Data Analytics for Business Decisions"
+                    "label": "The goal",
+                    "body": "By the end of the Specialization, learners will be able to frame a business question, analyze and visualize relevant data, and communicate an evidence-informed recommendation."
                   }
                 },
-                "**By the end of the Specialization,** learners will be able to use business data to identify meaningful findings, communicate insights, and make evidence-informed recommendations."
+                "This is more useful than a broad goal such as “understand the fundamentals of data analytics.” It describes what learners will be able to do, connects the learning to a recognizable need, and provides a practical boundary for deciding what belongs in the Specialization."
               ]
             }
           ]
@@ -371,25 +374,32 @@
               "variant": "example",
               "icon": "layers",
               "tier": "spec",
-              "title": "Data Analytics for Business Decisions",
+              "title": "Shaping the journey for Data Analytics for Business Decisions",
+              "body": [
+                "Once the overall goal is clear, consider what learners need to accomplish at each stage of the journey.",
+                "Rather than dividing data analytics content into three roughly equal groups of topics, give each Course a distinct role in helping learners move toward the Specialization goal."
+              ],
               "items": [
                 {
                   "n": 1,
                   "type": "Foundations of Data Analytics for Business",
-                  "what": "Learners frame a business question and identify and prepare the data needed to investigate it."
+                  "what": "Learners begin by translating a business need into a question that can be investigated with data. They identify the data they need, evaluate its basic quality, and prepare it for analysis.",
+                  "outcome": "**Learners leave with:** a focused business question and an analysis-ready dataset."
                 },
                 {
                   "n": 2,
                   "type": "Analyzing and Visualizing Business Data",
-                  "what": "Learners analyze data and create visualizations that reveal meaningful patterns and trends."
+                  "what": "Learners use appropriate analytical methods to investigate their question. They interpret the results and create visualizations that make important patterns and findings easier to understand.",
+                  "outcome": "**Learners leave with:** analytical findings and supporting visualizations."
                 },
                 {
                   "n": 3,
                   "type": "Communicating Data-Driven Recommendations",
-                  "what": "Learners use their findings to develop and communicate an evidence-informed recommendation."
+                  "what": "Learners determine what conclusions the evidence supports, account for limitations or uncertainty, and communicate a recommendation to a relevant audience.",
+                  "outcome": "**Learners leave with:** a clear, evidence-informed recommendation."
                 }
               ],
-              "footnote": "Together, the Courses create a clear progression: **Frame and prepare → Analyze and visualize → Recommend and communicate**. Each Course has a recognizable purpose of its own while contributing to the larger Specialization goal."
+              "footnote": "Together, the Courses create a recognizable progression: **Frame and prepare → Analyze and visualize → Recommend and communicate**"
             }
           ]
         },
@@ -794,30 +804,35 @@
           "children": [
             {
               "type": "prose",
+              "variant": "example",
               "icon": "list",
-              "title": "Objectives for a sample Course",
+              "title": "Writing objectives for Foundations of Data Analytics for Business",
               "body": [
-                "For Foundations of Data Analytics for Business, learners will be able to:"
-              ],
-              "bullets": [
+                "Now let's zoom in on the first Course in the Specialization: Foundations of Data Analytics for Business.",
+                "Its role in the larger journey is to help learners move from a general business need to a focused question and an analysis-ready dataset. That purpose can be translated into a small set of observable Course-level objectives.",
+                "By the end of the Course, learners will be able to:",
                 {
-                  "bold": "Translate",
-                  "rest": "a business need into a focused question that can be investigated with data."
+                  "bullets": [
+                    {
+                      "bold": "Translate",
+                      "rest": "a business need into a focused question that can be investigated with data."
+                    },
+                    {
+                      "bold": "Identify",
+                      "rest": "the data needed to investigate a business question."
+                    },
+                    {
+                      "bold": "Evaluate",
+                      "rest": "a dataset for relevance, completeness, and basic quality concerns."
+                    },
+                    {
+                      "bold": "Prepare",
+                      "rest": "a simple dataset for an introductory business analysis."
+                    }
+                  ]
                 },
-                {
-                  "bold": "Identify",
-                  "rest": "the data needed to investigate a business question."
-                },
-                {
-                  "bold": "Evaluate",
-                  "rest": "a dataset for relevance, completeness, and basic quality concerns."
-                },
-                {
-                  "bold": "Prepare",
-                  "rest": "data for an introductory business analysis."
-                }
-              ],
-              "variant": "example"
+                "These objectives describe what learners can demonstrate, rather than topics the instructor intends to cover. For example, “data quality” names a subject. “Evaluate a dataset for relevance, completeness, and basic quality concerns” describes what learners will do with their knowledge of that subject."
+              ]
             }
           ]
         },
@@ -888,32 +903,43 @@
           "children": [
             {
               "type": "sidebyside",
+              "variant": "example",
               "icon": "scale",
               "tier": "course",
               "title": "Using a Course objective to guide scope",
-              "anchor": {
-                "label": "Course objective",
-                "body": "Learners will be able to prepare data for an introductory business analysis."
-              },
+              "body": [
+                "Consider one objective from Foundations of Data Analytics for Business:",
+                {
+                  "anchor": {
+                    "label": "Course objective",
+                    "body": "Learners will be able to prepare a simple dataset for an introductory business analysis."
+                  }
+                },
+                "This objective can help faculty distinguish between content that directly supports the intended learning and content that, while interesting or valuable, may not be necessary at this stage."
+              ],
               "left": {
                 "label": "Include",
+                "body": "Learners will likely need opportunities to:",
                 "bullets": [
-                  "Identifying relevant data fields",
-                  "Checking for missing or inconsistent values",
-                  "Restructuring a simple dataset",
-                  "Documenting data-preparation decisions"
-                ]
+                  "identify the data fields relevant to a business question;",
+                  "check for missing, duplicate, or inconsistent values;",
+                  "restructure and format a simple dataset; and",
+                  "document data-preparation decisions."
+                ],
+                "note": "Each element contributes directly to learners’ ability to prepare data for an introductory analysis."
               },
               "right": {
                 "label": "Consider leaving out",
+                "body": "Learners may not need:",
                 "bullets": [
-                  "Advanced statistical modeling",
-                  "Complex programming techniques",
-                  "Topics that do not support the introductory analysis"
-                ]
+                  "advanced statistical modeling;",
+                  "complex programming techniques;",
+                  "large-scale data engineering; or",
+                  "specialized methods that are not used in the Course analysis."
+                ],
+                "note": "These topics may be valuable in another context, but they are not necessary for achieving this Course objective. Including them could increase the Course’s time and complexity without adding to the skill learners are expected to develop."
               },
-              "emphasis": "left",
-              "variant": "example"
+              "emphasis": "left"
             }
           ]
         },

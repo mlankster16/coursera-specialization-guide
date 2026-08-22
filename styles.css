@@ -2563,3 +2563,25 @@ a.flow-step-card:focus-visible { outline: 3px solid var(--persimmon); outline-of
 /* The Overview intro is not inside a hero head, so it needs its own spacing. */
 .intro.bare { margin-bottom: 26px; }
 .intro.bare .intro-body + .intro-body { margin-top: 14px; }
+
+/* What a learner walks away with, under each step of a worked example. */
+.example-outcome {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--graphite);
+  line-height: 1.5;
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px solid var(--hatteras);
+}
+.example-outcome strong { color: var(--navy); }
+
+/* A closing line inside a comparison panel, under its list. */
+.sbs-panel-note {
+  font-size: 0.82rem;
+  color: var(--graphite);
+  line-height: 1.6;
+  margin-top: 11px;
+  padding-top: 10px;
+  border-top: 1px solid var(--hatteras);
+}
