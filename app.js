@@ -815,7 +815,7 @@ function templatePreviewHtml(s, tier) {
     <section class="block">
       ${sectionHeadHtml({ ...s, note: undefined, intro: undefined })}
       ${s.note ? `<p class="section-intro below">${esc(s.note)}</p>` : ''}
-      <div class="tp-page tier-${s.band.tier}">
+      <div class="tp-page tier-${s.band.tier}${s.filled ? ' tp-filled' : ''}">
         <div class="tp-band tier-${s.band.tier}">
           <span class="tp-band-icon">${icon(s.band.icon)}</span>
           <span class="tp-band-title">${esc(s.band.title)}</span>

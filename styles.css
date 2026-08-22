@@ -2585,3 +2585,10 @@ a.flow-step-card:focus-visible { outline: 3px solid var(--persimmon); outline-of
   padding-top: 10px;
   border-top: 1px solid var(--hatteras);
 }
+
+/* ---------- A filled-in template ----------
+   With real values in the fields, placeholder grey would read as "not yet
+   written". Only a remaining bracketed stub stays muted. */
+.tp-filled .tp-ph,
+.tp-filled .tp-grid td { color: var(--cast-iron); }
+.tp-filled .tp-grid td.tp-n { color: var(--graphite); }
